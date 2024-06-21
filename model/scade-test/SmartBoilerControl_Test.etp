@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project id="1" oid_count="38" defaultConfiguration="14">
+	<props>
+		<Prop id="3" name="@STUDIO:PRODUCT">
+			<value>QTE</value>
+		</Prop>
+		<Prop id="6" name="@STUDIO:TITLE">
+			<value>&lt;title&gt;</value>
+		</Prop>
+		<Prop id="7" name="@STUDIO:SUBTITLE">
+			<value>&lt;subtitle&gt;</value>
+		</Prop>
+		<Prop id="8" name="@STUDIO:DESCRIPTION">
+			<value>&lt;description&gt;</value>
+		</Prop>
+		<Prop id="9" name="@STUDIO:AUTHORS">
+			<value>&lt;authors&gt;</value>
+		</Prop>
+		<Prop id="10" name="@STUDIO:COMPAGNY">
+			<value>&lt;company&gt;</value>
+		</Prop>
+		<Prop id="11" name="@STUDIO:DATE">
+			<value>&lt;date&gt;</value>
+		</Prop>
+		<Prop id="12" name="@STUDIO:INDEX">
+			<value>&lt;index&gt;</value>
+		</Prop>
+		<Prop id="13" name="@STUDIO:REFERENCE">
+			<value>&lt;reference&gt;</value>
+		</Prop>
+		<Prop id="15" name="@STUDIO:TOOLCONF">
+			<value>Test Tool</value>
+			<value>14</value>
+		</Prop>
+		<Prop id="16" name="@STUDIO:TOOLCONF">
+			<value>Reporter</value>
+			<value>14</value>
+		</Prop>
+		<Prop id="17" name="@REPORTER:SCRIPT">
+			<value>Reporter/ScadeTestReport.tcl</value>
+			<configuration>14</configuration>
+		</Prop>
+		<Prop id="19" name="@QTE:SOURCE_MODEL">
+			<value>..\scade-display\DisplayPanel.etp</value>
+		</Prop>
+		<Prop id="21" name="@QTE:SELECTED_PROCEDURES">
+			<value>Procedure1</value>
+			<configuration>14</configuration>
+		</Prop>
+		<Prop id="22" name="@QTE:USE_PROCEDURES_LIST">
+			<value>true</value>
+			<configuration>14</configuration>
+		</Prop>
+		<Prop id="23" name="@QTE:TEE_CONF">
+			<value>Code</value>
+			<configuration>14</configuration>
+		</Prop>
+	</props>
+	<roots>
+		<Folder id="4" extensions="etp;vsp" name="Model">
+			<elements>
+				<FileRef id="38" persistAs="..\scade-display\DisplayPanel.etp"/>
+			</elements>
+		</Folder>
+		<Folder id="5" extensions="stp" name="Tests">
+			<elements>
+				<FileRef id="20" persistAs="Procedure1.stp"/>
+			</elements>
+		</Folder>
+		<Folder id="24" extensions="sss;csv;sns" name="Scenarios">
+			<elements>
+				<FileRef id="34" persistAs="Scenario1.sss"/>
+			</elements>
+		</Folder>
+		<Folder id="26" extensions="trf" name="Results"/>
+	</roots>
+	<configurations>
+		<Configuration id="14" name="Test"/>
+	</configurations>
+</Project>
