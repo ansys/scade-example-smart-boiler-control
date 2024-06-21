@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="function" name="SteamControlState">
+	<inputs>
+		<Variable name="failureSteam">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/27de/34AD/C44/4e31548d737b"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="steamControlState">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/27d5/34AD/C44/4e31547b27d3"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/27d4/34AD/C44/4e31546e3d90"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/28b4/64D7/1384/4ed29dd5724d"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L3">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/28be/64D7/1384/4ed29de25d84"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L4">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/28d0/64D7/1384/4ed29de87a65"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- steamControlState = _L2; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="steamControlState"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L2"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/27d2/34AD/C44/4e31546e7211"/>
+			</pragmas>
+		</Equation>
+		<!-- _L1 = failureSteam; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L1"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="failureSteam"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/27d3/34AD/C44/4e31546e3c03"/>
+			</pragmas>
+		</Equation>
+		<!-- _L2 = if _L1 then (_L3) else (_L4); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L2"/>
+			</lefts>
+			<right>
+				<!-- if _L1 then (_L3) else (_L4) -->
+				<IfThenElseOp name="3">
+					<if>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L1"/>
+							</path>
+						</IdExpression>
+					</if>
+					<then>
+						<ListExpression>
+							<items>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L3"/>
+									</path>
+								</IdExpression>
+							</items>
+						</ListExpression>
+					</then>
+					<else>
+						<ListExpression>
+							<items>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L4"/>
+									</path>
+								</IdExpression>
+							</items>
+						</ListExpression>
+					</else>
+				</IfThenElseOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/28b3/64D7/1384/4ed29dd522ef"/>
+			</pragmas>
+		</Equation>
+		<!-- _L3 = 2; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L3"/>
+			</lefts>
+			<right>
+				<ConstValue value="2"/>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/28bd/64D7/1384/4ed29de25f5c"/>
+			</pragmas>
+		</Equation>
+		<!-- _L4 = 1; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L4"/>
+			</lefts>
+			<right>
+				<ConstValue value="1"/>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/28cf/64D7/1384/4ed29de83d37"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/27b6/34AD/C44/4e315461662d" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<diagrams>
+				<NetDiagram name="SteamControlState" landscape="true" format="A4 (210 297)" oid="!ed/27b7/34AD/C44/4e31546166a8">
+					<presentationElements>
+						<EquationGE presentable="!ed/27d2/34AD/C44/4e31546e7211">
+							<position>
+								<Point x="6202" y="2604"/>
+							</position>
+							<size>
+								<Size width="318" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/27d3/34AD/C44/4e31546e3c03">
+							<position>
+								<Point x="4233" y="1228"/>
+							</position>
+							<size>
+								<Size width="169" height="297"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/28b3/64D7/1384/4ed29dd522ef">
+							<position>
+								<Point x="4403" y="2392"/>
+							</position>
+							<size>
+								<Size width="1016" height="910"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/28b3/64D7/1384/4ed29dd522ef" dstEquation="!ed/27d2/34AD/C44/4e31546e7211">
+							<positions>
+								<Point x="5424" y="2858"/>
+								<Point x="5821" y="2858"/>
+								<Point x="5821" y="2858"/>
+								<Point x="6244" y="2858"/>
+							</positions>
+						</Edge>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/28bd/64D7/1384/4ed29de25f5c">
+							<position>
+								<Point x="3852" y="2540"/>
+							</position>
+							<size>
+								<Size width="169" height="297"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/28cf/64D7/1384/4ed29de83d37">
+							<position>
+								<Point x="3852" y="2858"/>
+							</position>
+							<size>
+								<Size width="170" height="296"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/27d3/34AD/C44/4e31546e3c03" dstEquation="!ed/28b3/64D7/1384/4ed29dd522ef">
+							<positions>
+								<Point x="4392" y="1376"/>
+								<Point x="4921" y="1376"/>
+								<Point x="4921" y="2381"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/28bd/64D7/1384/4ed29de25f5c" dstEquation="!ed/28b3/64D7/1384/4ed29dd522ef">
+							<positions>
+								<Point x="4022" y="2672"/>
+								<Point x="4233" y="2672"/>
+								<Point x="4233" y="2672"/>
+								<Point x="4392" y="2672"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/28cf/64D7/1384/4ed29de83d37" dstEquation="!ed/28b3/64D7/1384/4ed29dd522ef">
+							<positions>
+								<Point x="4022" y="2990"/>
+								<Point x="4207" y="2990"/>
+								<Point x="4207" y="2990"/>
+								<Point x="4392" y="2990"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+		</ed:Operator>
+	</pragmas>
+</Operator>

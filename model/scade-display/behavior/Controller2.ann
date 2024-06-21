@@ -1,0 +1,58 @@
+Notes-Types { Esterel-Technologies }  DEFINITIONS ::=
+BEGIN
+    Graphical ::= SEQUENCE OF { SEQUENCE {
+    annot_object OID,
+    name STRING,
+        note_graphical_information {
+            NT_INCRUSTABLE BOOLEAN
+            {
+            	 NT_DEFAULT_VALUE T },
+            NT_PERMANENT BOOLEAN
+            {
+            	 NT_DEFAULT_VALUE T },
+            NT_MODIFY BOOLEAN
+            {
+            	 NT_DEFAULT_VALUE T },
+            NT_LOCATION STRING
+            {
+            	 NT_DEFAULT_VALUE "RELATIVE" },
+            NT_FONT INTEGER
+            {
+            	 NT_DEFAULT_VALUE 2 },
+            NT_POS_X REAL
+            {
+            	 NT_DEFAULT_VALUE -1 },
+            NT_POS_Y REAL
+            {
+            	 NT_DEFAULT_VALUE -1 }
+        },
+        information {
+            Text TEXT
+            {
+            	 NT_INCRUSTABLE T },
+            to_c BOOLEAN
+            {
+            	 NT_DEFAULT_VALUE T ,
+            	 NT_PRINTABLE F ,
+            	 NT_LEFT_LABEL "Propagate to generated code" }
+    } } }
+
+END
+
+Notes-Values { Esterel-Technologies }  DEFINITIONS ::=
+BEGIN
+    Graphical ::= {
+        {"!ed/2e72/62A9/2F80/4ed283b31e82", "Graphical_1",T , T , T , "RELATIVE" , 2 , 20.826773 , 450.826782 , "Failure of Water_Level measure device is raised if:
+- not failure on Steam measure device
+- diff between Water_Level measure and estimation computed from previous value of Level is > 15% two consecutive times
+
+(In nominal operation the maximum diff is 12%)
+" , T },
+        {"!ed/2e9b/62A9/2F80/4ed283f12197", "Graphical_1",T , T , T , "RELATIVE" , 2 , 29.173227 , 402.519684 , "Failure of Steam measure device is raised if:
+- not failure on Water_Level measure device
+- diff between Steam measure and estimation computed from previous value of Level is > 15% two consecutive times
+
+(In nominal operation the maximum diff is 12%)
+" , T }}
+END
+

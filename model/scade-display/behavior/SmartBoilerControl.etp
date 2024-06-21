@@ -1,0 +1,721 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project id="1" oid_count="427" defaultConfiguration="21">
+	<props>
+		<Prop id="10" name="@STUDIO:PRODUCT">
+			<value>SC</value>
+		</Prop>
+		<Prop id="14" name="@GENERATOR:TARGET_DIR">
+			<value>$(Configuration)</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="15" name="@VC6.0:ADD_COMP_OPTIONS">
+			<value>/nologo /ML /O2</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="16" name="@GENERATOR:GENERATOR">
+			<value>C QUAL661</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="17" name="@GENERATOR:OPTLEVEL">
+			<value>1</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="18" name="@GENERATOR:USER_CONFIG">
+			<value>$(TargetDir)\user_macros.h</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="19" name="@GENERATOR:ENABLE_EXTENSIONS">
+			<value>false</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="20" name="@STUDIO:TOOLCONF">
+			<value>Code Generator</value>
+			<value>13</value>
+			<value>21</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="22" name="@GENERATOR:TARGET_DIR">
+			<value>$(Configuration)</value>
+			<configuration>21</configuration>
+		</Prop>
+		<Prop id="23" name="@VC6.0:ADD_COMP_OPTIONS">
+			<value>/nologo /ML /O2</value>
+			<configuration>21</configuration>
+		</Prop>
+		<Prop id="24" name="@GENERATOR:GENERATOR">
+			<value>C QUAL663</value>
+			<configuration>21</configuration>
+		</Prop>
+		<Prop id="26" name="@GENERATOR:DEBUG">
+			<value>true</value>
+			<configuration>21</configuration>
+		</Prop>
+		<Prop id="27" name="@GENERATOR:PROBES">
+			<value>true</value>
+			<configuration>21</configuration>
+		</Prop>
+		<Prop id="28" name="@GENERATOR:SKIP_UNUSED">
+			<value>true</value>
+			<configuration>21</configuration>
+		</Prop>
+		<Prop id="30" name="@GENERATOR:USER_CONFIG">
+			<value>$(TargetDir)\user_macros.h</value>
+			<configuration>21</configuration>
+		</Prop>
+		<Prop id="33" name="@REPORTER:RotateLandscape">
+			<value>true</value>
+			<configuration>31</configuration>
+		</Prop>
+		<Prop id="34" name="@REPORTER:cstDisplayType">
+			<value>Flat</value>
+			<configuration>31</configuration>
+		</Prop>
+		<Prop id="35" name="@STUDIO:TOOLCONF">
+			<value>Reporter</value>
+			<value>31</value>
+			<value>36</value>
+		</Prop>
+		<Prop id="37" name="@REPORTER:FORMAT">
+			<value>rtf</value>
+			<configuration>36</configuration>
+		</Prop>
+		<Prop id="38" name="@REPORTER:SCRIPT">
+			<value>Reporter/ScadeReport.tcl</value>
+			<configuration>36</configuration>
+		</Prop>
+		<Prop id="39" name="@REPORTER:RotateLandscape">
+			<value>true</value>
+			<configuration>36</configuration>
+		</Prop>
+		<Prop id="40" name="@REPORTER:cstDisplayType">
+			<value>Flat</value>
+			<configuration>36</configuration>
+		</Prop>
+		<Prop id="42" name="@STUDIO:TOOLCONF">
+			<value>Instrumenter</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="53" name="@GENERATOR:TARGET_DIR">
+			<value>$(Configuration)</value>
+			<configuration>52</configuration>
+		</Prop>
+		<Prop id="54" name="@VC6.0:ADD_COMP_OPTIONS">
+			<value>/nologo /ML /O2</value>
+			<configuration>52</configuration>
+		</Prop>
+		<Prop id="55" name="@GENERATOR:GENERATOR">
+			<value>C QUAL663</value>
+			<configuration>52</configuration>
+		</Prop>
+		<Prop id="56" name="@GENERATOR:OPTLEVEL">
+			<value>1</value>
+			<configuration>52</configuration>
+		</Prop>
+		<Prop id="57" name="@GENERATOR:USER_CONFIG">
+			<value>$(TargetDir)\user_macros.h</value>
+			<configuration>52</configuration>
+		</Prop>
+		<Prop id="58" name="@GENERATOR:TARGET_ADAPTOR">
+			<value>T&amp;S Optimizer</value>
+			<configuration>52</configuration>
+		</Prop>
+		<Prop id="59" name="@STUDIO:TOOLCONF">
+			<value>Timing and Stack Verifiers</value>
+			<value>52</value>
+		</Prop>
+		<Prop id="62" name="@SCADE:NOTEFILE">
+			<value>$(SCADE)/lib/DefaultAty.aty</value>
+		</Prop>
+		<Prop id="63" name="@SCADE:SAVEVERSION">
+			<value>SCADE65</value>
+		</Prop>
+		<Prop id="64" name="@SCADE:NEWVARIABLESYMBOLS">
+			<value>true</value>
+		</Prop>
+		<Prop id="65" name="@STUDIO:TITLE">
+			<value>&lt;title&gt;</value>
+		</Prop>
+		<Prop id="66" name="@STUDIO:SUBTITLE">
+			<value>&lt;subtitle&gt;</value>
+		</Prop>
+		<Prop id="67" name="@STUDIO:DESCRIPTION">
+			<value>&lt;description&gt;</value>
+		</Prop>
+		<Prop id="68" name="@STUDIO:AUTHORS">
+			<value>&lt;authors&gt;</value>
+		</Prop>
+		<Prop id="69" name="@STUDIO:COMPAGNY">
+			<value>&lt;company&gt;</value>
+		</Prop>
+		<Prop id="70" name="@STUDIO:DATE">
+			<value>&lt;date&gt;</value>
+		</Prop>
+		<Prop id="71" name="@STUDIO:INDEX">
+			<value>&lt;index&gt;</value>
+		</Prop>
+		<Prop id="72" name="@STUDIO:REFERENCE">
+			<value>&lt;reference&gt;</value>
+		</Prop>
+		<Prop id="75" name="@STUDIO:TOOLCONF">
+			<value>Design Verifier</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="76" name="@STUDIO:TOOLCONF">
+			<value>Checker</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="77" name="@STUDIO:TOOLCONF">
+			<value>DiffAnalyzer</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="82" name="@SCADE:CHECKED">
+			<value>false</value>
+		</Prop>
+		<Prop id="93" name="@GENERATOR:EXPAND_MODE">
+			<value>2</value>
+			<configuration>21</configuration>
+		</Prop>
+		<Prop id="173" name="@GENERATOR:EXPAND_MODE">
+			<value>2</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="174" name="@GENERATOR:USER_CONFIG">
+			<value>$(TargetDir)\user_macros.h</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="177" name="@GENERATOR:PROBES">
+			<value>true</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="178" name="@GENERATOR:DEBUG">
+			<value>true</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="180" name="@GENERATOR:GENERATOR">
+			<value>C QUAL663</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="181" name="@VC6.0:ADD_COMP_OPTIONS">
+			<value>/nologo /ML /O2</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="182" name="@GENERATOR:TARGET_DIR">
+			<value>$(Configuration)</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="184" name="@GENERATOR:DISPLAY_DISABLED_PANELS">
+			<value>SysPanel.sgf</value>
+			<value>ControlPanel.sgf</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="185" name="@GENERATOR:ROOTNODE">
+			<value>Proof::Proof</value>
+			<configuration>172</configuration>
+		</Prop>
+		<Prop id="203" name="@STUDIO:TOOLCONF">
+			<value>Timing and Stack Analysis Tools</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="204" name="@STUDIO:TOOLCONF">
+			<value>DashBoard</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="278" name="@STUDIO:TOOLCONF">
+			<value>Synchronization</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="289" name="@GENERATOR:DISPLAY_ENABLED_PANELS">
+			<value>Display\DisplayPanel.sgfx,Co-simulation</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="290" name="@GENERATOR:ROOTNODE">
+			<value>SteamBoiler</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="291" name="@GENERATOR:EXPAND_MODE">
+			<value>2</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="292" name="@GENERATOR:USER_CONFIG">
+			<value>$(TargetDir)\user_macros.h</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="293" name="@GENERATOR:SKIP_UNUSED">
+			<value>true</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="294" name="@GENERATOR:PROBES">
+			<value>true</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="295" name="@GENERATOR:DEBUG">
+			<value>true</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="296" name="@GENERATOR:GENERATOR">
+			<value>C QUAL663</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="297" name="@VC6.0:ADD_COMP_OPTIONS">
+			<value>/nologo /ML /O2</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="298" name="@GENERATOR:TARGET_DIR">
+			<value>$(Configuration)</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="299" name="@GENERATOR:TARGET_ADAPTOR">
+			<value>SCADE Display Co-execution</value>
+			<configuration>288</configuration>
+		</Prop>
+		<Prop id="319" name="@STUDIO:TOOLCONF">
+			<value>Import/Export</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="320" name="@STUDIO:TOOLCONF">
+			<value>Metrics and Rules Checker</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="321" name="@SIMULATOR:CPU_TYPE">
+			<value>e300</value>
+			<configuration>52</configuration>
+		</Prop>
+		<Prop id="374" name="@SCADE:DEFAULTFILE">
+			<value>SmartBoilerControl.xscade</value>
+		</Prop>
+		<Prop id="375" name="@SCADE:SEMFILE">
+			<value>SmartBoilerControl.err</value>
+		</Prop>
+		<Prop id="377" name="@STUDIO:TOOLCONF">
+			<value>Test Tool</value>
+			<value>13</value>
+			<value>21</value>
+			<value>31</value>
+			<value>36</value>
+			<value>52</value>
+			<value>172</value>
+			<value>288</value>
+		</Prop>
+		<Prop id="378" name="@GENERATOR:ROOTNODE">
+			<value>SmartBoilerControl</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="382" name="@METRICS_RULES:SELECTED_ROOTS">
+			<value>SmartBoilerControl</value>
+			<value>Display::</value>
+			<value>Simu::</value>
+			<value>Controller::</value>
+			<value>Utilities::</value>
+			<value>SmartBoilerControl/</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="385" name="@METRICS_RULES:SELECTED_NODES">
+			<value>{SmartBoilerControl}/[SELF][CONSTANTS][TYPES]</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="386" name="@METRICS_RULES:USER_DEF_FILES">
+			<value>$(SCADE)/scripts/MetricRule/DefaultMetrics.py</value>
+			<value>$(SCADE)/scripts/MetricRule/DefaultRules.py</value>
+		</Prop>
+		<Prop id="387" name="@METRICS_RULES:RULES_PARAM">
+			<value>SDR-30-1,7</value>
+			<value>SDR-38,&lt;, &gt;, &lt;=, &gt;=, =, &lt;&gt;</value>
+			<value>SDR-30-6,7</value>
+			<value>SDR-30-5,7</value>
+			<value>SDR-30-4,5</value>
+			<value>SDR-52,true,false</value>
+			<value>SDR-19,in=acc.*In, out=acc.*Out, strict=False</value>
+			<value>SDR-65,configuration=</value>
+			<value>SDR-51,index=index</value>
+			<value>SDR-22,10</value>
+			<value>SDR-64,configuration=</value>
+			<value>SDR-31,margins=0;0</value>
+			<value>SDR-32,upper_levels=1</value>
+			<value>SDR-20,continue=continue</value>
+			<value>SDR-30-3,15</value>
+			<value>SDR-30-2,7</value>
+			<configuration>13</configuration>
+		</Prop>
+		<Prop id="388" name="@METRICS_RULES:SELECTED_RULES">
+			<value>SDR-11-12-1</value>
+			<value>SDR-30-1</value>
+			<value>SDR-30-6</value>
+			<value>SDR-39</value>
+			<value>SDR-30-5</value>
+			<value>SDR-30-4</value>
+			<value>SDR-18</value>
+			<value>SDR-19</value>
+			<value>SDR-24</value>
+			<value>SDR-65</value>
+			<value>SDR-51</value>
+			<value>SDR-22</value>
+			<value>SDR-21</value>
+			<value>SDR-11-12-2</value>
+			<value>SDR-20</value>
+			<configuration>13</configuration>
+		</Prop>
+	</props>
+	<roots>
+		<Folder id="3" extensions="vsp;etp" name="SCADE Libraries">
+			<elements>
+				<FileRef id="322" persistAs="Libraries\Collections\Collections.etp"/>
+				<FileRef id="371" persistAs="$(SCADE)\libraries\SC65\libdigital\libdigital.etp"/>
+			</elements>
+		</Folder>
+		<Folder id="11" extensions="xscade;scade" name="Model Files">
+			<elements>
+				<Folder id="12" extensions="xscade;scade" name="Separate Files">
+					<elements>
+						<FileRef id="341" persistAs="Compare.xscade">
+							<props>
+								<Prop id="340" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="342" persistAs="Sort.xscade">
+							<props>
+								<Prop id="339" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="343" persistAs="Present.xscade">
+							<props>
+								<Prop id="338" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="344" persistAs="Remove.xscade">
+							<props>
+								<Prop id="337" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="345" persistAs="Find.xscade">
+							<props>
+								<Prop id="336" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="346" persistAs="Tail.xscade">
+							<props>
+								<Prop id="335" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="347" persistAs="Head.xscade">
+							<props>
+								<Prop id="334" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="348" persistAs="Full.xscade">
+							<props>
+								<Prop id="333" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="349" persistAs="Reverse.xscade">
+							<props>
+								<Prop id="332" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="350" persistAs="Set.xscade">
+							<props>
+								<Prop id="331" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="351" persistAs="Append.xscade">
+							<props>
+								<Prop id="330" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="352" persistAs="Pop.xscade">
+							<props>
+								<Prop id="329" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="353" persistAs="Insert.xscade">
+							<props>
+								<Prop id="328" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="354" persistAs="Get.xscade">
+							<props>
+								<Prop id="327" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="355" persistAs="Clear.xscade">
+							<props>
+								<Prop id="326" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="356" persistAs="Empty.xscade">
+							<props>
+								<Prop id="325" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="357" persistAs="Length.xscade">
+							<props>
+								<Prop id="324" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="358" persistAs="New.xscade">
+							<props>
+								<Prop id="323" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="373" persistAs="NotificationsData.xscade">
+							<props>
+								<Prop id="372" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="393" persistAs="SteamControlState.xscade">
+							<props>
+								<Prop id="392" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="395" persistAs="PumpState.xscade">
+							<props>
+								<Prop id="394" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="397" persistAs="ProcessNotificationsData.xscade">
+							<props>
+								<Prop id="396" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="399" persistAs="MeasuredValues.xscade">
+							<props>
+								<Prop id="398" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="406" persistAs="Controller2.xscade">
+							<props>
+								<Prop id="400" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="407" persistAs="DetectPumpControllerFailure.xscade">
+							<props>
+								<Prop id="401" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="408" persistAs="DetectPumpFailure.xscade">
+							<props>
+								<Prop id="402" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="409" persistAs="EstimateLevelChange.xscade">
+							<props>
+								<Prop id="403" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="410" persistAs="EstimateSteam.xscade">
+							<props>
+								<Prop id="404" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="411" persistAs="FailureManager.xscade">
+							<props>
+								<Prop id="405" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="413" persistAs="ComModel.xscade">
+							<props>
+								<Prop id="412" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="415" persistAs="LevelMeasurementDevice.xscade">
+							<props>
+								<Prop id="414" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="417" persistAs="PumpControlDevice.xscade">
+							<props>
+								<Prop id="416" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="419" persistAs="PumpModel.xscade">
+							<props>
+								<Prop id="418" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="421" persistAs="SecToCycles.xscade">
+							<props>
+								<Prop id="420" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="423" persistAs="SteamBoiler1.xscade">
+							<props>
+								<Prop id="422" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="425" persistAs="SteamMeasurementDevice.xscade">
+							<props>
+								<Prop id="424" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+						<FileRef id="427" persistAs="World.xscade">
+							<props>
+								<Prop id="426" name="@SCADE:NONROOT">
+									<value>true</value>
+								</Prop>
+							</props>
+						</FileRef>
+					</elements>
+				</Folder>
+				<FileRef id="79" persistAs="SteamBoiler.xscade"/>
+				<FileRef id="150" persistAs="Display.xscade"/>
+				<FileRef id="196" persistAs="Simu.xscade"/>
+				<FileRef id="198" persistAs="Controller.xscade"/>
+				<FileRef id="286" persistAs="Utilities.xscade"/>
+				<FileRef id="359" persistAs="ListOfDatas.xscade"/>
+				<FileRef id="376" persistAs="SmartBoilerControl.xscade"/>
+			</elements>
+		</Folder>
+		<Folder id="118" extensions="*.sgf" name="Panels"/>
+		<Folder id="279" extensions="sdy" name="Graphical Panels Mapping File"/>
+		<Folder id="362" extensions="c;adb;ada" name="External Code">
+			<elements>
+				<FileRef id="389" persistAs="Code\ProcessNotificationsData.c">
+					<props>
+						<Prop id="390" name="@SIMULATOR:FILEKIND">
+							<value>CS</value>
+						</Prop>
+						<Prop id="391" name="@SCADE:IMPORTED_NODES">
+							<value>Display::ProcessNotificationsData</value>
+						</Prop>
+					</props>
+				</FileRef>
+			</elements>
+		</Folder>
+	</roots>
+	<configurations>
+		<Configuration id="13" name="KCG"/>
+		<Configuration id="21" name="Simulation"/>
+		<Configuration id="31" name="HTML"/>
+		<Configuration id="36" name="RTF"/>
+		<Configuration id="52" name="Timing and Stack"/>
+		<Configuration id="172" name="Proof"/>
+		<Configuration id="288" name="Standalone"/>
+	</configurations>
+</Project>

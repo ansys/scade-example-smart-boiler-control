@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?dom version="19.0" ?>
+
+<fontTable generateAsBitmap="false" generateHalo="false" name="font_table" size="11">
+    <fontDefinition index="0" path="fonts/nfd/oxanium-light10.nfd"/>
+    <fontDefinition index="1" path="fonts/nfd/oxanium-light12.nfd"/>
+    <fontDefinition index="2" path="fonts/nfd/oxanium-light20.nfd"/>
+    <fontDefinition index="3" path="fonts/nfd/oxanium-regular16.nfd"/>
+    <fontDefinition index="4" path="fonts/nfd/oxanium-regular28.nfd"/>
+    <fontDefinition index="5" path="fonts/nfd/oxanium-regular74.nfd"/>
+    <fontDefinition index="6" path="fonts/nfd/oxanium-medium20.nfd"/>
+    <fontDefinition index="7" path="fonts/nfd/oxanium-medium32.nfd"/>
+    <fontDefinition index="8" path="fonts/nfd/oxanium-medium48.nfd"/>
+    <fontDefinition index="9" path="fonts/nfd/oxanium-semibold20.nfd"/>
+    <fontDefinition index="10" path="fonts/nfd/oxanium-semibold28.nfd"/>
+</fontTable>
+
+<!-- crc32 : 3360144779 -->
+

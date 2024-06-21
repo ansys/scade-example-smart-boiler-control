@@ -1,0 +1,2502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?dom version="19.0" ?>
+
+<specification>
+    <IDE>
+        <project path="DisplayPanel.etp"/>
+        <ratio horizontal="1" vertical="1"/>
+    </IDE>
+    <symbology>
+        <dimension height="1080" width="1920"/>
+    </symbology>
+    <children>
+        <layer oid="863baca7-0766-4b26-95b2-afc2407e188f">
+            <pathFromRoot value=""/>
+            <declaration>
+                <outputs>
+                    <output memory="true" name="Mode" oid="3f1521d1-fc47-428d-bb75-7e902d32b1a7" type="Modes">
+                        <init>RESTART</init>
+                    </output>
+                    <output memory="true" name="WaterTempActual" oid="1b9d4bdf-50f9-479e-94e2-a9a04a1afd85" type="float32">
+                        <init>0.0</init>
+                    </output>
+                    <output memory="true" name="DisplayPumpState" oid="a9518396-cd79-4f0d-b0db-d086d2311d35" type="int32^4">
+                        <init>[0]</init>
+                    </output>
+                    <output memory="true" name="WaterCoolTempDisplay" oid="34f944f1-13dd-446a-a841-126ddcd6074d" type="int32">
+                        <init>0</init>
+                    </output>
+                    <output memory="true" name="SteamControlState" oid="b6bef2da-9242-44c6-ae45-fe10a927ee2d" type="int32">
+                        <init>0</init>
+                    </output>
+                    <output memory="true" name="PumpState" oid="ac86dc0a-7fc0-416c-9f6f-caad35276c72" type="bool^4">
+                        <init>[false]</init>
+                    </output>
+                    <output memory="true" name="BoilerReady" oid="c4c7ac97-2281-4a89-9f39-31ff5dd85fab" type="bool">
+                        <init>false</init>
+                    </output>
+                    <output memory="true" name="MeasuredSteamThroughput" oid="c8960ae6-4227-457f-bed0-5ceedc29736c" type="float32">
+                        <init>0.0</init>
+                    </output>
+                    <output memory="true" name="MeasuredWaterVolume" oid="9a548ca6-2b12-47de-80dd-b5ed7f704595" type="float32">
+                        <init>0.0</init>
+                    </output>
+                    <output memory="true" name="UnitsReady" oid="9ada9d00-b21b-4e86-8063-9a949743b56b" type="bool">
+                        <init>false</init>
+                    </output>
+                    <output memory="true" name="PumpForce" oid="60c61d6b-8c58-4576-bf32-e25e4d108505" type="bool^4">
+                        <init>[false]</init>
+                    </output>
+                    <output memory="true" name="LevelControlFailure" oid="fb17be87-b82b-40f6-8ebd-d90a631b7ac9" type="bool">
+                        <init>false</init>
+                    </output>
+                    <output memory="true" name="LevelControlRepair" oid="ab8880f8-404f-45fd-9e33-9d2eff7e9883" type="bool">
+                        <init>false</init>
+                    </output>
+                    <output memory="true" name="PumpFailure" oid="db3cbf33-5a00-44b9-8724-62d9f70bb54c" type="bool^4">
+                        <init>[false]</init>
+                    </output>
+                    <output memory="true" name="PumpRepair" oid="8a0f497f-044e-4942-95b6-428c919f1b2e" type="bool^4">
+                        <init>[false]</init>
+                    </output>
+                    <output memory="true" name="SteamControlFailure" oid="bb6ee88c-09ec-42f3-aaa4-fdc6b373f688" type="bool">
+                        <init>false</init>
+                    </output>
+                    <output memory="true" name="SteamControlRepair" oid="6892f762-7b31-420a-8944-d435d5ed3064" type="bool">
+                        <init>false</init>
+                    </output>
+                    <output memory="true" name="LevelColor" oid="4d596ba9-eff2-4a3b-8ddb-a916c2cc8484" representation="color" type="int32">
+                        <init>25</init>
+                    </output>
+                </outputs>
+                <locals>
+                    <local memory="true" name="Time" oid="0842663e-a724-4904-a273-382c937b0974" representation="as_string" type="char^6">
+                        <init>[49,51,58,51,55,0]</init>
+                    </local>
+                    <local memory="false" name="ModeIndicatorColor" oid="446e77b9-664c-4f86-9ca8-edefb03bb91f" representation="color" type="int32">
+                        <init>25</init>
+                    </local>
+                    <local memory="false" name="ModeIndicatorText" oid="39787908-1664-46ec-a1ab-f886054db7bb" representation="as_string" type="char^255">
+                        <init>[78,79,82,77,65,76,32,77,79,68,69,0]</init>
+                    </local>
+                    <local memory="true" name="WaterLevel" oid="083b4cc9-f171-4169-8ede-f04faa5fe85a" type="float32">
+                        <init>0.0</init>
+                    </local>
+                    <local memory="true" name="ReactorHeatDisplay" oid="56c41b88-d6fb-48fc-b9bf-362541aae6d0" type="int32">
+                        <init>0</init>
+                    </local>
+                    <local memory="true" name="RunMode" oid="2ed658d8-0907-4f4c-b4c2-fa430b684be1" type="bool">
+                        <init>false</init>
+                    </local>
+                    <local memory="true" name="WaitPhysicalUnitsReady" oid="b091d284-068d-4f38-bd62-ad0694cfcc49" type="bool">
+                        <init>false</init>
+                    </local>
+                    <local memory="true" name="WaitSteamBoilerReady" oid="af9c6d24-dffe-4b92-8790-f4970bd77adb" type="bool">
+                        <init>false</init>
+                    </local>
+                    <local memory="true" name="WaterLevelFailure" oid="cf0e9df3-7777-456b-bb81-0abb8380581c" type="bool">
+                        <init>false</init>
+                    </local>
+                    <local memory="true" name="TankColor" oid="4acd3646-3234-41b3-964a-159a7ad6a72a" representation="color" type="int32">
+                        <init>25</init>
+                    </local>
+                    <local memory="true" name="PumpColors" oid="6ad2c74e-ea5a-42e7-a477-f902bc933546" representation="as_int_array" type="int^4">
+                        <init>[25]</init>
+                    </local>
+                    <local memory="true" name="SteamColor" oid="cbc0c3ef-f016-433c-b268-4e11c62194d7" representation="color" type="int32">
+                        <init>25</init>
+                    </local>
+                    <local memory="true" name="WaterColor" oid="fd23e925-a5f6-4d39-838c-22fa6ec66625" representation="color" type="int32">
+                        <init>25</init>
+                    </local>
+                    <local memory="true" name="count" oid="497c7978-9d03-42e0-aff0-2c6063036182" type="int32">
+                        <init>0</init>
+                    </local>
+                    <local memory="true" name="notifsToDisplay" oid="1897a0ff-4a88-45fd-b98e-98e230e40306" representation="as_int_array" type="int32^6">
+                        <init>[0]</init>
+                    </local>
+                    <local memory="true" name="viewAll" oid="9c0eb66a-3fd7-4fb7-8e68-367fe9594c6f" type="bool">
+                        <init>false</init>
+                    </local>
+                </locals>
+            </declaration>
+            <properties name="symbology_layer">
+                <comment>Behavior/Code/processNotificationsData.c added in C code property of the project to workaround build issue in SCADE test</comment>
+                <visible>
+                    <init>true</init>
+                </visible>
+                <origin>
+                    <x>
+                        <init>0.0</init>
+                    </x>
+                    <y>
+                        <init>0.0</init>
+                    </y>
+                </origin>
+                <id>
+                    <init>1</init>
+                </id>
+                <ratio horizontal="1" vertical="1"/>
+            </properties>
+            <children>
+                <behavior oid="5a67ed6b-940e-4d40-bdfe-ff4b2510ba02">
+                    <pathFromRoot value="0"/>
+                    <properties name="SmartBoilerControl">
+                        <file name="SmartBoilerControl.etp" path="N/A"/>
+                        <function isNode="true" name="SmartBoilerControl"/>
+                        <enable>
+                            <init>true</init>
+                        </enable>
+                        <inputParameters>
+                            <parameter name="boilerReady" oid="!ed/ee17/4FCD/1EE8/50eee49c556e" type="bool">
+                                <expr>BoilerReady</expr>
+                                <init>false</init>
+                            </parameter>
+                            <parameter name="unitsReady" oid="!ed/ee19/4FCD/1EE8/50eee4aa6c5b" type="bool">
+                                <expr>UnitsReady</expr>
+                                <init>false</init>
+                            </parameter>
+                            <parameter name="pumpRepair" oid="!ed/18176/4FCD/1EE8/50ef0155bd9" type="bool^4">
+                                <expr>PumpRepair</expr>
+                                <init>[false]</init>
+                            </parameter>
+                            <parameter name="pumpFailure" oid="!ed/1818e/4FCD/1EE8/50ef01674ab3" type="bool^4">
+                                <expr>PumpFailure</expr>
+                                <init>[false]</init>
+                            </parameter>
+                            <parameter name="pumpForce" oid="!ed/181a6/4FCD/1EE8/50ef01724cf" type="bool^4">
+                                <expr>PumpForce</expr>
+                                <init>[false]</init>
+                            </parameter>
+                            <parameter name="steamControlRepair" oid="!ed/940c/474B/10F4/50efda93364" type="bool">
+                                <expr>SteamControlRepair</expr>
+                                <init>false</init>
+                            </parameter>
+                            <parameter name="steamControlFailure" oid="!ed/9412/474B/10F4/50efda9f3348" type="bool">
+                                <expr>SteamControlFailure</expr>
+                                <init>false</init>
+                            </parameter>
+                            <parameter name="levelControlRepair" oid="!ed/9418/474B/10F4/50efdaad224a" type="bool">
+                                <expr>LevelControlRepair</expr>
+                                <init>false</init>
+                            </parameter>
+                            <parameter name="levelControlFailure" oid="!ed/941e/474B/10F4/50efdab37117" type="bool">
+                                <expr>LevelControlFailure</expr>
+                                <init>false</init>
+                            </parameter>
+                        </inputParameters>
+                        <outputParameters>
+                            <parameter name="mode" oid="!ed/87f1/4FCD/1EE8/50eece051f5f" type="Modes">
+                                <expr>Mode</expr>
+                            </parameter>
+                            <parameter name="waterTempActual" oid="!ed/8805/4FCD/1EE8/50eece05176e" type="float32">
+                                <expr>WaterTempActual</expr>
+                            </parameter>
+                            <parameter name="displayPumpState" oid="!ed/880b/4FCD/1EE8/50eece052439" type="int32^4">
+                                <expr>DisplayPumpState</expr>
+                            </parameter>
+                            <parameter name="runMode" oid="!ed/881e/4FCD/1EE8/50eece052378" type="bool">
+                                <expr>RunMode</expr>
+                            </parameter>
+                            <parameter name="reactorHeatDisplay" oid="!ed/8824/4FCD/1EE8/50eece057a2f" type="int32">
+                                <expr>ReactorHeatDisplay</expr>
+                            </parameter>
+                            <parameter name="waterCoolTempDisplay" oid="!ed/882a/4FCD/1EE8/50eece05480d" type="int32">
+                                <expr>WaterCoolTempDisplay</expr>
+                            </parameter>
+                            <parameter name="waitSteamBoilerReady" oid="!ed/8830/4FCD/1EE8/50eece0549bc" type="bool">
+                                <expr>WaitSteamBoilerReady</expr>
+                            </parameter>
+                            <parameter name="waitPhysicalUnitsReady" oid="!ed/8836/4FCD/1EE8/50eece05328c" type="bool">
+                                <expr>WaitPhysicalUnitsReady</expr>
+                            </parameter>
+                            <parameter name="measuredWaterLevelPx" oid="!ed/48e5/104E/398/571629646004" type="float32">
+                                <expr>WaterLevel</expr>
+                            </parameter>
+                            <parameter name="waterLevelFailure" oid="!ed/4947/104E/398/5716313117da" type="bool">
+                                <expr>WaterLevelFailure</expr>
+                            </parameter>
+                            <parameter name="steamControlState" oid="!ed/4946/104E/398/571631313cc1" type="int32">
+                                <expr>SteamControlState</expr>
+                            </parameter>
+                            <parameter name="measuredWaterLevel" oid="!ed/4945/104E/398/571631314633" type="float32">
+                                <expr>MeasuredWaterVolume</expr>
+                            </parameter>
+                            <parameter name="measuredSteamOutput" oid="!ed/4944/104E/398/57163131344f" type="float32">
+                                <expr>MeasuredSteamThroughput</expr>
+                            </parameter>
+                            <parameter name="pumpState" oid="!ed/4963/104E/398/5716375e788b" type="bool^4">
+                                <expr>PumpState</expr>
+                            </parameter>
+                            <parameter name="notifsToDisplay" oid="!ed/3dc0/56E7/5DAC/653ba07d7f06" type="int32^6">
+                                <expr>notifsToDisplay</expr>
+                            </parameter>
+                            <parameter name="count" oid="!ed/3dc6/56E7/5DAC/653ba07d48f8" type="int32">
+                                <expr>count</expr>
+                            </parameter>
+                        </outputParameters>
+                    </properties>
+                </behavior>
+                <rectangle oid="bc519a26-b504-4545-b2e0-8217268bafde">
+                    <pathFromRoot value="1"/>
+                    <properties name="rectangle">
+                        <comment>background added because SCADE Test does not take in account the background color defined in the color table =&gt; image com failed!</comment>
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <firstPoint>
+                            <x>
+                                <init>-1000.0</init>
+                            </x>
+                            <y>
+                                <init>-600.0</init>
+                            </y>
+                        </firstPoint>
+                        <thirdPoint>
+                            <x>
+                                <init>1000.0</init>
+                            </x>
+                            <y>
+                                <init>600.0</init>
+                            </y>
+                        </thirdPoint>
+                        <lineWidth>
+                            <init>0</init>
+                        </lineWidth>
+                        <lineStipple>
+                            <init>0</init>
+                        </lineStipple>
+                        <lineCap>
+                            <init>round</init>
+                        </lineCap>
+                        <haloing>
+                            <init>false</init>
+                        </haloing>
+                        <haloColor>
+                            <init>-1</init>
+                        </haloColor>
+                        <outlineColor>
+                            <init>-1</init>
+                        </outlineColor>
+                        <outlineOpacity>
+                            <init>255</init>
+                        </outlineOpacity>
+                        <fillColor>
+                            <init>3</init>
+                        </fillColor>
+                        <fillOpacity>
+                            <init>255</init>
+                        </fillOpacity>
+                        <polygonSmooth>
+                            <init>false</init>
+                        </polygonSmooth>
+                        <textureControl>
+                            <init>false</init>
+                        </textureControl>
+                        <texture horizAlign="center" horizPattern="1.0" vertAlign="middle" vertPattern="1.0">
+                            <textureId>
+                                <init>-1</init>
+                            </textureId>
+                        </texture>
+                        <gradient>
+                            <init>-1</init>
+                        </gradient>
+                        <modulate>
+                            <init>false</init>
+                        </modulate>
+                        <tessellate>
+                            <init>false</init>
+                        </tessellate>
+                    </properties>
+                </rectangle>
+                <container oid="20071c59-e69a-4ed4-a8e1-c70265c32708">
+                    <pathFromRoot value="2"/>
+                    <properties name="Mode">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>0.0</init>
+                            </x>
+                            <y>
+                                <init>0.0</init>
+                            </y>
+                        </origin>
+                        <priority>
+                            <init>-1</init>
+                        </priority>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                            <init>false</init>
+                        </static>
+                    </properties>
+                    <children>
+                        <condContainer oid="ce6614d7-1971-4dce-ac91-f1cb445b4755">
+                            <pathFromRoot value="0,2"/>
+                            <properties name="Mode Indicator">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>0.0</init>
+                                    </x>
+                                    <y>
+                                        <init>0.0</init>
+                                    </y>
+                                </origin>
+                                <priority>
+                                    <init>-1</init>
+                                </priority>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <index allVisible="false">
+                                    <init>default</init>
+                                    <expr>Mode</expr>
+                                </index>
+                                <indexes default="INITIALIZATION">
+                                    <index value="INITIALIZATION"/>
+                                    <index value="NORMAL"/>
+                                    <index value="DEGRADED"/>
+                                    <index value="RESCUE"/>
+                                    <index value="EMERGENCY_STOP"/>
+                                    <index value="RESTART"/>
+                                </indexes>
+                            </properties>
+                            <children>
+                                <container oid="9d172dd4-ff53-4552-951f-741254212720">
+                                    <pathFromRoot value="0,0,2"/>
+                                    <properties name="group">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>0.0</init>
+                                            </x>
+                                            <y>
+                                                <init>0.0</init>
+                                            </y>
+                                        </origin>
+                                        <priority>
+                                            <init>-1</init>
+                                        </priority>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                            <init>false</init>
+                                        </static>
+                                    </properties>
+                                    <children>
+                                        <assignment oid="f7c00293-1af6-4c25-bd89-57131e1607a1">
+                                            <pathFromRoot value="0,0,0,2"/>
+                                            <properties name="ModeIndicatorColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>25</init>
+                                                    <expr>color_table_INITIALIZATION</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="b399709b-cab7-406a-a6fd-ae609ad304bf">
+                                            <pathFromRoot value="1,0,0,2"/>
+                                            <properties name="ModeIndicatorText">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>[73,78,73,84,73,65,76,73,90,65,84,73,79,78,0]</init>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorText</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="170ba8c7-349f-4564-ad4d-a9ca0f24045b">
+                                            <pathFromRoot value="2,0,0,2"/>
+                                            <properties name="TankColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>25</init>
+                                                    <expr>color_table_INITIALIZATION</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>TankColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                    </children>
+                                </container>
+                                <container oid="84321c93-0d8a-49e7-97a0-79566bc2a22c">
+                                    <pathFromRoot value="1,0,2"/>
+                                    <properties name="group">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>0.0</init>
+                                            </x>
+                                            <y>
+                                                <init>0.0</init>
+                                            </y>
+                                        </origin>
+                                        <priority>
+                                            <init>-1</init>
+                                        </priority>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                            <init>false</init>
+                                        </static>
+                                    </properties>
+                                    <children>
+                                        <assignment oid="6f151208-6402-407e-9808-6d6c5a068492">
+                                            <pathFromRoot value="0,1,0,2"/>
+                                            <properties name="ModeIndicatorColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>46</init>
+                                                    <expr>color_table_NORMAL</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="c525e8b7-3f94-4ebb-a086-1f0235aacc7e">
+                                            <pathFromRoot value="1,1,0,2"/>
+                                            <properties name="ModeIndicatorText">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>[78,79,82,77,65,76,32,77,79,68,69,0]</init>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorText</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="3e654b25-2d8a-44fb-a871-5f9c1d24c242">
+                                            <pathFromRoot value="2,1,0,2"/>
+                                            <properties name="TankColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>46</init>
+                                                    <expr>color_table_NORMAL</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>TankColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                    </children>
+                                </container>
+                                <container oid="3674a467-e07d-486d-9b6b-8531ba565c2b">
+                                    <pathFromRoot value="2,0,2"/>
+                                    <properties name="group">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>0.0</init>
+                                            </x>
+                                            <y>
+                                                <init>0.0</init>
+                                            </y>
+                                        </origin>
+                                        <priority>
+                                            <init>-1</init>
+                                        </priority>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                            <init>false</init>
+                                        </static>
+                                    </properties>
+                                    <children>
+                                        <assignment oid="2786aca1-32d5-492a-968e-992fc7111782">
+                                            <pathFromRoot value="0,2,0,2"/>
+                                            <properties name="ModeIndicatorColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>67</init>
+                                                    <expr>color_table_DEGRADED</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="13aca218-d2dd-4a62-91f1-f2ccffc59271">
+                                            <pathFromRoot value="1,2,0,2"/>
+                                            <properties name="ModeIndicatorText">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>[68,69,71,82,65,68,69,68,32,77,79,68,69,0]</init>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorText</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="ecf28486-70de-4313-a569-e4474564d796">
+                                            <pathFromRoot value="2,2,0,2"/>
+                                            <properties name="TankColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>67</init>
+                                                    <expr>color_table_DEGRADED</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>TankColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                    </children>
+                                </container>
+                                <container oid="2b35e6a1-3e97-44ec-a185-7ec06f45a5b7">
+                                    <pathFromRoot value="3,0,2"/>
+                                    <properties name="group">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>0.0</init>
+                                            </x>
+                                            <y>
+                                                <init>0.0</init>
+                                            </y>
+                                        </origin>
+                                        <priority>
+                                            <init>-1</init>
+                                        </priority>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                            <init>false</init>
+                                        </static>
+                                    </properties>
+                                    <children>
+                                        <assignment oid="2dacfc8a-c9e2-4aa2-a934-ea250c10889c">
+                                            <pathFromRoot value="0,3,0,2"/>
+                                            <properties name="ModeIndicatorColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>88</init>
+                                                    <expr>color_table_RESCUE</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="4389726e-a461-4a6f-ba00-481a87ed23a0">
+                                            <pathFromRoot value="1,3,0,2"/>
+                                            <properties name="ModeIndicatorText">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>[82,69,83,67,85,69,32,77,79,68,69,0]</init>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorText</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="bd12aaf3-4f31-4f4c-b1ab-3edba0f508d1">
+                                            <pathFromRoot value="2,3,0,2"/>
+                                            <properties name="TankColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>88</init>
+                                                    <expr>color_table_RESCUE</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>TankColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                    </children>
+                                </container>
+                                <container oid="f9772244-aebd-4a62-bf6c-a67f0b6f02a7">
+                                    <pathFromRoot value="4,0,2"/>
+                                    <properties name="group">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>0.0</init>
+                                            </x>
+                                            <y>
+                                                <init>0.0</init>
+                                            </y>
+                                        </origin>
+                                        <priority>
+                                            <init>-1</init>
+                                        </priority>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                            <init>false</init>
+                                        </static>
+                                    </properties>
+                                    <children>
+                                        <assignment oid="dc258be8-f94d-462d-8e82-87ae548dbd80">
+                                            <pathFromRoot value="0,4,0,2"/>
+                                            <properties name="ModeIndicatorColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>109</init>
+                                                    <expr>color_table_EMERGENCY</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="1ee099d6-e9c5-492d-bf8d-e11c0af35062">
+                                            <pathFromRoot value="1,4,0,2"/>
+                                            <properties name="ModeIndicatorText">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>[69,77,69,82,71,69,78,67,89,32,77,79,68,69,0]</init>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorText</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="39a6613a-8550-4b6c-bcbf-4e58d192c7c6">
+                                            <pathFromRoot value="2,4,0,2"/>
+                                            <properties name="TankColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>109</init>
+                                                    <expr>color_table_EMERGENCY</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>TankColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                    </children>
+                                </container>
+                                <container oid="2f72e64c-8323-463e-8b2e-f06ff79b41a3">
+                                    <pathFromRoot value="5,0,2"/>
+                                    <properties name="group">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>0.0</init>
+                                            </x>
+                                            <y>
+                                                <init>0.0</init>
+                                            </y>
+                                        </origin>
+                                        <priority>
+                                            <init>-1</init>
+                                        </priority>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                            <init>false</init>
+                                        </static>
+                                    </properties>
+                                    <children>
+                                        <assignment oid="852a5112-2109-427d-88fe-9f64edba8649">
+                                            <pathFromRoot value="0,5,0,2"/>
+                                            <properties name="ModeIndicatorColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>25</init>
+                                                    <expr>color_table_INITIALIZATION</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="f7d93a74-a9f4-4ceb-adb3-d155efe03810">
+                                            <pathFromRoot value="1,5,0,2"/>
+                                            <properties name="ModeIndicatorText">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>[0]</init>
+                                                </input>
+                                                <output>
+                                                    <expr>ModeIndicatorText</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                        <assignment oid="4fec40e2-545f-4b42-b561-cced8ef73035">
+                                            <pathFromRoot value="2,5,0,2"/>
+                                            <properties name="TankColor">
+                                                <enable>
+                                                    <init>true</init>
+                                                </enable>
+                                                <input>
+                                                    <init>25</init>
+                                                    <expr>color_table_INITIALIZATION</expr>
+                                                </input>
+                                                <output>
+                                                    <expr>TankColor</expr>
+                                                </output>
+                                            </properties>
+                                        </assignment>
+                                    </children>
+                                </container>
+                            </children>
+                        </condContainer>
+                        <container oid="72089c04-3f61-4aa6-956f-61b43c5f66e7">
+                            <pathFromRoot value="1,2"/>
+                            <properties name="Top Left text">
+                                <visible>
+                                    <init>false</init>
+                                    <expr>Mode &lt;&gt; RESTART</expr>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>0.0</init>
+                                    </x>
+                                    <y>
+                                        <init>0.0</init>
+                                    </y>
+                                </origin>
+                                <priority>
+                                    <init>-1</init>
+                                </priority>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <static editorLinked="true" generateStaticSequence="true" maxX="-890.0" maxY="507.0" minX="-946.0" minY="462.0">
+                                    <init>false</init>
+                                </static>
+                            </properties>
+                            <children>
+                                <circle oid="a6158fcc-ec3f-4f37-b4c1-c5500da3c24a">
+                                    <pathFromRoot value="0,1,2"/>
+                                    <properties name="circle">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <center>
+                                            <x>
+                                                <init>-926.0</init>
+                                            </x>
+                                            <y>
+                                                <init>482.0</init>
+                                            </y>
+                                        </center>
+                                        <radius>
+                                            <init>14.0</init>
+                                        </radius>
+                                        <lineWidth>
+                                            <init>0</init>
+                                        </lineWidth>
+                                        <lineStipple>
+                                            <init>0</init>
+                                        </lineStipple>
+                                        <lineCap>
+                                            <init>round</init>
+                                        </lineCap>
+                                        <haloing>
+                                            <init>false</init>
+                                        </haloing>
+                                        <haloColor>
+                                            <init>-1</init>
+                                        </haloColor>
+                                        <outlineColor>
+                                            <init>-1</init>
+                                        </outlineColor>
+                                        <outlineOpacity>
+                                            <init>255</init>
+                                        </outlineOpacity>
+                                        <fillColor>
+                                            <init>25</init>
+                                            <expr>ModeIndicatorColor</expr>
+                                        </fillColor>
+                                        <fillOpacity>
+                                            <init>255</init>
+                                        </fillOpacity>
+                                        <polygonSmooth>
+                                            <init>false</init>
+                                        </polygonSmooth>
+                                        <texture horizAlign="center" horizPattern="1.0" vertAlign="middle" vertPattern="1.0">
+                                            <textureId>
+                                                <init>-1</init>
+                                            </textureId>
+                                        </texture>
+                                        <gradient>
+                                            <init>-1</init>
+                                        </gradient>
+                                        <modulate>
+                                            <init>false</init>
+                                        </modulate>
+                                    </properties>
+                                </circle>
+                                <text oid="7099089a-870b-4993-b936-a92c8174700c">
+                                    <pathFromRoot value="1,1,2"/>
+                                    <properties name="text">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <position>
+                                            <x>
+                                                <init>-896.0</init>
+                                            </x>
+                                            <y>
+                                                <init>501.0</init>
+                                            </y>
+                                        </position>
+                                        <maxLength>
+                                            <init>255</init>
+                                        </maxLength>
+                                        <textValue type="char">
+                                            <init>[78, 79, 82, 77, 65, 76, 32, 77, 79, 68, 69, 0]</init>
+                                            <expr>ModeIndicatorText</expr>
+                                        </textValue>
+                                        <haloing>
+                                            <init>false</init>
+                                        </haloing>
+                                        <haloColor>
+                                            <init>-1</init>
+                                        </haloColor>
+                                        <outlineColor>
+                                            <init>25</init>
+                                            <expr>ModeIndicatorColor</expr>
+                                        </outlineColor>
+                                        <lineWidth>
+                                            <init>2</init>
+                                        </lineWidth>
+                                        <font>
+                                            <init>7</init>
+                                        </font>
+                                        <horizAlign>
+                                            <init>left</init>
+                                        </horizAlign>
+                                        <vertAlign>
+                                            <init>top</init>
+                                        </vertAlign>
+                                    </properties>
+                                </text>
+                            </children>
+                        </container>
+                    </children>
+                </container>
+                <container oid="50af4865-807e-4306-a477-abf77b568ea0">
+                    <pathFromRoot value="3"/>
+                    <properties name="Colors Management">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>0.0</init>
+                            </x>
+                            <y>
+                                <init>0.0</init>
+                            </y>
+                        </origin>
+                        <priority>
+                            <init>-1</init>
+                        </priority>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                            <init>false</init>
+                        </static>
+                    </properties>
+                    <children>
+                        <container oid="2fda4662-af6e-474e-82f0-24940c0ee8ce">
+                            <pathFromRoot value="0,3"/>
+                            <properties name="PumpColors">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>0.0</init>
+                                    </x>
+                                    <y>
+                                        <init>0.0</init>
+                                    </y>
+                                </origin>
+                                <priority>
+                                    <init>-1</init>
+                                </priority>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                    <init>false</init>
+                                </static>
+                            </properties>
+                            <children>
+                                <assignment oid="c8872679-8eef-4051-a134-b176f6f7e63c">
+                                    <pathFromRoot value="0,0,3"/>
+                                    <properties name="Pump1">
+                                        <enable>
+                                            <init>true</init>
+                                        </enable>
+                                        <input>
+                                            <init>25</init>
+                                            <expr>((((Mode = INITIALIZATION) or (Mode = NORMAL)) or (Mode = RESTART)) or (DisplayPumpState[0] = 3)) ? ModeIndicatorColor : color_table_NEUTRAL</expr>
+                                        </input>
+                                        <output>
+                                            <expr>PumpColors[0]</expr>
+                                        </output>
+                                    </properties>
+                                </assignment>
+                                <assignment oid="a769d632-b9c6-4452-9e2a-42013fdfc24b">
+                                    <pathFromRoot value="1,0,3"/>
+                                    <properties name="Pump2">
+                                        <enable>
+                                            <init>true</init>
+                                        </enable>
+                                        <input>
+                                            <init>25</init>
+                                            <expr>((((Mode = INITIALIZATION) or (Mode = NORMAL)) or (Mode = RESTART)) or (DisplayPumpState[1] = 3)) ? ModeIndicatorColor : color_table_NEUTRAL</expr>
+                                        </input>
+                                        <output>
+                                            <expr>PumpColors[1]</expr>
+                                        </output>
+                                    </properties>
+                                </assignment>
+                                <assignment oid="40df215b-0b8b-4d03-bc1a-6e82f72e5839">
+                                    <pathFromRoot value="2,0,3"/>
+                                    <properties name="Pump3">
+                                        <enable>
+                                            <init>true</init>
+                                        </enable>
+                                        <input>
+                                            <init>25</init>
+                                            <expr>((((Mode = INITIALIZATION) or (Mode = NORMAL)) or (Mode = RESTART)) or (DisplayPumpState[2] = 3)) ? ModeIndicatorColor : color_table_NEUTRAL</expr>
+                                        </input>
+                                        <output>
+                                            <expr>PumpColors[2]</expr>
+                                        </output>
+                                    </properties>
+                                </assignment>
+                                <assignment oid="5cc933ac-aed5-48db-8248-e3f955234385">
+                                    <pathFromRoot value="3,0,3"/>
+                                    <properties name="Pump4">
+                                        <enable>
+                                            <init>true</init>
+                                        </enable>
+                                        <input>
+                                            <init>25</init>
+                                            <expr>((((Mode = INITIALIZATION) or (Mode = NORMAL)) or (Mode = RESTART)) or (DisplayPumpState[3] = 3)) ? ModeIndicatorColor : color_table_NEUTRAL</expr>
+                                        </input>
+                                        <output>
+                                            <expr>PumpColors[3]</expr>
+                                        </output>
+                                    </properties>
+                                </assignment>
+                            </children>
+                        </container>
+                        <container oid="87b4d19a-fdce-4630-8454-7bcdf8c20bfd">
+                            <pathFromRoot value="1,3"/>
+                            <properties name="SteamColor">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>0.0</init>
+                                    </x>
+                                    <y>
+                                        <init>0.0</init>
+                                    </y>
+                                </origin>
+                                <priority>
+                                    <init>-1</init>
+                                </priority>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                    <init>false</init>
+                                </static>
+                            </properties>
+                            <children>
+                                <assignment oid="bd630a3b-8f98-43a2-a7e8-425adbd95bf0">
+                                    <pathFromRoot value="0,1,3"/>
+                                    <properties name="Steam">
+                                        <enable>
+                                            <init>true</init>
+                                        </enable>
+                                        <input>
+                                            <init>25</init>
+                                            <expr>((((Mode = INITIALIZATION) or (Mode = NORMAL)) or (Mode = RESTART)) or (SteamControlState = 2)) ? ModeIndicatorColor : color_table_NEUTRAL</expr>
+                                        </input>
+                                        <output>
+                                            <expr>SteamColor</expr>
+                                        </output>
+                                    </properties>
+                                </assignment>
+                            </children>
+                        </container>
+                        <container oid="bf0188bc-e5fe-47fc-8282-6590cee3ff8e">
+                            <pathFromRoot value="2,3"/>
+                            <properties name="LevelColor">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>0.0</init>
+                                    </x>
+                                    <y>
+                                        <init>0.0</init>
+                                    </y>
+                                </origin>
+                                <priority>
+                                    <init>-1</init>
+                                </priority>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                    <init>false</init>
+                                </static>
+                            </properties>
+                            <children>
+                                <assignment oid="26529ed8-d7d6-4fd7-9927-417f3b81cbd5">
+                                    <pathFromRoot value="0,2,3"/>
+                                    <properties name="Level">
+                                        <enable>
+                                            <init>true</init>
+                                        </enable>
+                                        <input>
+                                            <init>25</init>
+                                            <expr>((((Mode = INITIALIZATION) or (Mode = NORMAL)) or (Mode = RESTART)) or WaterLevelFailure) ? ModeIndicatorColor : color_table_NEUTRAL</expr>
+                                        </input>
+                                        <output>
+                                            <expr>LevelColor</expr>
+                                        </output>
+                                    </properties>
+                                </assignment>
+                            </children>
+                        </container>
+                        <container oid="c7e84191-b79e-478e-81cf-8e4bfab133a4">
+                            <pathFromRoot value="3,3"/>
+                            <properties name="WaterColor">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>0.0</init>
+                                    </x>
+                                    <y>
+                                        <init>0.0</init>
+                                    </y>
+                                </origin>
+                                <priority>
+                                    <init>-1</init>
+                                </priority>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <static editorLinked="true" generateStaticSequence="true" maxX="0.0" maxY="0.0" minX="0.0" minY="0.0">
+                                    <init>false</init>
+                                </static>
+                            </properties>
+                            <children>
+                                <assignment oid="a81c7357-daf7-47be-a4e8-f8837afb8ed7">
+                                    <pathFromRoot value="0,3,3"/>
+                                    <properties name="Level">
+                                        <enable>
+                                            <init>true</init>
+                                        </enable>
+                                        <input>
+                                            <init>25</init>
+                                            <expr>((((Mode = INITIALIZATION) or (Mode = NORMAL)) or (Mode = RESTART)) or WaterLevelFailure) ? ModeIndicatorColor : color_table_NEUTRAL</expr>
+                                        </input>
+                                        <output>
+                                            <expr>WaterColor</expr>
+                                        </output>
+                                    </properties>
+                                </assignment>
+                            </children>
+                        </container>
+                    </children>
+                </container>
+                <container oid="e05dcd83-d679-4145-946d-910c990f2c87">
+                    <pathFromRoot value="4"/>
+                    <properties name="Time">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>0.0</init>
+                            </x>
+                            <y>
+                                <init>0.0</init>
+                            </y>
+                        </origin>
+                        <priority>
+                            <init>-1</init>
+                        </priority>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <static editorLinked="true" generateStaticSequence="true" maxX="176.0" maxY="559.00037" minX="-176.0" minY="441.00037">
+                            <init>false</init>
+                        </static>
+                    </properties>
+                    <children>
+                        <imported oid="e22734c4-ccd8-4d32-9dbf-dd70e741340b">
+                            <pathFromRoot value="0,4"/>
+                            <properties name="GetTime">
+                                <function name="GetTime"/>
+                                <enable>
+                                    <init>true</init>
+                                </enable>
+                                <restoreStates>
+                                    <init>true</init>
+                                </restoreStates>
+                                <memory>
+                                    <init>false</init>
+                                </memory>
+                                <outputParameters>
+                                    <parameter name="time" oid="" representation="as_string" type="char^6">
+                                        <expr>Time</expr>
+                                    </parameter>
+                                </outputParameters>
+                            </properties>
+                        </imported>
+                        <text oid="3f2a768c-d9a6-4cd8-a80b-1e60c44c70a6">
+                            <pathFromRoot value="1,4"/>
+                            <properties name="text">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <position>
+                                    <x>
+                                        <init>0.412994</init>
+                                    </x>
+                                    <y>
+                                        <init>499.5</init>
+                                    </y>
+                                </position>
+                                <maxLength>
+                                    <init>6</init>
+                                </maxLength>
+                                <textValue type="char">
+                                    <init>[49, 51, 58, 51, 55, 0]</init>
+                                    <expr>Time</expr>
+                                </textValue>
+                                <haloing>
+                                    <init>true</init>
+                                </haloing>
+                                <haloColor>
+                                    <init>-1</init>
+                                </haloColor>
+                                <outlineColor>
+                                    <init>4</init>
+                                </outlineColor>
+                                <lineWidth>
+                                    <init>2</init>
+                                </lineWidth>
+                                <font>
+                                    <init>5</init>
+                                </font>
+                                <horizAlign>
+                                    <init>center</init>
+                                </horizAlign>
+                                <vertAlign>
+                                    <init>middle</init>
+                                </vertAlign>
+                            </properties>
+                        </text>
+                    </children>
+                </container>
+                <container oid="11920417-8676-493a-93f5-88214a468a9e">
+                    <pathFromRoot value="5"/>
+                    <properties name="Graphs">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>0.0</init>
+                            </x>
+                            <y>
+                                <init>0.0</init>
+                            </y>
+                        </origin>
+                        <priority>
+                            <init>-1</init>
+                        </priority>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <static editorLinked="true" generateStaticSequence="true" maxX="-320.0" maxY="429.0" minX="-959.0" minY="-530.0">
+                            <init>false</init>
+                        </static>
+                    </properties>
+                    <children>
+                        <referenceContainer oid="72aca7db-0c6b-45e8-ab41-837ad83cd936">
+                            <pathFromRoot value="0,5"/>
+                            <properties modular="false" name="Reactor Water Widget">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>-652.0</init>
+                                    </x>
+                                    <y>
+                                        <init>272.0</init>
+                                    </y>
+                                </origin>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <file name="Graph.ogfx" path="."/>
+                                <crc value="4165604298"/>
+                                <constantParameters>
+                                    <parameter control="false" name="Label" oid="8602fbfa-aa06-4a6f-b532-60de77d45289" representation="as_string" type="char^255">
+                                        <init>[82,69,65,67,84,79,82,32,87,65,84,69,82,32,84,69,77,80,69,82,65,84,85,82,69,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="Unit" oid="d7e0a098-acce-4da6-9555-b820b0c2e432" representation="as_string" type="char^255">
+                                        <init>[176,67,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="MaxValueY" oid="f26a690b-fd9f-49fa-90a3-a4cd98a12d53" type="float32">
+                                        <init>120.0</init>
+                                    </parameter>
+                                </constantParameters>
+                                <inputParameters>
+                                    <parameter control="false" name="Color" oid="533282d2-4845-45e3-ba76-220ebfda8f1d" representation="color" type="int32">
+                                        <expr>WaterColor</expr>
+                                        <init>25</init>
+                                    </parameter>
+                                    <parameter control="false" name="CurrentValue" oid="435434f0-23e7-43fa-8b43-2e0f58bc26b0" type="float32">
+                                        <expr>WaterTempActual</expr>
+                                        <init>0.0</init>
+                                    </parameter>
+                                </inputParameters>
+                                <outputParameters>
+                                    <parameter name="OldValues" oid="8f0314a2-070d-47e7-9730-bf9a8c335f36" type="float32^22"/>
+                                </outputParameters>
+                            </properties>
+                            <children/>
+                        </referenceContainer>
+                        <referenceContainer oid="ec716389-552d-4c2a-9ced-1dfa00f1155c">
+                            <pathFromRoot value="1,5"/>
+                            <properties modular="false" name="Water Widget">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>-652.0</init>
+                                    </x>
+                                    <y>
+                                        <init>-48.0</init>
+                                    </y>
+                                </origin>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <file name="Graph.ogfx" path="."/>
+                                <crc value="4165604298"/>
+                                <constantParameters>
+                                    <parameter control="false" name="Label" oid="8602fbfa-aa06-4a6f-b532-60de77d45289" representation="as_string" type="char^255">
+                                        <init>[87,65,84,69,82,32,86,79,76,85,77,69,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="Unit" oid="d7e0a098-acce-4da6-9555-b820b0c2e432" representation="as_string" type="char^255">
+                                        <init>[76,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="MaxValueY" oid="f26a690b-fd9f-49fa-90a3-a4cd98a12d53" type="float32">
+                                        <init>1600.0</init>
+                                    </parameter>
+                                </constantParameters>
+                                <inputParameters>
+                                    <parameter control="false" name="Color" oid="533282d2-4845-45e3-ba76-220ebfda8f1d" representation="color" type="int32">
+                                        <expr>LevelColor</expr>
+                                        <init>25</init>
+                                    </parameter>
+                                    <parameter control="false" name="CurrentValue" oid="435434f0-23e7-43fa-8b43-2e0f58bc26b0" type="float32">
+                                        <expr>MeasuredWaterVolume</expr>
+                                        <init>0.0</init>
+                                    </parameter>
+                                </inputParameters>
+                                <outputParameters>
+                                    <parameter name="OldValues" oid="8f0314a2-070d-47e7-9730-bf9a8c335f36" type="float32^22"/>
+                                </outputParameters>
+                            </properties>
+                            <children/>
+                        </referenceContainer>
+                        <referenceContainer oid="e31e0adf-1a11-4180-ae4b-6fd744e108f1">
+                            <pathFromRoot value="2,5"/>
+                            <properties modular="false" name="Steam Widget">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>-652.0</init>
+                                    </x>
+                                    <y>
+                                        <init>-368.0</init>
+                                    </y>
+                                </origin>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <file name="Graph.ogfx" path="."/>
+                                <crc value="4165604298"/>
+                                <constantParameters>
+                                    <parameter control="false" name="Label" oid="8602fbfa-aa06-4a6f-b532-60de77d45289" representation="as_string" type="char^255">
+                                        <init>[83,84,69,65,77,32,79,85,84,80,85,84,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="Unit" oid="d7e0a098-acce-4da6-9555-b820b0c2e432" representation="as_string" type="char^255">
+                                        <init>[76,47,83,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="MaxValueY" oid="f26a690b-fd9f-49fa-90a3-a4cd98a12d53" type="float32">
+                                        <init>1400.0</init>
+                                    </parameter>
+                                </constantParameters>
+                                <inputParameters>
+                                    <parameter control="false" name="Color" oid="533282d2-4845-45e3-ba76-220ebfda8f1d" representation="color" type="int32">
+                                        <expr>SteamColor</expr>
+                                        <init>25</init>
+                                    </parameter>
+                                    <parameter control="false" name="CurrentValue" oid="435434f0-23e7-43fa-8b43-2e0f58bc26b0" type="float32">
+                                        <expr>MeasuredSteamThroughput</expr>
+                                        <init>0.0</init>
+                                    </parameter>
+                                </inputParameters>
+                                <outputParameters>
+                                    <parameter name="OldValues" oid="8f0314a2-070d-47e7-9730-bf9a8c335f36" type="float32^22"/>
+                                </outputParameters>
+                            </properties>
+                            <children/>
+                        </referenceContainer>
+                    </children>
+                </container>
+                <referenceContainer oid="82c069bc-6fa5-4b40-9464-8acd528256dd">
+                    <pathFromRoot value="6"/>
+                    <properties modular="false" name="Tank">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>0.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </origin>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <file name="Tank.ogfx" path="."/>
+                        <crc value="1653419963"/>
+                        <inputParameters>
+                            <parameter control="false" name="WaterLevel" oid="63035583-1747-4a5e-a888-95c6906ec8eb" type="float32">
+                                <expr>MeasuredWaterVolume</expr>
+                                <init>0.0</init>
+                            </parameter>
+                            <parameter control="false" name="Mode" oid="48cb91c4-a310-4f8e-87e6-8c5052fed6e6" type="Modes">
+                                <expr>Mode</expr>
+                                <init>RESTART</init>
+                            </parameter>
+                            <parameter control="false" name="PumpColors" oid="4a39677a-58a5-49ca-ad8a-e3736153390a" representation="as_int_array" type="int32^4">
+                                <expr>PumpColors</expr>
+                                <init>[25]</init>
+                            </parameter>
+                            <parameter control="false" name="LevelColor" oid="fa987dac-9f0d-40eb-9657-394523f6c975" representation="color" type="int">
+                                <expr>LevelColor</expr>
+                                <init>25</init>
+                            </parameter>
+                            <parameter control="false" name="SteamColor" oid="6e5d7432-0544-4f12-b95c-f50f6aa8c8ae" representation="color" type="int">
+                                <expr>SteamColor</expr>
+                                <init>25</init>
+                            </parameter>
+                        </inputParameters>
+                    </properties>
+                    <children/>
+                </referenceContainer>
+                <container oid="42eac5d7-5d86-40db-99e3-2d0e14d5b515">
+                    <pathFromRoot value="7"/>
+                    <properties name="Parameters Configuration">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>0.0</init>
+                            </x>
+                            <y>
+                                <init>0.0</init>
+                            </y>
+                        </origin>
+                        <priority>
+                            <init>-1</init>
+                        </priority>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <static editorLinked="true" generateStaticSequence="true" maxX="949.0" maxY="247.00018" minX="356.0" minY="-532.0">
+                            <init>false</init>
+                        </static>
+                    </properties>
+                    <children>
+                        <text oid="02a738b0-78ff-49c3-a5e1-951d3b4e6105">
+                            <pathFromRoot value="0,7"/>
+                            <properties name="text">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <position>
+                                    <x>
+                                        <init>364.0</init>
+                                    </x>
+                                    <y>
+                                        <init>241.0</init>
+                                    </y>
+                                </position>
+                                <maxLength>
+                                    <init>255</init>
+                                </maxLength>
+                                <textValue type="char">
+                                    <init>[80, 65, 82, 65, 77, 69, 84, 69, 82, 32, 67, 79, 78, 70, 73, 71, 85, 82, 65, 84, 73, 79, 78, 0]</init>
+                                </textValue>
+                                <haloing>
+                                    <init>false</init>
+                                </haloing>
+                                <haloColor>
+                                    <init>-1</init>
+                                </haloColor>
+                                <outlineColor>
+                                    <init>4</init>
+                                </outlineColor>
+                                <lineWidth>
+                                    <init>2</init>
+                                </lineWidth>
+                                <font>
+                                    <init>2</init>
+                                </font>
+                                <horizAlign>
+                                    <init>left</init>
+                                </horizAlign>
+                                <vertAlign>
+                                    <init>top</init>
+                                </vertAlign>
+                            </properties>
+                        </text>
+                        <container oid="b2fe63b2-d47e-4524-9293-f9a76fc9d178">
+                            <pathFromRoot value="1,7"/>
+                            <properties name="Pumps Control">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>0.0</init>
+                                    </x>
+                                    <y>
+                                        <init>0.0</init>
+                                    </y>
+                                </origin>
+                                <priority>
+                                    <init>-1</init>
+                                </priority>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <static editorLinked="true" generateStaticSequence="true" maxX="949.0" maxY="91.0" minX="356.0" minY="-407.0">
+                                    <init>false</init>
+                                </static>
+                            </properties>
+                            <children>
+                                <referenceContainer oid="0be39fe7-3f51-4557-862c-5660761bd5ee">
+                                    <pathFromRoot value="0,1,7"/>
+                                    <properties modular="false" name="Pump1">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>653.0</init>
+                                            </x>
+                                            <y>
+                                                <init>29.0</init>
+                                            </y>
+                                        </origin>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <file name="PumpButton.ogfx" path="."/>
+                                        <crc value="2212657353"/>
+                                        <constantParameters>
+                                            <parameter control="false" name="Label" oid="b600e689-44b7-4b94-9b58-004c042d13c0" representation="as_string" type="char^255">
+                                                <init>[80,85,77,80,32,49,0]</init>
+                                            </parameter>
+                                        </constantParameters>
+                                        <inputParameters>
+                                            <parameter control="false" name="Color" oid="98212d76-e287-4ec2-866a-4703071fb5ab" representation="color" type="int32">
+                                                <expr>PumpColors[0]</expr>
+                                                <init>25</init>
+                                            </parameter>
+                                            <parameter control="false" name="ON" oid="e7f939a0-79e8-4d9b-90cb-1d115fbd184c" type="bool">
+                                                <expr>PumpState[0]</expr>
+                                                <init>false</init>
+                                            </parameter>
+                                            <parameter control="false" name="Enable" oid="1111c45a-01e6-4081-ad2b-4842c59e0f8f" type="bool">
+                                                <expr>RunMode and (not viewAll)</expr>
+                                                <init>false</init>
+                                            </parameter>
+                                        </inputParameters>
+                                        <outputParameters>
+                                            <parameter name="Failure" oid="bf1d2184-a941-40d4-9d0d-3a860c688627" type="bool">
+                                                <expr>PumpFailure[0]</expr>
+                                            </parameter>
+                                            <parameter name="Force" oid="37650279-4801-4c17-8d09-ed178b6cbd88" type="bool">
+                                                <expr>PumpForce[0]</expr>
+                                            </parameter>
+                                            <parameter name="Repair" oid="c70e9158-0e1c-40c6-8779-129c80a9290c" type="bool">
+                                                <expr>PumpRepair[0]</expr>
+                                            </parameter>
+                                        </outputParameters>
+                                    </properties>
+                                    <children/>
+                                </referenceContainer>
+                                <referenceContainer oid="a530bea4-5f50-4657-9142-45fb5c2551d3">
+                                    <pathFromRoot value="1,1,7"/>
+                                    <properties modular="false" name="Pump2">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>653.0</init>
+                                            </x>
+                                            <y>
+                                                <init>-95.0</init>
+                                            </y>
+                                        </origin>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <file name="PumpButton.ogfx" path="."/>
+                                        <crc value="2212657353"/>
+                                        <constantParameters>
+                                            <parameter control="false" name="Label" oid="b600e689-44b7-4b94-9b58-004c042d13c0" representation="as_string" type="char^255">
+                                                <init>[80,85,77,80,32,50,0]</init>
+                                            </parameter>
+                                        </constantParameters>
+                                        <inputParameters>
+                                            <parameter control="false" name="Color" oid="98212d76-e287-4ec2-866a-4703071fb5ab" representation="color" type="int32">
+                                                <expr>PumpColors[1]</expr>
+                                                <init>25</init>
+                                            </parameter>
+                                            <parameter control="false" name="ON" oid="e7f939a0-79e8-4d9b-90cb-1d115fbd184c" type="bool">
+                                                <expr>PumpState[1]</expr>
+                                                <init>false</init>
+                                            </parameter>
+                                            <parameter control="false" name="Enable" oid="1111c45a-01e6-4081-ad2b-4842c59e0f8f" type="bool">
+                                                <expr>RunMode and (not viewAll)</expr>
+                                                <init>false</init>
+                                            </parameter>
+                                        </inputParameters>
+                                        <outputParameters>
+                                            <parameter name="Failure" oid="bf1d2184-a941-40d4-9d0d-3a860c688627" type="bool">
+                                                <expr>PumpFailure[1]</expr>
+                                            </parameter>
+                                            <parameter name="Force" oid="37650279-4801-4c17-8d09-ed178b6cbd88" type="bool">
+                                                <expr>PumpForce[1]</expr>
+                                            </parameter>
+                                            <parameter name="Repair" oid="c70e9158-0e1c-40c6-8779-129c80a9290c" type="bool">
+                                                <expr>PumpRepair[1]</expr>
+                                            </parameter>
+                                        </outputParameters>
+                                    </properties>
+                                    <children/>
+                                </referenceContainer>
+                                <referenceContainer oid="d91ab9e3-832b-4fc5-b708-fffa82a5f371">
+                                    <pathFromRoot value="2,1,7"/>
+                                    <properties modular="false" name="Pump3">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>653.0</init>
+                                            </x>
+                                            <y>
+                                                <init>-220.0</init>
+                                            </y>
+                                        </origin>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <file name="PumpButton.ogfx" path="."/>
+                                        <crc value="2212657353"/>
+                                        <constantParameters>
+                                            <parameter control="false" name="Label" oid="b600e689-44b7-4b94-9b58-004c042d13c0" representation="as_string" type="char^255">
+                                                <init>[80,85,77,80,32,51,0]</init>
+                                            </parameter>
+                                        </constantParameters>
+                                        <inputParameters>
+                                            <parameter control="false" name="Color" oid="98212d76-e287-4ec2-866a-4703071fb5ab" representation="color" type="int32">
+                                                <expr>PumpColors[2]</expr>
+                                                <init>25</init>
+                                            </parameter>
+                                            <parameter control="false" name="ON" oid="e7f939a0-79e8-4d9b-90cb-1d115fbd184c" type="bool">
+                                                <expr>PumpState[2]</expr>
+                                                <init>false</init>
+                                            </parameter>
+                                            <parameter control="false" name="Enable" oid="1111c45a-01e6-4081-ad2b-4842c59e0f8f" type="bool">
+                                                <expr>RunMode and (not viewAll)</expr>
+                                                <init>false</init>
+                                            </parameter>
+                                        </inputParameters>
+                                        <outputParameters>
+                                            <parameter name="Failure" oid="bf1d2184-a941-40d4-9d0d-3a860c688627" type="bool">
+                                                <expr>PumpFailure[2]</expr>
+                                            </parameter>
+                                            <parameter name="Force" oid="37650279-4801-4c17-8d09-ed178b6cbd88" type="bool">
+                                                <expr>PumpForce[2]</expr>
+                                            </parameter>
+                                            <parameter name="Repair" oid="c70e9158-0e1c-40c6-8779-129c80a9290c" type="bool">
+                                                <expr>PumpRepair[2]</expr>
+                                            </parameter>
+                                        </outputParameters>
+                                    </properties>
+                                    <children/>
+                                </referenceContainer>
+                                <referenceContainer oid="9694c5d4-32fb-4ef9-a056-f471ab632f72">
+                                    <pathFromRoot value="3,1,7"/>
+                                    <properties modular="false" name="Pump4">
+                                        <visible>
+                                            <init>true</init>
+                                        </visible>
+                                        <origin>
+                                            <x>
+                                                <init>653.0</init>
+                                            </x>
+                                            <y>
+                                                <init>-344.0</init>
+                                            </y>
+                                        </origin>
+                                        <scale>
+                                            <x>
+                                                <init>1.0</init>
+                                            </x>
+                                            <y>
+                                                <init>1.0</init>
+                                            </y>
+                                        </scale>
+                                        <rotate>
+                                            <angle>
+                                                <init>0.0</init>
+                                            </angle>
+                                        </rotate>
+                                        <orientation clockwise="false"/>
+                                        <file name="PumpButton.ogfx" path="."/>
+                                        <crc value="2212657353"/>
+                                        <constantParameters>
+                                            <parameter control="false" name="Label" oid="b600e689-44b7-4b94-9b58-004c042d13c0" representation="as_string" type="char^255">
+                                                <init>[80,85,77,80,32,52,0]</init>
+                                            </parameter>
+                                        </constantParameters>
+                                        <inputParameters>
+                                            <parameter control="false" name="Color" oid="98212d76-e287-4ec2-866a-4703071fb5ab" representation="color" type="int32">
+                                                <expr>PumpColors[3]</expr>
+                                                <init>25</init>
+                                            </parameter>
+                                            <parameter control="false" name="ON" oid="e7f939a0-79e8-4d9b-90cb-1d115fbd184c" type="bool">
+                                                <expr>PumpState[3]</expr>
+                                                <init>false</init>
+                                            </parameter>
+                                            <parameter control="false" name="Enable" oid="1111c45a-01e6-4081-ad2b-4842c59e0f8f" type="bool">
+                                                <expr>RunMode and (not viewAll)</expr>
+                                                <init>false</init>
+                                            </parameter>
+                                        </inputParameters>
+                                        <outputParameters>
+                                            <parameter name="Failure" oid="bf1d2184-a941-40d4-9d0d-3a860c688627" type="bool">
+                                                <expr>PumpFailure[3]</expr>
+                                            </parameter>
+                                            <parameter name="Force" oid="37650279-4801-4c17-8d09-ed178b6cbd88" type="bool">
+                                                <expr>PumpForce[3]</expr>
+                                            </parameter>
+                                            <parameter name="Repair" oid="c70e9158-0e1c-40c6-8779-129c80a9290c" type="bool">
+                                                <expr>PumpRepair[3]</expr>
+                                            </parameter>
+                                        </outputParameters>
+                                    </properties>
+                                    <children/>
+                                </referenceContainer>
+                            </children>
+                        </container>
+                        <referenceContainer oid="d328ea41-5860-464f-b05e-f93f364419a2">
+                            <pathFromRoot value="2,7"/>
+                            <properties modular="false" name="Steam Control">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>653.0</init>
+                                    </x>
+                                    <y>
+                                        <init>154.0</init>
+                                    </y>
+                                </origin>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <file name="SteamButton.ogfx" path="."/>
+                                <crc value="622989251"/>
+                                <constantParameters>
+                                    <parameter control="false" name="Name" oid="ead6f6d7-b003-49f8-88aa-806959f77f57" representation="as_string" type="char^255">
+                                        <init>[83,84,69,65,77,32,67,79,78,84,82,79,76,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="StatusName" oid="a28398e0-6320-4cc8-9b34-8da477bb2203" representation="as_string" type="char^255">
+                                        <init>[79,80,69,78,0]</init>
+                                    </parameter>
+                                </constantParameters>
+                                <inputParameters>
+                                    <parameter control="false" name="Color" oid="5ad29b2c-1a7a-4a7c-becc-8c8b74ceabe1" representation="color" type="int32">
+                                        <expr>SteamColor</expr>
+                                        <init>25</init>
+                                    </parameter>
+                                    <parameter control="false" name="Enable" oid="ef79f57d-569b-4c2a-842a-9ef4f19451ab" type="bool">
+                                        <expr>RunMode and (not viewAll)</expr>
+                                        <init>false</init>
+                                    </parameter>
+                                </inputParameters>
+                                <outputParameters>
+                                    <parameter name="Repair" oid="15800ad8-fbfd-43ef-9c0c-28b6282cdd38" type="bool">
+                                        <expr>SteamControlRepair</expr>
+                                    </parameter>
+                                    <parameter name="Failure" oid="2e1ae495-5c1c-4b9e-bf23-959a3f5de582" type="bool">
+                                        <expr>SteamControlFailure</expr>
+                                    </parameter>
+                                </outputParameters>
+                            </properties>
+                            <children/>
+                        </referenceContainer>
+                        <referenceContainer oid="30b66fb5-cc08-4ec0-b5d4-297db8fb6972">
+                            <pathFromRoot value="3,7"/>
+                            <properties modular="false" name="Level Control">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>653.0</init>
+                                    </x>
+                                    <y>
+                                        <init>-469.0</init>
+                                    </y>
+                                </origin>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <file name="SteamButton.ogfx" path="."/>
+                                <crc value="622989251"/>
+                                <constantParameters>
+                                    <parameter control="false" name="Name" oid="ead6f6d7-b003-49f8-88aa-806959f77f57" representation="as_string" type="char^255">
+                                        <init>[76,69,86,69,76,32,67,79,78,84,82,79,76,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="StatusName" oid="a28398e0-6320-4cc8-9b34-8da477bb2203" representation="as_string" type="char^255">
+                                        <init>[0]</init>
+                                    </parameter>
+                                </constantParameters>
+                                <inputParameters>
+                                    <parameter control="false" name="Color" oid="5ad29b2c-1a7a-4a7c-becc-8c8b74ceabe1" representation="color" type="int32">
+                                        <expr>LevelColor</expr>
+                                        <init>25</init>
+                                    </parameter>
+                                    <parameter control="false" name="Enable" oid="ef79f57d-569b-4c2a-842a-9ef4f19451ab" type="bool">
+                                        <expr>RunMode and (not viewAll)</expr>
+                                        <init>false</init>
+                                    </parameter>
+                                </inputParameters>
+                                <outputParameters>
+                                    <parameter name="Repair" oid="15800ad8-fbfd-43ef-9c0c-28b6282cdd38" type="bool">
+                                        <expr>LevelControlRepair</expr>
+                                    </parameter>
+                                    <parameter name="Failure" oid="2e1ae495-5c1c-4b9e-bf23-959a3f5de582" type="bool">
+                                        <expr>LevelControlFailure</expr>
+                                    </parameter>
+                                </outputParameters>
+                            </properties>
+                            <children/>
+                        </referenceContainer>
+                    </children>
+                </container>
+                <container oid="66d662ae-cf38-4884-92f8-96eb7c53a498">
+                    <pathFromRoot value="8"/>
+                    <properties name="Initialization">
+                        <visible>
+                            <init>true</init>
+                            <expr>count &lt; 2</expr>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>0.0</init>
+                            </x>
+                            <y>
+                                <init>0.0</init>
+                            </y>
+                        </origin>
+                        <priority>
+                            <init>-1</init>
+                        </priority>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <static editorLinked="true" generateStaticSequence="true" maxX="947.0" maxY="359.00015" minX="356.0" minY="259.0">
+                            <init>false</init>
+                        </static>
+                    </properties>
+                    <children>
+                        <text oid="be29fa46-ef9c-4308-980f-6a456b019efb">
+                            <pathFromRoot value="0,8"/>
+                            <properties name="text">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <position>
+                                    <x>
+                                        <init>364.0</init>
+                                    </x>
+                                    <y>
+                                        <init>353.0</init>
+                                    </y>
+                                </position>
+                                <maxLength>
+                                    <init>255</init>
+                                </maxLength>
+                                <textValue type="char">
+                                    <init>[73, 78, 73, 84, 73, 65, 76, 73, 90, 65, 84, 73, 79, 78, 0]</init>
+                                </textValue>
+                                <haloing>
+                                    <init>false</init>
+                                </haloing>
+                                <haloColor>
+                                    <init>-1</init>
+                                </haloColor>
+                                <outlineColor>
+                                    <init>4</init>
+                                </outlineColor>
+                                <lineWidth>
+                                    <init>2</init>
+                                </lineWidth>
+                                <font>
+                                    <init>2</init>
+                                </font>
+                                <horizAlign>
+                                    <init>left</init>
+                                </horizAlign>
+                                <vertAlign>
+                                    <init>top</init>
+                                </vertAlign>
+                            </properties>
+                        </text>
+                        <referenceContainer oid="335ffee9-b06c-4f64-962d-76186ef6a82e">
+                            <pathFromRoot value="1,8"/>
+                            <properties modular="false" name="Boiler">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>504.0</init>
+                                    </x>
+                                    <y>
+                                        <init>291.0</init>
+                                    </y>
+                                </origin>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <file name="IconTextButton.ogfx" path="."/>
+                                <crc value="1429391603"/>
+                                <constantParameters>
+                                    <parameter control="false" name="Label" oid="58a5a092-227e-4a42-bbe0-6896932c4fdb" representation="as_string" type="char^255">
+                                        <init>[66,79,73,76,69,82,32,32,82,69,65,68,89,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="AlternateLabel" oid="d6eef8ac-5410-425f-ac39-ed03076dfbb8" representation="as_string" type="char^255">
+                                        <init>[66,79,73,76,69,82,32,78,79,84,32,82,69,65,68,89,0]</init>
+                                    </parameter>
+                                </constantParameters>
+                                <inputParameters>
+                                    <parameter control="true" name="SizeX" oid="057842e7-e65a-45a7-9cec-a22fcce89a6a" type="float32">
+                                        <init>139.0</init>
+                                    </parameter>
+                                    <parameter control="false" name="Color" oid="3a931a02-8ce7-494b-a22b-0ff34eccb33b" representation="color" type="int32">
+                                        <expr>TankColor</expr>
+                                        <init>25</init>
+                                    </parameter>
+                                    <parameter control="false" name="Enable" oid="1d935b28-a6cc-4596-9d01-c03750f51170" type="bool">
+                                        <expr>WaitSteamBoilerReady</expr>
+                                        <init>false</init>
+                                    </parameter>
+                                </inputParameters>
+                                <outputParameters>
+                                    <parameter name="StateChangeEmit" oid="b2b736b8-3692-465d-83d6-24013b337a57" type="bool"/>
+                                    <parameter name="State" oid="5f95565e-0067-44e3-b042-8495e5b2abec" type="bool">
+                                        <expr>BoilerReady</expr>
+                                    </parameter>
+                                </outputParameters>
+                            </properties>
+                            <children/>
+                        </referenceContainer>
+                        <referenceContainer oid="2f5be6ca-ffc5-4251-b205-e3245b78adc0">
+                            <pathFromRoot value="2,8"/>
+                            <properties modular="false" name="Units">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <origin>
+                                    <x>
+                                        <init>800.0</init>
+                                    </x>
+                                    <y>
+                                        <init>291.0</init>
+                                    </y>
+                                </origin>
+                                <scale>
+                                    <x>
+                                        <init>1.0</init>
+                                    </x>
+                                    <y>
+                                        <init>1.0</init>
+                                    </y>
+                                </scale>
+                                <rotate>
+                                    <angle>
+                                        <init>0.0</init>
+                                    </angle>
+                                </rotate>
+                                <orientation clockwise="false"/>
+                                <file name="IconTextButton.ogfx" path="."/>
+                                <crc value="1429391603"/>
+                                <constantParameters>
+                                    <parameter control="false" name="Label" oid="58a5a092-227e-4a42-bbe0-6896932c4fdb" representation="as_string" type="char^255">
+                                        <init>[85,78,73,84,83,32,82,69,65,68,89,0]</init>
+                                    </parameter>
+                                    <parameter control="false" name="AlternateLabel" oid="d6eef8ac-5410-425f-ac39-ed03076dfbb8" representation="as_string" type="char^255">
+                                        <init>[85,78,73,84,83,32,82,69,65,68,89,0]</init>
+                                    </parameter>
+                                </constantParameters>
+                                <inputParameters>
+                                    <parameter control="true" name="SizeX" oid="057842e7-e65a-45a7-9cec-a22fcce89a6a" type="float32">
+                                        <init>139.0</init>
+                                    </parameter>
+                                    <parameter control="false" name="Color" oid="3a931a02-8ce7-494b-a22b-0ff34eccb33b" representation="color" type="int32">
+                                        <expr>TankColor</expr>
+                                        <init>25</init>
+                                    </parameter>
+                                    <parameter control="false" name="Enable" oid="1d935b28-a6cc-4596-9d01-c03750f51170" type="bool">
+                                        <expr>WaitPhysicalUnitsReady</expr>
+                                        <init>false</init>
+                                    </parameter>
+                                </inputParameters>
+                                <outputParameters>
+                                    <parameter name="StateChangeEmit" oid="b2b736b8-3692-465d-83d6-24013b337a57" type="bool"/>
+                                    <parameter name="State" oid="5f95565e-0067-44e3-b042-8495e5b2abec" type="bool">
+                                        <expr>UnitsReady</expr>
+                                    </parameter>
+                                </outputParameters>
+                            </properties>
+                            <children/>
+                        </referenceContainer>
+                    </children>
+                </container>
+                <referenceContainer oid="1b0d4d2c-9fda-4d89-a598-8600590fab85">
+                    <pathFromRoot value="9"/>
+                    <properties modular="false" name="Notifications">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>660.0</init>
+                            </x>
+                            <y>
+                                <init>456.0</init>
+                            </y>
+                        </origin>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <file name="Notifications.ogfx" path="."/>
+                        <crc value="758234006"/>
+                        <inputParameters>
+                            <parameter control="false" name="count" oid="fcb73c95-081b-4ae3-9839-1df051e41c8f" type="int32">
+                                <expr>count</expr>
+                                <init>0</init>
+                            </parameter>
+                            <parameter control="false" name="notifToDisplay" oid="d918d386-5f9d-4ddc-9b9e-ec486571178d" representation="as_int_array" type="int32^6">
+                                <expr>notifsToDisplay</expr>
+                                <init>[0]</init>
+                            </parameter>
+                            <parameter control="false" name="Color" oid="bca7575a-4661-4355-be5a-e45aba0db671" representation="color" type="int32">
+                                <expr>ModeIndicatorColor</expr>
+                                <init>25</init>
+                            </parameter>
+                        </inputParameters>
+                        <outputParameters>
+                            <parameter name="viewAll" oid="79ceee7b-c99d-4f99-9b0a-0dfcd7274660" type="bool">
+                                <expr>viewAll</expr>
+                            </parameter>
+                        </outputParameters>
+                    </properties>
+                    <children/>
+                </referenceContainer>
+                <container oid="e14cd263-1366-43d1-802f-53b6d21069ca">
+                    <pathFromRoot value="10"/>
+                    <properties name="logo">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>0.0</init>
+                            </x>
+                            <y>
+                                <init>0.0</init>
+                            </y>
+                        </origin>
+                        <priority>
+                            <init>-1</init>
+                        </priority>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <static editorLinked="true" generateStaticSequence="true" maxX="118.5" maxY="-426.0" minX="-118.5" minY="-576.0">
+                            <init>false</init>
+                        </static>
+                    </properties>
+                    <children>
+                        <bitmap oid="6bbae703-a96a-4135-8d2a-8139fd846d79">
+                            <pathFromRoot value="0,10"/>
+                            <properties name="bitmap">
+                                <visible>
+                                    <init>true</init>
+                                </visible>
+                                <position>
+                                    <x>
+                                        <init>-112.5</init>
+                                    </x>
+                                    <y>
+                                        <init>-570.0</init>
+                                    </y>
+                                </position>
+                                <textureId>
+                                    <init>12</init>
+                                </textureId>
+                            </properties>
+                        </bitmap>
+                    </children>
+                </container>
+            </children>
+        </layer>
+    </children>
+</specification>
+
+<!-- crc32 : 707308517 -->
+

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3">
+	<declarations>
+		<Package name="ListOfDatas">
+			<declarations>
+				<Constant name="N">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int32"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<ConstValue value="6"/>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/1dc3/56E7/5DAC/653b83156992"/>
+					</pragmas>
+				</Constant>
+				<Constant name="NULL_DATAS">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Datas"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<!-- [{kind : 0}, {kind : 0}, {kind : 0}, {kind : 0}, {kind : 0}, {kind : 0}] -->
+						<DataArrayOp>
+							<data>
+								<!-- {kind : 0} -->
+								<DataStructOp>
+									<data>
+										<LabelledExpression label="kind">
+											<flow>
+												<ConstValue value="0"/>
+											</flow>
+										</LabelledExpression>
+									</data>
+								</DataStructOp>
+								<!-- {kind : 0} -->
+								<DataStructOp>
+									<data>
+										<LabelledExpression label="kind">
+											<flow>
+												<ConstValue value="0"/>
+											</flow>
+										</LabelledExpression>
+									</data>
+								</DataStructOp>
+								<!-- {kind : 0} -->
+								<DataStructOp>
+									<data>
+										<LabelledExpression label="kind">
+											<flow>
+												<ConstValue value="0"/>
+											</flow>
+										</LabelledExpression>
+									</data>
+								</DataStructOp>
+								<!-- {kind : 0} -->
+								<DataStructOp>
+									<data>
+										<LabelledExpression label="kind">
+											<flow>
+												<ConstValue value="0"/>
+											</flow>
+										</LabelledExpression>
+									</data>
+								</DataStructOp>
+								<!-- {kind : 0} -->
+								<DataStructOp>
+									<data>
+										<LabelledExpression label="kind">
+											<flow>
+												<ConstValue value="0"/>
+											</flow>
+										</LabelledExpression>
+									</data>
+								</DataStructOp>
+								<!-- {kind : 0} -->
+								<DataStructOp>
+									<data>
+										<LabelledExpression label="kind">
+											<flow>
+												<ConstValue value="0"/>
+											</flow>
+										</LabelledExpression>
+									</data>
+								</DataStructOp>
+							</data>
+						</DataArrayOp>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/1dc4/56E7/5DAC/653b831552ce"/>
+					</pragmas>
+				</Constant>
+				<Constant name="NULL_DATA">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="Data"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<!-- {kind : 0} -->
+						<DataStructOp>
+							<data>
+								<LabelledExpression label="kind">
+									<flow>
+										<ConstValue value="0"/>
+									</flow>
+								</LabelledExpression>
+							</data>
+						</DataStructOp>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/1dc5/56E7/5DAC/653b83156ae4"/>
+					</pragmas>
+				</Constant>
+				<Type name="IndexTable">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="count">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int32"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/1dba/56E7/5DAC/653b83155e95"/>
+									</pragmas>
+								</Field>
+								<Field name="values">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="Indexes"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/1dbb/56E7/5DAC/653b8315688d"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/1db9/56E7/5DAC/653b83154193" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<comment>Internal index table for managing the list</comment>
+						</ed:Type>
+					</pragmas>
+				</Type>
+				<Type name="ListData">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="indexes">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="IndexTable"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/1dbd/56E7/5DAC/653b831527ab"/>
+									</pragmas>
+								</Field>
+								<Field name="datas">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="Datas"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/1dbe/56E7/5DAC/653b831532"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/1dbc/56E7/5DAC/653b8315151f" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<comment>List of Datas</comment>
+						</ed:Type>
+						<kcg:Pragma>
+							C:name ListData_ListOfDatas
+						</kcg:Pragma>
+					</pragmas>
+				</Type>
+				<Type name="Data">
+					<definition>
+						<Struct>
+							<fields>
+								<Field name="kind">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="int32"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Field oid="!ed/1dc0/56E7/5DAC/653b83151c6a"/>
+									</pragmas>
+								</Field>
+							</fields>
+						</Struct>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/1dbf/56E7/5DAC/653b83157b4a" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<comment>Arbitrary data to be stored in the list</comment>
+						</ed:Type>
+					</pragmas>
+				</Type>
+				<Type name="Datas">
+					<definition>
+						<Table>
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="Data"/>
+									</type>
+								</NamedType>
+							</type>
+							<size>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="N"/>
+									</path>
+								</IdExpression>
+							</size>
+						</Table>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/1dc1/56E7/5DAC/653b83156081" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<comment>Storage of Datas, internal to the list</comment>
+						</ed:Type>
+					</pragmas>
+				</Type>
+				<Type name="Indexes">
+					<definition>
+						<Table>
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="int32"/>
+									</type>
+								</NamedType>
+							</type>
+							<size>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="N"/>
+									</path>
+								</IdExpression>
+							</size>
+						</Table>
+					</definition>
+					<pragmas>
+						<ed:Type oid="!ed/1dc2/56E7/5DAC/653b831541c5" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<comment>Array of indexes, internal to the list</comment>
+						</ed:Type>
+						<kcg:Pragma>
+							C:name Indexes_ListOfDatas
+						</kcg:Pragma>
+					</pragmas>
+				</Type>
+				<Operator name="New" href="New.xscade"/>
+				<Operator name="Length" href="Length.xscade"/>
+				<Operator name="Empty" href="Empty.xscade"/>
+				<Operator name="Clear" href="Clear.xscade"/>
+				<Operator name="Get" href="Get.xscade"/>
+				<Operator name="Insert" href="Insert.xscade"/>
+				<Operator name="Pop" href="Pop.xscade"/>
+				<Operator name="Append" href="Append.xscade"/>
+				<Operator name="Set" href="Set.xscade"/>
+				<Operator name="Reverse" href="Reverse.xscade"/>
+				<Operator name="Full" href="Full.xscade"/>
+				<Operator name="Head" href="Head.xscade"/>
+				<Operator name="Tail" href="Tail.xscade"/>
+				<Operator name="Find" href="Find.xscade"/>
+				<Operator name="Remove" href="Remove.xscade"/>
+				<Operator name="Present" href="Present.xscade"/>
+				<Operator name="Sort" href="Sort.xscade"/>
+				<Operator name="Compare" href="Compare.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/1db5/56E7/5DAC/653b83154d55" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Proxy types/operators for implementing a list of Data, size bounded by N.</comment>
+					<comment>We expect a parameterized package like List&lt;&lt;Data, N&gt;&gt;.</comment>
+					<comment>The contained operators are wrappers to a generic implementation with adequate typing.</comment>
+					<diagrams>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/1db6/56E7/5DAC/653b8315194e" blockKind="constants"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/1db7/56E7/5DAC/653b83156f2b" blockKind="types"/>
+						<TreeDiagram landscape="false" format="A4 (210 297)" oid="!ed/1db8/56E7/5DAC/653b83156aab" blockKind="sensors"/>
+					</diagrams>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

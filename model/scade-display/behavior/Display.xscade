@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3">
+	<declarations>
+		<Package name="Display">
+			<declarations>
+				<Constant name="LEVEL_CONTROL_FAILURE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ListOfDatas::Data"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<!-- {kind : 6} -->
+						<DataStructOp>
+							<data>
+								<LabelledExpression label="kind">
+									<flow>
+										<ConstValue value="6"/>
+									</flow>
+								</LabelledExpression>
+							</data>
+						</DataStructOp>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e2a/56E7/5DAC/653ba3cf29d0"/>
+					</pragmas>
+				</Constant>
+				<Constant name="STEAM_FAILURE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ListOfDatas::Data"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<!-- {kind : 1} -->
+						<DataStructOp>
+							<data>
+								<LabelledExpression label="kind">
+									<flow>
+										<ConstValue value="1"/>
+									</flow>
+								</LabelledExpression>
+							</data>
+						</DataStructOp>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e52/56E7/5DAC/653ba4276dd0"/>
+					</pragmas>
+				</Constant>
+				<Constant name="PUMP1_FAILURE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ListOfDatas::Data"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<!-- {kind : 2} -->
+						<DataStructOp>
+							<data>
+								<LabelledExpression label="kind">
+									<flow>
+										<ConstValue value="2"/>
+									</flow>
+								</LabelledExpression>
+							</data>
+						</DataStructOp>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3e61/56E7/5DAC/653ba4285e21"/>
+					</pragmas>
+				</Constant>
+				<Constant name="PUMP2_FAILURE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ListOfDatas::Data"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<!-- {kind : 3} -->
+						<DataStructOp>
+							<data>
+								<LabelledExpression label="kind">
+									<flow>
+										<ConstValue value="3"/>
+									</flow>
+								</LabelledExpression>
+							</data>
+						</DataStructOp>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3ead/56E7/5DAC/653ba4645d48"/>
+					</pragmas>
+				</Constant>
+				<Constant name="PUMP3_FAILURE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ListOfDatas::Data"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<!-- {kind : 4} -->
+						<DataStructOp>
+							<data>
+								<LabelledExpression label="kind">
+									<flow>
+										<ConstValue value="4"/>
+									</flow>
+								</LabelledExpression>
+							</data>
+						</DataStructOp>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3ebc/56E7/5DAC/653ba4662a16"/>
+					</pragmas>
+				</Constant>
+				<Constant name="PUMP4_FAILURE">
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="ListOfDatas::Data"/>
+							</type>
+						</NamedType>
+					</type>
+					<value>
+						<!-- {kind : 5} -->
+						<DataStructOp>
+							<data>
+								<LabelledExpression label="kind">
+									<flow>
+										<ConstValue value="5"/>
+									</flow>
+								</LabelledExpression>
+							</data>
+						</DataStructOp>
+					</value>
+					<pragmas>
+						<ed:Constant oid="!ed/3ecb/56E7/5DAC/653ba468650b"/>
+					</pragmas>
+				</Constant>
+				<Operator name="PumpState" href="PumpState.xscade"/>
+				<Operator name="SteamControlState" href="SteamControlState.xscade"/>
+				<Operator name="MeasuredValues" href="MeasuredValues.xscade"/>
+				<Operator name="ProcessNotificationsData" href="ProcessNotificationsData.xscade"/>
+				<Operator name="NotificationsData" href="NotificationsData.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/25e0/30DB/10CC/4e2449b564c0" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<diagrams>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/25e1/30DB/10CC/4e2449b510f4" blockKind="constants" columnsSize="0, 240, 150, 150, 300"/>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/25e2/30DB/10CC/4e2449b578f1" blockKind="types"/>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/25e3/30DB/10CC/4e2449b53bdf" blockKind="sensors"/>
+					</diagrams>
+					<references>
+						<TypeRef path="ListOfDatas::Data" refOid="!ed/1dbf/56E7/5DAC/653b83157b4a"/>
+					</references>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

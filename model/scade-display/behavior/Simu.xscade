@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" xmlns:simu="http://www.esterel-technologies.com/ns/scade/pragmas/simulator/1">
+	<declarations>
+		<Package name="Simu">
+			<declarations>
+				<Operator name="PumpModel" href="PumpModel.xscade"/>
+				<Operator name="PumpControlDevice" href="PumpControlDevice.xscade"/>
+				<Operator name="ComModel" href="ComModel.xscade"/>
+				<Operator name="SecToCycles" href="SecToCycles.xscade"/>
+				<Operator name="SteamMeasurementDevice" href="SteamMeasurementDevice.xscade"/>
+				<Operator name="LevelMeasurementDevice" href="LevelMeasurementDevice.xscade"/>
+				<Operator name="World" href="World.xscade"/>
+				<Operator name="SteamBoiler" href="SteamBoiler1.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/2f4f/184A/4D4/4de52ea0742f" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<diagrams>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/2f50/184A/4D4/4de52ea043fe" blockKind="constants"/>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/2f51/184A/4D4/4de52ea04d77" blockKind="types"/>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/2f52/184A/4D4/4de52ea04d" blockKind="sensors"/>
+					</diagrams>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>

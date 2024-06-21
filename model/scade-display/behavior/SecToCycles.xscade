@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="function" name="SecToCycles">
+	<inputs>
+		<Variable name="timeInSecs">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/3491/184A/4D4/4de66e1527d8"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="timeInCycles">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/3492/184A/4D4/4de66e163fa4"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<data>
+		<!-- timeInCycles = CYCLES_PER_S * timeInSecs; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="timeInCycles"/>
+			</lefts>
+			<right>
+				<!-- CYCLES_PER_S * timeInSecs -->
+				<NAryOp operator="*">
+					<operands>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="CYCLES_PER_S"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="timeInSecs"/>
+							</path>
+						</IdExpression>
+					</operands>
+				</NAryOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/349c/184A/4D4/4de66e41389d"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/348e/184A/4D4/4de66df55e7b" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<diagrams>
+				<TextDiagram name="SecToCycles" landscape="true" format="A4 (210 297)" oid="!ed/3490/184A/4D4/4de66e12515d">
+					<presentationElements>
+						<FlowTE presentable="!ed/349c/184A/4D4/4de66e41389d"/>
+					</presentationElements>
+				</TextDiagram>
+			</diagrams>
+			<references>
+				<ConstVarRef path="CYCLES_PER_S" refOid="!ed/33cb/184A/4D4/4de669d44f09"/>
+			</references>
+		</ed:Operator>
+		<kcg:Pragma>
+			expand
+		</kcg:Pragma>
+	</pragmas>
+</Operator>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="node" name="FailureManager">
+	<inputs>
+		<Variable name="failCondition">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/221a/184A/4D4/4de4f3682de1"/>
+			</pragmas>
+		</Variable>
+		<Variable name="systemAck">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/221b/184A/4D4/4de4f37760e9" hidden="true"/>
+			</pragmas>
+		</Variable>
+		<Variable name="systemRepaired">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/221c/184A/4D4/4de4f3896485" hidden="true"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="inFailure">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<default>
+				<ConstValue value="true"/>
+			</default>
+			<pragmas>
+				<ed:Variable oid="!ed/22b3/184A/4D4/4de4f52f60a8"/>
+			</pragmas>
+		</Variable>
+		<Variable name="failureNotification">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<default>
+				<ConstValue value="false"/>
+			</default>
+			<pragmas>
+				<ed:Variable oid="!ed/221d/184A/4D4/4de4f3974e4a"/>
+			</pragmas>
+		</Variable>
+		<Variable name="repairedAck">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<default>
+				<ConstValue value="false"/>
+			</default>
+			<pragmas>
+				<ed:Variable oid="!ed/221e/184A/4D4/4de4f4661325"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<data>
+		<StateMachine name="SM1">
+			<states>
+				<State initial="true" name="OK">
+					<unless>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="Detected"/>
+							</target>
+							<condition>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="failCondition"/>
+									</path>
+								</IdExpression>
+							</condition>
+							<pragmas>
+								<ed:Transition oid="!ed/2245/184A/4D4/4de4f48c216"/>
+							</pragmas>
+						</Transition>
+					</unless>
+					<data>
+						<!-- inFailure = false; -->
+						<Equation>
+							<lefts>
+								<VariableRef name="inFailure"/>
+							</lefts>
+							<right>
+								<ConstValue value="false"/>
+							</right>
+							<pragmas>
+								<ed:Equation oid="!ed/22d4/184A/4D4/4de4f54e2365"/>
+							</pragmas>
+						</Equation>
+					</data>
+					<pragmas>
+						<ed:State oid="!ed/2222/184A/4D4/4de4f4726cc1"/>
+					</pragmas>
+				</State>
+				<State name="Detected">
+					<unless>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="Acknowledged"/>
+							</target>
+							<condition>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="systemAck"/>
+									</path>
+								</IdExpression>
+							</condition>
+							<pragmas>
+								<ed:Transition oid="!ed/2272/184A/4D4/4de4f4c9c54"/>
+							</pragmas>
+						</Transition>
+					</unless>
+					<data>
+						<!-- failureNotification = true; -->
+						<Equation>
+							<lefts>
+								<VariableRef name="failureNotification"/>
+							</lefts>
+							<right>
+								<ConstValue value="true"/>
+							</right>
+							<pragmas>
+								<ed:Equation oid="!ed/225b/184A/4D4/4de4f4b07c2d"/>
+							</pragmas>
+						</Equation>
+					</data>
+					<pragmas>
+						<ed:State oid="!ed/2240/184A/4D4/4de4f4897eda"/>
+					</pragmas>
+				</State>
+				<State name="Acknowledged">
+					<unless>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="OK"/>
+							</target>
+							<condition>
+								<!-- systemRepaired and  not failCondition -->
+								<NAryOp name="1" operator="and">
+									<operands>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="systemRepaired"/>
+											</path>
+										</IdExpression>
+										<!--  not failCondition -->
+										<UnaryOp name="1" operator="not">
+											<operand>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="failCondition"/>
+													</path>
+												</IdExpression>
+											</operand>
+										</UnaryOp>
+									</operands>
+								</NAryOp>
+							</condition>
+							<effect>
+								<Action>
+									<data>
+										<!-- repairedAck = true; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="repairedAck"/>
+											</lefts>
+											<right>
+												<ConstValue value="true"/>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/2299/184A/4D4/4de4f4fd419a"/>
+											</pragmas>
+										</Equation>
+									</data>
+									<pragmas>
+										<ed:Action oid="!ed/228f/184A/4D4/4de4f4fd1134"/>
+									</pragmas>
+								</Action>
+							</effect>
+							<pragmas>
+								<ed:Transition oid="!ed/2286/184A/4D4/4de4f4e0662d"/>
+							</pragmas>
+						</Transition>
+					</unless>
+					<pragmas>
+						<ed:State oid="!ed/226e/184A/4D4/4de4f4bb209c"/>
+					</pragmas>
+				</State>
+			</states>
+			<pragmas>
+				<ed:StateMachine oid="!ed/2227/184A/4D4/4de4f47559f"/>
+			</pragmas>
+		</StateMachine>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/2218/184A/4D4/4de4f3637f06" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<diagrams>
+				<NetDiagram name="FailureManager" landscape="true" format="A4 (210 297)" oid="!ed/2219/184A/4D4/4de4f3632608">
+					<presentationElements>
+						<StateMachineGE presentable="!ed/2227/184A/4D4/4de4f47559f">
+							<position>
+								<Point x="699" y="529"/>
+							</position>
+							<size>
+								<Size width="13186" height="8975"/>
+							</size>
+						</StateMachineGE>
+						<StateGE display="embeddedTextual" presentable="!ed/2222/184A/4D4/4de4f4726cc1">
+							<position>
+								<Point x="6350" y="900"/>
+							</position>
+							<size>
+								<Size width="2567" height="1905"/>
+							</size>
+						</StateGE>
+						<StateGE display="embeddedTextual" presentable="!ed/2240/184A/4D4/4de4f4897eda">
+							<position>
+								<Point x="7218" y="4106"/>
+							</position>
+							<size>
+								<Size width="3387" height="1546"/>
+							</size>
+						</StateGE>
+						<TransitionGE presentable="!ed/2245/184A/4D4/4de4f48c216">
+							<positions>
+								<Point x="8911" y="2371"/>
+								<Point x="9631" y="2455"/>
+								<Point x="10224" y="3408"/>
+								<Point x="10266" y="4106"/>
+							</positions>
+							<labelSize>
+								<Size width="2413" height="953"/>
+							</labelSize>
+							<labelPos>
+								<Point x="9922" y="2524"/>
+							</labelPos>
+							<slashPos>
+								<Point x="11536" y="2519"/>
+							</slashPos>
+						</TransitionGE>
+						<StateGE presentable="!ed/226e/184A/4D4/4de4f4bb209c">
+							<position>
+								<Point x="6435" y="7281"/>
+							</position>
+							<size>
+								<Size width="5715" height="1567"/>
+							</size>
+						</StateGE>
+						<TransitionGE presentable="!ed/2272/184A/4D4/4de4f4c9c54">
+							<positions>
+								<Point x="10605" y="5249"/>
+								<Point x="11388" y="5398"/>
+								<Point x="11642" y="6477"/>
+								<Point x="11663" y="7281"/>
+							</positions>
+							<labelSize>
+								<Size width="2307" height="953"/>
+							</labelSize>
+							<labelPos>
+								<Point x="11408" y="5514"/>
+							</labelPos>
+							<slashPos>
+								<Point x="12912" y="5525"/>
+							</slashPos>
+						</TransitionGE>
+						<TransitionGE presentable="!ed/2286/184A/4D4/4de4f4e0662d">
+							<positions>
+								<Point x="6435" y="8213"/>
+								<Point x="5503" y="7176"/>
+								<Point x="5609" y="2413"/>
+								<Point x="6350" y="2074"/>
+							</positions>
+							<labelSize>
+								<Size width="4530" height="4763"/>
+							</labelSize>
+							<labelPos>
+								<Point x="867" y="4128"/>
+							</labelPos>
+							<slashPos>
+								<Point x="3069" y="4128"/>
+							</slashPos>
+						</TransitionGE>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+		</ed:Operator>
+	</pragmas>
+</Operator>

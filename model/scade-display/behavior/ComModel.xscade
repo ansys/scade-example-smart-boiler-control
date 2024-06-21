@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="node" name="ComModel">
+	<inputs>
+		<Variable name="repair">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/32f8/184A/4D4/4de6673c2583"/>
+			</pragmas>
+		</Variable>
+		<Variable name="failureDetection">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/32fe/184A/4D4/4de6673cb0c"/>
+			</pragmas>
+		</Variable>
+		<Variable name="repairedAck">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/3304/184A/4D4/4de6673c6ac1"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="failureAck">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<default>
+				<ConstValue value="false"/>
+			</default>
+			<pragmas>
+				<ed:Variable oid="!ed/3312/184A/4D4/4de6673c274a"/>
+			</pragmas>
+		</Variable>
+		<Variable name="repaired">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<default>
+				<ConstValue value="false"/>
+			</default>
+			<pragmas>
+				<ed:Variable oid="!ed/3320/184A/4D4/4de6673ca08"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<data>
+		<StateMachine name="Com">
+			<states>
+				<State initial="true" name="Ctrlrok">
+					<unless>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="CtrlrFailDetected"/>
+							</target>
+							<condition>
+								<!-- 5 times failureDetection -->
+								<BinaryOp name="1" operator="times">
+									<operands>
+										<ConstValue value="5"/>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="failureDetection"/>
+											</path>
+										</IdExpression>
+									</operands>
+								</BinaryOp>
+							</condition>
+							<effect>
+								<Action>
+									<data>
+										<!-- failureAck = true; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="failureAck"/>
+											</lefts>
+											<right>
+												<ConstValue value="true"/>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/32eb/184A/4D4/4de6671c11a3"/>
+											</pragmas>
+										</Equation>
+									</data>
+									<pragmas>
+										<ed:Action oid="!ed/32ea/184A/4D4/4de6671c3275"/>
+									</pragmas>
+								</Action>
+							</effect>
+							<pragmas>
+								<ed:Transition oid="!ed/32e9/184A/4D4/4de6671c15b6"/>
+							</pragmas>
+						</Transition>
+					</unless>
+					<pragmas>
+						<ed:State oid="!ed/32e8/184A/4D4/4de6671c5a3c"/>
+					</pragmas>
+				</State>
+				<State name="CtrlrFailDetected">
+					<unless>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="WaitCtrlrAck"/>
+							</target>
+							<condition>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="repair"/>
+									</path>
+								</IdExpression>
+							</condition>
+							<effect>
+								<Action>
+									<data>
+										<!-- repaired = true; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="repaired"/>
+											</lefts>
+											<right>
+												<ConstValue value="true"/>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/32ef/184A/4D4/4de6671c2d3d"/>
+											</pragmas>
+										</Equation>
+									</data>
+									<pragmas>
+										<ed:Action oid="!ed/32ee/184A/4D4/4de6671c67a8"/>
+									</pragmas>
+								</Action>
+							</effect>
+							<pragmas>
+								<ed:Transition oid="!ed/32ed/184A/4D4/4de6671c748a"/>
+							</pragmas>
+						</Transition>
+					</unless>
+					<pragmas>
+						<ed:State oid="!ed/32ec/184A/4D4/4de6671c2b06"/>
+					</pragmas>
+				</State>
+				<State name="WaitCtrlrAck">
+					<unless>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="Ctrlrok"/>
+							</target>
+							<condition>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="repairedAck"/>
+									</path>
+								</IdExpression>
+							</condition>
+							<pragmas>
+								<ed:Transition oid="!ed/32f1/184A/4D4/4de6671c2d43"/>
+							</pragmas>
+						</Transition>
+						<Transition kind="restart">
+							<target>
+								<StateRef name="WaitCtrlrAck"/>
+							</target>
+							<condition>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="repair"/>
+									</path>
+								</IdExpression>
+							</condition>
+							<effect>
+								<Action>
+									<data>
+										<!-- repaired = true; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="repaired"/>
+											</lefts>
+											<right>
+												<ConstValue value="true"/>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/2852/783D/1438/4e311dfe66bd"/>
+											</pragmas>
+										</Equation>
+									</data>
+									<pragmas>
+										<ed:Action oid="!ed/2848/783D/1438/4e311dfe1eeb"/>
+									</pragmas>
+								</Action>
+							</effect>
+							<pragmas>
+								<ed:Transition oid="!ed/283f/783D/1438/4e311df12d7"/>
+							</pragmas>
+						</Transition>
+					</unless>
+					<pragmas>
+						<ed:State oid="!ed/32f0/184A/4D4/4de6671c15e0"/>
+					</pragmas>
+				</State>
+			</states>
+			<pragmas>
+				<ed:StateMachine oid="!ed/32e7/184A/4D4/4de6671c4b1d"/>
+			</pragmas>
+		</StateMachine>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/32be/184A/4D4/4de66716505f" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<diagrams>
+				<NetDiagram name="ComModel" landscape="true" format="A4 (210 297)" oid="!ed/32bf/184A/4D4/4de667163e4e">
+					<presentationElements>
+						<StateMachineGE presentable="!ed/32e7/184A/4D4/4de6671c4b1d">
+							<position>
+								<Point x="931" y="1080"/>
+							</position>
+							<size>
+								<Size width="12912" height="8233"/>
+							</size>
+						</StateMachineGE>
+						<StateGE presentable="!ed/32e8/184A/4D4/4de6671c5a3c">
+							<position>
+								<Point x="5334" y="1588"/>
+							</position>
+							<size>
+								<Size width="3493" height="1297"/>
+							</size>
+						</StateGE>
+						<StateGE presentable="!ed/32ec/184A/4D4/4de6671c2b06">
+							<position>
+								<Point x="8424" y="6329"/>
+							</position>
+							<size>
+								<Size width="3070" height="2413"/>
+							</size>
+						</StateGE>
+						<StateGE presentable="!ed/32f0/184A/4D4/4de6671c15e0">
+							<position>
+								<Point x="2053" y="6710"/>
+							</position>
+							<size>
+								<Size width="2731" height="2307"/>
+							</size>
+						</StateGE>
+						<TransitionGE presentable="!ed/32e9/184A/4D4/4de6671c15b6">
+							<positions>
+								<Point x="7281" y="2900"/>
+								<Point x="8043" y="3641"/>
+								<Point x="8911" y="5588"/>
+								<Point x="8996" y="6329"/>
+							</positions>
+							<labelSize>
+								<Size width="6826" height="582"/>
+							</labelSize>
+							<labelPos>
+								<Point x="5757" y="3704"/>
+							</labelPos>
+							<slashPos>
+								<Point x="8043" y="3704"/>
+							</slashPos>
+						</TransitionGE>
+						<TransitionGE presentable="!ed/32ed/184A/4D4/4de6671c748a">
+							<positions>
+								<Point x="8424" y="8446"/>
+								<Point x="8022" y="8446"/>
+								<Point x="5186" y="8467"/>
+								<Point x="4784" y="8467"/>
+							</positions>
+							<labelSize>
+								<Size width="2937" height="291"/>
+							</labelSize>
+							<labelPos>
+								<Point x="5102" y="7768"/>
+							</labelPos>
+							<slashPos>
+								<Point x="5847" y="7779"/>
+							</slashPos>
+						</TransitionGE>
+						<TransitionGE presentable="!ed/32f1/184A/4D4/4de6671c2d43">
+							<positions>
+								<Point x="2963" y="6710"/>
+								<Point x="2963" y="4233"/>
+								<Point x="4614" y="2667"/>
+								<Point x="5376" y="2688"/>
+							</positions>
+							<labelSize>
+								<Size width="4154" height="635"/>
+							</labelSize>
+							<labelPos>
+								<Point x="1212" y="3086"/>
+							</labelPos>
+							<slashPos>
+								<Point x="4577" y="3096"/>
+							</slashPos>
+						</TransitionGE>
+						<TransitionGE presentable="!ed/283f/783D/1438/4e311df12d7">
+							<positions>
+								<Point x="4784" y="7049"/>
+								<Point x="5588" y="6265"/>
+								<Point x="4212" y="5757"/>
+								<Point x="3916" y="6710"/>
+							</positions>
+							<labelSize>
+								<Size width="3413" height="318"/>
+							</labelSize>
+							<labelPos>
+								<Point x="3858" y="5566"/>
+							</labelPos>
+							<slashPos>
+								<Point x="4604" y="5556"/>
+							</slashPos>
+						</TransitionGE>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+		</ed:Operator>
+	</pragmas>
+</Operator>

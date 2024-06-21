@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3">
+	<declarations>
+		<Type name="Volume">
+			<definition>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1f4a/184A/4D4/4de4e6b16040" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>A volume in litres</comment>
+				</ed:Type>
+			</pragmas>
+		</Type>
+		<Type name="Throughput">
+			<definition>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1f53/184A/4D4/4de4e6ce6b1c" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>In L/s</comment>
+				</ed:Type>
+			</pragmas>
+		</Type>
+		<Type name="Ggradient">
+			<definition>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/1f5c/184A/4D4/4de4e6f923d5" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>in L/s/s</comment>
+				</ed:Type>
+			</pragmas>
+		</Type>
+		<Constant name="C">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Volume"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="2000."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/1f65/184A/4D4/4de4e70f2b19" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Boiler maximal capacity</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="M1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Volume"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="800."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/1f77/184A/4D4/4de4e72524b6" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Minimal limit</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="M2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Volume"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="1800."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/1f9f/184A/4D4/4de4e7544813" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Maximal limit</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="N2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Volume"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="1600."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/1fc5/184A/4D4/4de4e7732cc0" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Maximal normal</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="N1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Volume"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="1200."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/1fb6/184A/4D4/4de4e773797e" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Minimal normal</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="W">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Throughput"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="2000."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/1fd6/184A/4D4/4de4e7a4315" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Maximal steam output</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="U1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Ggradient"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="0.8"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/2049/184A/4D4/4de4e7e61b07" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Max steam increase</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="U2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Ggradient"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="2.2"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/2071/184A/4D4/4de4e80e7493" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Max steam decrease</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="P">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Throughput"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="2."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/2082/184A/4D4/4de4e827439d" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Pump Capacity in L/s</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Type name="Modes">
+			<definition>
+				<Enum>
+					<values>
+						<Value name="INITIALIZATION">
+							<pragmas>
+								<ed:Value oid="!ed/20bd/184A/4D4/4de4edbe4dff"/>
+								<kcg:Pragma>
+									C:enum_val 1
+								</kcg:Pragma>
+								<kcg:Pragma>
+									Ada:enum_val 1
+								</kcg:Pragma>
+							</pragmas>
+						</Value>
+						<Value name="NORMAL">
+							<pragmas>
+								<ed:Value oid="!ed/20be/184A/4D4/4de4edc76dd6"/>
+								<kcg:Pragma>
+									C:enum_val 2
+								</kcg:Pragma>
+								<kcg:Pragma>
+									Ada:enum_val 2
+								</kcg:Pragma>
+							</pragmas>
+						</Value>
+						<Value name="DEGRADED">
+							<pragmas>
+								<ed:Value oid="!ed/20bf/184A/4D4/4de4edccce"/>
+								<kcg:Pragma>
+									C:enum_val 3
+								</kcg:Pragma>
+								<kcg:Pragma>
+									Ada:enum_val 3
+								</kcg:Pragma>
+							</pragmas>
+						</Value>
+						<Value name="RESCUE">
+							<pragmas>
+								<ed:Value oid="!ed/20c0/184A/4D4/4de4edd0f9d"/>
+								<kcg:Pragma>
+									C:enum_val 4
+								</kcg:Pragma>
+								<kcg:Pragma>
+									Ada:enum_val 4
+								</kcg:Pragma>
+							</pragmas>
+						</Value>
+						<Value name="EMERGENCY_STOP">
+							<pragmas>
+								<ed:Value oid="!ed/20c1/184A/4D4/4de4edd56e7c"/>
+								<kcg:Pragma>
+									C:enum_val 5
+								</kcg:Pragma>
+								<kcg:Pragma>
+									Ada:enum_val 5
+								</kcg:Pragma>
+							</pragmas>
+						</Value>
+						<Value name="RESTART">
+							<pragmas>
+								<ed:Value oid="!ed/2dc2/1D40/3784/4edbe5109"/>
+								<kcg:Pragma>
+									C:enum_val 6
+								</kcg:Pragma>
+							</pragmas>
+						</Value>
+					</values>
+				</Enum>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/20bc/184A/4D4/4de4edb88f"/>
+			</pragmas>
+		</Type>
+		<Constant name="NB_PUMPS">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="4"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/268d/184A/4D4/4de50551764a"/>
+			</pragmas>
+		</Constant>
+		<Constant name="CYCLES_PER_S">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="1"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/33cb/184A/4D4/4de669d44f09"/>
+			</pragmas>
+		</Constant>
+		<Type name="Temp">
+			<definition>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</definition>
+			<pragmas>
+				<ed:Type oid="!ed/25da/2033/728/4df0ba575c11"/>
+			</pragmas>
+		</Type>
+		<Constant name="KLAT">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="0.1"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/26de/2033/728/4df0bc7dc03" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>number of litters evaporated by ° above 100</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="VALVE_THROUGHPUT">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Throughput"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="12."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/2766/2033/728/4df0bf7f383d" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>In L/s /*P * (nbPumps : float32) * 1.5*/ = 12.</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="VAPOUR_EXPANSION">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="1673.0"/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/278b/2033/728/4df0bfca1aba" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Volume of 1L of liquid water under vapour form</comment>
+				</ed:Constant>
+			</pragmas>
+		</Constant>
+		<Constant name="MAX_WATER_LEVEL">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</type>
+			<value>
+				<ConstValue value="420."/>
+			</value>
+			<pragmas>
+				<ed:Constant oid="!ed/2864/6C53/FC4/4e300ecc47e4"/>
+			</pragmas>
+		</Constant>
+	</declarations>
+</File>

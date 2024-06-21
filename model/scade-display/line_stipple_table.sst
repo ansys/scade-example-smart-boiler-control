@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?dom version="19.0" ?>
+
+<lineStippleTable name="line_stipple_table" size="6">
+    <lineStippleDefinition index="0" name="solid" type="solid"/>
+    <lineStippleDefinition index="1" name="grad line" type="dashed">
+        <length value="4" visible="true"/>
+        <length value="4" visible="false"/>
+    </lineStippleDefinition>
+</lineStippleTable>
+
+<!-- crc32 : 3730180377 -->
+

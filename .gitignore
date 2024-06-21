@@ -1,0 +1,12 @@
+# Files ignored for configuration management with SCADE 
+*.log
+*.dll
+*.exe
+*.htm
+*.ewo
+*.vsw
+*.mccache
+*.mcorder
+*.skc
+*.err
+

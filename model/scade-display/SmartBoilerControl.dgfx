@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?dom version="19.0" ?>
+
+<globals>
+    <type name="Modes" oid="00000000-20bc-184a-04d4-004de4edb88f">
+        <definition>enum {INITIALIZATION: 1, NORMAL: 2, DEGRADED: 3, RESCUE: 4, EMERGENCY_STOP: 5, RESTART: 6}</definition>
+    </type>
+    <type name="Temp" oid="00000000-25da-2033-0728-4df0ba575c11">
+        <definition>float32</definition>
+    </type>
+    <type name="Data" oid="00000000-1dbf-56e7-5dac-653b83157b4a">
+        <definition>{kind: int32}</definition>
+        <comment>Arbitrary data to be stored in the list</comment>
+    </type>
+    <constant name="N" oid="00000000-1dc3-56e7-5dac-653b83156992" type="int32">
+        <init>6</init>
+    </constant>
+    <type name="Datas" oid="00000000-1dc1-56e7-5dac-653b83156081">
+        <definition>Data^N</definition>
+        <comment>Storage of Datas, internal to the list</comment>
+    </type>
+    <type name="Ggradient" oid="00000000-1f5c-184a-04d4-4de4e6f923d5">
+        <definition>float32</definition>
+        <comment>in L/s/s</comment>
+    </type>
+    <type name="Volume" oid="00000000-1f4a-184a-04d4-4de4e6b16040">
+        <definition>float32</definition>
+        <comment>A volume in litres</comment>
+    </type>
+    <type name="Throughput" oid="00000000-1f53-184a-04d4-4de4e6ce6b1c">
+        <definition>float32</definition>
+        <comment>In L/s</comment>
+    </type>
+    <type name="Indexes" oid="00000000-1dc2-56e7-5dac-653b831541c5">
+        <definition>int32^N</definition>
+        <comment>Array of indexes, internal to the list</comment>
+    </type>
+    <type name="IndexTable" oid="00000000-1db9-56e7-5dac-653b83154193">
+        <definition>{count: int32, values: Indexes}</definition>
+        <comment>Internal index table for managing the list</comment>
+    </type>
+    <type name="ListData" oid="00000000-1dbc-56e7-5dac-653b8315151f">
+        <definition>{indexes: IndexTable, datas: Datas}</definition>
+        <comment>List of Datas</comment>
+    </type>
+    <constant name="LEVEL_CONTROL_FAILURE" oid="00000000-3e2a-56e7-5dac-653ba3cf29d0" type="Data">
+        <init>{kind: 6}</init>
+    </constant>
+    <constant name="NULL_DATA" oid="00000000-1dc5-56e7-5dac-653b83156ae4" type="Data">
+        <init>{kind: 0}</init>
+    </constant>
+    <constant name="NB_PUMPS" oid="00000000-268d-184a-04d4-4de50551764a" type="int32">
+        <init>4</init>
+    </constant>
+    <constant name="C" oid="00000000-1f65-184a-04d4-4de4e70f2b19" type="Volume">
+        <init>2000.</init>
+        <comment>Boiler maximal capacity</comment>
+    </constant>
+    <constant name="N1" oid="00000000-1fb6-184a-04d4-4de4e773797e" type="Volume">
+        <init>1200.</init>
+        <comment>Minimal normal</comment>
+    </constant>
+    <constant name="M1" oid="00000000-1f77-184a-04d4-4de4e72524b6" type="Volume">
+        <init>800.</init>
+        <comment>Minimal limit</comment>
+    </constant>
+    <constant name="N2" oid="00000000-1fc5-184a-04d4-4de4e7732cc0" type="Volume">
+        <init>1600.</init>
+        <comment>Maximal normal</comment>
+    </constant>
+    <constant name="M2" oid="00000000-1f9f-184a-04d4-4de4e7544813" type="Volume">
+        <init>1800.</init>
+        <comment>Maximal limit</comment>
+    </constant>
+    <constant name="STEAM_FAILURE" oid="00000000-3e52-56e7-5dac-653ba4276dd0" type="Data">
+        <init>{kind: 1}</init>
+    </constant>
+    <constant name="PUMP1_FAILURE" oid="00000000-3e61-56e7-5dac-653ba4285e21" type="Data">
+        <init>{kind: 2}</init>
+    </constant>
+    <constant name="P" oid="00000000-2082-184a-04d4-4de4e827439d" type="Throughput">
+        <init>2.</init>
+        <comment>Pump Capacity in L/s</comment>
+    </constant>
+    <constant name="PUMP3_FAILURE" oid="00000000-3ebc-56e7-5dac-653ba4662a16" type="Data">
+        <init>{kind: 4}</init>
+    </constant>
+    <constant name="NULL_DATAS" oid="00000000-1dc4-56e7-5dac-653b831552ce" type="Datas">
+        <init>[{kind: 0}, {kind: 0}, {kind: 0}, {kind: 0}, {kind: 0}, {kind: 0}]</init>
+    </constant>
+    <constant name="VALVE_THROUGHPUT" oid="00000000-2766-2033-0728-4df0bf7f383d" type="Throughput">
+        <init>12.</init>
+        <comment>In L/s /*P * (nbPumps : float32) * 1.5*/ = 12.</comment>
+    </constant>
+    <constant name="MAX_WATER_LEVEL" oid="00000000-2864-6c53-0fc4-4e300ecc47e4" type="float32">
+        <init>420.</init>
+    </constant>
+    <constant name="PUMP2_FAILURE" oid="00000000-3ead-56e7-5dac-653ba4645d48" type="Data">
+        <init>{kind: 3}</init>
+    </constant>
+    <constant name="KLAT" oid="00000000-26de-2033-0728-04df0bc7dc03" type="float32">
+        <init>0.1</init>
+        <comment>number of litters evaporated by ° above 100</comment>
+    </constant>
+    <constant name="W" oid="00000000-1fd6-184a-04d4-04de4e7a4315" type="Throughput">
+        <init>2000.</init>
+        <comment>Maximal steam output</comment>
+    </constant>
+    <constant name="CYCLES_PER_S" oid="00000000-33cb-184a-04d4-4de669d44f09" type="int32">
+        <init>1</init>
+    </constant>
+    <constant name="U1" oid="00000000-2049-184a-04d4-4de4e7e61b07" type="Ggradient">
+        <init>0.8</init>
+        <comment>Max steam increase</comment>
+    </constant>
+    <constant name="VAPOUR_EXPANSION" oid="00000000-278b-2033-0728-4df0bfca1aba" type="float32">
+        <init>1673.0</init>
+        <comment>Volume of 1L of liquid water under vapour form</comment>
+    </constant>
+    <constant name="U2" oid="00000000-2071-184a-04d4-4de4e80e7493" type="Ggradient">
+        <init>2.2</init>
+        <comment>Max steam decrease</comment>
+    </constant>
+    <constant name="PUMP4_FAILURE" oid="00000000-3ecb-56e7-5dac-653ba468650b" type="Data">
+        <init>{kind: 5}</init>
+    </constant>
+</globals>
+
+<!-- crc32 : 2993292196 -->
+

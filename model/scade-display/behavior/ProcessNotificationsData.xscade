@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="function" external="imported" name="ProcessNotificationsData">
+	<inputs>
+		<Variable name="myNotifs">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListOfDatas::ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1ecf/56E7/5DAC/653b834474df"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="notifsToDisplay">
+			<type>
+				<Table>
+					<type>
+						<NamedType>
+							<type>
+								<TypeRef name="int32"/>
+							</type>
+						</NamedType>
+					</type>
+					<size>
+						<ConstValue value="6"/>
+					</size>
+				</Table>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1ece/56E7/5DAC/653b83441253"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<pragmas>
+		<ed:Operator oid="!ed/1ecd/56E7/5DAC/653b8344322f" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<references>
+				<TypeRef path="ListOfDatas::ListData" refOid="!ed/1dbc/56E7/5DAC/653b8315151f"/>
+			</references>
+		</ed:Operator>
+		<kcg:Pragma>
+			C:name ProcessNotificationsData
+		</kcg:Pragma>
+	</pragmas>
+</Operator>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="function" name="Full">
+	<inputs>
+		<Variable name="list">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e41/56E7/5DAC/653b83152eb0"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="full">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e40/56E7/5DAC/653b8315381"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e3e/56E7/5DAC/653b831555af"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L5">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e3f/56E7/5DAC/653b83152b36"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- _L1 = list; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L1"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="list"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e3a/56E7/5DAC/653b83157247"/>
+			</pragmas>
+		</Equation>
+		<!-- full = _L5; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="full"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L5"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e3b/56E7/5DAC/653b83151139"/>
+			</pragmas>
+		</Equation>
+		<!-- _L5 = (ListCore::Full<<N>>)(_L1, NULL_DATA); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L5"/>
+			</lefts>
+			<right>
+				<!-- (ListCore::Full<<N>>)(_L1, NULL_DATA) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="1">
+							<operator>
+								<OperatorRef name="ListCore::Full"/>
+							</operator>
+							<instanceParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="N"/>
+									</path>
+								</IdExpression>
+							</instanceParameters>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L1"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="NULL_DATA"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+					<pragmas>
+						<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<references>
+								<OperatorRef path="ListCore::Full" refOid="!ed/1ae1/A17/AF94/644a913e2429">
+									<InputRef refOid="!ed/1af3/A17/AF94/644a913e11d7"/>
+									<InputRef refOid="!ed/1af1/A17/AF94/644a913e65dc"/>
+									<OutputRef refOid="!ed/1af2/A17/AF94/644a913e14f1"/>
+									<ParameterRef refOid="!ed/1af0/A17/AF94/644a913e2dfe"/>
+								</OperatorRef>
+							</references>
+						</ed:CallExpression>
+					</pragmas>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e3c/56E7/5DAC/653b831577d5"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/1e39/56E7/5DAC/653b831550d1" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<comment>Return whether the list is full.</comment>
+			<diagrams>
+				<NetDiagram name="Full" landscape="true" format="A4 (210 297)" oid="!ed/1e3d/56E7/5DAC/653b8315515a">
+					<presentationElements>
+						<EquationGE presentable="!ed/1e3a/56E7/5DAC/653b83157247">
+							<position>
+								<Point x="1111" y="1164"/>
+							</position>
+							<size>
+								<Size width="265" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e3b/56E7/5DAC/653b83151139">
+							<position>
+								<Point x="14446" y="1164"/>
+							</position>
+							<size>
+								<Size width="317" height="502"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e3c/56E7/5DAC/653b831577d5">
+							<position>
+								<Point x="5768" y="291"/>
+							</position>
+							<size>
+								<Size width="4302" height="2265"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e3c/56E7/5DAC/653b831577d5" dstEquation="!ed/1e3b/56E7/5DAC/653b83151139">
+							<positions>
+								<Point x="10081" y="1429"/>
+								<Point x="11298" y="1429"/>
+								<Point x="11298" y="1429"/>
+								<Point x="14499" y="1429"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e3a/56E7/5DAC/653b83157247" dstEquation="!ed/1e3c/56E7/5DAC/653b831577d5">
+							<positions>
+								<Point x="1376" y="1429"/>
+								<Point x="2566" y="1429"/>
+								<Point x="2566" y="1429"/>
+								<Point x="5768" y="1429"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+			<references>
+				<TypeRef path="ListData" refOid="!ed/1dbc/56E7/5DAC/653b8315151f"/>
+				<ConstVarRef path="N" refOid="!ed/1dc3/56E7/5DAC/653b83156992"/>
+				<ConstVarRef path="NULL_DATA" refOid="!ed/1dc5/56E7/5DAC/653b83156ae4"/>
+			</references>
+		</ed:Operator>
+	</pragmas>
+</Operator>

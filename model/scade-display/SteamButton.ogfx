@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?dom version="19.0" ?>
+
+<object>
+    <IDE>
+        <ratio horizontal="1" vertical="1"/>
+        <project path="DisplayPanel.etp"/>
+        <preview height="26" width="128">
+            <raw numberOfBytes="880">
+-119,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82,0,0,0,-128,0,0,0,26,8,2,0,0,0,-16,-95,-61,-71,0,0,3,55,73,68,65,84,120,-38,-19,-102,-33,78,26,65,20,-58,125,-114,94,-9,-94,77,90,80,-125,46,43,42,90,81,64,64,20,65,69,19,99,34,32,23,-60,20,117,-93,-58,-1,46,26,68,69,37,-2,-61,-8,2,38,-67,-19,-53,-12,-94,73,47,122,-47,-92,119,125,-128,-10,-105,29,-77,49,-42,90,-120,-122,-59,100,-66,76,38,103,102,-49,-84,-6,125,115,102,-50,-39,-40,-48,32,97,57,-6,75,-27,-12,-73,-97,52,95,-82,-32,28,30,-111,-83,22,45,26,123,-83,-88,-73,2,-92,-66,-2,-8,-8,-21,55,-51,-109,-43,-34,73,-44,10,-17,-5,67,82,-128,-105,35,64,83,83,-45,35,67,-119,-25,23,96,121,121,-103,-66,-79,-79,49,26,-115,58,28,-114,114,-71,28,10,-123,108,54,91,36,18,105,107,107,-37,-39,-39,-111,12,-2,-115,-55,-55,-55,-67,-67,-67,-45,-45,-45,100,50,89,44,22,-79,-41,-42,-42,-74,-74,-74,-58,-58,-58,110,110,110,90,90,90,52,77,-85,84,-128,124,62,79,-81,40,10,92,-21,-70,126,113,113,113,114,114,50,51,51,115,121,121,121,118,118,38,5,120,16,-20,-38,-114,-114,
+-114,-115,-115,-115,-7,-7,-7,-19,-19,109,72,-37,-33,-33,71,-128,96,48,120,125,125,-83,27,-88,84,-128,-93,-93,35,-12,92,92,92,92,95,95,-49,-27,114,87,87,87,8,-101,72,36,-80,-61,-31,48,-14,16,28,-110,-15,123,-128,-9,76,38,3,-17,-39,108,118,98,98,-94,-75,-75,-75,80,40,64,99,95,95,-33,-18,-18,46,100,-78,-119,43,21,-96,-85,-85,11,-94,85,85,-27,-28,65,85,-65,-33,-17,-11,122,57,-126,16,-77,-67,-67,-99,87,-37,-19,118,-55,-8,61,-80,41,7,6,6,60,30,15,-4,-120,107,18,-22,-96,-79,-77,-77,-45,-27,114,-63,30,67,-103,5,-67,-112,75,-72,-69,-69,-101,-21,119,-8,33,48,-17,-13,-7,-124,91,115,115,51,33,18,-108,-88,24,102,2,-7,31,1,8,-100,-111,71,97,-98,84,35,18,-43,-128,-29,-88,58,1,72,-95,-114,-113,-113,-117,6,54,55,55,-91,0,79,-124,121,13,84,36,64,58,-99,-26,30,95,90,90,-30,18,39,5,58,60,60,92,89,89,-111,2,-44,78,0,18,-37,-39,-39,-39,-125,-125,3,-74,127,42,-107,66,-125,82,-87,100,-119,0,-67,-67,-67,100,23,-127,64,0,-125,33,89,25,63,-6,-125,1,46,33,-30,-70,-89,-89,-121,-101,-119,34,-111,30,7,-15,116,112,112,
+-112,-100,-115,-52,-124,85,-4,69,44,23,-81,18,-67,-37,-19,-58,-115,73,124,88,-50,-35,86,119,2,-112,-49,-82,-82,-82,-78,-3,-25,-26,-26,-88,12,56,-126,8,2,75,4,32,41,-128,80,-73,1,-104,-118,-59,98,-52,-64,59,-109,34,-13,51,-35,-124,1,-89,-30,17,-52,98,48,-113,45,-76,17,62,-12,-8,-80,-112,36,-35,-23,116,-102,111,-88,47,1,-88,44,-32,-99,2,56,111,96,97,97,-63,-86,8,16,2,12,13,13,-111,69,120,13,8,49,-56,43,-40,-26,40,-127,33,84,-71,-85,4,-76,98,16,22,66,0,122,-111,-107,-29,-116,-51,114,28,68,-95,35,-106,-41,-99,0,-100,60,-80,-113,6,-80,63,61,61,77,97,77,93,103,-119,0,17,3,24,104,0,83,-80,-58,16,91,24,-4,-74,24,-62,-51,-12,-65,-37,3,-30,6,31,-44,18,-85,24,-102,79,-47,-122,-103,122,20,-32,-4,-4,28,-22,53,77,-101,-102,-102,-46,117,-99,94,102,65,53,21,32,30,-113,-113,-114,-114,-54,58,-64,-126,58,-64,-27,114,-3,-85,-106,35,90,57,64,-123,-101,-86,-86,113,-119,-118,49,62,62,-82,40,-54,51,127,11,-78,75,84,3,-7,49,-82,-2,62,-58,37,-65,124,-105,2,-44,30,54,127,-16,86,0,71,34,29,-2,-12,-103,-90,102,-78,
+-74,-2,-112,108,-75,104,-2,-64,-85,55,111,-27,-65,68,89,-113,63,110,95,-113,63,-105,-32,-81,7,0,0,0,0,73,69,78,68,-82,66,96,-126</raw>
+        </preview>
+    </IDE>
+    <symbology>
+        <dimension height="150" width="600"/>
+    </symbology>
+    <declaration>
+        <constants>
+            <constant name="Name" oid="ead6f6d7-b003-49f8-88aa-806959f77f57" representation="as_string" type="char^255">
+                <init>[76,97,98,101,108,0]</init>
+            </constant>
+            <constant name="StatusName" oid="a28398e0-6320-4cc8-9b34-8da477bb2203" representation="as_string" type="char^255">
+                <init>[79,80,69,78,0]</init>
+            </constant>
+        </constants>
+        <inputs>
+            <input name="Color" oid="5ad29b2c-1a7a-4a7c-becc-8c8b74ceabe1" representation="color" type="int32">
+                <init>25</init>
+            </input>
+            <input name="Enable" oid="ef79f57d-569b-4c2a-842a-9ef4f19451ab" type="bool">
+                <init>false</init>
+            </input>
+        </inputs>
+        <outputs>
+            <output memory="true" name="Repair" oid="15800ad8-fbfd-43ef-9c0c-28b6282cdd38" type="bool">
+                <init>false</init>
+            </output>
+            <output memory="true" name="Failure" oid="2e1ae495-5c1c-4b9e-bf23-959a3f5de582" type="bool">
+                <init>false</init>
+            </output>
+        </outputs>
+    </declaration>
+    <children>
+        <container oid="5de6a39c-f2df-403b-8de1-c0624fe97999">
+            <pathFromRoot value="0"/>
+            <properties name="group">
+                <visible>
+                    <init>true</init>
+                </visible>
+                <origin>
+                    <x>
+                        <init>0.0</init>
+                    </x>
+                    <y>
+                        <init>0.0</init>
+                    </y>
+                </origin>
+                <priority>
+                    <init>-1</init>
+                </priority>
+                <scale>
+                    <x>
+                        <init>1.0</init>
+                    </x>
+                    <y>
+                        <init>1.0</init>
+                    </y>
+                </scale>
+                <rotate>
+                    <angle>
+                        <init>0.0</init>
+                    </angle>
+                </rotate>
+                <orientation clockwise="false"/>
+                <static editorLinked="true" generateStaticSequence="true" maxX="294.5" maxY="60.5" minX="-294.5" minY="-60.5">
+                    <init>false</init>
+                </static>
+            </properties>
+            <children>
+                <shape oid="496b77c0-55d7-40da-9c79-3e701e91bd6e">
+                    <pathFromRoot value="0,0"/>
+                    <properties name="Background">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <points>
+                            <point>
+                                <x>
+                                    <init>-288.5</init>
+                                </x>
+                                <y>
+                                    <init>50.5</init>
+                                </y>
+                            </point>
+                            <arcSegment>
+                                <orientation clockwise="true"/>
+                                <angle>
+                                    <angle>
+                                        <init>90.0</init>
+                                    </angle>
+                                </angle>
+                            </arcSegment>
+                            <point>
+                                <x>
+                                    <init>-284.5</init>
+                                </x>
+                                <y>
+                                    <init>54.5</init>
+                                </y>
+                            </point>
+                            <point>
+                                <x>
+                                    <init>284.5</init>
+                                </x>
+                                <y>
+                                    <init>54.5</init>
+                                </y>
+                            </point>
+                            <arcSegment>
+                                <orientation clockwise="true"/>
+                                <angle>
+                                    <angle>
+                                        <init>90.0</init>
+                                    </angle>
+                                </angle>
+                            </arcSegment>
+                            <point>
+                                <x>
+                                    <init>288.5</init>
+                                </x>
+                                <y>
+                                    <init>50.5</init>
+                                </y>
+                            </point>
+                            <point>
+                                <x>
+                                    <init>288.5</init>
+                                </x>
+                                <y>
+                                    <init>-50.5</init>
+                                </y>
+                            </point>
+                            <arcSegment>
+                                <orientation clockwise="true"/>
+                                <angle>
+                                    <angle>
+                                        <init>90.0</init>
+                                    </angle>
+                                </angle>
+                            </arcSegment>
+                            <point>
+                                <x>
+                                    <init>284.5</init>
+                                </x>
+                                <y>
+                                    <init>-54.5</init>
+                                </y>
+                            </point>
+                            <point>
+                                <x>
+                                    <init>-284.5</init>
+                                </x>
+                                <y>
+                                    <init>-54.5</init>
+                                </y>
+                            </point>
+                            <arcSegment>
+                                <orientation clockwise="true"/>
+                                <angle>
+                                    <angle>
+                                        <init>90.0</init>
+                                    </angle>
+                                </angle>
+                            </arcSegment>
+                            <point>
+                                <x>
+                                    <init>-288.5</init>
+                                </x>
+                                <y>
+                                    <init>-50.5</init>
+                                </y>
+                            </point>
+                        </points>
+                        <lineWidth>
+                            <init>0</init>
+                        </lineWidth>
+                        <lineStipple>
+                            <init>0</init>
+                        </lineStipple>
+                        <lineCap>
+                            <init>round</init>
+                        </lineCap>
+                        <haloing>
+                            <init>false</init>
+                        </haloing>
+                        <haloColor>
+                            <init>-1</init>
+                        </haloColor>
+                        <outlineColor>
+                            <init>25</init>
+                            <expr>Color</expr>
+                        </outlineColor>
+                        <outlineOpacity>
+                            <init>255</init>
+                        </outlineOpacity>
+                        <fillColor>
+                            <init>2</init>
+                        </fillColor>
+                        <fillOpacity>
+                            <init>255</init>
+                        </fillOpacity>
+                        <polygonSmooth>
+                            <init>false</init>
+                        </polygonSmooth>
+                        <textureControl>
+                            <init>false</init>
+                        </textureControl>
+                        <texture horizAlign="center" horizPattern="1.0" vertAlign="middle" vertPattern="1.0">
+                            <textureId>
+                                <init>-1</init>
+                            </textureId>
+                        </texture>
+                        <gradient>
+                            <init>-1</init>
+                        </gradient>
+                        <modulate>
+                            <init>false</init>
+                        </modulate>
+                        <tessellate>
+                            <init>false</init>
+                        </tessellate>
+                    </properties>
+                </shape>
+                <shape oid="ff15cad7-c6c6-452f-98c7-248b43dad736">
+                    <pathFromRoot value="1,0"/>
+                    <properties name="shape">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <points>
+                            <point>
+                                <x>
+                                    <init>-288.5</init>
+                                </x>
+                                <y>
+                                    <init>50.5</init>
+                                </y>
+                            </point>
+                            <arcSegment>
+                                <orientation clockwise="true"/>
+                                <angle>
+                                    <angle>
+                                        <init>90.0</init>
+                                    </angle>
+                                </angle>
+                            </arcSegment>
+                            <point>
+                                <x>
+                                    <init>-284.5</init>
+                                </x>
+                                <y>
+                                    <init>54.5</init>
+                                </y>
+                            </point>
+                            <point>
+                                <x>
+                                    <init>-274.5</init>
+                                </x>
+                                <y>
+                                    <init>54.5</init>
+                                </y>
+                            </point>
+                            <point>
+                                <x>
+                                    <init>-274.5</init>
+                                </x>
+                                <y>
+                                    <init>-54.5</init>
+                                </y>
+                            </point>
+                            <point>
+                                <x>
+                                    <init>-284.5</init>
+                                </x>
+                                <y>
+                                    <init>-54.5</init>
+                                </y>
+                            </point>
+                            <arcSegment>
+                                <orientation clockwise="true"/>
+                                <angle>
+                                    <angle>
+                                        <init>90.0</init>
+                                    </angle>
+                                </angle>
+                            </arcSegment>
+                            <point>
+                                <x>
+                                    <init>-288.5</init>
+                                </x>
+                                <y>
+                                    <init>-50.5</init>
+                                </y>
+                            </point>
+                        </points>
+                        <lineWidth>
+                            <init>0</init>
+                        </lineWidth>
+                        <lineStipple>
+                            <init>0</init>
+                        </lineStipple>
+                        <lineCap>
+                            <init>round</init>
+                        </lineCap>
+                        <haloing>
+                            <init>false</init>
+                        </haloing>
+                        <haloColor>
+                            <init>-1</init>
+                        </haloColor>
+                        <outlineColor>
+                            <init>25</init>
+                            <expr>Color</expr>
+                        </outlineColor>
+                        <outlineOpacity>
+                            <init>255</init>
+                        </outlineOpacity>
+                        <fillColor>
+                            <init>25</init>
+                            <expr>Color</expr>
+                        </fillColor>
+                        <fillOpacity>
+                            <init>255</init>
+                        </fillOpacity>
+                        <polygonSmooth>
+                            <init>false</init>
+                        </polygonSmooth>
+                        <textureControl>
+                            <init>false</init>
+                        </textureControl>
+                        <texture horizAlign="center" horizPattern="1.0" vertAlign="middle" vertPattern="1.0">
+                            <textureId>
+                                <init>-1</init>
+                            </textureId>
+                        </texture>
+                        <gradient>
+                            <init>-1</init>
+                        </gradient>
+                        <modulate>
+                            <init>false</init>
+                        </modulate>
+                        <tessellate>
+                            <init>false</init>
+                        </tessellate>
+                    </properties>
+                </shape>
+                <referenceContainer oid="8f0cbe31-f3f2-4922-ad97-938b72401178">
+                    <pathFromRoot value="2,0"/>
+                    <properties modular="false" name="IconButton">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>-256.0</init>
+                            </x>
+                            <y>
+                                <init>-36.25</init>
+                            </y>
+                        </origin>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <file name="IconButton.ogfx" path="."/>
+                        <crc value="3160770607"/>
+                        <inputParameters>
+                            <parameter control="false" name="Color" oid="6bb1cde8-3ee5-465d-834c-91a550b44e42" representation="color" type="int32">
+                                <expr>Color</expr>
+                                <init>25</init>
+                            </parameter>
+                            <parameter control="false" name="Enable" oid="e3982eeb-1a22-43ca-9e61-c5ca24762369" type="bool">
+                                <expr>Enable</expr>
+                                <init>false</init>
+                            </parameter>
+                        </inputParameters>
+                        <outputParameters>
+                            <parameter name="BouttonPressed" oid="ac9804cb-24e7-4bc8-a986-115f6bf500d2" type="bool">
+                                <expr>Repair</expr>
+                            </parameter>
+                        </outputParameters>
+                    </properties>
+                    <children/>
+                </referenceContainer>
+                <text oid="9af67a13-906b-46ff-a80c-cbaa57390226">
+                    <pathFromRoot value="3,0"/>
+                    <properties name="Label">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <position>
+                            <x>
+                                <init>-257.0</init>
+                            </x>
+                            <y>
+                                <init>41.0</init>
+                            </y>
+                        </position>
+                        <maxLength>
+                            <init>255</init>
+                        </maxLength>
+                        <textValue type="char">
+                            <init>[76, 97, 98, 101, 108, 0]</init>
+                            <expr>Name</expr>
+                        </textValue>
+                        <haloing>
+                            <init>false</init>
+                        </haloing>
+                        <haloColor>
+                            <init>-1</init>
+                        </haloColor>
+                        <outlineColor>
+                            <init>4</init>
+                        </outlineColor>
+                        <lineWidth>
+                            <init>2</init>
+                        </lineWidth>
+                        <font>
+                            <init>6</init>
+                        </font>
+                        <horizAlign>
+                            <init>left</init>
+                        </horizAlign>
+                        <vertAlign>
+                            <init>top</init>
+                        </vertAlign>
+                    </properties>
+                </text>
+                <text oid="366430b4-a826-4602-bd52-7b3f54b3059f">
+                    <pathFromRoot value="4,0"/>
+                    <properties name="Status">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <position>
+                            <x>
+                                <init>272.0</init>
+                            </x>
+                            <y>
+                                <init>41.0</init>
+                            </y>
+                        </position>
+                        <maxLength>
+                            <init>255</init>
+                        </maxLength>
+                        <textValue type="char">
+                            <init>[79, 80, 69, 78, 0]</init>
+                            <expr>StatusName</expr>
+                        </textValue>
+                        <haloing>
+                            <init>false</init>
+                        </haloing>
+                        <haloColor>
+                            <init>-1</init>
+                        </haloColor>
+                        <outlineColor>
+                            <init>4</init>
+                        </outlineColor>
+                        <lineWidth>
+                            <init>2</init>
+                        </lineWidth>
+                        <font>
+                            <init>6</init>
+                        </font>
+                        <horizAlign>
+                            <init>right</init>
+                        </horizAlign>
+                        <vertAlign>
+                            <init>top</init>
+                        </vertAlign>
+                    </properties>
+                </text>
+                <referenceContainer oid="dc610ed2-7c0b-4ef9-9312-f13f4fb365e3">
+                    <pathFromRoot value="5,0"/>
+                    <properties modular="false" name="ToggleButton">
+                        <visible>
+                            <init>true</init>
+                        </visible>
+                        <origin>
+                            <x>
+                                <init>39.5</init>
+                            </x>
+                            <y>
+                                <init>-13.0</init>
+                            </y>
+                        </origin>
+                        <scale>
+                            <x>
+                                <init>1.0</init>
+                            </x>
+                            <y>
+                                <init>1.0</init>
+                            </y>
+                        </scale>
+                        <rotate>
+                            <angle>
+                                <init>0.0</init>
+                            </angle>
+                        </rotate>
+                        <orientation clockwise="false"/>
+                        <file name="ToggleButton.ogfx" path="."/>
+                        <crc value="1352591609"/>
+                        <constantParameters>
+                            <parameter control="false" name="Label" oid="08024638-0b20-4651-a6e5-ee95dc4b826d" representation="as_string" type="char^255">
+                                <init>[73,78,74,69,67,84,32,70,65,73,76,85,82,69,0]</init>
+                            </parameter>
+                            <parameter control="false" name="AlternateLabel" oid="1612cf29-4edb-4a1b-968a-a3ffdd81019d" representation="as_string" type="char^255">
+                                <init>[70,65,73,76,85,82,69,32,73,78,74,69,67,84,69,68,0]</init>
+                            </parameter>
+                        </constantParameters>
+                        <inputParameters>
+                            <parameter control="true" name="SizeX" oid="42f33bf6-2c3e-4aa5-b9d7-d57d09ecb8ba" type="float32">
+                                <init>233.0</init>
+                            </parameter>
+                            <parameter control="false" name="Color" oid="1cc7952d-38ec-4ed9-bc92-1fbf87be78dd" representation="color" type="int32">
+                                <expr>Color</expr>
+                                <init>25</init>
+                            </parameter>
+                            <parameter control="false" name="Enable" oid="d4f0b67a-c1c1-4124-877d-f9d0f2fc1780" type="bool">
+                                <expr>Enable</expr>
+                                <init>false</init>
+                            </parameter>
+                            <parameter control="false" name="STYLE" oid="ac894d78-0268-4a18-93aa-1e57792384a5" representation="index" type="int32">
+                                <init>1</init>
+                            </parameter>
+                        </inputParameters>
+                        <outputParameters>
+                            <parameter name="StateChangeEmit" oid="ba7c89e6-1cf1-4afa-8414-1938286c2a94" type="bool"/>
+                            <parameter name="State" oid="82f5b3cb-1775-464d-a947-440054608181" type="bool">
+                                <expr>Failure</expr>
+                            </parameter>
+                        </outputParameters>
+                    </properties>
+                    <children/>
+                </referenceContainer>
+            </children>
+        </container>
+    </children>
+</object>
+
+<!-- crc32 : 2091704659 -->
+

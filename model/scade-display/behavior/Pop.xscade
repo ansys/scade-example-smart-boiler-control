@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="function" name="Pop">
+	<inputs>
+		<Variable name="list">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e13/56E7/5DAC/653b8315b22"/>
+			</pragmas>
+		</Variable>
+		<Variable name="position">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e14/56E7/5DAC/653b83155ac1"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="data">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Data"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e11/56E7/5DAC/653b83151f48"/>
+			</pragmas>
+		</Variable>
+		<Variable name="newList">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e12/56E7/5DAC/653b83157783"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="output">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e10/56E7/5DAC/653b831566ed" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Local variable to prevent the flow's type being arbitrary changed by the IDE.</comment>
+				</ed:Variable>
+			</pragmas>
+		</Variable>
+		<Variable name="_L4">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="int32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e0c/56E7/5DAC/653b83152bf6"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L9">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e0d/56E7/5DAC/653b83155def"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L18">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Data"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e0e/56E7/5DAC/653b83152a04"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L19">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Data"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e0f/56E7/5DAC/653b831560f9"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- _L4 = position; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L4"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="position"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e05/56E7/5DAC/653b8315401f"/>
+			</pragmas>
+		</Equation>
+		<!-- data = _L19; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="data"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L19"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e06/56E7/5DAC/653b8315f64"/>
+			</pragmas>
+		</Equation>
+		<!-- newList = output; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="newList"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="output"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e07/56E7/5DAC/653b83154a86"/>
+			</pragmas>
+		</Equation>
+		<!-- _L9 = list; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L9"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="list"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e08/56E7/5DAC/653b831524c3"/>
+			</pragmas>
+		</Equation>
+		<!-- _L18 = NULL_DATA; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L18"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="NULL_DATA"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e09/56E7/5DAC/653b83151fd0"/>
+			</pragmas>
+		</Equation>
+		<!-- _L19, output = (ListCore::Pop<<N>>)(_L9, _L4, _L18); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L19"/>
+				<VariableRef name="output"/>
+			</lefts>
+			<right>
+				<!-- (ListCore::Pop<<N>>)(_L9, _L4, _L18) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="1">
+							<operator>
+								<OperatorRef name="ListCore::Pop"/>
+							</operator>
+							<instanceParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="N"/>
+									</path>
+								</IdExpression>
+							</instanceParameters>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L9"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L4"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L18"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+					<pragmas>
+						<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<references>
+								<OperatorRef path="ListCore::Pop" refOid="!ed/23e8/A17/AF94/644aad0d4acb">
+									<InputRef refOid="!ed/2400/A17/AF94/644aad0d6ede"/>
+									<InputRef refOid="!ed/2401/A17/AF94/644aad0d2aad"/>
+									<InputRef refOid="!ed/2489/A17/AF94/644aadb51e21"/>
+									<OutputRef refOid="!ed/23fe/A17/AF94/644aad0d1f2"/>
+									<OutputRef refOid="!ed/23ff/A17/AF94/644aad0d1b4f"/>
+									<ParameterRef refOid="!ed/2412/A17/AF94/644aad10355e"/>
+								</OperatorRef>
+							</references>
+						</ed:CallExpression>
+					</pragmas>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e0a/56E7/5DAC/653b83154b4a"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/1e04/56E7/5DAC/653b83152413" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<comment>Remove and return the element of the list at the given position or a default value of the position is invalid.</comment>
+			<diagrams>
+				<NetDiagram name="Pop" landscape="true" format="A4 (210 297)" oid="!ed/1e0b/56E7/5DAC/653b831552e">
+					<presentationElements>
+						<EquationGE presentable="!ed/1e05/56E7/5DAC/653b8315401f">
+							<position>
+								<Point x="2540" y="1905"/>
+							</position>
+							<size>
+								<Size width="265" height="502"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e06/56E7/5DAC/653b8315f64">
+							<position>
+								<Point x="14579" y="1376"/>
+							</position>
+							<size>
+								<Size width="318" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e07/56E7/5DAC/653b83154a86">
+							<position>
+								<Point x="14579" y="2434"/>
+							</position>
+							<size>
+								<Size width="317" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="2" rightExprIndex="1" srcEquation="!ed/1e0a/56E7/5DAC/653b83154b4a" dstEquation="!ed/1e07/56E7/5DAC/653b83154a86">
+							<positions>
+								<Point x="10530" y="2699"/>
+								<Point x="12568" y="2699"/>
+								<Point x="12568" y="2699"/>
+								<Point x="14631" y="2699"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/1e08/56E7/5DAC/653b831524c3">
+							<position>
+								<Point x="2540" y="1111"/>
+							</position>
+							<size>
+								<Size width="264" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/1e05/56E7/5DAC/653b8315401f" dstEquation="!ed/1e0a/56E7/5DAC/653b83154b4a">
+							<positions>
+								<Point x="2805" y="2170"/>
+								<Point x="4815" y="2170"/>
+								<Point x="4815" y="2170"/>
+								<Point x="6853" y="2170"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e0a/56E7/5DAC/653b83154b4a" dstEquation="!ed/1e06/56E7/5DAC/653b8315f64">
+							<positions>
+								<Point x="10530" y="1640"/>
+								<Point x="12568" y="1640"/>
+								<Point x="12568" y="1640"/>
+								<Point x="14631" y="1640"/>
+							</positions>
+						</Edge>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/1e09/56E7/5DAC/653b83151fd0">
+							<position>
+								<Point x="2593" y="2752"/>
+							</position>
+							<size>
+								<Size width="212" height="397"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/1e09/56E7/5DAC/653b83151fd0" dstEquation="!ed/1e0a/56E7/5DAC/653b83154b4a">
+							<positions>
+								<Point x="2805" y="2963"/>
+								<Point x="4815" y="2963"/>
+								<Point x="4815" y="2963"/>
+								<Point x="6853" y="2963"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/1e0a/56E7/5DAC/653b83154b4a">
+							<position>
+								<Point x="6853" y="582"/>
+							</position>
+							<size>
+								<Size width="3667" height="3165"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e08/56E7/5DAC/653b831524c3" dstEquation="!ed/1e0a/56E7/5DAC/653b83154b4a">
+							<positions>
+								<Point x="2805" y="1376"/>
+								<Point x="4815" y="1376"/>
+								<Point x="4815" y="1376"/>
+								<Point x="6853" y="1376"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+			<references>
+				<TypeRef path="ListData" refOid="!ed/1dbc/56E7/5DAC/653b8315151f"/>
+				<TypeRef path="Data" refOid="!ed/1dbf/56E7/5DAC/653b83157b4a"/>
+				<ConstVarRef path="NULL_DATA" refOid="!ed/1dc5/56E7/5DAC/653b83156ae4"/>
+				<ConstVarRef path="N" refOid="!ed/1dc3/56E7/5DAC/653b83156992"/>
+			</references>
+		</ed:Operator>
+	</pragmas>
+</Operator>

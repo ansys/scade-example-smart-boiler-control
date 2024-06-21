@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="function" name="Remove">
+	<inputs>
+		<Variable name="list">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e6e/56E7/5DAC/653b831589d"/>
+			</pragmas>
+		</Variable>
+		<Variable name="data">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Data"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e6f/56E7/5DAC/653b831530f6"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="newList">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e6d/56E7/5DAC/653b83153234"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L9">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e66/56E7/5DAC/653b83152ff3"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L18">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Data"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e67/56E7/5DAC/653b83152f33"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L19">
+			<type>
+				<Struct>
+					<fields>
+						<Field name="indexes">
+							<type>
+								<Struct>
+									<fields>
+										<Field name="count">
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="IndexTable::Position"/>
+													</type>
+												</NamedType>
+											</type>
+											<pragmas>
+												<ed:Field oid="!ed/1e6a/56E7/5DAC/653b83152eb5"/>
+											</pragmas>
+										</Field>
+										<Field name="values">
+											<type>
+												<Table>
+													<type>
+														<NamedType>
+															<type>
+																<TypeRef name="IndexTable::Index"/>
+															</type>
+														</NamedType>
+													</type>
+													<size>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="N"/>
+															</path>
+														</IdExpression>
+													</size>
+												</Table>
+											</type>
+											<pragmas>
+												<ed:Field oid="!ed/1e6b/56E7/5DAC/653b8315153e"/>
+											</pragmas>
+										</Field>
+									</fields>
+								</Struct>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1e69/56E7/5DAC/653b83152631"/>
+							</pragmas>
+						</Field>
+						<Field name="datas">
+							<type>
+								<Table>
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="Data"/>
+											</type>
+										</NamedType>
+									</type>
+									<size>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="N"/>
+											</path>
+										</IdExpression>
+									</size>
+								</Table>
+							</type>
+							<pragmas>
+								<ed:Field oid="!ed/1e6c/56E7/5DAC/653b831572d4"/>
+							</pragmas>
+						</Field>
+					</fields>
+				</Struct>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e68/56E7/5DAC/653b831569b0"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- newList = _L19; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="newList"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L19"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e61/56E7/5DAC/653b83154dbe"/>
+			</pragmas>
+		</Equation>
+		<!-- _L9 = list; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L9"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="list"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e62/56E7/5DAC/653b83154fc3"/>
+			</pragmas>
+		</Equation>
+		<!-- _L18 = data; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L18"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="data"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e63/56E7/5DAC/653b8315307b"/>
+			</pragmas>
+		</Equation>
+		<!-- _L19 = (ListCore::Remove<<N>>)(_L9, _L18); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L19"/>
+			</lefts>
+			<right>
+				<!-- (ListCore::Remove<<N>>)(_L9, _L18) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="1">
+							<operator>
+								<OperatorRef name="ListCore::Remove"/>
+							</operator>
+							<instanceParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="N"/>
+									</path>
+								</IdExpression>
+							</instanceParameters>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L9"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L18"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+					<pragmas>
+						<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<references>
+								<OperatorRef path="ListCore::Remove" refOid="!ed/4753/3F50/7F68/6464784e7467">
+									<InputRef refOid="!ed/477b/3F50/7F68/6464784e5add"/>
+									<InputRef refOid="!ed/4781/3F50/7F68/6464784e795f"/>
+									<OutputRef refOid="!ed/4776/3F50/7F68/6464784e4713"/>
+									<ParameterRef refOid="!ed/4774/3F50/7F68/6464784e6da"/>
+								</OperatorRef>
+							</references>
+						</ed:CallExpression>
+					</pragmas>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e64/56E7/5DAC/653b8315556b"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/1e60/56E7/5DAC/653b8315787b" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<comment>Remove an element from the list. The list remains unchanged if the element is not found.</comment>
+			<diagrams>
+				<NetDiagram name="Remove" landscape="true" format="A4 (210 297)" oid="!ed/1e65/56E7/5DAC/653b83155f02">
+					<presentationElements>
+						<EquationGE presentable="!ed/1e61/56E7/5DAC/653b83154dbe">
+							<position>
+								<Point x="13467" y="2434"/>
+							</position>
+							<size>
+								<Size width="317" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e62/56E7/5DAC/653b83154fc3">
+							<position>
+								<Point x="1429" y="1376"/>
+							</position>
+							<size>
+								<Size width="264" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e63/56E7/5DAC/653b8315307b">
+							<position>
+								<Point x="1482" y="2487"/>
+							</position>
+							<size>
+								<Size width="212" height="397"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e64/56E7/5DAC/653b8315556b">
+							<position>
+								<Point x="5741" y="582"/>
+							</position>
+							<size>
+								<Size width="3667" height="3165"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e62/56E7/5DAC/653b83154fc3" dstEquation="!ed/1e64/56E7/5DAC/653b8315556b">
+							<positions>
+								<Point x="1693" y="1640"/>
+								<Point x="3704" y="1640"/>
+								<Point x="3704" y="1640"/>
+								<Point x="5741" y="1640"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/1e63/56E7/5DAC/653b8315307b" dstEquation="!ed/1e64/56E7/5DAC/653b8315556b">
+							<positions>
+								<Point x="1693" y="2699"/>
+								<Point x="3704" y="2699"/>
+								<Point x="3704" y="2699"/>
+								<Point x="5741" y="2699"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e64/56E7/5DAC/653b8315556b" dstEquation="!ed/1e61/56E7/5DAC/653b83154dbe">
+							<positions>
+								<Point x="9419" y="2170"/>
+								<Point x="11456" y="2170"/>
+								<Point x="11456" y="2699"/>
+								<Point x="13520" y="2699"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+			<references>
+				<TypeRef path="ListData" refOid="!ed/1dbc/56E7/5DAC/653b8315151f"/>
+				<TypeRef path="Data" refOid="!ed/1dbf/56E7/5DAC/653b83157b4a"/>
+				<ConstVarRef path="N" refOid="!ed/1dc3/56E7/5DAC/653b83156992"/>
+			</references>
+		</ed:Operator>
+	</pragmas>
+</Operator>

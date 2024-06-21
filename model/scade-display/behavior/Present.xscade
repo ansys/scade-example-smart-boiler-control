@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="function" name="Present">
+	<inputs>
+		<Variable name="list">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e7a/56E7/5DAC/653b83157105"/>
+			</pragmas>
+		</Variable>
+		<Variable name="data">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Data"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e7b/56E7/5DAC/653b83153260"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="present">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e79/56E7/5DAC/653b8315174e"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e76/56E7/5DAC/653b8315564a"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L5">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e77/56E7/5DAC/653b83156968"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L6">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Data"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/1e78/56E7/5DAC/653b8315745b"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- _L1 = list; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L1"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="list"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e71/56E7/5DAC/653b83154d5a"/>
+			</pragmas>
+		</Equation>
+		<!-- present = _L5; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="present"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L5"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e72/56E7/5DAC/653b8315310a"/>
+			</pragmas>
+		</Equation>
+		<!-- _L5 = (ListCore::Present<<N>>)(_L1, _L6); -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L5"/>
+			</lefts>
+			<right>
+				<!-- (ListCore::Present<<N>>)(_L1, _L6) -->
+				<CallExpression>
+					<operator>
+						<OpCall name="1">
+							<operator>
+								<OperatorRef name="ListCore::Present"/>
+							</operator>
+							<instanceParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="N"/>
+									</path>
+								</IdExpression>
+							</instanceParameters>
+						</OpCall>
+					</operator>
+					<callParameters>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L1"/>
+							</path>
+						</IdExpression>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="_L6"/>
+							</path>
+						</IdExpression>
+					</callParameters>
+					<pragmas>
+						<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+							<references>
+								<OperatorRef path="ListCore::Present" refOid="!ed/4a0e/3F50/7F68/6464c6c54390">
+									<InputRef refOid="!ed/4a26/3F50/7F68/6464c6c53db3"/>
+									<InputRef refOid="!ed/4a2b/3F50/7F68/6464c6c55806"/>
+									<OutputRef refOid="!ed/4a25/3F50/7F68/6464c6c56f26"/>
+									<ParameterRef refOid="!ed/4a24/3F50/7F68/6464c6c5228b"/>
+								</OperatorRef>
+							</references>
+						</ed:CallExpression>
+					</pragmas>
+				</CallExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e73/56E7/5DAC/653b8315714f"/>
+			</pragmas>
+		</Equation>
+		<!-- _L6 = data; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L6"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="data"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/1e74/56E7/5DAC/653b831555f5"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/1e70/56E7/5DAC/653b83153999" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<comment>Return whether data is present in the list.</comment>
+			<diagrams>
+				<NetDiagram name="Present" landscape="true" format="A4 (210 297)" oid="!ed/1e75/56E7/5DAC/653b83154150">
+					<presentationElements>
+						<EquationGE presentable="!ed/1e71/56E7/5DAC/653b83154d5a">
+							<position>
+								<Point x="1111" y="794"/>
+							</position>
+							<size>
+								<Size width="265" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e72/56E7/5DAC/653b8315310a">
+							<position>
+								<Point x="14446" y="1164"/>
+							</position>
+							<size>
+								<Size width="317" height="502"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/1e73/56E7/5DAC/653b8315714f">
+							<position>
+								<Point x="5768" y="291"/>
+							</position>
+							<size>
+								<Size width="4302" height="2265"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e73/56E7/5DAC/653b8315714f" dstEquation="!ed/1e72/56E7/5DAC/653b8315310a">
+							<positions>
+								<Point x="10081" y="1429"/>
+								<Point x="11298" y="1429"/>
+								<Point x="11298" y="1429"/>
+								<Point x="14499" y="1429"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1e71/56E7/5DAC/653b83154d5a" dstEquation="!ed/1e73/56E7/5DAC/653b8315714f">
+							<positions>
+								<Point x="1376" y="1058"/>
+								<Point x="3572" y="1058"/>
+								<Point x="3572" y="1058"/>
+								<Point x="5768" y="1058"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/1e74/56E7/5DAC/653b831555f5">
+							<position>
+								<Point x="1111" y="1535"/>
+							</position>
+							<size>
+								<Size width="264" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/1e74/56E7/5DAC/653b831555f5" dstEquation="!ed/1e73/56E7/5DAC/653b8315714f">
+							<positions>
+								<Point x="1376" y="1799"/>
+								<Point x="3572" y="1799"/>
+								<Point x="3572" y="1799"/>
+								<Point x="5768" y="1799"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+			<references>
+				<TypeRef path="ListData" refOid="!ed/1dbc/56E7/5DAC/653b8315151f"/>
+				<TypeRef path="Data" refOid="!ed/1dbf/56E7/5DAC/653b83157b4a"/>
+				<ConstVarRef path="N" refOid="!ed/1dc3/56E7/5DAC/653b83156992"/>
+			</references>
+		</ed:Operator>
+	</pragmas>
+</Operator>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?dom version="19.0" ?>
+
+<globals>
+    <type name="tNotification" oid="f729a208-1379-4ee8-add0-e3659a416f99">
+        <definition>enum {STEAM_OUTPUT_MALFUNCTION, WATER_LEVEL_MALFUNCTION, VALVE_MALFUNCTION, SENSOR_MALFUNCTION}</definition>
+    </type>
+    <constant name="OPACITY80" oid="765ee6ae-a5b9-4ea7-8c01-1c53981e8229" type="int32">
+        <init>204</init>
+    </constant>
+    <constant name="OPACITY100" oid="7c4798ef-fca4-4463-8cad-e2919b967c6b" type="int32">
+        <init>255</init>
+    </constant>
+    <constant name="OPACITY60" oid="8e4c93b4-c887-411c-bdf5-e2fbabe4e673" type="int32">
+        <init>153</init>
+    </constant>
+    <constant name="OPACITY20" oid="aa13a940-df49-4d95-bdab-86c3783984b4" type="int32">
+        <init>51</init>
+    </constant>
+</globals>
+
+<!-- crc32 : 3539333627 -->
+

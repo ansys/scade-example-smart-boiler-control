@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="function" name="MeasuredValues">
+	<inputs>
+		<Variable name="v">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Throughput"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/2811/34AD/C44/4e3154dd2512" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Output steam throughput</comment>
+				</ed:Variable>
+			</pragmas>
+		</Variable>
+		<Variable name="q">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Volume"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/2810/34AD/C44/4e3154dd3612" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<comment>Quantity of water in the steam boiler</comment>
+				</ed:Variable>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="measuredWaterLevelPx">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/281d/34AD/C44/4e3154e86e24"/>
+			</pragmas>
+		</Variable>
+		<Variable name="measuredWaterLevel">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/281e/34AD/C44/4e3154f31189"/>
+			</pragmas>
+		</Variable>
+		<Variable name="measuredSteamOutput">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/281f/34AD/C44/4e3154f94ffe"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<locals>
+		<Variable name="_L3">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Volume"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/281b/34AD/C44/4e3154dd1bfa"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L2">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="float32"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/2819/34AD/C44/4e3154dd7b9d"/>
+			</pragmas>
+		</Variable>
+		<Variable name="_L1">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="Throughput"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/2816/34AD/C44/4e3154dd6368"/>
+			</pragmas>
+		</Variable>
+	</locals>
+	<data>
+		<!-- measuredSteamOutput = _L1; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="measuredSteamOutput"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L1"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/2814/34AD/C44/4e3154dd1000"/>
+			</pragmas>
+		</Equation>
+		<!-- _L1 = v; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L1"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="v"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/2815/34AD/C44/4e3154dd3615"/>
+			</pragmas>
+		</Equation>
+		<!-- measuredWaterLevel = _L3; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="measuredWaterLevel"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L3"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/2817/34AD/C44/4e3154dd36a"/>
+			</pragmas>
+		</Equation>
+		<!-- _L2 = (q * MAX_WATER_LEVEL) / C; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L2"/>
+			</lefts>
+			<right>
+				<!-- (q * MAX_WATER_LEVEL) / C -->
+				<BinaryOp name="1" operator="/">
+					<operands>
+						<!-- (q * MAX_WATER_LEVEL) -->
+						<NAryOp name="1" operator="*">
+							<operands>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="q"/>
+									</path>
+								</IdExpression>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="MAX_WATER_LEVEL"/>
+									</path>
+								</IdExpression>
+							</operands>
+						</NAryOp>
+						<IdExpression>
+							<path>
+								<ConstVarRef name="C"/>
+							</path>
+						</IdExpression>
+					</operands>
+				</BinaryOp>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/2818/34AD/C44/4e3154dd5766"/>
+			</pragmas>
+		</Equation>
+		<!-- _L3 = q; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="_L3"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="q"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/281a/34AD/C44/4e3154dd39e5"/>
+			</pragmas>
+		</Equation>
+		<!-- measuredWaterLevelPx = _L2; -->
+		<Equation>
+			<lefts>
+				<VariableRef name="measuredWaterLevelPx"/>
+			</lefts>
+			<right>
+				<IdExpression>
+					<path>
+						<ConstVarRef name="_L2"/>
+					</path>
+				</IdExpression>
+			</right>
+			<pragmas>
+				<ed:Equation oid="!ed/283d/34AD/C44/4e315508643d"/>
+			</pragmas>
+		</Equation>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/27f8/34AD/C44/4e3154d24a29" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<diagrams>
+				<NetDiagram name="MeasuredValues" landscape="true" format="A4 (210 297)" oid="!ed/27f9/34AD/C44/4e3154d2191f">
+					<presentationElements>
+						<EquationGE presentable="!ed/2814/34AD/C44/4e3154dd1000">
+							<position>
+								<Point x="5334" y="3577"/>
+							</position>
+							<size>
+								<Size width="317" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/2815/34AD/C44/4e3154dd3615">
+							<position>
+								<Point x="3768" y="3577"/>
+							</position>
+							<size>
+								<Size width="264" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/2817/34AD/C44/4e3154dd36a">
+							<position>
+								<Point x="5334" y="2455"/>
+							</position>
+							<size>
+								<Size width="317" height="502"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/2818/34AD/C44/4e3154dd5766">
+							<position>
+								<Point x="3852" y="1609"/>
+							</position>
+							<size>
+								<Size width="169" height="296"/>
+							</size>
+						</EquationGE>
+						<EquationGE kind="OBJ_LIT" presentable="!ed/281a/34AD/C44/4e3154dd39e5">
+							<position>
+								<Point x="3852" y="2561"/>
+							</position>
+							<size>
+								<Size width="169" height="297"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/281a/34AD/C44/4e3154dd39e5" dstEquation="!ed/2817/34AD/C44/4e3154dd36a">
+							<positions>
+								<Point x="4022" y="2699"/>
+								<Point x="4710" y="2699"/>
+								<Point x="4710" y="2699"/>
+								<Point x="5398" y="2699"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/2815/34AD/C44/4e3154dd3615" dstEquation="!ed/2814/34AD/C44/4e3154dd1000">
+							<positions>
+								<Point x="4022" y="3836"/>
+								<Point x="4710" y="3836"/>
+								<Point x="4710" y="3836"/>
+								<Point x="5398" y="3836"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/283d/34AD/C44/4e315508643d">
+							<position>
+								<Point x="5334" y="1482"/>
+							</position>
+							<size>
+								<Size width="318" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/2818/34AD/C44/4e3154dd5766" dstEquation="!ed/283d/34AD/C44/4e315508643d">
+							<positions>
+								<Point x="4022" y="1746"/>
+								<Point x="4710" y="1746"/>
+								<Point x="4710" y="1746"/>
+								<Point x="5398" y="1746"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+			<references>
+				<TypeRef path="Throughput" refOid="!ed/1f53/184A/4D4/4de4e6ce6b1c"/>
+				<TypeRef path="Volume" refOid="!ed/1f4a/184A/4D4/4de4e6b16040"/>
+				<ConstVarRef path="MAX_WATER_LEVEL" refOid="!ed/2864/6C53/FC4/4e300ecc47e4"/>
+				<ConstVarRef path="C" refOid="!ed/1f65/184A/4D4/4de4e70f2b19"/>
+			</references>
+		</ed:Operator>
+	</pragmas>
+</Operator>

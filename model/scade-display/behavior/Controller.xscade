@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<File xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3">
+	<declarations>
+		<Package name="Controller">
+			<declarations>
+				<Open>
+					<package>
+						<PackageRef name="Utilities"/>
+					</package>
+					<pragmas>
+						<ed:Open oid="!ed/2c6d/1D40/3784/4ed91efb6d66"/>
+					</pragmas>
+				</Open>
+				<Operator name="Controller" href="Controller2.xscade"/>
+				<Operator name="FailureManager" href="FailureManager.xscade"/>
+				<Operator name="DetectPumpFailure" href="DetectPumpFailure.xscade"/>
+				<Operator name="DetectPumpControllerFailure" href="DetectPumpControllerFailure.xscade"/>
+				<Operator name="EstimateLevelChange" href="EstimateLevelChange.xscade"/>
+				<Operator name="EstimateSteam" href="EstimateSteam.xscade"/>
+			</declarations>
+			<pragmas>
+				<ed:Package oid="!ed/27d5/4FC4/166C/4e315aea3cff" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+					<diagrams>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/27d6/4FC4/166C/4e315aea1e55" blockKind="constants"/>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/27d7/4FC4/166C/4e315aea69b4" blockKind="types"/>
+						<TreeDiagram landscape="true" format="A4 (210 297)" oid="!ed/27d8/4FC4/166C/4e315aead24" blockKind="sensors"/>
+					</diagrams>
+					<references>
+						<PackageRef path="Utilities" refOid="!ed/4e25/150F/2E50/4ed2988b71df"/>
+					</references>
+				</ed:Package>
+			</pragmas>
+		</Package>
+	</declarations>
+</File>
