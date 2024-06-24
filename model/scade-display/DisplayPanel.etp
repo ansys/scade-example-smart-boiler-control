@@ -77,7 +77,7 @@
 			<configuration>28</configuration>
 		</Prop>
 		<Prop id="33" name="@SDY:CONFOUTPUT">
-			<value>kcgdisplay</value>
+			<value>%ModelName%</value>
 			<configuration>28</configuration>
 		</Prop>
 		<Prop id="34" name="@SDY:CODEGENERATOR">

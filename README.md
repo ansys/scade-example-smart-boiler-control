@@ -1,5 +1,5 @@
 # `Compatible with SCADE version: 2024R2`
-![screenshot](pictures/screenshot.jpg)
+![screenshot](pictures/screenshot.png)
 
 # Smart Boiler Control
 The Smart Boiler Control application illustrates, how touch interactivity concepts are brought into control panel with a modern/futuristic smart boiler control panel. The  Smart Boiler Control application was automatically generated from SCADE Suite® and SCADE Display®.
@@ -11,7 +11,7 @@ The Smart boiler controller is software used to control the water level in a ste
 Description of the architecture of the demo.
 
 # Demo Start Guide
-Open SCADE Display project `mode/scade-display/DisplayPanel.etp`
+Open SCADE Display project `model/scade-display/DisplayPanel.etp`
 
 Select `Windows` configuration & execute.
 
