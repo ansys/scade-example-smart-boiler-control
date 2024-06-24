@@ -14,24 +14,14 @@ This project serves as a companion to the blog series, "Designing a Next-Gen Emb
 
 
 
-# Demo Start Guide
+# Start Guide
 Open SCADE Display project `model/scade-display/DisplayPanel.etp`
 
 Select `Windows` configuration & execute.
 
 For SCADE Test for Display, open SCADE Test project `model/scade-test/SmartBoilerControl_Test.etp` and execute Tests.
 # Products used 
-
-| Product          | Used       |
-|------------------|------------|
-| SCADE Suite      | **Yes** |
-| SCADE Display    | **Yes** |
-| SCADE Architect  | No |
-| SCADE Test       | **Yes** |
-| SCADE LifeCycle  | No |
-| SCADE A661       | No |
-| Medini Analyze   | No |
-| TwinBuilder      | No |
+Suite/Display/Test
 
 
 
