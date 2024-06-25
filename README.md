@@ -1,6 +1,6 @@
 # Smart Boiler Control
 <a href="https://www.ansys.com/fr-fr/products/embedded-software/" title=""><img src="https://img.shields.io/badge/Ansys-SCADE-ffb71b?labelColor=black&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC" alt="ANnsys SCADE" /></a>
-<a href="https://www.ansys.com/fr-fr/products/embedded-software/" title=""><img src="https://tinyurl.com/2s498jkv" alt="ANnsys SCADE" /></a>
+<a href="https://www.ansys.com/fr-fr/products/embedded-software/" title=""><img src="https://tinyurl.com/2s498jkv" alt="Ansys SCADE Suite, Display, Test" /></a>
 ![version](https://img.shields.io/badge/version-2024R2-blue)
 <a href="https://opensource.org/licenses/MIT" title=""><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a>
 
@@ -16,8 +16,28 @@ This project serves as a companion to the blog series, "Designing a Next-Gen Emb
 
 
 # Start Guide
-Open SCADE Display project `model/scade-display/DisplayPanel.etp`
+## Generate, build and execute standalone application
+Launch  SCADE Display and open the project `model/scade-display/DisplayPanel.etp` (File>Open). 
 
-Select `Windows` configuration & execute.
+![screenshot](pictures/fileOpenP.png)
 
-For SCADE Test for Display, open SCADE Test project `model/scade-test/SmartBoilerControl_Test.etp` and execute Tests.
+
+Select `Windows` configuration, this configuration enables the generation of a standalone application
+running on Windows.
+
+![screenshot](pictures/selectConf.png) 
+
+Then click Execute.
+
+![screenshot](pictures/execute.png) 
+
+
+
+## Test Execution on host
+Launch SCADE Test and open SCADE Test project `model/scade-test/SmartBoilerControl_Test.etp` (File>Open).
+
+![screenshot](pictures/fileOpenSCADE.png)
+
+Project > Test tool > Execute tests
+
+![screenshot](pictures/executeTests.png)
