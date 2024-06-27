@@ -19,25 +19,35 @@ This project serves as a companion to the blog series, "Designing a Next-Gen Emb
 ## Generate, build and execute standalone application
 Launch  SCADE Display and open the project `model/scade-display/DisplayPanel.etp` (File>Open). 
 
-![screenshot](pictures/fileOpenP.png)
 
+<p align="center">
+  <img src="pictures/fileOpenP.png" alt="file open"/>
+</p>
 
 Select `Windows` configuration, this configuration enables the generation of a standalone application
 running on Windows.
 
-![screenshot](pictures/selectConf.png) 
+<p align="center">
+  <img src="pictures/selectConf.png" alt="select conf"/>
+</p>
 
 Then click Execute.
 
-![screenshot](pictures/execute.png) 
+<p align="center">
+  <img src="pictures/execute.png" alt="execute"/>
+</p>
 
 
 
 ## Test Execution on host
 Launch SCADE Test and open SCADE Test project `model/scade-test/SmartBoilerControl_Test.etp` (File>Open).
 
-![screenshot](pictures/fileOpenSCADE.png)
+<p align="center">
+  <img src="pictures/fileOpenSCADE.png" alt="file open scade"/>
+</p>
 
 Project > Test tool > Execute tests
 
-![screenshot](pictures/executeTests.png)
+<p align="center">
+  <img src="pictures/executeTests.png" alt="execute tests"/>
+</p>
