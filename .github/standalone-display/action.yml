@@ -68,5 +68,6 @@ runs:
     - name: "Build Standalone"
       shell: cmd
       run: |
-        "%INPUT_SCADE_DIR%\SCADE Display\bin\ScadeDisplayConsole.exe" batch generate "%MODEL%" -conf "%CONF%"
+        echo run "%CONF%" 
+        "%INPUT_SCADE_DIR%\SCADE Display\bin\ScadeDisplayConsole.exe" batch generate "%MODEL%" -conf %CONF%
 
