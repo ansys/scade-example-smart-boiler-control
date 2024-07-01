@@ -38,6 +38,9 @@ jobs:
       - uses: ansys/actions/doc-build@v6
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
+          skip-install: true
+          use-python-cache: false
+          dependencies: "texlive-fonts-extra qpdf"
 
       # - name: "Zipping the examples directory"
       #   run: |
