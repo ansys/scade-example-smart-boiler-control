@@ -60,8 +60,8 @@ runs:
       run: |
         :: Pass inputs to the shell
         echo INPUT_SCADE_DIR=${{ steps.get-scade-dir.outputs.scade-directory }}>> %GITHUB_ENV%
-        echo CONF=${{ inputs.conf }}>> %GITHUB_ENV% 
-        echo MODEL=${{ inputs.model-path}}>> %GITHUB_ENV%
+        echo CONF=${{inputs.conf}}>> %GITHUB_ENV% 
+        echo MODEL=${{ inputs.model-path }}>> %GITHUB_ENV%
         :: add other optional options todo
     
     - name: "Build Standalone"
