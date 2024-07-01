@@ -47,6 +47,20 @@ jobs:
           scade-version: ${{ matrix.scade-version }}
           model-path: 'model/scade-display/DisplayPanel.etp'
           conf: 'Windows'
+      
+
+      - name: "Zipping the standalone directory"
+        run: |
+          sudo apt-get install zip
+          zip -r SmartBoilerStandalone.zip ./model/scade-display/DisplayPanel_Exe
+
+      - name: "Upload zip to artifacts"
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartBoilerStandalone
+          path: ./SmartBoilerStandalone.zip
+          retention-days: 7
+          if-no-files-found: error
 
   doc-build:
     name: "Build documentation"

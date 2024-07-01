@@ -54,21 +54,8 @@ runs:
       with:
         scade-version: ${{ inputs.scade-version }}
 
-
-    - name: "Pass Inputs to Shell"
-      shell: cmd
-      run: |
-        :: Pass inputs to the shell
-        echo INPUT_SCADE_DIR=${{ steps.get-scade-dir.outputs.scade-directory }}>> %GITHUB_ENV%
-        echo CONF=${{inputs.conf}}>> %GITHUB_ENV% 
-        echo MODEL=${{ inputs.model-path }}>> %GITHUB_ENV%
-        :: add other optional options todo
-        echo "${{inputs.conf}}"
-    
     - name: "Build Standalone"
       shell: cmd
       run: |
-        echo run "%CONF%" 
-        echo input "${{ inputs.conf }}"
-        "%INPUT_SCADE_DIR%\SCADE Display\bin\ScadeDisplayConsole.exe" batch generate "%MODEL%" -conf "${{ inputs.conf }}"
+        "${{ steps.get-scade-dir.outputs.scade-directory }}\SCADE Display\bin\ScadeDisplayConsole.exe" batch generate "${{ inputs.model-path }}" -conf "${{ inputs.conf }}"
 
