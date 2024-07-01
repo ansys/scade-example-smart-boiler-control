@@ -69,5 +69,6 @@ runs:
       shell: cmd
       run: |
         echo run "%CONF%" 
-        "%INPUT_SCADE_DIR%\SCADE Display\bin\ScadeDisplayConsole.exe" batch generate "%MODEL%" -conf %CONF%
+        echo input "${{ inputs.conf }}"
+        "%INPUT_SCADE_DIR%\SCADE Display\bin\ScadeDisplayConsole.exe" batch generate "%MODEL%" -conf "${{ inputs.conf }}"
 
