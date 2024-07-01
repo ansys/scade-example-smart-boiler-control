@@ -29,11 +29,30 @@ jobs:
   #         token: ${{ secrets.GITHUB_TOKEN }}
 
 
+  standalone-display:
+    name: "Standalone Display"
+    # runs-on: ${{ matrix.os }}
+    runs-on: [self-hosted, 'SCADE']    
+    strategy:
+      matrix:
+        os: [windows-latest]
+        scade-version: ['24.1']
+      fail-fast: false
+    steps:
+      - name: "Install Git and clone project"
+        uses: actions/checkout@v4
+
+      - uses: ./.github/standalone-display/
+        with:
+          scade-version: ${{ matrix.scade-version }}
+          model-path: 'model/scade-display/DisplayPanel.etp'
+          conf: 'Windows'
+
   doc-build:
     name: "Build documentation"
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    # needs: [doc-style]
+    needs: [standalone-display]
     steps:
       - uses: ansys/actions/doc-build@v6
         with:
@@ -92,3 +111,7 @@ jobs:
           doc-artifact-name: 'documentation-html'
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
