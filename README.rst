@@ -10,73 +10,42 @@ Smart Boiler Control
 :raw-html-m2r:`<img src="https://img.shields.io/badge/version-2024R2-blue" alt="version" />`
 :raw-html-m2r:`<a href="https://opensource.org/licenses/MIT" title=""><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT" /></a>`
 
+
+Overview
+--------
 The Smart Boiler Control application illustrates, how touch interactivity concepts are brought into control panel with a modern/futuristic smart boiler control panel. The  Smart Boiler Control application was automatically generated from SCADE Suite® and SCADE Display®.
 The Smart boiler controller is software used to control the water level in a steam boiler. It is important that the program works correctly because the quantity of water present when the steam boiler is operating must neither be too low nor too high; otherwise, the smart boiler  in front of it could be seriously affected.
 
 This project serves as a companion to the blog series, "Designing a Next-Gen Embedded HMI," which explores the concepts implemented =>  `SCADE Smart Boiler Control – Designing a next-gen embedded HMI <https://ansyskm.ansys.com/forums/topic/scade-smart-boiler-control-designing-a-next-gen-embedded-hmi/>`_.
 
 
-.. image:: pictures/screenshot.png
-   :target: pictures/screenshot.png
+.. image:: doc/source/_static/screenshot.png
+   :target: doc/source/_static/screenshot.png
    :alt: screenshot
 
+Requirements
+------------
+The ``ansys-scade-example-smart-boiler-control`` project supports only the versions of 
+Ansys SCADE, starting from 2024 R2.
 
-Start Guide
-===========
+Documentation and issues
+------------------------
+Documentation for the latest stable release of Ansys SCADE Smart Boiler Control Example  is hosted at
+`Ansys SCADE Smart Boiler Control Example documentation <smart-boiler-control.example.scade.docs.pyansys.com/version/stable/index.html>`_.
 
-Generate, build and execute standalone application
---------------------------------------------------
+In the upper right corner of the documentation's title bar, there is an option for
+switching from viewing the documentation for the latest stable release to viewing the
+documentation for the development version or previously released versions.
 
-Launch  SCADE Display and open the project ``model/scade-display/DisplayPanel.etp`` (File>Open). 
+On the `Ansys SCADE Smart Boiler Control Issues <https://github.com/ansys/scade-example-smart-boiler-control/issues>`_
+page, you can create issues to report bugs and request new features. On the `Discussions <https://discuss.ansys.com/>`_
+page on the Ansys Developer portal, you can post questions, share ideas, and get community feedback.
 
+License
+~~~~~~~
+ Ansys SCADE Smart Boiler Control Example is licensed under the MIT license.
 
-.. raw:: html
-
-   <p align="center">
-     <img src="pictures/fileOpenP.png" alt="file open"/>
-   </p>
-
-
-Select ``Windows`` configuration, this configuration enables the generation of a standalone application
-running on Windows.
-
-
-.. raw:: html
-
-   <p align="center">
-     <img src="pictures/selectConf.png" alt="select conf"/>
-   </p>
-
-
-Then click Execute.
-
-
-.. raw:: html
-
-   <p align="center">
-     <img src="pictures/execute.png" alt="execute"/>
-   </p>
-
-
-Test Execution on host
-----------------------
-
-Launch SCADE Test and open SCADE Test project ``model/scade-test/SmartBoilerControl_Test.etp`` (File>Open).
-
-
-.. raw:: html
-
-   <p align="center">
-     <img src="pictures/fileOpenSCADE.png" alt="file open scade"/>
-   </p>
-
-
-Project > Test tool > Execute tests
-
-
-.. raw:: html
-
-   <p align="center">
-     <img src="pictures/executeTests.png" alt="execute tests"/>
-   </p>
-
+This toolkit makes no commercial claim over Ansys whatsoever. The use of this toolkit
+requires a legally licensed copy of the Ansys SCADE Suite. For more information,
+see the `Ansys SCADE Suite <https://www.ansys.com/products/embedded-software/ansys-scade-suite>`_
+page on the Ansys website.
