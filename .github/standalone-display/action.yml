@@ -43,20 +43,13 @@ inputs:
       conf.
     required: true
   
-  # Optional inputs
-  checkout:
-    description: >
-      Whether to clone the repository on the CI/CD machine.
-    default: 'true'
-    required: false
-
 
 runs:
   using: "composite"
   steps:
 
     - name: "Get SCADE installation directory"
-      uses: ./get-scade-dir
+      uses: ansys/scade-actions/get-scade-dir@v1
       id: get-scade-dir
       with:
         scade-version: ${{ inputs.scade-version }}
