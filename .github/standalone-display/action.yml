@@ -63,6 +63,7 @@ runs:
         echo CONF=${{inputs.conf}}>> %GITHUB_ENV% 
         echo MODEL=${{ inputs.model-path }}>> %GITHUB_ENV%
         :: add other optional options todo
+        echo "${{inputs.conf}}"
     
     - name: "Build Standalone"
       shell: cmd
