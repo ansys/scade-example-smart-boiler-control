@@ -1,9 +1,10 @@
 # Minimal makefile for Sphinx documentation
 #
 
-# You can set these variables from the command line.
-SPHINXOPTS    = -j auto
-SPHINXBUILD   = sphinx-build
+# You can set these variables from the command line. You can also
+# set the first two from the environment.
+SPHINXOPTS    ?= -j auto -W
+SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = source
 BUILDDIR      = _build
 
@@ -21,7 +22,8 @@ help:
 
 # Customized clean due to examples gallery
 clean:
-	rm -rf $(BUILDDIR)/*
+	rm -rf $(BUILDDIR)
+	rm -rf $(SOURCEDIR)/**/*-rendered-example.yml
 
 # Customized pdf for svg format images
 pdf:
