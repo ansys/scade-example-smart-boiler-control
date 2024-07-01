@@ -3,9 +3,10 @@ Smart Boiler Control Example
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
-   README
+   
+   description
    brief
+   start_guide
    contributing
 
 * :ref:`genindex`

@@ -39,18 +39,18 @@ jobs:
         with:
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
-      - name: "Zipping the examples directory"
-        run: |
-          sudo apt-get install zip
-          zip -r examples.zip ./examples
+      # - name: "Zipping the examples directory"
+      #   run: |
+      #     sudo apt-get install zip
+      #     zip -r examples.zip ./examples
 
-      - name: "Upload zip to artifacts"
-        uses: actions/upload-artifact@v4
-        with:
-          name: examples
-          path: ./examples.zip
-          retention-days: 7
-          if-no-files-found: error
+      # - name: "Upload zip to artifacts"
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: examples
+      #     path: ./examples.zip
+      #     retention-days: 7
+      #     if-no-files-found: error
 
   release:
     name: "Release project"
@@ -58,19 +58,11 @@ jobs:
     needs: [build-library]
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
     steps:
-
-      - name: "Release to public PyPI"
-        uses: ansys/actions/release-pypi-public@v6
-        with:
-          library-name: ${{ env.LIBRARY_NAME }}
-          twine-username: "__token__"
-          twine-token: ${{ secrets.PYPI_TOKEN }}
-
       - name: "Release to GitHub"
         uses: ansys/actions/release-github@v6
         with:
           library-name: ${{ env.LIBRARY_NAME }}
-          additional-artifacts: 'examples'
+          # additional-artifacts: 'examples'
 
   doc-deploy-dev:
     name: "Deploy development documentation"
