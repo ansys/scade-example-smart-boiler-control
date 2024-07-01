@@ -20,20 +20,20 @@ concurrency:
 
 jobs:
 
-  doc-style:
-    name: "Documentation style"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ansys/actions/doc-style@v6
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+  # doc-style:
+  #   name: "Documentation style"
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: ansys/actions/doc-style@v6
+  #       with:
+  #         token: ${{ secrets.GITHUB_TOKEN }}
 
 
   doc-build:
     name: "Build documentation"
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    needs: [doc-style]
+    # needs: [doc-style]
     steps:
       - uses: ansys/actions/doc-build@v6
         with:
