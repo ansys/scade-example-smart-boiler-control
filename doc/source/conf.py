@@ -23,7 +23,7 @@ release = version = __version__
 # Select desired logo, theme, and declare the html title
 html_logo = pyansys_logo_black
 html_theme = "ansys_sphinx_theme"
-html_short_title = html_title = "Ansys SCADE API Tools"
+html_short_title = html_title = "Ansys SCADE Smart Boiler Example"
 
 # multi-version documentation
 cname = os.getenv("DOCUMENTATION_CNAME", "smart-boiler-control.example.scade.docs.pyansys.com")
