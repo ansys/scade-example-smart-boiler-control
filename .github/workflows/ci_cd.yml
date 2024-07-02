@@ -20,13 +20,13 @@ concurrency:
 
 jobs:
 
-  # doc-style:
-  #   name: "Documentation style"
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: ansys/actions/doc-style@v6
-  #       with:
-  #         token: ${{ secrets.GITHUB_TOKEN }}
+  doc-style:
+    name: "Documentation style"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ansys/actions/doc-style@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
 
   standalone-display:
