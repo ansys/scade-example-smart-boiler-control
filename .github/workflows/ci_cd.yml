@@ -49,9 +49,9 @@ jobs:
           conf: 'Windows'
       
 
-      - name: "Zipping the standalone directory"
-        run: |
-          powershell Compress-Archive ./model/scade-display/DisplayPanel_Exe SmartBoilerStandalone.zip
+      # - name: "Zipping the standalone directory"
+      #   run: |
+      #     powershell Compress-Archive ./model/scade-display/DisplayPanel_Exe SmartBoilerStandalone.zip
 
       - name: "Upload zip to artifacts"
         uses: actions/upload-artifact@v4
