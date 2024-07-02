@@ -68,7 +68,8 @@ Post issues
 -----------
 
  
- Use the `Ansys SCADE Smart Boiler Control Example Issues <https://github.com/ansys/scade-example-smart-boiler-control/issues>`_ page to submit questions, report bugs, and request new features. When possible, use
+Use the `Ansys SCADE Smart Boiler Control Example Issues <https://github.com/ansys/scade-example-smart-boiler-control/issues>`_
+page to submit questions, report bugs, and request new features. When possible, use
 these templates:
 
 * Bug, problem, error: For filing a bug report
