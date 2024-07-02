@@ -53,11 +53,11 @@ jobs:
       #   run: |
       #     powershell Compress-Archive ./model/scade-display/DisplayPanel_Exe SmartBoilerStandalone.zip
 
-      - name: "Upload zip to artifacts"
+      - name: "Upload folder to  artifacts"
         uses: actions/upload-artifact@v4
         with:
-          name: SmartBoilerStandalone
-          path: ./SmartBoilerStandalone.zip
+          name: SmartBoilerStandaloneExecutable
+          path: ./model/scade-display/DisplayPanel_Exe
           retention-days: 7
           if-no-files-found: error
 
