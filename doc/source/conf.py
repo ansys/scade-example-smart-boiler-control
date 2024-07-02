@@ -15,7 +15,7 @@ from sphinx.highlighting import lexers
 __version__="0.1.dev0"
 
 # Project information
-project = "ansys-scade-scade-example-smart-boiler-control"
+project = "ansys-scade-example-smart-boiler-control"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
@@ -128,9 +128,9 @@ master_doc = "index"
 
 # TODO: remove ignore links after public release
 linkcheck_ignore = [
-    "https://github.com/ansys/scade-scade-example-smart-boiler-control",
-    "https://github.com/ansys/scade-scade-example-smart-boiler-control/actions/workflows/ci_cd.yml",
-    "https://pypi.org/project/ansys-scade-scade-example-smart-boiler-control",
+    "https://github.com/ansys/scade-example-smart-boiler-control",
+    "https://github.com/ansys/scade-example-smart-boiler-control/actions/workflows/ci_cd.yml",
+    "https://pypi.org/project/ansys-scade-example-smart-boiler-control",
     # The link below takes a long time to check
     "https://www.ansys.com/products/embedded-software/ansys-scade-suite",
     "https://www.ansys.com/*"
