@@ -29,11 +29,43 @@ jobs:
   #         token: ${{ secrets.GITHUB_TOKEN }}
 
 
+  standalone-display:
+    name: "Standalone Display"
+    # runs-on: ${{ matrix.os }}
+    runs-on: [self-hosted, 'SCADE']    
+    strategy:
+      matrix:
+        os: [windows-latest]
+        scade-version: ['24.1']
+      fail-fast: false
+    steps:
+      - name: "Install Git and clone project"
+        uses: actions/checkout@v4
+
+      - uses: ./.github/standalone-display/
+        with:
+          scade-version: ${{ matrix.scade-version }}
+          model-path: 'model/scade-display/DisplayPanel.etp'
+          conf: 'Windows'
+      
+
+      # - name: "Zipping the standalone directory"
+      #   run: |
+      #     powershell Compress-Archive ./model/scade-display/DisplayPanel_Exe SmartBoilerStandalone.zip
+
+      - name: "Upload folder to  artifacts"
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartBoilerStandaloneExecutable
+          path: ./model/scade-display/DisplayPanel_Exe
+          retention-days: 7
+          if-no-files-found: error
+
   doc-build:
     name: "Build documentation"
     runs-on: ubuntu-latest
     timeout-minutes: 30
-    # needs: [doc-style]
+    needs: [standalone-display]
     steps:
       - uses: ansys/actions/doc-build@v6
         with:
@@ -92,3 +124,7 @@ jobs:
           doc-artifact-name: 'documentation-html'
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
