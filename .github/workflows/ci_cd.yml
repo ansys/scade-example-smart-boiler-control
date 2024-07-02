@@ -20,14 +20,40 @@ concurrency:
 
 jobs:
 
-  # doc-style:
-  #   name: "Documentation style"
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: ansys/actions/doc-style@v6
-  #       with:
-  #         token: ${{ secrets.GITHUB_TOKEN }}
+  doc-style:
+    name: "Documentation style"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ansys/actions/doc-style@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
+  doc-build:
+    name: "Build documentation"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: [doc-style]
+    steps:
+      - uses: ansys/actions/doc-build@v6
+        with:
+          python-version: ${{ env.MAIN_PYTHON_VERSION }}
+          skip-install: true
+          use-python-cache: false
+          dependencies: "texlive-fonts-extra qpdf"
+          check-links: false
+
+      # - name: "Zipping the examples directory"
+      #   run: |
+      #     sudo apt-get install zip
+      #     zip -r examples.zip ./examples
+
+      # - name: "Upload zip to artifacts"
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: examples
+      #     path: ./examples.zip
+      #     retention-days: 7
+      #     if-no-files-found: error
 
   standalone-display:
     name: "Standalone Display"
@@ -38,6 +64,7 @@ jobs:
         os: [windows-latest]
         scade-version: ['24.1']
       fail-fast: false
+    needs: [doc-build]
     steps:
       - name: "Install Git and clone project"
         uses: actions/checkout@v4
@@ -61,36 +88,12 @@ jobs:
           retention-days: 7
           if-no-files-found: error
 
-  doc-build:
-    name: "Build documentation"
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    needs: [standalone-display]
-    steps:
-      - uses: ansys/actions/doc-build@v6
-        with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
-          skip-install: true
-          use-python-cache: false
-          dependencies: "texlive-fonts-extra qpdf"
 
-      # - name: "Zipping the examples directory"
-      #   run: |
-      #     sudo apt-get install zip
-      #     zip -r examples.zip ./examples
-
-      # - name: "Upload zip to artifacts"
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: examples
-      #     path: ./examples.zip
-      #     retention-days: 7
-      #     if-no-files-found: error
 
   release:
     name: "Release project"
     runs-on: ubuntu-latest
-    needs: [doc-build]
+    needs: [standalone-display]
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
     steps:
       - name: "Release to GitHub"
@@ -103,7 +106,7 @@ jobs:
     name: "Deploy development documentation"
     # Deploy development only when merging or pushing to the 'main' branch
     runs-on: ubuntu-latest
-    needs: [doc-build]
+    needs: [standalone-display]
     if: github.event_name == 'push' && !contains(github.ref, 'refs/tags')
     steps:
       - uses: ansys/actions/doc-deploy-dev@v6

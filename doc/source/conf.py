@@ -15,7 +15,7 @@ from sphinx.highlighting import lexers
 __version__="0.1.dev0"
 
 # Project information
-project = "ansys-scade-apitools"
+project = "ansys-scade-example-smart-boiler-control"
 copyright = f"(c) {datetime.now().year} ANSYS, Inc. All rights reserved"
 author = "ANSYS, Inc."
 release = version = __version__
@@ -23,7 +23,7 @@ release = version = __version__
 # Select desired logo, theme, and declare the html title
 html_logo = pyansys_logo_black
 html_theme = "ansys_sphinx_theme"
-html_short_title = html_title = "Ansys SCADE API Tools"
+html_short_title = html_title = "Ansys SCADE Smart Boiler Example"
 
 # multi-version documentation
 cname = os.getenv("DOCUMENTATION_CNAME", "smart-boiler-control.example.scade.docs.pyansys.com")
@@ -54,7 +54,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_jinja",
-    # "sphinx_gallery.gen_gallery",# apitools examples
+    # "sphinx_gallery.gen_gallery",# scade-example-smart-boiler-control examples
 ]
 
 # Print the type annotations from the signature in the description only
@@ -128,9 +128,9 @@ master_doc = "index"
 
 # TODO: remove ignore links after public release
 linkcheck_ignore = [
-    "https://github.com/ansys/scade-apitools",
-    "https://github.com/ansys/scade-apitools/actions/workflows/ci_cd.yml",
-    "https://pypi.org/project/ansys-scade-apitools",
+    "https://github.com/ansys/scade-example-smart-boiler-control",
+    "https://github.com/ansys/scade-example-smart-boiler-control/actions/workflows/ci_cd.yml",
+    "https://pypi.org/project/ansys-scade-example-smart-boiler-control",
     # The link below takes a long time to check
     "https://www.ansys.com/products/embedded-software/ansys-scade-suite",
     "https://www.ansys.com/*"
