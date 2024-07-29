@@ -223,3121 +223,402 @@
 					</pragmas>
 				</State>
 				<State name="AppendRemove">
+					<locals>
+						<Variable name="_L1">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="ListOfDatas::ListData"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Variable oid="!ed/25ed/5AFC/F098/66a73b3c2637"/>
+							</pragmas>
+						</Variable>
+						<Variable name="_L2">
+							<type>
+								<NamedType>
+									<type>
+										<TypeRef name="ListOfDatas::ListData"/>
+									</type>
+								</NamedType>
+							</type>
+							<pragmas>
+								<ed:Variable oid="!ed/260c/5AFC/F098/66a73bf15497"/>
+							</pragmas>
+						</Variable>
+						<Variable name="_L4">
+							<type>
+								<Table>
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="ListOfDatas::Data"/>
+											</type>
+										</NamedType>
+									</type>
+									<size>
+										<ConstValue value="6"/>
+									</size>
+								</Table>
+							</type>
+							<pragmas>
+								<ed:Variable oid="!ed/2618/5AFC/F098/66a73cc16d73"/>
+							</pragmas>
+						</Variable>
+						<Variable name="_L5">
+							<type>
+								<Table>
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="bool"/>
+											</type>
+										</NamedType>
+									</type>
+									<size>
+										<ConstValue value="6"/>
+									</size>
+								</Table>
+							</type>
+							<pragmas>
+								<ed:Variable oid="!ed/2628/5AFC/F098/66a73d2d676f"/>
+							</pragmas>
+						</Variable>
+					</locals>
 					<data>
-						<IfBlock name="IfBlock1">
-							<block>
-								<IfNode>
-									<if>
-										<!-- digital::RisingEdge(waterLevelFailure) -->
-										<CallExpression>
+						<!-- _L1 = (fold ProcessNotificationsDataEvent <<ListOfDatas::N>>)(_L2, _L5, _L4); -->
+						<Equation>
+							<lefts>
+								<VariableRef name="_L1"/>
+							</lefts>
+							<right>
+								<!-- (fold ProcessNotificationsDataEvent <<ListOfDatas::N>>)(_L2, _L5, _L4) -->
+								<CallExpression>
+									<operator>
+										<IteratorOp name="1" iterator="fold">
 											<operator>
-												<OpCall name="2">
+												<OpCall name="1">
 													<operator>
-														<OperatorRef name="digital::RisingEdge"/>
+														<OperatorRef name="ProcessNotificationsDataEvent"/>
 													</operator>
 												</OpCall>
 											</operator>
-											<callParameters>
+											<size>
 												<IdExpression>
 													<path>
-														<ConstVarRef name="waterLevelFailure"/>
+														<ConstVarRef name="ListOfDatas::N"/>
 													</path>
 												</IdExpression>
-											</callParameters>
-											<pragmas>
-												<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-													<references>
-														<OperatorRef path="digital::RisingEdge" refOid="s4_137/7236A702/11D5/36A6E753/39A9">
-															<InputRef refOid="s4_135/7236A702/11D5/36A6E752/7C93"/>
-															<OutputRef refOid="s4_136/7236A702/11D5/36A6E753/5ABC"/>
-														</OperatorRef>
-													</references>
-												</ed:CallExpression>
-											</pragmas>
-										</CallExpression>
-									</if>
-									<then>
-										<Action>
-											<locals>
-												<Variable name="_L1">
-													<type>
-														<NamedType>
-															<type>
-																<TypeRef name="ListOfDatas::ListData"/>
-															</type>
-														</NamedType>
-													</type>
-													<pragmas>
-														<ed:Variable oid="!ed/1f51/56E7/5DAC/653b842b1991"/>
-													</pragmas>
-												</Variable>
-												<Variable name="_L3">
-													<type>
-														<NamedType>
-															<type>
-																<TypeRef name="ListOfDatas::ListData"/>
-															</type>
-														</NamedType>
-													</type>
-													<pragmas>
-														<ed:Variable oid="!ed/1f53/56E7/5DAC/653b842b73cc"/>
-													</pragmas>
-												</Variable>
-												<Variable name="_L4">
-													<type>
-														<NamedType>
-															<type>
-																<TypeRef name="ListOfDatas::Data"/>
-															</type>
-														</NamedType>
-													</type>
-													<pragmas>
-														<ed:Variable oid="!ed/3eea/56E7/5DAC/653ba4b53e99"/>
-													</pragmas>
-												</Variable>
-											</locals>
-											<data>
-												<!-- _L1 = ListOfDatas::Append(_L3, _L4); -->
-												<Equation>
-													<lefts>
-														<VariableRef name="_L1"/>
-													</lefts>
-													<right>
-														<!-- ListOfDatas::Append(_L3, _L4) -->
-														<CallExpression>
-															<operator>
-																<OpCall name="1">
-																	<operator>
-																		<OperatorRef name="ListOfDatas::Append"/>
-																	</operator>
-																</OpCall>
-															</operator>
-															<callParameters>
-																<IdExpression>
-																	<path>
-																		<ConstVarRef name="_L3"/>
-																	</path>
-																</IdExpression>
-																<IdExpression>
-																	<path>
-																		<ConstVarRef name="_L4"/>
-																	</path>
-																</IdExpression>
-															</callParameters>
-															<pragmas>
-																<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																	<references>
-																		<OperatorRef path="ListOfDatas::Append" refOid="!ed/1e15/56E7/5DAC/653b83156e1e">
-																			<InputRef refOid="!ed/1e1f/56E7/5DAC/653b831536e7"/>
-																			<InputRef refOid="!ed/1e20/56E7/5DAC/653b83157557"/>
-																			<OutputRef refOid="!ed/1e1e/56E7/5DAC/653b8315821"/>
-																		</OperatorRef>
-																	</references>
-																</ed:CallExpression>
-															</pragmas>
-														</CallExpression>
-													</right>
-													<pragmas>
-														<ed:Equation oid="!ed/1f4d/56E7/5DAC/653b842b21e8"/>
-													</pragmas>
-												</Equation>
-												<!-- lMyNotifs = _L1; -->
-												<Equation>
-													<lefts>
-														<VariableRef name="lMyNotifs"/>
-													</lefts>
-													<right>
-														<IdExpression>
-															<path>
-																<ConstVarRef name="_L1"/>
-															</path>
-														</IdExpression>
-													</right>
-													<pragmas>
-														<ed:Equation oid="!ed/1f4e/56E7/5DAC/653b842b3c20"/>
-													</pragmas>
-												</Equation>
-												<!-- _L3 =  last 'lMyNotifs; -->
-												<Equation>
-													<lefts>
-														<VariableRef name="_L3"/>
-													</lefts>
-													<right>
-														<Last>
-															<variable>
-																<ConstVarRef name="lMyNotifs"/>
-															</variable>
-														</Last>
-													</right>
-													<pragmas>
-														<ed:Equation oid="!ed/1f50/56E7/5DAC/653b842b607d"/>
-													</pragmas>
-												</Equation>
-												<!-- _L4 = LEVEL_CONTROL_FAILURE; -->
-												<Equation>
-													<lefts>
-														<VariableRef name="_L4"/>
-													</lefts>
-													<right>
-														<IdExpression>
-															<path>
-																<ConstVarRef name="LEVEL_CONTROL_FAILURE"/>
-															</path>
-														</IdExpression>
-													</right>
-													<pragmas>
-														<ed:Equation oid="!ed/3ee9/56E7/5DAC/653ba4b561a4"/>
-													</pragmas>
-												</Equation>
-											</data>
-											<pragmas>
-												<ed:Action oid="!ed/1f4c/56E7/5DAC/653b842b4591"/>
-											</pragmas>
-										</Action>
-									</then>
-									<else>
-										<IfNode>
-											<if>
-												<!-- digital::FallingEdge(waterLevelFailure) -->
-												<CallExpression>
-													<operator>
-														<OpCall name="1">
-															<operator>
-																<OperatorRef name="digital::FallingEdge"/>
-															</operator>
-														</OpCall>
-													</operator>
-													<callParameters>
-														<IdExpression>
-															<path>
-																<ConstVarRef name="waterLevelFailure"/>
-															</path>
-														</IdExpression>
-													</callParameters>
-													<pragmas>
-														<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-															<references>
-																<OperatorRef path="digital::FallingEdge" refOid="s4_13D/7236A702/11D5/36A6E7A2/E74">
-																	<InputRef refOid="s4_13B/7236A702/11D5/36A6E7A2/5047"/>
-																	<OutputRef refOid="s4_13C/7236A702/11D5/36A6E7A2/4412"/>
-																</OperatorRef>
-															</references>
-														</ed:CallExpression>
-													</pragmas>
-												</CallExpression>
-											</if>
-											<then>
-												<Action>
-													<locals>
-														<Variable name="_L6">
-															<type>
-																<NamedType>
-																	<type>
-																		<TypeRef name="ListOfDatas::ListData"/>
-																	</type>
-																</NamedType>
-															</type>
-															<pragmas>
-																<ed:Variable oid="!ed/1f49/56E7/5DAC/653b842b409a"/>
-															</pragmas>
-														</Variable>
-														<Variable name="_L4">
-															<type>
-																<NamedType>
-																	<type>
-																		<TypeRef name="ListOfDatas::ListData"/>
-																	</type>
-																</NamedType>
-															</type>
-															<pragmas>
-																<ed:Variable oid="!ed/1f4a/56E7/5DAC/653b842b5977"/>
-															</pragmas>
-														</Variable>
-														<Variable name="_L9">
-															<type>
-																<NamedType>
-																	<type>
-																		<TypeRef name="ListOfDatas::Data"/>
-																	</type>
-																</NamedType>
-															</type>
-															<pragmas>
-																<ed:Variable oid="!ed/3ef0/56E7/5DAC/653ba4bc5bae"/>
-															</pragmas>
-														</Variable>
-													</locals>
-													<data>
-														<!-- _L4 =  last 'lMyNotifs; -->
-														<Equation>
-															<lefts>
-																<VariableRef name="_L4"/>
-															</lefts>
-															<right>
-																<Last>
-																	<variable>
-																		<ConstVarRef name="lMyNotifs"/>
-																	</variable>
-																</Last>
-															</right>
-															<pragmas>
-																<ed:Equation oid="!ed/1f45/56E7/5DAC/653b842b6814"/>
-															</pragmas>
-														</Equation>
-														<!-- lMyNotifs = _L6; -->
-														<Equation>
-															<lefts>
-																<VariableRef name="lMyNotifs"/>
-															</lefts>
-															<right>
-																<IdExpression>
-																	<path>
-																		<ConstVarRef name="_L6"/>
-																	</path>
-																</IdExpression>
-															</right>
-															<pragmas>
-																<ed:Equation oid="!ed/1f46/56E7/5DAC/653b842b2312"/>
-															</pragmas>
-														</Equation>
-														<!-- _L6 = ListOfDatas::Remove(_L4, _L9); -->
-														<Equation>
-															<lefts>
-																<VariableRef name="_L6"/>
-															</lefts>
-															<right>
-																<!-- ListOfDatas::Remove(_L4, _L9) -->
-																<CallExpression>
-																	<operator>
-																		<OpCall name="1">
-																			<operator>
-																				<OperatorRef name="ListOfDatas::Remove"/>
-																			</operator>
-																		</OpCall>
-																	</operator>
-																	<callParameters>
-																		<IdExpression>
-																			<path>
-																				<ConstVarRef name="_L4"/>
-																			</path>
-																		</IdExpression>
-																		<IdExpression>
-																			<path>
-																				<ConstVarRef name="_L9"/>
-																			</path>
-																		</IdExpression>
-																	</callParameters>
-																	<pragmas>
-																		<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																			<references>
-																				<OperatorRef path="ListOfDatas::Remove" refOid="!ed/1e60/56E7/5DAC/653b8315787b">
-																					<InputRef refOid="!ed/1e6e/56E7/5DAC/653b831589d"/>
-																					<InputRef refOid="!ed/1e6f/56E7/5DAC/653b831530f6"/>
-																					<OutputRef refOid="!ed/1e6d/56E7/5DAC/653b83153234"/>
-																				</OperatorRef>
-																			</references>
-																		</ed:CallExpression>
-																	</pragmas>
-																</CallExpression>
-															</right>
-															<pragmas>
-																<ed:Equation oid="!ed/1f47/56E7/5DAC/653b842bfb8"/>
-															</pragmas>
-														</Equation>
-														<!-- _L9 = LEVEL_CONTROL_FAILURE; -->
-														<Equation>
-															<lefts>
-																<VariableRef name="_L9"/>
-															</lefts>
-															<right>
-																<IdExpression>
-																	<path>
-																		<ConstVarRef name="LEVEL_CONTROL_FAILURE"/>
-																	</path>
-																</IdExpression>
-															</right>
-															<pragmas>
-																<ed:Equation oid="!ed/3eef/56E7/5DAC/653ba4bc717c"/>
-															</pragmas>
-														</Equation>
-													</data>
-													<pragmas>
-														<ed:Action oid="!ed/1f44/56E7/5DAC/653b842b4d12"/>
-													</pragmas>
-												</Action>
-											</then>
-											<else>
-												<IfNode>
-													<if>
-														<!-- digital::RisingEdge(steamControlState = 2) -->
-														<CallExpression>
-															<operator>
-																<OpCall name="3">
-																	<operator>
-																		<OperatorRef name="digital::RisingEdge"/>
-																	</operator>
-																</OpCall>
-															</operator>
-															<callParameters>
-																<!-- steamControlState = 2 -->
-																<BinaryOp name="1" operator="=">
-																	<operands>
-																		<IdExpression>
-																			<path>
-																				<ConstVarRef name="steamControlState"/>
-																			</path>
-																		</IdExpression>
-																		<ConstValue value="2"/>
-																	</operands>
-																</BinaryOp>
-															</callParameters>
-															<pragmas>
-																<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																	<references>
-																		<OperatorRef path="digital::RisingEdge" refOid="s4_137/7236A702/11D5/36A6E753/39A9">
-																			<InputRef refOid="s4_135/7236A702/11D5/36A6E752/7C93"/>
-																			<OutputRef refOid="s4_136/7236A702/11D5/36A6E753/5ABC"/>
-																		</OperatorRef>
-																	</references>
-																</ed:CallExpression>
-															</pragmas>
-														</CallExpression>
-													</if>
-													<then>
-														<Action>
-															<locals>
-																<Variable name="_L3">
-																	<type>
-																		<NamedType>
-																			<type>
-																				<TypeRef name="ListOfDatas::ListData"/>
-																			</type>
-																		</NamedType>
-																	</type>
-																	<pragmas>
-																		<ed:Variable oid="!ed/4584/56E7/5DAC/653bac964b04"/>
-																	</pragmas>
-																</Variable>
-																<Variable name="_L2">
-																	<type>
-																		<NamedType>
-																			<type>
-																				<TypeRef name="ListOfDatas::ListData"/>
-																			</type>
-																		</NamedType>
-																	</type>
-																	<pragmas>
-																		<ed:Variable oid="!ed/4582/56E7/5DAC/653bac9613c7"/>
-																	</pragmas>
-																</Variable>
-																<Variable name="_L1">
-																	<type>
-																		<NamedType>
-																			<type>
-																				<TypeRef name="ListOfDatas::Data"/>
-																			</type>
-																		</NamedType>
-																	</type>
-																	<pragmas>
-																		<ed:Variable oid="!ed/4580/56E7/5DAC/653bac963b8f"/>
-																	</pragmas>
-																</Variable>
-															</locals>
-															<data>
-																<!-- _L1 = STEAM_FAILURE; -->
-																<Equation>
-																	<lefts>
-																		<VariableRef name="_L1"/>
-																	</lefts>
-																	<right>
-																		<IdExpression>
-																			<path>
-																				<ConstVarRef name="STEAM_FAILURE"/>
-																			</path>
-																		</IdExpression>
-																	</right>
-																	<pragmas>
-																		<ed:Equation oid="!ed/457f/56E7/5DAC/653bac96717"/>
-																	</pragmas>
-																</Equation>
-																<!-- _L2 = ListOfDatas::Append(_L3, _L1); -->
-																<Equation>
-																	<lefts>
-																		<VariableRef name="_L2"/>
-																	</lefts>
-																	<right>
-																		<!-- ListOfDatas::Append(_L3, _L1) -->
-																		<CallExpression>
-																			<operator>
-																				<OpCall name="4">
-																					<operator>
-																						<OperatorRef name="ListOfDatas::Append"/>
-																					</operator>
-																				</OpCall>
-																			</operator>
-																			<callParameters>
-																				<IdExpression>
-																					<path>
-																						<ConstVarRef name="_L3"/>
-																					</path>
-																				</IdExpression>
-																				<IdExpression>
-																					<path>
-																						<ConstVarRef name="_L1"/>
-																					</path>
-																				</IdExpression>
-																			</callParameters>
-																			<pragmas>
-																				<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																					<references>
-																						<OperatorRef path="ListOfDatas::Append" refOid="!ed/1e15/56E7/5DAC/653b83156e1e">
-																							<InputRef refOid="!ed/1e1f/56E7/5DAC/653b831536e7"/>
-																							<InputRef refOid="!ed/1e20/56E7/5DAC/653b83157557"/>
-																							<OutputRef refOid="!ed/1e1e/56E7/5DAC/653b8315821"/>
-																						</OperatorRef>
-																					</references>
-																				</ed:CallExpression>
-																			</pragmas>
-																		</CallExpression>
-																	</right>
-																	<pragmas>
-																		<ed:Equation oid="!ed/4581/56E7/5DAC/653bac965690"/>
-																	</pragmas>
-																</Equation>
-																<!-- _L3 =  last 'lMyNotifs; -->
-																<Equation>
-																	<lefts>
-																		<VariableRef name="_L3"/>
-																	</lefts>
-																	<right>
-																		<Last>
-																			<variable>
-																				<ConstVarRef name="lMyNotifs"/>
-																			</variable>
-																		</Last>
-																	</right>
-																	<pragmas>
-																		<ed:Equation oid="!ed/4583/56E7/5DAC/653bac964b21"/>
-																	</pragmas>
-																</Equation>
-																<!-- lMyNotifs = _L2; -->
-																<Equation>
-																	<lefts>
-																		<VariableRef name="lMyNotifs"/>
-																	</lefts>
-																	<right>
-																		<IdExpression>
-																			<path>
-																				<ConstVarRef name="_L2"/>
-																			</path>
-																		</IdExpression>
-																	</right>
-																	<pragmas>
-																		<ed:Equation oid="!ed/4585/56E7/5DAC/653bac9640bb"/>
-																	</pragmas>
-																</Equation>
-															</data>
-															<pragmas>
-																<ed:Action oid="!ed/4555/56E7/5DAC/653bac5d2314"/>
-															</pragmas>
-														</Action>
-													</then>
-													<else>
-														<IfNode>
-															<if>
-																<!-- digital::FallingEdge(steamControlState = 2) -->
-																<CallExpression>
-																	<operator>
-																		<OpCall name="2">
-																			<operator>
-																				<OperatorRef name="digital::FallingEdge"/>
-																			</operator>
-																		</OpCall>
-																	</operator>
-																	<callParameters>
-																		<!-- steamControlState = 2 -->
-																		<BinaryOp name="2" operator="=">
-																			<operands>
-																				<IdExpression>
-																					<path>
-																						<ConstVarRef name="steamControlState"/>
-																					</path>
-																				</IdExpression>
-																				<ConstValue value="2"/>
-																			</operands>
-																		</BinaryOp>
-																	</callParameters>
-																	<pragmas>
-																		<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																			<references>
-																				<OperatorRef path="digital::FallingEdge" refOid="s4_13D/7236A702/11D5/36A6E7A2/E74">
-																					<InputRef refOid="s4_13B/7236A702/11D5/36A6E7A2/5047"/>
-																					<OutputRef refOid="s4_13C/7236A702/11D5/36A6E7A2/4412"/>
-																				</OperatorRef>
-																			</references>
-																		</ed:CallExpression>
-																	</pragmas>
-																</CallExpression>
-															</if>
-															<then>
-																<Action>
-																	<locals>
-																		<Variable name="_L3">
-																			<type>
-																				<NamedType>
-																					<type>
-																						<TypeRef name="ListOfDatas::Data"/>
-																					</type>
-																				</NamedType>
-																			</type>
-																			<pragmas>
-																				<ed:Variable oid="!ed/45da/56E7/5DAC/653bae1c541a"/>
-																			</pragmas>
-																		</Variable>
-																		<Variable name="_L2">
-																			<type>
-																				<NamedType>
-																					<type>
-																						<TypeRef name="ListOfDatas::ListData"/>
-																					</type>
-																				</NamedType>
-																			</type>
-																			<pragmas>
-																				<ed:Variable oid="!ed/45d8/56E7/5DAC/653bae1c5547"/>
-																			</pragmas>
-																		</Variable>
-																		<Variable name="_L1">
-																			<type>
-																				<NamedType>
-																					<type>
-																						<TypeRef name="ListOfDatas::ListData"/>
-																					</type>
-																				</NamedType>
-																			</type>
-																			<pragmas>
-																				<ed:Variable oid="!ed/45d6/56E7/5DAC/653bae1c3"/>
-																			</pragmas>
-																		</Variable>
-																	</locals>
-																	<data>
-																		<!-- lMyNotifs = _L2; -->
-																		<Equation>
-																			<lefts>
-																				<VariableRef name="lMyNotifs"/>
-																			</lefts>
-																			<right>
-																				<IdExpression>
-																					<path>
-																						<ConstVarRef name="_L2"/>
-																					</path>
-																				</IdExpression>
-																			</right>
-																			<pragmas>
-																				<ed:Equation oid="!ed/45d4/56E7/5DAC/653bae1c1f18"/>
-																			</pragmas>
-																		</Equation>
-																		<!-- _L1 =  last 'lMyNotifs; -->
-																		<Equation>
-																			<lefts>
-																				<VariableRef name="_L1"/>
-																			</lefts>
-																			<right>
-																				<Last>
-																					<variable>
-																						<ConstVarRef name="lMyNotifs"/>
-																					</variable>
-																				</Last>
-																			</right>
-																			<pragmas>
-																				<ed:Equation oid="!ed/45d5/56E7/5DAC/653bae1c40e8"/>
-																			</pragmas>
-																		</Equation>
-																		<!-- _L2 = ListOfDatas::Remove(_L1, _L3); -->
-																		<Equation>
-																			<lefts>
-																				<VariableRef name="_L2"/>
-																			</lefts>
-																			<right>
-																				<!-- ListOfDatas::Remove(_L1, _L3) -->
-																				<CallExpression>
-																					<operator>
-																						<OpCall name="3">
-																							<operator>
-																								<OperatorRef name="ListOfDatas::Remove"/>
-																							</operator>
-																						</OpCall>
-																					</operator>
-																					<callParameters>
-																						<IdExpression>
-																							<path>
-																								<ConstVarRef name="_L1"/>
-																							</path>
-																						</IdExpression>
-																						<IdExpression>
-																							<path>
-																								<ConstVarRef name="_L3"/>
-																							</path>
-																						</IdExpression>
-																					</callParameters>
-																					<pragmas>
-																						<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																							<references>
-																								<OperatorRef path="ListOfDatas::Remove" refOid="!ed/1e60/56E7/5DAC/653b8315787b">
-																									<InputRef refOid="!ed/1e6e/56E7/5DAC/653b831589d"/>
-																									<InputRef refOid="!ed/1e6f/56E7/5DAC/653b831530f6"/>
-																									<OutputRef refOid="!ed/1e6d/56E7/5DAC/653b83153234"/>
-																								</OperatorRef>
-																							</references>
-																						</ed:CallExpression>
-																					</pragmas>
-																				</CallExpression>
-																			</right>
-																			<pragmas>
-																				<ed:Equation oid="!ed/45d7/56E7/5DAC/653bae1c4641"/>
-																			</pragmas>
-																		</Equation>
-																		<!-- _L3 = STEAM_FAILURE; -->
-																		<Equation>
-																			<lefts>
-																				<VariableRef name="_L3"/>
-																			</lefts>
-																			<right>
-																				<IdExpression>
-																					<path>
-																						<ConstVarRef name="STEAM_FAILURE"/>
-																					</path>
-																				</IdExpression>
-																			</right>
-																			<pragmas>
-																				<ed:Equation oid="!ed/45d9/56E7/5DAC/653bae1c7da8"/>
-																			</pragmas>
-																		</Equation>
-																	</data>
-																	<pragmas>
-																		<ed:Action oid="!ed/45b3/56E7/5DAC/653badf56cff"/>
-																	</pragmas>
-																</Action>
-															</then>
-															<else>
-																<IfNode>
-																	<if>
-																		<!-- digital::RisingEdge(displayPumpState[0] = 3) -->
-																		<CallExpression>
-																			<operator>
-																				<OpCall name="4">
-																					<operator>
-																						<OperatorRef name="digital::RisingEdge"/>
-																					</operator>
-																				</OpCall>
-																			</operator>
-																			<callParameters>
-																				<!-- displayPumpState[0] = 3 -->
-																				<BinaryOp name="3" operator="=">
-																					<operands>
-																						<!-- displayPumpState[0] -->
-																						<PrjOp name="2">
-																							<flow>
-																								<IdExpression>
-																									<path>
-																										<ConstVarRef name="displayPumpState"/>
-																									</path>
-																								</IdExpression>
-																							</flow>
-																							<with>
-																								<ConstValue value="0"/>
-																							</with>
-																						</PrjOp>
-																						<ConstValue value="3"/>
-																					</operands>
-																				</BinaryOp>
-																			</callParameters>
-																			<pragmas>
-																				<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																					<references>
-																						<OperatorRef path="digital::RisingEdge" refOid="s4_137/7236A702/11D5/36A6E753/39A9">
-																							<InputRef refOid="s4_135/7236A702/11D5/36A6E752/7C93"/>
-																							<OutputRef refOid="s4_136/7236A702/11D5/36A6E753/5ABC"/>
-																						</OperatorRef>
-																					</references>
-																				</ed:CallExpression>
-																			</pragmas>
-																		</CallExpression>
-																	</if>
-																	<then>
-																		<Action>
-																			<locals>
-																				<Variable name="_L3">
-																					<type>
-																						<NamedType>
-																							<type>
-																								<TypeRef name="ListOfDatas::ListData"/>
-																							</type>
-																						</NamedType>
-																					</type>
-																					<pragmas>
-																						<ed:Variable oid="!ed/4621/56E7/5DAC/653bb2327aae"/>
-																					</pragmas>
-																				</Variable>
-																				<Variable name="_L2">
-																					<type>
-																						<NamedType>
-																							<type>
-																								<TypeRef name="ListOfDatas::ListData"/>
-																							</type>
-																						</NamedType>
-																					</type>
-																					<pragmas>
-																						<ed:Variable oid="!ed/461e/56E7/5DAC/653bb232133b"/>
-																					</pragmas>
-																				</Variable>
-																				<Variable name="_L1">
-																					<type>
-																						<NamedType>
-																							<type>
-																								<TypeRef name="ListOfDatas::Data"/>
-																							</type>
-																						</NamedType>
-																					</type>
-																					<pragmas>
-																						<ed:Variable oid="!ed/461c/56E7/5DAC/653bb23253ab"/>
-																					</pragmas>
-																				</Variable>
-																			</locals>
-																			<data>
-																				<!-- _L1 = PUMP1_FAILURE; -->
-																				<Equation>
-																					<lefts>
-																						<VariableRef name="_L1"/>
-																					</lefts>
-																					<right>
-																						<IdExpression>
-																							<path>
-																								<ConstVarRef name="PUMP1_FAILURE"/>
-																							</path>
-																						</IdExpression>
-																					</right>
-																					<pragmas>
-																						<ed:Equation oid="!ed/461b/56E7/5DAC/653bb232765f"/>
-																					</pragmas>
-																				</Equation>
-																				<!-- _L2 = ListOfDatas::Append(_L3, _L1); -->
-																				<Equation>
-																					<lefts>
-																						<VariableRef name="_L2"/>
-																					</lefts>
-																					<right>
-																						<!-- ListOfDatas::Append(_L3, _L1) -->
-																						<CallExpression>
-																							<operator>
-																								<OpCall name="6">
-																									<operator>
-																										<OperatorRef name="ListOfDatas::Append"/>
-																									</operator>
-																								</OpCall>
-																							</operator>
-																							<callParameters>
-																								<IdExpression>
-																									<path>
-																										<ConstVarRef name="_L3"/>
-																									</path>
-																								</IdExpression>
-																								<IdExpression>
-																									<path>
-																										<ConstVarRef name="_L1"/>
-																									</path>
-																								</IdExpression>
-																							</callParameters>
-																							<pragmas>
-																								<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																									<references>
-																										<OperatorRef path="ListOfDatas::Append" refOid="!ed/1e15/56E7/5DAC/653b83156e1e">
-																											<InputRef refOid="!ed/1e1f/56E7/5DAC/653b831536e7"/>
-																											<InputRef refOid="!ed/1e20/56E7/5DAC/653b83157557"/>
-																											<OutputRef refOid="!ed/1e1e/56E7/5DAC/653b8315821"/>
-																										</OperatorRef>
-																									</references>
-																								</ed:CallExpression>
-																							</pragmas>
-																						</CallExpression>
-																					</right>
-																					<pragmas>
-																						<ed:Equation oid="!ed/461d/56E7/5DAC/653bb2326b1c"/>
-																					</pragmas>
-																				</Equation>
-																				<!-- lMyNotifs = _L2; -->
-																				<Equation>
-																					<lefts>
-																						<VariableRef name="lMyNotifs"/>
-																					</lefts>
-																					<right>
-																						<IdExpression>
-																							<path>
-																								<ConstVarRef name="_L2"/>
-																							</path>
-																						</IdExpression>
-																					</right>
-																					<pragmas>
-																						<ed:Equation oid="!ed/461f/56E7/5DAC/653bb2321a35"/>
-																					</pragmas>
-																				</Equation>
-																				<!-- _L3 =  last 'lMyNotifs; -->
-																				<Equation>
-																					<lefts>
-																						<VariableRef name="_L3"/>
-																					</lefts>
-																					<right>
-																						<Last>
-																							<variable>
-																								<ConstVarRef name="lMyNotifs"/>
-																							</variable>
-																						</Last>
-																					</right>
-																					<pragmas>
-																						<ed:Equation oid="!ed/4620/56E7/5DAC/653bb2326732"/>
-																					</pragmas>
-																				</Equation>
-																			</data>
-																			<pragmas>
-																				<ed:Action oid="!ed/45ef/56E7/5DAC/653baec524d9"/>
-																			</pragmas>
-																		</Action>
-																	</then>
-																	<else>
-																		<IfNode>
-																			<if>
-																				<!-- digital::FallingEdge(displayPumpState[0] = 3) -->
-																				<CallExpression>
-																					<operator>
-																						<OpCall name="3">
-																							<operator>
-																								<OperatorRef name="digital::FallingEdge"/>
-																							</operator>
-																						</OpCall>
-																					</operator>
-																					<callParameters>
-																						<!-- displayPumpState[0] = 3 -->
-																						<BinaryOp name="4" operator="=">
-																							<operands>
-																								<!-- displayPumpState[0] -->
-																								<PrjOp name="3">
-																									<flow>
-																										<IdExpression>
-																											<path>
-																												<ConstVarRef name="displayPumpState"/>
-																											</path>
-																										</IdExpression>
-																									</flow>
-																									<with>
-																										<ConstValue value="0"/>
-																									</with>
-																								</PrjOp>
-																								<ConstValue value="3"/>
-																							</operands>
-																						</BinaryOp>
-																					</callParameters>
-																					<pragmas>
-																						<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																							<references>
-																								<OperatorRef path="digital::FallingEdge" refOid="s4_13D/7236A702/11D5/36A6E7A2/E74">
-																									<InputRef refOid="s4_13B/7236A702/11D5/36A6E7A2/5047"/>
-																									<OutputRef refOid="s4_13C/7236A702/11D5/36A6E7A2/4412"/>
-																								</OperatorRef>
-																							</references>
-																						</ed:CallExpression>
-																					</pragmas>
-																				</CallExpression>
-																			</if>
-																			<then>
-																				<Action>
-																					<locals>
-																						<Variable name="_L3">
-																							<type>
-																								<NamedType>
-																									<type>
-																										<TypeRef name="ListOfDatas::Data"/>
-																									</type>
-																								</NamedType>
-																							</type>
-																							<pragmas>
-																								<ed:Variable oid="!ed/466d/56E7/5DAC/653bb2ad72eb"/>
-																							</pragmas>
-																						</Variable>
-																						<Variable name="_L2">
-																							<type>
-																								<NamedType>
-																									<type>
-																										<TypeRef name="ListOfDatas::ListData"/>
-																									</type>
-																								</NamedType>
-																							</type>
-																							<pragmas>
-																								<ed:Variable oid="!ed/466b/56E7/5DAC/653bb2ad6849"/>
-																							</pragmas>
-																						</Variable>
-																						<Variable name="_L1">
-																							<type>
-																								<NamedType>
-																									<type>
-																										<TypeRef name="ListOfDatas::ListData"/>
-																									</type>
-																								</NamedType>
-																							</type>
-																							<pragmas>
-																								<ed:Variable oid="!ed/4668/56E7/5DAC/653bb2ad54e8"/>
-																							</pragmas>
-																						</Variable>
-																					</locals>
-																					<data>
-																						<!-- _L1 =  last 'lMyNotifs; -->
-																						<Equation>
-																							<lefts>
-																								<VariableRef name="_L1"/>
-																							</lefts>
-																							<right>
-																								<Last>
-																									<variable>
-																										<ConstVarRef name="lMyNotifs"/>
-																									</variable>
-																								</Last>
-																							</right>
-																							<pragmas>
-																								<ed:Equation oid="!ed/4667/56E7/5DAC/653bb2ad781d"/>
-																							</pragmas>
-																						</Equation>
-																						<!-- lMyNotifs = _L2; -->
-																						<Equation>
-																							<lefts>
-																								<VariableRef name="lMyNotifs"/>
-																							</lefts>
-																							<right>
-																								<IdExpression>
-																									<path>
-																										<ConstVarRef name="_L2"/>
-																									</path>
-																								</IdExpression>
-																							</right>
-																							<pragmas>
-																								<ed:Equation oid="!ed/4669/56E7/5DAC/653bb2ad26df"/>
-																							</pragmas>
-																						</Equation>
-																						<!-- _L2 = ListOfDatas::Remove(_L1, _L3); -->
-																						<Equation>
-																							<lefts>
-																								<VariableRef name="_L2"/>
-																							</lefts>
-																							<right>
-																								<!-- ListOfDatas::Remove(_L1, _L3) -->
-																								<CallExpression>
-																									<operator>
-																										<OpCall name="5">
-																											<operator>
-																												<OperatorRef name="ListOfDatas::Remove"/>
-																											</operator>
-																										</OpCall>
-																									</operator>
-																									<callParameters>
-																										<IdExpression>
-																											<path>
-																												<ConstVarRef name="_L1"/>
-																											</path>
-																										</IdExpression>
-																										<IdExpression>
-																											<path>
-																												<ConstVarRef name="_L3"/>
-																											</path>
-																										</IdExpression>
-																									</callParameters>
-																									<pragmas>
-																										<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																											<references>
-																												<OperatorRef path="ListOfDatas::Remove" refOid="!ed/1e60/56E7/5DAC/653b8315787b">
-																													<InputRef refOid="!ed/1e6e/56E7/5DAC/653b831589d"/>
-																													<InputRef refOid="!ed/1e6f/56E7/5DAC/653b831530f6"/>
-																													<OutputRef refOid="!ed/1e6d/56E7/5DAC/653b83153234"/>
-																												</OperatorRef>
-																											</references>
-																										</ed:CallExpression>
-																									</pragmas>
-																								</CallExpression>
-																							</right>
-																							<pragmas>
-																								<ed:Equation oid="!ed/466a/56E7/5DAC/653bb2ad28e4"/>
-																							</pragmas>
-																						</Equation>
-																						<!-- _L3 = PUMP1_FAILURE; -->
-																						<Equation>
-																							<lefts>
-																								<VariableRef name="_L3"/>
-																							</lefts>
-																							<right>
-																								<IdExpression>
-																									<path>
-																										<ConstVarRef name="PUMP1_FAILURE"/>
-																									</path>
-																								</IdExpression>
-																							</right>
-																							<pragmas>
-																								<ed:Equation oid="!ed/466c/56E7/5DAC/653bb2ad122f"/>
-																							</pragmas>
-																						</Equation>
-																					</data>
-																					<pragmas>
-																						<ed:Action oid="!ed/463d/56E7/5DAC/653bb27528c6"/>
-																					</pragmas>
-																				</Action>
-																			</then>
-																			<else>
-																				<IfNode>
-																					<if>
-																						<!-- digital::RisingEdge(displayPumpState[1] = 3) -->
-																						<CallExpression>
-																							<operator>
-																								<OpCall name="6">
-																									<operator>
-																										<OperatorRef name="digital::RisingEdge"/>
-																									</operator>
-																								</OpCall>
-																							</operator>
-																							<callParameters>
-																								<!-- displayPumpState[1] = 3 -->
-																								<BinaryOp name="7" operator="=">
-																									<operands>
-																										<!-- displayPumpState[1] -->
-																										<PrjOp name="6">
-																											<flow>
-																												<IdExpression>
-																													<path>
-																														<ConstVarRef name="displayPumpState"/>
-																													</path>
-																												</IdExpression>
-																											</flow>
-																											<with>
-																												<ConstValue value="1"/>
-																											</with>
-																										</PrjOp>
-																										<ConstValue value="3"/>
-																									</operands>
-																								</BinaryOp>
-																							</callParameters>
-																							<pragmas>
-																								<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																									<references>
-																										<OperatorRef path="digital::RisingEdge" refOid="s4_137/7236A702/11D5/36A6E753/39A9">
-																											<InputRef refOid="s4_135/7236A702/11D5/36A6E752/7C93"/>
-																											<OutputRef refOid="s4_136/7236A702/11D5/36A6E753/5ABC"/>
-																										</OperatorRef>
-																									</references>
-																								</ed:CallExpression>
-																							</pragmas>
-																						</CallExpression>
-																					</if>
-																					<then>
-																						<Action>
-																							<locals>
-																								<Variable name="_L3">
-																									<type>
-																										<NamedType>
-																											<type>
-																												<TypeRef name="ListOfDatas::Data"/>
-																											</type>
-																										</NamedType>
-																									</type>
-																									<pragmas>
-																										<ed:Variable oid="!ed/4770/56E7/5DAC/653bb3b52627"/>
-																									</pragmas>
-																								</Variable>
-																								<Variable name="_L2">
-																									<type>
-																										<NamedType>
-																											<type>
-																												<TypeRef name="ListOfDatas::ListData"/>
-																											</type>
-																										</NamedType>
-																									</type>
-																									<pragmas>
-																										<ed:Variable oid="!ed/476e/56E7/5DAC/653bb3b55e23"/>
-																									</pragmas>
-																								</Variable>
-																								<Variable name="_L1">
-																									<type>
-																										<NamedType>
-																											<type>
-																												<TypeRef name="ListOfDatas::ListData"/>
-																											</type>
-																										</NamedType>
-																									</type>
-																									<pragmas>
-																										<ed:Variable oid="!ed/476b/56E7/5DAC/653bb3b5b82"/>
-																									</pragmas>
-																								</Variable>
-																							</locals>
-																							<data>
-																								<!-- _L1 =  last 'lMyNotifs; -->
-																								<Equation>
-																									<lefts>
-																										<VariableRef name="_L1"/>
-																									</lefts>
-																									<right>
-																										<Last>
-																											<variable>
-																												<ConstVarRef name="lMyNotifs"/>
-																											</variable>
-																										</Last>
-																									</right>
-																									<pragmas>
-																										<ed:Equation oid="!ed/476a/56E7/5DAC/653bb3b55216"/>
-																									</pragmas>
-																								</Equation>
-																								<!-- lMyNotifs = _L2; -->
-																								<Equation>
-																									<lefts>
-																										<VariableRef name="lMyNotifs"/>
-																									</lefts>
-																									<right>
-																										<IdExpression>
-																											<path>
-																												<ConstVarRef name="_L2"/>
-																											</path>
-																										</IdExpression>
-																									</right>
-																									<pragmas>
-																										<ed:Equation oid="!ed/476c/56E7/5DAC/653bb3b55fb2"/>
-																									</pragmas>
-																								</Equation>
-																								<!-- _L2 = ListOfDatas::Append(_L1, _L3); -->
-																								<Equation>
-																									<lefts>
-																										<VariableRef name="_L2"/>
-																									</lefts>
-																									<right>
-																										<!-- ListOfDatas::Append(_L1, _L3) -->
-																										<CallExpression>
-																											<operator>
-																												<OpCall name="8">
-																													<operator>
-																														<OperatorRef name="ListOfDatas::Append"/>
-																													</operator>
-																												</OpCall>
-																											</operator>
-																											<callParameters>
-																												<IdExpression>
-																													<path>
-																														<ConstVarRef name="_L1"/>
-																													</path>
-																												</IdExpression>
-																												<IdExpression>
-																													<path>
-																														<ConstVarRef name="_L3"/>
-																													</path>
-																												</IdExpression>
-																											</callParameters>
-																											<pragmas>
-																												<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																													<references>
-																														<OperatorRef path="ListOfDatas::Append" refOid="!ed/1e15/56E7/5DAC/653b83156e1e">
-																															<InputRef refOid="!ed/1e1f/56E7/5DAC/653b831536e7"/>
-																															<InputRef refOid="!ed/1e20/56E7/5DAC/653b83157557"/>
-																															<OutputRef refOid="!ed/1e1e/56E7/5DAC/653b8315821"/>
-																														</OperatorRef>
-																													</references>
-																												</ed:CallExpression>
-																											</pragmas>
-																										</CallExpression>
-																									</right>
-																									<pragmas>
-																										<ed:Equation oid="!ed/476d/56E7/5DAC/653bb3b529f5"/>
-																									</pragmas>
-																								</Equation>
-																								<!-- _L3 = PUMP2_FAILURE; -->
-																								<Equation>
-																									<lefts>
-																										<VariableRef name="_L3"/>
-																									</lefts>
-																									<right>
-																										<IdExpression>
-																											<path>
-																												<ConstVarRef name="PUMP2_FAILURE"/>
-																											</path>
-																										</IdExpression>
-																									</right>
-																									<pragmas>
-																										<ed:Equation oid="!ed/476f/56E7/5DAC/653bb3b51267"/>
-																									</pragmas>
-																								</Equation>
-																							</data>
-																							<pragmas>
-																								<ed:Action oid="!ed/4730/56E7/5DAC/653bb36e4f7f"/>
-																							</pragmas>
-																						</Action>
-																					</then>
-																					<else>
-																						<IfNode>
-																							<if>
-																								<!-- digital::FallingEdge(displayPumpState[1] = 3) -->
-																								<CallExpression>
-																									<operator>
-																										<OpCall name="5">
-																											<operator>
-																												<OperatorRef name="digital::FallingEdge"/>
-																											</operator>
-																										</OpCall>
-																									</operator>
-																									<callParameters>
-																										<!-- displayPumpState[1] = 3 -->
-																										<BinaryOp name="8" operator="=">
-																											<operands>
-																												<!-- displayPumpState[1] -->
-																												<PrjOp name="7">
-																													<flow>
-																														<IdExpression>
-																															<path>
-																																<ConstVarRef name="displayPumpState"/>
-																															</path>
-																														</IdExpression>
-																													</flow>
-																													<with>
-																														<ConstValue value="1"/>
-																													</with>
-																												</PrjOp>
-																												<ConstValue value="3"/>
-																											</operands>
-																										</BinaryOp>
-																									</callParameters>
-																									<pragmas>
-																										<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																											<references>
-																												<OperatorRef path="digital::FallingEdge" refOid="s4_13D/7236A702/11D5/36A6E7A2/E74">
-																													<InputRef refOid="s4_13B/7236A702/11D5/36A6E7A2/5047"/>
-																													<OutputRef refOid="s4_13C/7236A702/11D5/36A6E7A2/4412"/>
-																												</OperatorRef>
-																											</references>
-																										</ed:CallExpression>
-																									</pragmas>
-																								</CallExpression>
-																							</if>
-																							<then>
-																								<Action>
-																									<locals>
-																										<Variable name="_L3">
-																											<type>
-																												<NamedType>
-																													<type>
-																														<TypeRef name="ListOfDatas::ListData"/>
-																													</type>
-																												</NamedType>
-																											</type>
-																											<pragmas>
-																												<ed:Variable oid="!ed/4794/56E7/5DAC/653bb3c6d51"/>
-																											</pragmas>
-																										</Variable>
-																										<Variable name="_L2">
-																											<type>
-																												<NamedType>
-																													<type>
-																														<TypeRef name="ListOfDatas::ListData"/>
-																													</type>
-																												</NamedType>
-																											</type>
-																											<pragmas>
-																												<ed:Variable oid="!ed/4792/56E7/5DAC/653bb3c671d0"/>
-																											</pragmas>
-																										</Variable>
-																										<Variable name="_L1">
-																											<type>
-																												<NamedType>
-																													<type>
-																														<TypeRef name="ListOfDatas::Data"/>
-																													</type>
-																												</NamedType>
-																											</type>
-																											<pragmas>
-																												<ed:Variable oid="!ed/478f/56E7/5DAC/653bb3c65d38"/>
-																											</pragmas>
-																										</Variable>
-																									</locals>
-																									<data>
-																										<!-- _L1 = PUMP2_FAILURE; -->
-																										<Equation>
-																											<lefts>
-																												<VariableRef name="_L1"/>
-																											</lefts>
-																											<right>
-																												<IdExpression>
-																													<path>
-																														<ConstVarRef name="PUMP2_FAILURE"/>
-																													</path>
-																												</IdExpression>
-																											</right>
-																											<pragmas>
-																												<ed:Equation oid="!ed/478e/56E7/5DAC/653bb3c6203"/>
-																											</pragmas>
-																										</Equation>
-																										<!-- lMyNotifs = _L2; -->
-																										<Equation>
-																											<lefts>
-																												<VariableRef name="lMyNotifs"/>
-																											</lefts>
-																											<right>
-																												<IdExpression>
-																													<path>
-																														<ConstVarRef name="_L2"/>
-																													</path>
-																												</IdExpression>
-																											</right>
-																											<pragmas>
-																												<ed:Equation oid="!ed/4790/56E7/5DAC/653bb3c6651e"/>
-																											</pragmas>
-																										</Equation>
-																										<!-- _L2 = ListOfDatas::Remove(_L3, _L1); -->
-																										<Equation>
-																											<lefts>
-																												<VariableRef name="_L2"/>
-																											</lefts>
-																											<right>
-																												<!-- ListOfDatas::Remove(_L3, _L1) -->
-																												<CallExpression>
-																													<operator>
-																														<OpCall name="6">
-																															<operator>
-																																<OperatorRef name="ListOfDatas::Remove"/>
-																															</operator>
-																														</OpCall>
-																													</operator>
-																													<callParameters>
-																														<IdExpression>
-																															<path>
-																																<ConstVarRef name="_L3"/>
-																															</path>
-																														</IdExpression>
-																														<IdExpression>
-																															<path>
-																																<ConstVarRef name="_L1"/>
-																															</path>
-																														</IdExpression>
-																													</callParameters>
-																													<pragmas>
-																														<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																															<references>
-																																<OperatorRef path="ListOfDatas::Remove" refOid="!ed/1e60/56E7/5DAC/653b8315787b">
-																																	<InputRef refOid="!ed/1e6e/56E7/5DAC/653b831589d"/>
-																																	<InputRef refOid="!ed/1e6f/56E7/5DAC/653b831530f6"/>
-																																	<OutputRef refOid="!ed/1e6d/56E7/5DAC/653b83153234"/>
-																																</OperatorRef>
-																															</references>
-																														</ed:CallExpression>
-																													</pragmas>
-																												</CallExpression>
-																											</right>
-																											<pragmas>
-																												<ed:Equation oid="!ed/4791/56E7/5DAC/653bb3c64d0c"/>
-																											</pragmas>
-																										</Equation>
-																										<!-- _L3 =  last 'lMyNotifs; -->
-																										<Equation>
-																											<lefts>
-																												<VariableRef name="_L3"/>
-																											</lefts>
-																											<right>
-																												<Last>
-																													<variable>
-																														<ConstVarRef name="lMyNotifs"/>
-																													</variable>
-																												</Last>
-																											</right>
-																											<pragmas>
-																												<ed:Equation oid="!ed/4793/56E7/5DAC/653bb3c61b86"/>
-																											</pragmas>
-																										</Equation>
-																									</data>
-																									<pragmas>
-																										<ed:Action oid="!ed/4744/56E7/5DAC/653bb37d45f4"/>
-																									</pragmas>
-																								</Action>
-																							</then>
-																							<else>
-																								<IfNode>
-																									<if>
-																										<!-- digital::RisingEdge(displayPumpState[2] = 3) -->
-																										<CallExpression>
-																											<operator>
-																												<OpCall name="9">
-																													<operator>
-																														<OperatorRef name="digital::RisingEdge"/>
-																													</operator>
-																												</OpCall>
-																											</operator>
-																											<callParameters>
-																												<!-- displayPumpState[2] = 3 -->
-																												<BinaryOp name="13" operator="=">
-																													<operands>
-																														<!-- displayPumpState[2] -->
-																														<PrjOp name="12">
-																															<flow>
-																																<IdExpression>
-																																	<path>
-																																		<ConstVarRef name="displayPumpState"/>
-																																	</path>
-																																</IdExpression>
-																															</flow>
-																															<with>
-																																<ConstValue value="2"/>
-																															</with>
-																														</PrjOp>
-																														<ConstValue value="3"/>
-																													</operands>
-																												</BinaryOp>
-																											</callParameters>
-																											<pragmas>
-																												<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																													<references>
-																														<OperatorRef path="digital::RisingEdge" refOid="s4_137/7236A702/11D5/36A6E753/39A9">
-																															<InputRef refOid="s4_135/7236A702/11D5/36A6E752/7C93"/>
-																															<OutputRef refOid="s4_136/7236A702/11D5/36A6E753/5ABC"/>
-																														</OperatorRef>
-																													</references>
-																												</ed:CallExpression>
-																											</pragmas>
-																										</CallExpression>
-																									</if>
-																									<then>
-																										<Action>
-																											<locals>
-																												<Variable name="_L3">
-																													<type>
-																														<NamedType>
-																															<type>
-																																<TypeRef name="ListOfDatas::ListData"/>
-																															</type>
-																														</NamedType>
-																													</type>
-																													<pragmas>
-																														<ed:Variable oid="!ed/485d/56E7/5DAC/653bb4697b06"/>
-																													</pragmas>
-																												</Variable>
-																												<Variable name="_L2">
-																													<type>
-																														<NamedType>
-																															<type>
-																																<TypeRef name="ListOfDatas::ListData"/>
-																															</type>
-																														</NamedType>
-																													</type>
-																													<pragmas>
-																														<ed:Variable oid="!ed/485a/56E7/5DAC/653bb4692b35"/>
-																													</pragmas>
-																												</Variable>
-																												<Variable name="_L1">
-																													<type>
-																														<NamedType>
-																															<type>
-																																<TypeRef name="ListOfDatas::Data"/>
-																															</type>
-																														</NamedType>
-																													</type>
-																													<pragmas>
-																														<ed:Variable oid="!ed/4858/56E7/5DAC/653bb46930b3"/>
-																													</pragmas>
-																												</Variable>
-																											</locals>
-																											<data>
-																												<!-- _L1 = PUMP3_FAILURE; -->
-																												<Equation>
-																													<lefts>
-																														<VariableRef name="_L1"/>
-																													</lefts>
-																													<right>
-																														<IdExpression>
-																															<path>
-																																<ConstVarRef name="PUMP3_FAILURE"/>
-																															</path>
-																														</IdExpression>
-																													</right>
-																													<pragmas>
-																														<ed:Equation oid="!ed/4857/56E7/5DAC/653bb46957fd"/>
-																													</pragmas>
-																												</Equation>
-																												<!-- _L2 = ListOfDatas::Append(_L3, _L1); -->
-																												<Equation>
-																													<lefts>
-																														<VariableRef name="_L2"/>
-																													</lefts>
-																													<right>
-																														<!-- ListOfDatas::Append(_L3, _L1) -->
-																														<CallExpression>
-																															<operator>
-																																<OpCall name="9">
-																																	<operator>
-																																		<OperatorRef name="ListOfDatas::Append"/>
-																																	</operator>
-																																</OpCall>
-																															</operator>
-																															<callParameters>
-																																<IdExpression>
-																																	<path>
-																																		<ConstVarRef name="_L3"/>
-																																	</path>
-																																</IdExpression>
-																																<IdExpression>
-																																	<path>
-																																		<ConstVarRef name="_L1"/>
-																																	</path>
-																																</IdExpression>
-																															</callParameters>
-																															<pragmas>
-																																<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																																	<references>
-																																		<OperatorRef path="ListOfDatas::Append" refOid="!ed/1e15/56E7/5DAC/653b83156e1e">
-																																			<InputRef refOid="!ed/1e1f/56E7/5DAC/653b831536e7"/>
-																																			<InputRef refOid="!ed/1e20/56E7/5DAC/653b83157557"/>
-																																			<OutputRef refOid="!ed/1e1e/56E7/5DAC/653b8315821"/>
-																																		</OperatorRef>
-																																	</references>
-																																</ed:CallExpression>
-																															</pragmas>
-																														</CallExpression>
-																													</right>
-																													<pragmas>
-																														<ed:Equation oid="!ed/4859/56E7/5DAC/653bb4692c81"/>
-																													</pragmas>
-																												</Equation>
-																												<!-- lMyNotifs = _L2; -->
-																												<Equation>
-																													<lefts>
-																														<VariableRef name="lMyNotifs"/>
-																													</lefts>
-																													<right>
-																														<IdExpression>
-																															<path>
-																																<ConstVarRef name="_L2"/>
-																															</path>
-																														</IdExpression>
-																													</right>
-																													<pragmas>
-																														<ed:Equation oid="!ed/485b/56E7/5DAC/653bb469cec"/>
-																													</pragmas>
-																												</Equation>
-																												<!-- _L3 =  last 'lMyNotifs; -->
-																												<Equation>
-																													<lefts>
-																														<VariableRef name="_L3"/>
-																													</lefts>
-																													<right>
-																														<Last>
-																															<variable>
-																																<ConstVarRef name="lMyNotifs"/>
-																															</variable>
-																														</Last>
-																													</right>
-																													<pragmas>
-																														<ed:Equation oid="!ed/485c/56E7/5DAC/653bb46971c1"/>
-																													</pragmas>
-																												</Equation>
-																											</data>
-																											<pragmas>
-																												<ed:Action oid="!ed/47bb/56E7/5DAC/653bb3eb6060"/>
-																											</pragmas>
-																										</Action>
-																									</then>
-																									<else>
-																										<IfNode>
-																											<if>
-																												<!-- digital::FallingEdge(displayPumpState[2] = 3) -->
-																												<CallExpression>
-																													<operator>
-																														<OpCall name="8">
-																															<operator>
-																																<OperatorRef name="digital::FallingEdge"/>
-																															</operator>
-																														</OpCall>
-																													</operator>
-																													<callParameters>
-																														<!-- displayPumpState[2] = 3 -->
-																														<BinaryOp name="14" operator="=">
-																															<operands>
-																																<!-- displayPumpState[2] -->
-																																<PrjOp name="13">
-																																	<flow>
-																																		<IdExpression>
-																																			<path>
-																																				<ConstVarRef name="displayPumpState"/>
-																																			</path>
-																																		</IdExpression>
-																																	</flow>
-																																	<with>
-																																		<ConstValue value="2"/>
-																																	</with>
-																																</PrjOp>
-																																<ConstValue value="3"/>
-																															</operands>
-																														</BinaryOp>
-																													</callParameters>
-																													<pragmas>
-																														<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																															<references>
-																																<OperatorRef path="digital::FallingEdge" refOid="s4_13D/7236A702/11D5/36A6E7A2/E74">
-																																	<InputRef refOid="s4_13B/7236A702/11D5/36A6E7A2/5047"/>
-																																	<OutputRef refOid="s4_13C/7236A702/11D5/36A6E7A2/4412"/>
-																																</OperatorRef>
-																															</references>
-																														</ed:CallExpression>
-																													</pragmas>
-																												</CallExpression>
-																											</if>
-																											<then>
-																												<Action>
-																													<locals>
-																														<Variable name="_L3">
-																															<type>
-																																<NamedType>
-																																	<type>
-																																		<TypeRef name="ListOfDatas::Data"/>
-																																	</type>
-																																</NamedType>
-																															</type>
-																															<pragmas>
-																																<ed:Variable oid="!ed/48a5/56E7/5DAC/653bb4812894"/>
-																															</pragmas>
-																														</Variable>
-																														<Variable name="_L2">
-																															<type>
-																																<NamedType>
-																																	<type>
-																																		<TypeRef name="ListOfDatas::ListData"/>
-																																	</type>
-																																</NamedType>
-																															</type>
-																															<pragmas>
-																																<ed:Variable oid="!ed/48a2/56E7/5DAC/653bb4814005"/>
-																															</pragmas>
-																														</Variable>
-																														<Variable name="_L1">
-																															<type>
-																																<NamedType>
-																																	<type>
-																																		<TypeRef name="ListOfDatas::ListData"/>
-																																	</type>
-																																</NamedType>
-																															</type>
-																															<pragmas>
-																																<ed:Variable oid="!ed/48a0/56E7/5DAC/653bb4814601"/>
-																															</pragmas>
-																														</Variable>
-																													</locals>
-																													<data>
-																														<!-- _L1 =  last 'lMyNotifs; -->
-																														<Equation>
-																															<lefts>
-																																<VariableRef name="_L1"/>
-																															</lefts>
-																															<right>
-																																<Last>
-																																	<variable>
-																																		<ConstVarRef name="lMyNotifs"/>
-																																	</variable>
-																																</Last>
-																															</right>
-																															<pragmas>
-																																<ed:Equation oid="!ed/489f/56E7/5DAC/653bb481918"/>
-																															</pragmas>
-																														</Equation>
-																														<!-- _L2 = ListOfDatas::Remove(_L1, _L3); -->
-																														<Equation>
-																															<lefts>
-																																<VariableRef name="_L2"/>
-																															</lefts>
-																															<right>
-																																<!-- ListOfDatas::Remove(_L1, _L3) -->
-																																<CallExpression>
-																																	<operator>
-																																		<OpCall name="7">
-																																			<operator>
-																																				<OperatorRef name="ListOfDatas::Remove"/>
-																																			</operator>
-																																		</OpCall>
-																																	</operator>
-																																	<callParameters>
-																																		<IdExpression>
-																																			<path>
-																																				<ConstVarRef name="_L1"/>
-																																			</path>
-																																		</IdExpression>
-																																		<IdExpression>
-																																			<path>
-																																				<ConstVarRef name="_L3"/>
-																																			</path>
-																																		</IdExpression>
-																																	</callParameters>
-																																	<pragmas>
-																																		<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																																			<references>
-																																				<OperatorRef path="ListOfDatas::Remove" refOid="!ed/1e60/56E7/5DAC/653b8315787b">
-																																					<InputRef refOid="!ed/1e6e/56E7/5DAC/653b831589d"/>
-																																					<InputRef refOid="!ed/1e6f/56E7/5DAC/653b831530f6"/>
-																																					<OutputRef refOid="!ed/1e6d/56E7/5DAC/653b83153234"/>
-																																				</OperatorRef>
-																																			</references>
-																																		</ed:CallExpression>
-																																	</pragmas>
-																																</CallExpression>
-																															</right>
-																															<pragmas>
-																																<ed:Equation oid="!ed/48a1/56E7/5DAC/653bb48148bf"/>
-																															</pragmas>
-																														</Equation>
-																														<!-- lMyNotifs = _L2; -->
-																														<Equation>
-																															<lefts>
-																																<VariableRef name="lMyNotifs"/>
-																															</lefts>
-																															<right>
-																																<IdExpression>
-																																	<path>
-																																		<ConstVarRef name="_L2"/>
-																																	</path>
-																																</IdExpression>
-																															</right>
-																															<pragmas>
-																																<ed:Equation oid="!ed/48a3/56E7/5DAC/653bb48117e0"/>
-																															</pragmas>
-																														</Equation>
-																														<!-- _L3 = PUMP3_FAILURE; -->
-																														<Equation>
-																															<lefts>
-																																<VariableRef name="_L3"/>
-																															</lefts>
-																															<right>
-																																<IdExpression>
-																																	<path>
-																																		<ConstVarRef name="PUMP3_FAILURE"/>
-																																	</path>
-																																</IdExpression>
-																															</right>
-																															<pragmas>
-																																<ed:Equation oid="!ed/48a4/56E7/5DAC/653bb48162bc"/>
-																															</pragmas>
-																														</Equation>
-																													</data>
-																													<pragmas>
-																														<ed:Action oid="!ed/47c7/56E7/5DAC/653bb3f16801"/>
-																													</pragmas>
-																												</Action>
-																											</then>
-																											<else>
-																												<IfNode>
-																													<if>
-																														<!-- digital::RisingEdge(displayPumpState[3] = 3) -->
-																														<CallExpression>
-																															<operator>
-																																<OpCall name="11">
-																																	<operator>
-																																		<OperatorRef name="digital::RisingEdge"/>
-																																	</operator>
-																																</OpCall>
-																															</operator>
-																															<callParameters>
-																																<!-- displayPumpState[3] = 3 -->
-																																<BinaryOp name="17" operator="=">
-																																	<operands>
-																																		<!-- displayPumpState[3] -->
-																																		<PrjOp name="16">
-																																			<flow>
-																																				<IdExpression>
-																																					<path>
-																																						<ConstVarRef name="displayPumpState"/>
-																																					</path>
-																																				</IdExpression>
-																																			</flow>
-																																			<with>
-																																				<ConstValue value="3"/>
-																																			</with>
-																																		</PrjOp>
-																																		<ConstValue value="3"/>
-																																	</operands>
-																																</BinaryOp>
-																															</callParameters>
-																															<pragmas>
-																																<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																																	<references>
-																																		<OperatorRef path="digital::RisingEdge" refOid="s4_137/7236A702/11D5/36A6E753/39A9">
-																																			<InputRef refOid="s4_135/7236A702/11D5/36A6E752/7C93"/>
-																																			<OutputRef refOid="s4_136/7236A702/11D5/36A6E753/5ABC"/>
-																																		</OperatorRef>
-																																	</references>
-																																</ed:CallExpression>
-																															</pragmas>
-																														</CallExpression>
-																													</if>
-																													<then>
-																														<Action>
-																															<locals>
-																																<Variable name="_L3">
-																																	<type>
-																																		<NamedType>
-																																			<type>
-																																				<TypeRef name="ListOfDatas::Data"/>
-																																			</type>
-																																		</NamedType>
-																																	</type>
-																																	<pragmas>
-																																		<ed:Variable oid="!ed/487a/56E7/5DAC/653bb46b503f"/>
-																																	</pragmas>
-																																</Variable>
-																																<Variable name="_L2">
-																																	<type>
-																																		<NamedType>
-																																			<type>
-																																				<TypeRef name="ListOfDatas::ListData"/>
-																																			</type>
-																																		</NamedType>
-																																	</type>
-																																	<pragmas>
-																																		<ed:Variable oid="!ed/4878/56E7/5DAC/653bb46b115"/>
-																																	</pragmas>
-																																</Variable>
-																																<Variable name="_L1">
-																																	<type>
-																																		<NamedType>
-																																			<type>
-																																				<TypeRef name="ListOfDatas::ListData"/>
-																																			</type>
-																																		</NamedType>
-																																	</type>
-																																	<pragmas>
-																																		<ed:Variable oid="!ed/4876/56E7/5DAC/653bb46b2847"/>
-																																	</pragmas>
-																																</Variable>
-																															</locals>
-																															<data>
-																																<!-- _L1 = ListOfDatas::Append(_L2, _L3); -->
-																																<Equation>
-																																	<lefts>
-																																		<VariableRef name="_L1"/>
-																																	</lefts>
-																																	<right>
-																																		<!-- ListOfDatas::Append(_L2, _L3) -->
-																																		<CallExpression>
-																																			<operator>
-																																				<OpCall name="10">
-																																					<operator>
-																																						<OperatorRef name="ListOfDatas::Append"/>
-																																					</operator>
-																																				</OpCall>
-																																			</operator>
-																																			<callParameters>
-																																				<IdExpression>
-																																					<path>
-																																						<ConstVarRef name="_L2"/>
-																																					</path>
-																																				</IdExpression>
-																																				<IdExpression>
-																																					<path>
-																																						<ConstVarRef name="_L3"/>
-																																					</path>
-																																				</IdExpression>
-																																			</callParameters>
-																																			<pragmas>
-																																				<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																																					<references>
-																																						<OperatorRef path="ListOfDatas::Append" refOid="!ed/1e15/56E7/5DAC/653b83156e1e">
-																																							<InputRef refOid="!ed/1e1f/56E7/5DAC/653b831536e7"/>
-																																							<InputRef refOid="!ed/1e20/56E7/5DAC/653b83157557"/>
-																																							<OutputRef refOid="!ed/1e1e/56E7/5DAC/653b8315821"/>
-																																						</OperatorRef>
-																																					</references>
-																																				</ed:CallExpression>
-																																			</pragmas>
-																																		</CallExpression>
-																																	</right>
-																																	<pragmas>
-																																		<ed:Equation oid="!ed/4875/56E7/5DAC/653bb46b49c6"/>
-																																	</pragmas>
-																																</Equation>
-																																<!-- _L2 =  last 'lMyNotifs; -->
-																																<Equation>
-																																	<lefts>
-																																		<VariableRef name="_L2"/>
-																																	</lefts>
-																																	<right>
-																																		<Last>
-																																			<variable>
-																																				<ConstVarRef name="lMyNotifs"/>
-																																			</variable>
-																																		</Last>
-																																	</right>
-																																	<pragmas>
-																																		<ed:Equation oid="!ed/4877/56E7/5DAC/653bb46b7519"/>
-																																	</pragmas>
-																																</Equation>
-																																<!-- _L3 = PUMP4_FAILURE; -->
-																																<Equation>
-																																	<lefts>
-																																		<VariableRef name="_L3"/>
-																																	</lefts>
-																																	<right>
-																																		<IdExpression>
-																																			<path>
-																																				<ConstVarRef name="PUMP4_FAILURE"/>
-																																			</path>
-																																		</IdExpression>
-																																	</right>
-																																	<pragmas>
-																																		<ed:Equation oid="!ed/4879/56E7/5DAC/653bb46b4378"/>
-																																	</pragmas>
-																																</Equation>
-																																<!-- lMyNotifs = _L1; -->
-																																<Equation>
-																																	<lefts>
-																																		<VariableRef name="lMyNotifs"/>
-																																	</lefts>
-																																	<right>
-																																		<IdExpression>
-																																			<path>
-																																				<ConstVarRef name="_L1"/>
-																																			</path>
-																																		</IdExpression>
-																																	</right>
-																																	<pragmas>
-																																		<ed:Equation oid="!ed/487b/56E7/5DAC/653bb46b5947"/>
-																																	</pragmas>
-																																</Equation>
-																															</data>
-																															<pragmas>
-																																<ed:Action oid="!ed/47df/56E7/5DAC/653bb3fc6b27"/>
-																															</pragmas>
-																														</Action>
-																													</then>
-																													<else>
-																														<IfNode>
-																															<if>
-																																<!-- digital::FallingEdge(displayPumpState[3] = 3) -->
-																																<CallExpression>
-																																	<operator>
-																																		<OpCall name="9">
-																																			<operator>
-																																				<OperatorRef name="digital::FallingEdge"/>
-																																			</operator>
-																																		</OpCall>
-																																	</operator>
-																																	<callParameters>
-																																		<!-- displayPumpState[3] = 3 -->
-																																		<BinaryOp name="16" operator="=">
-																																			<operands>
-																																				<!-- displayPumpState[3] -->
-																																				<PrjOp name="15">
-																																					<flow>
-																																						<IdExpression>
-																																							<path>
-																																								<ConstVarRef name="displayPumpState"/>
-																																							</path>
-																																						</IdExpression>
-																																					</flow>
-																																					<with>
-																																						<ConstValue value="3"/>
-																																					</with>
-																																				</PrjOp>
-																																				<ConstValue value="3"/>
-																																			</operands>
-																																		</BinaryOp>
-																																	</callParameters>
-																																	<pragmas>
-																																		<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																																			<references>
-																																				<OperatorRef path="digital::FallingEdge" refOid="s4_13D/7236A702/11D5/36A6E7A2/E74">
-																																					<InputRef refOid="s4_13B/7236A702/11D5/36A6E7A2/5047"/>
-																																					<OutputRef refOid="s4_13C/7236A702/11D5/36A6E7A2/4412"/>
-																																				</OperatorRef>
-																																			</references>
-																																		</ed:CallExpression>
-																																	</pragmas>
-																																</CallExpression>
-																															</if>
-																															<then>
-																																<Action>
-																																	<locals>
-																																		<Variable name="_L3">
-																																			<type>
-																																				<NamedType>
-																																					<type>
-																																						<TypeRef name="ListOfDatas::Data"/>
-																																					</type>
-																																				</NamedType>
-																																			</type>
-																																			<pragmas>
-																																				<ed:Variable oid="!ed/48c3/56E7/5DAC/653bb4842e25"/>
-																																			</pragmas>
-																																		</Variable>
-																																		<Variable name="_L2">
-																																			<type>
-																																				<NamedType>
-																																					<type>
-																																						<TypeRef name="ListOfDatas::ListData"/>
-																																					</type>
-																																				</NamedType>
-																																			</type>
-																																			<pragmas>
-																																				<ed:Variable oid="!ed/48c0/56E7/5DAC/653bb4845efb"/>
-																																			</pragmas>
-																																		</Variable>
-																																		<Variable name="_L1">
-																																			<type>
-																																				<NamedType>
-																																					<type>
-																																						<TypeRef name="ListOfDatas::ListData"/>
-																																					</type>
-																																				</NamedType>
-																																			</type>
-																																			<pragmas>
-																																				<ed:Variable oid="!ed/48be/56E7/5DAC/653bb4842cea"/>
-																																			</pragmas>
-																																		</Variable>
-																																	</locals>
-																																	<data>
-																																		<!-- _L1 =  last 'lMyNotifs; -->
-																																		<Equation>
-																																			<lefts>
-																																				<VariableRef name="_L1"/>
-																																			</lefts>
-																																			<right>
-																																				<Last>
-																																					<variable>
-																																						<ConstVarRef name="lMyNotifs"/>
-																																					</variable>
-																																				</Last>
-																																			</right>
-																																			<pragmas>
-																																				<ed:Equation oid="!ed/48bd/56E7/5DAC/653bb4841d28"/>
-																																			</pragmas>
-																																		</Equation>
-																																		<!-- _L2 = ListOfDatas::Remove(_L1, _L3); -->
-																																		<Equation>
-																																			<lefts>
-																																				<VariableRef name="_L2"/>
-																																			</lefts>
-																																			<right>
-																																				<!-- ListOfDatas::Remove(_L1, _L3) -->
-																																				<CallExpression>
-																																					<operator>
-																																						<OpCall name="8">
-																																							<operator>
-																																								<OperatorRef name="ListOfDatas::Remove"/>
-																																							</operator>
-																																						</OpCall>
-																																					</operator>
-																																					<callParameters>
-																																						<IdExpression>
-																																							<path>
-																																								<ConstVarRef name="_L1"/>
-																																							</path>
-																																						</IdExpression>
-																																						<IdExpression>
-																																							<path>
-																																								<ConstVarRef name="_L3"/>
-																																							</path>
-																																						</IdExpression>
-																																					</callParameters>
-																																					<pragmas>
-																																						<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
-																																							<references>
-																																								<OperatorRef path="ListOfDatas::Remove" refOid="!ed/1e60/56E7/5DAC/653b8315787b">
-																																									<InputRef refOid="!ed/1e6e/56E7/5DAC/653b831589d"/>
-																																									<InputRef refOid="!ed/1e6f/56E7/5DAC/653b831530f6"/>
-																																									<OutputRef refOid="!ed/1e6d/56E7/5DAC/653b83153234"/>
-																																								</OperatorRef>
-																																							</references>
-																																						</ed:CallExpression>
-																																					</pragmas>
-																																				</CallExpression>
-																																			</right>
-																																			<pragmas>
-																																				<ed:Equation oid="!ed/48bf/56E7/5DAC/653bb48470d4"/>
-																																			</pragmas>
-																																		</Equation>
-																																		<!-- lMyNotifs = _L2; -->
-																																		<Equation>
-																																			<lefts>
-																																				<VariableRef name="lMyNotifs"/>
-																																			</lefts>
-																																			<right>
-																																				<IdExpression>
-																																					<path>
-																																						<ConstVarRef name="_L2"/>
-																																					</path>
-																																				</IdExpression>
-																																			</right>
-																																			<pragmas>
-																																				<ed:Equation oid="!ed/48c1/56E7/5DAC/653bb4846c83"/>
-																																			</pragmas>
-																																		</Equation>
-																																		<!-- _L3 = PUMP4_FAILURE; -->
-																																		<Equation>
-																																			<lefts>
-																																				<VariableRef name="_L3"/>
-																																			</lefts>
-																																			<right>
-																																				<IdExpression>
-																																					<path>
-																																						<ConstVarRef name="PUMP4_FAILURE"/>
-																																					</path>
-																																				</IdExpression>
-																																			</right>
-																																			<pragmas>
-																																				<ed:Equation oid="!ed/48c2/56E7/5DAC/653bb4846ade"/>
-																																			</pragmas>
-																																		</Equation>
-																																	</data>
-																																	<pragmas>
-																																		<ed:Action oid="!ed/47ea/56E7/5DAC/653bb40761f9"/>
-																																	</pragmas>
-																																</Action>
-																															</then>
-																															<else>
-																																<Action>
-																																	<pragmas>
-																																		<ed:Action oid="!ed/1f43/56E7/5DAC/653b842b73ea"/>
-																																	</pragmas>
-																																</Action>
-																															</else>
-																															<pragmas>
-																																<ed:IfNode oid="!ed/47e0/56E7/5DAC/653bb4056f10"/>
-																															</pragmas>
-																														</IfNode>
-																													</else>
-																													<pragmas>
-																														<ed:IfNode oid="!ed/47d5/56E7/5DAC/653bb3fa1c22"/>
-																													</pragmas>
-																												</IfNode>
-																											</else>
-																											<pragmas>
-																												<ed:IfNode oid="!ed/47bd/56E7/5DAC/653bb3f07ef7"/>
-																											</pragmas>
-																										</IfNode>
-																									</else>
-																									<pragmas>
-																										<ed:IfNode oid="!ed/47b1/56E7/5DAC/653bb3ea4c7d"/>
-																									</pragmas>
-																								</IfNode>
-																							</else>
-																							<pragmas>
-																								<ed:IfNode oid="!ed/473a/56E7/5DAC/653bb37c4267"/>
-																							</pragmas>
-																						</IfNode>
-																					</else>
-																					<pragmas>
-																						<ed:IfNode oid="!ed/4726/56E7/5DAC/653bb36d68a8"/>
-																					</pragmas>
-																				</IfNode>
-																			</else>
-																			<pragmas>
-																				<ed:IfNode oid="!ed/4633/56E7/5DAC/653bb2734326"/>
-																			</pragmas>
-																		</IfNode>
-																	</else>
-																	<pragmas>
-																		<ed:IfNode oid="!ed/45e5/56E7/5DAC/653baec476be"/>
-																	</pragmas>
-																</IfNode>
-															</else>
-															<pragmas>
-																<ed:IfNode oid="!ed/45a9/56E7/5DAC/653badf46b6c"/>
-															</pragmas>
-														</IfNode>
-													</else>
-													<pragmas>
-														<ed:IfNode oid="!ed/454b/56E7/5DAC/653bac5c506f"/>
-													</pragmas>
-												</IfNode>
-											</else>
-											<pragmas>
-												<ed:IfNode oid="!ed/1f42/56E7/5DAC/653b842bec6"/>
-											</pragmas>
-										</IfNode>
-									</else>
+											</size>
+										</IteratorOp>
+									</operator>
+									<callParameters>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L2"/>
+											</path>
+										</IdExpression>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L5"/>
+											</path>
+										</IdExpression>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L4"/>
+											</path>
+										</IdExpression>
+									</callParameters>
 									<pragmas>
-										<ed:IfNode oid="!ed/1f41/56E7/5DAC/653b842b3173"/>
+										<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+											<references>
+												<OperatorRef path="ProcessNotificationsDataEvent" refOid="!ed/259e/6FD0/A238/66a73363188d">
+													<InputRef refOid="!ed/27d8/6FD0/A238/66a734186e44"/>
+													<InputRef refOid="!ed/275e/6FD0/A238/66a733794db9"/>
+													<InputRef refOid="!ed/27f4/6FD0/A238/66a734bf601f"/>
+													<OutputRef refOid="!ed/2761/6FD0/A238/66a73379382e"/>
+												</OperatorRef>
+											</references>
+										</ed:CallExpression>
 									</pragmas>
-								</IfNode>
-							</block>
+								</CallExpression>
+							</right>
 							<pragmas>
-								<ed:IfBlock oid="!ed/1f40/56E7/5DAC/653b842b7d46"/>
+								<ed:Equation oid="!ed/25ec/5AFC/F098/66a73b3c5767"/>
 							</pragmas>
-						</IfBlock>
+						</Equation>
+						<!-- lMyNotifs = _L1; -->
+						<Equation>
+							<lefts>
+								<VariableRef name="lMyNotifs"/>
+							</lefts>
+							<right>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="_L1"/>
+									</path>
+								</IdExpression>
+							</right>
+							<pragmas>
+								<ed:Equation oid="!ed/2603/5AFC/F098/66a73bd97a01"/>
+							</pragmas>
+						</Equation>
+						<!-- _L2 =  last 'lMyNotifs; -->
+						<Equation>
+							<lefts>
+								<VariableRef name="_L2"/>
+							</lefts>
+							<right>
+								<Last>
+									<variable>
+										<ConstVarRef name="lMyNotifs"/>
+									</variable>
+								</Last>
+							</right>
+							<pragmas>
+								<ed:Equation oid="!ed/260b/5AFC/F098/66a73bf169c9"/>
+							</pragmas>
+						</Equation>
+						<!-- _L4 = [LEVEL_CONTROL_FAILURE, STEAM_FAILURE, PUMP1_FAILURE, PUMP2_FAILURE, PUMP3_... -->
+						<Equation>
+							<lefts>
+								<VariableRef name="_L4"/>
+							</lefts>
+							<right>
+								<!-- [LEVEL_CONTROL_FAILURE, STEAM_FAILURE, PUMP1_FAILURE, PUMP2_FAILURE, PUMP3_FAILUR... -->
+								<DataArrayOp name="1">
+									<data>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="LEVEL_CONTROL_FAILURE"/>
+											</path>
+										</IdExpression>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="STEAM_FAILURE"/>
+											</path>
+										</IdExpression>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="PUMP1_FAILURE"/>
+											</path>
+										</IdExpression>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="PUMP2_FAILURE"/>
+											</path>
+										</IdExpression>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="PUMP3_FAILURE"/>
+											</path>
+										</IdExpression>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="PUMP4_FAILURE"/>
+											</path>
+										</IdExpression>
+									</data>
+								</DataArrayOp>
+							</right>
+							<pragmas>
+								<ed:Equation oid="!ed/2617/5AFC/F098/66a73cc167e6"/>
+							</pragmas>
+						</Equation>
+						<!-- _L5 = [waterLevelFailure, steamControlState = 2, displayPumpState[0] = 3, display... -->
+						<Equation>
+							<lefts>
+								<VariableRef name="_L5"/>
+							</lefts>
+							<right>
+								<!-- [waterLevelFailure, steamControlState = 2, displayPumpState[0] = 3, displayPumpSt... -->
+								<DataArrayOp name="2">
+									<data>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="waterLevelFailure"/>
+											</path>
+										</IdExpression>
+										<!-- steamControlState = 2 -->
+										<BinaryOp name="18" operator="=">
+											<operands>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="steamControlState"/>
+													</path>
+												</IdExpression>
+												<ConstValue value="2"/>
+											</operands>
+										</BinaryOp>
+										<!-- displayPumpState[0] = 3 -->
+										<BinaryOp name="19" operator="=">
+											<operands>
+												<!-- displayPumpState[0] -->
+												<PrjOp name="17">
+													<flow>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="displayPumpState"/>
+															</path>
+														</IdExpression>
+													</flow>
+													<with>
+														<ConstValue value="0"/>
+													</with>
+												</PrjOp>
+												<ConstValue value="3"/>
+											</operands>
+										</BinaryOp>
+										<!-- displayPumpState[1] = 3 -->
+										<BinaryOp name="20" operator="=">
+											<operands>
+												<!-- displayPumpState[1] -->
+												<PrjOp name="18">
+													<flow>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="displayPumpState"/>
+															</path>
+														</IdExpression>
+													</flow>
+													<with>
+														<ConstValue value="1"/>
+													</with>
+												</PrjOp>
+												<ConstValue value="3"/>
+											</operands>
+										</BinaryOp>
+										<!-- displayPumpState[2] = 3 -->
+										<BinaryOp name="21" operator="=">
+											<operands>
+												<!-- displayPumpState[2] -->
+												<PrjOp name="19">
+													<flow>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="displayPumpState"/>
+															</path>
+														</IdExpression>
+													</flow>
+													<with>
+														<ConstValue value="2"/>
+													</with>
+												</PrjOp>
+												<ConstValue value="3"/>
+											</operands>
+										</BinaryOp>
+										<!-- displayPumpState[3] = 3 -->
+										<BinaryOp name="22" operator="=">
+											<operands>
+												<!-- displayPumpState[3] -->
+												<PrjOp name="20">
+													<flow>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="displayPumpState"/>
+															</path>
+														</IdExpression>
+													</flow>
+													<with>
+														<ConstValue value="3"/>
+													</with>
+												</PrjOp>
+												<ConstValue value="3"/>
+											</operands>
+										</BinaryOp>
+									</data>
+								</DataArrayOp>
+							</right>
+							<pragmas>
+								<ed:Equation oid="!ed/2627/5AFC/F098/66a73d2d5577"/>
+							</pragmas>
+						</Equation>
 					</data>
 					<pragmas>
 						<ed:State oid="!ed/1f3f/56E7/5DAC/653b842b190b" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
 							<diagrams>
 								<NetDiagram name="AppendRemove" landscape="true" format="A4 (210 297)" oid="!ed/2656/C1B/BAE0/66754074967">
 									<presentationElements>
-										<IfBlockGE presentable="!ed/1f40/56E7/5DAC/653b842b7d46">
+										<EquationGE presentable="!ed/25ec/5AFC/F098/66a73b3c5767">
 											<position>
-												<Point x="1138" y="344"/>
+												<Point x="19870" y="2461"/>
 											</position>
 											<size>
-												<Size width="20029" height="77788"/>
+												<Size width="7821" height="3826"/>
 											</size>
-										</IfBlockGE>
-										<IfNodeGE labelWidth="4128" presentable="!ed/1f41/56E7/5DAC/653b842b3173">
+										</EquationGE>
+										<EquationGE presentable="!ed/2603/5AFC/F098/66a73bd97a01">
+											<position>
+												<Point x="29448" y="4128"/>
+											</position>
+											<size>
+												<Size width="317" height="503"/>
+											</size>
+										</EquationGE>
+										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/25ec/5AFC/F098/66a73b3c5767" dstEquation="!ed/2603/5AFC/F098/66a73bd97a01">
+											<positions>
+												<Point x="27702" y="4392"/>
+												<Point x="28575" y="4392"/>
+												<Point x="28575" y="4392"/>
+												<Point x="29448" y="4392"/>
+											</positions>
+										</Edge>
+										<EquationGE presentable="!ed/260b/5AFC/F098/66a73bf169c9">
+											<position>
+												<Point x="3254" y="3175"/>
+											</position>
+											<size>
+												<Size width="318" height="503"/>
+											</size>
+										</EquationGE>
+										<EquationGE kind="OBJ_LIT" presentable="!ed/2617/5AFC/F098/66a73cc167e6">
 											<textAreas>
-												<TextArea text="digital::RisingEdge(waterLevelFailure)&#xA;
-" role="181"/>
+												<TextArea text="[LEVEL_CONTROL_FAILURE, STEAM_FAILURE, PUMP1_FAILURE, PUMP2_FAILURE,PUMP3_FAILURE,PUMP4_FAILURE]" role="6"/>
 											</textAreas>
 											<position>
-												<Point x="1588" y="1323"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/1f4c/56E7/5DAC/653b842b4591">
-											<position>
-												<Point x="2963" y="1244"/>
-											</position>
-											<size>
-												<Size width="13308" height="5398"/>
-											</size>
-										</ActionGE>
-										<EquationGE presentable="!ed/1f4d/56E7/5DAC/653b842b21e8">
-											<position>
-												<Point x="6959" y="2487"/>
-											</position>
-											<size>
-												<Size width="4620" height="2026"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/3ee9/56E7/5DAC/653ba4b561a4" dstEquation="!ed/1f4d/56E7/5DAC/653b842b21e8">
-											<positions>
-												<Point x="6668" y="3836"/>
-												<Point x="6906" y="3836"/>
-												<Point x="6906" y="3836"/>
-												<Point x="6959" y="3836"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1f50/56E7/5DAC/653b842b607d" dstEquation="!ed/1f4d/56E7/5DAC/653b842b21e8">
-											<positions>
-												<Point x="5450" y="3149"/>
-												<Point x="6191" y="3149"/>
-												<Point x="6191" y="3149"/>
-												<Point x="6959" y="3149"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/1f4e/56E7/5DAC/653b842b3c20">
-											<position>
-												<Point x="13758" y="3228"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1f4d/56E7/5DAC/653b842b21e8" dstEquation="!ed/1f4e/56E7/5DAC/653b842b3c20">
-											<positions>
-												<Point x="11589" y="3519"/>
-												<Point x="12674" y="3519"/>
-												<Point x="12674" y="3519"/>
-												<Point x="13758" y="3519"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/1f50/56E7/5DAC/653b842b607d">
-											<position>
-												<Point x="5133" y="2910"/>
-											</position>
-											<size>
-												<Size width="317" height="503"/>
-											</size>
-										</EquationGE>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/3ee9/56E7/5DAC/653ba4b561a4">
-											<position>
-												<Point x="6456" y="3678"/>
-											</position>
-											<size>
-												<Size width="211" height="317"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4154" presentable="!ed/1f42/56E7/5DAC/653b842bec6">
-											<position>
-												<Point x="1588" y="8361"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/1f44/56E7/5DAC/653b842b4d12">
-											<position>
-												<Point x="2937" y="8281"/>
-											</position>
-											<size>
-												<Size width="13308" height="5927"/>
-											</size>
-										</ActionGE>
-										<EquationGE presentable="!ed/1f45/56E7/5DAC/653b842b6814">
-											<position>
-												<Point x="5133" y="10689"/>
-											</position>
-											<size>
-												<Size width="317" height="503"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/1f46/56E7/5DAC/653b842b2312">
-											<position>
-												<Point x="13811" y="10980"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1f47/56E7/5DAC/653b842bfb8" dstEquation="!ed/1f46/56E7/5DAC/653b842b2312">
-											<positions>
-												<Point x="11589" y="11271"/>
-												<Point x="12700" y="11271"/>
-												<Point x="12700" y="11271"/>
-												<Point x="13811" y="11271"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/1f47/56E7/5DAC/653b842bfb8">
-											<position>
-												<Point x="6985" y="10266"/>
-											</position>
-											<size>
-												<Size width="4604" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/3eef/56E7/5DAC/653ba4bc717c" dstEquation="!ed/1f47/56E7/5DAC/653b842bfb8">
-											<positions>
-												<Point x="6588" y="11615"/>
-												<Point x="6906" y="11615"/>
-												<Point x="6906" y="11615"/>
-												<Point x="6985" y="11615"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1f45/56E7/5DAC/653b842b6814" dstEquation="!ed/1f47/56E7/5DAC/653b842bfb8">
-											<positions>
-												<Point x="5450" y="10927"/>
-												<Point x="6218" y="10927"/>
-												<Point x="6218" y="10927"/>
-												<Point x="6985" y="10927"/>
-											</positions>
-										</Edge>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/3eef/56E7/5DAC/653ba4bc717c">
-											<position>
-												<Point x="6376" y="11456"/>
-											</position>
-											<size>
-												<Size width="211" height="318"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4260" presentable="!ed/454b/56E7/5DAC/653bac5c506f">
-											<textAreas>
-												<TextArea text="digital::RisingEdge(steamControlState &#xA;
-= 2)" role="181"/>
-											</textAreas>
-											<position>
-												<Point x="1588" y="15796"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/4555/56E7/5DAC/653bac5d2314">
-											<position>
-												<Point x="2937" y="15716"/>
-											</position>
-											<size>
-												<Size width="13308" height="5795"/>
-											</size>
-										</ActionGE>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/457f/56E7/5DAC/653bac96717">
-											<position>
-												<Point x="5371" y="17648"/>
-											</position>
-											<size>
-												<Size width="212" height="317"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/4581/56E7/5DAC/653bac965690">
-											<position>
-												<Point x="6985" y="16457"/>
-											</position>
-											<size>
-												<Size width="4603" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4583/56E7/5DAC/653bac964b21" dstEquation="!ed/4581/56E7/5DAC/653bac965690">
-											<positions>
-												<Point x="5450" y="17119"/>
-												<Point x="5874" y="17119"/>
-												<Point x="5874" y="17119"/>
-												<Point x="6985" y="17119"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/457f/56E7/5DAC/653bac96717" dstEquation="!ed/4581/56E7/5DAC/653bac965690">
-											<positions>
-												<Point x="5583" y="17806"/>
-												<Point x="6271" y="17806"/>
-												<Point x="6271" y="17806"/>
-												<Point x="6985" y="17806"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/4583/56E7/5DAC/653bac964b21">
-											<position>
-												<Point x="5133" y="16880"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/4585/56E7/5DAC/653bac9640bb">
-											<position>
-												<Point x="14182" y="17171"/>
-											</position>
-											<size>
-												<Size width="317" height="503"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4581/56E7/5DAC/653bac965690" dstEquation="!ed/4585/56E7/5DAC/653bac9640bb">
-											<positions>
-												<Point x="11589" y="17463"/>
-												<Point x="12885" y="17463"/>
-												<Point x="12885" y="17463"/>
-												<Point x="14182" y="17463"/>
-											</positions>
-										</Edge>
-										<IfNodeGE labelWidth="4710" presentable="!ed/45a9/56E7/5DAC/653badf46b6c">
-											<textAreas>
-												<TextArea text="digital::FallingEdge(steamControlState = 2)&#xA;
-" role="181"/>
-											</textAreas>
-											<position>
-												<Point x="1588" y="22463"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/45b3/56E7/5DAC/653badf56cff">
-											<position>
-												<Point x="2937" y="22384"/>
-											</position>
-											<size>
-												<Size width="13282" height="3598"/>
-											</size>
-										</ActionGE>
-										<EquationGE presentable="!ed/45d4/56E7/5DAC/653bae1c1f18">
-											<position>
-												<Point x="13838" y="23945"/>
-											</position>
-											<size>
-												<Size width="317" height="503"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/45d7/56E7/5DAC/653bae1c4641" dstEquation="!ed/45d4/56E7/5DAC/653bae1c1f18">
-											<positions>
-												<Point x="11589" y="24236"/>
-												<Point x="12700" y="24236"/>
-												<Point x="12700" y="24236"/>
-												<Point x="13838" y="24236"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/45d5/56E7/5DAC/653bae1c40e8">
-											<position>
-												<Point x="5133" y="23654"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/45d7/56E7/5DAC/653bae1c4641">
-											<position>
-												<Point x="6985" y="23230"/>
-											</position>
-											<size>
-												<Size width="4603" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/45d5/56E7/5DAC/653bae1c40e8" dstEquation="!ed/45d7/56E7/5DAC/653bae1c4641">
-											<positions>
-												<Point x="5450" y="23892"/>
-												<Point x="5530" y="23892"/>
-												<Point x="5530" y="23892"/>
-												<Point x="6985" y="23892"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/45d9/56E7/5DAC/653bae1c7da8" dstEquation="!ed/45d7/56E7/5DAC/653bae1c4641">
-											<positions>
-												<Point x="5583" y="24580"/>
-												<Point x="6271" y="24580"/>
-												<Point x="6271" y="24580"/>
-												<Point x="6985" y="24580"/>
-											</positions>
-										</Edge>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/45d9/56E7/5DAC/653bae1c7da8">
-											<position>
-												<Point x="5371" y="24421"/>
-											</position>
-											<size>
-												<Size width="211" height="317"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4921" presentable="!ed/45e5/56E7/5DAC/653baec476be">
-											<position>
-												<Point x="1588" y="27570"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/45ef/56E7/5DAC/653baec524d9">
-											<position>
-												<Point x="2937" y="27490"/>
-											</position>
-											<size>
-												<Size width="13256" height="3810"/>
-											</size>
-										</ActionGE>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/461b/56E7/5DAC/653bb232765f">
-											<position>
-												<Point x="5398" y="28787"/>
+												<Point x="15584" y="5186"/>
 											</position>
 											<size>
 												<Size width="212" height="318"/>
 											</size>
 										</EquationGE>
-										<EquationGE presentable="!ed/461d/56E7/5DAC/653bb2326b1c">
-											<position>
-												<Point x="6985" y="27596"/>
-											</position>
-											<size>
-												<Size width="4604" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4620/56E7/5DAC/653bb2326732" dstEquation="!ed/461d/56E7/5DAC/653bb2326b1c">
+										<Edge leftVarIndex="1" rightExprIndex="3" srcEquation="!ed/2617/5AFC/F098/66a73cc167e6" dstEquation="!ed/25ec/5AFC/F098/66a73b3c5767">
 											<positions>
-												<Point x="5450" y="28258"/>
-												<Point x="6218" y="28258"/>
-												<Point x="6218" y="28258"/>
-												<Point x="6985" y="28258"/>
+												<Point x="15796" y="5345"/>
+												<Point x="18706" y="5345"/>
+												<Point x="18706" y="5345"/>
+												<Point x="19870" y="5345"/>
 											</positions>
 										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/461b/56E7/5DAC/653bb232765f" dstEquation="!ed/461d/56E7/5DAC/653bb2326b1c">
-											<positions>
-												<Point x="5609" y="28945"/>
-												<Point x="6297" y="28945"/>
-												<Point x="6297" y="28945"/>
-												<Point x="6985" y="28945"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/461f/56E7/5DAC/653bb2321a35">
-											<position>
-												<Point x="13626" y="28310"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/461d/56E7/5DAC/653bb2326b1c" dstEquation="!ed/461f/56E7/5DAC/653bb2321a35">
-											<positions>
-												<Point x="11589" y="28601"/>
-												<Point x="12859" y="28601"/>
-												<Point x="12859" y="28601"/>
-												<Point x="13626" y="28601"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/4620/56E7/5DAC/653bb2326732">
-											<position>
-												<Point x="5133" y="28019"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4868" presentable="!ed/4633/56E7/5DAC/653bb2734326">
+										<EquationGE kind="OBJ_LIT" presentable="!ed/2627/5AFC/F098/66a73d2d5577">
 											<textAreas>
-												<TextArea text="digital::FallingEdge(displayPumpState[0] =3)&#xA;
-" role="181"/>
+												<TextArea text="[waterLevelFailure, steamControlState = 2, displayPumpState[0] =3, displayPumpState[1] =3, displayPumpState[2] =3,displayPumpState[3] =3]" role="6"/>
 											</textAreas>
 											<position>
-												<Point x="1588" y="33285"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/463d/56E7/5DAC/653bb27528c6">
-											<position>
-												<Point x="2963" y="33205"/>
-											</position>
-											<size>
-												<Size width="13071" height="3599"/>
-											</size>
-										</ActionGE>
-										<EquationGE presentable="!ed/4667/56E7/5DAC/653bb2ad781d">
-											<position>
-												<Point x="5133" y="33814"/>
-											</position>
-											<size>
-												<Size width="318" height="502"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/4669/56E7/5DAC/653bb2ad26df">
-											<position>
-												<Point x="13520" y="34105"/>
-											</position>
-											<size>
-												<Size width="317" height="503"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/466a/56E7/5DAC/653bb2ad28e4" dstEquation="!ed/4669/56E7/5DAC/653bb2ad26df">
-											<positions>
-												<Point x="11589" y="34396"/>
-												<Point x="12753" y="34396"/>
-												<Point x="12753" y="34396"/>
-												<Point x="13520" y="34396"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/466a/56E7/5DAC/653bb2ad28e4">
-											<position>
-												<Point x="6985" y="33390"/>
-											</position>
-											<size>
-												<Size width="4603" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4667/56E7/5DAC/653bb2ad781d" dstEquation="!ed/466a/56E7/5DAC/653bb2ad28e4">
-											<positions>
-												<Point x="5450" y="34052"/>
-												<Point x="6218" y="34052"/>
-												<Point x="6218" y="34052"/>
-												<Point x="6985" y="34052"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/466c/56E7/5DAC/653bb2ad122f" dstEquation="!ed/466a/56E7/5DAC/653bb2ad28e4">
-											<positions>
-												<Point x="5609" y="34740"/>
-												<Point x="6297" y="34740"/>
-												<Point x="6297" y="34740"/>
-												<Point x="6985" y="34740"/>
-											</positions>
-										</Edge>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/466c/56E7/5DAC/653bb2ad122f">
-											<position>
-												<Point x="5398" y="34581"/>
-											</position>
-											<size>
-												<Size width="211" height="318"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4921" presentable="!ed/4726/56E7/5DAC/653bb36d68a8">
-											<position>
-												<Point x="1588" y="37809"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/4730/56E7/5DAC/653bb36e4f7f">
-											<position>
-												<Point x="2963" y="37730"/>
-											</position>
-											<size>
-												<Size width="13018" height="3598"/>
-											</size>
-										</ActionGE>
-										<EquationGE presentable="!ed/476a/56E7/5DAC/653bb3b55216">
-											<position>
-												<Point x="5133" y="38682"/>
-											</position>
-											<size>
-												<Size width="318" height="502"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/476c/56E7/5DAC/653bb3b55fb2">
-											<position>
-												<Point x="14261" y="38973"/>
-											</position>
-											<size>
-												<Size width="317" height="502"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/476d/56E7/5DAC/653bb3b529f5" dstEquation="!ed/476c/56E7/5DAC/653bb3b55fb2">
-											<positions>
-												<Point x="11589" y="39264"/>
-												<Point x="13494" y="39264"/>
-												<Point x="13494" y="39264"/>
-												<Point x="14261" y="39264"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/476d/56E7/5DAC/653bb3b529f5">
-											<position>
-												<Point x="6985" y="38259"/>
-											</position>
-											<size>
-												<Size width="4604" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/476f/56E7/5DAC/653bb3b51267" dstEquation="!ed/476d/56E7/5DAC/653bb3b529f5">
-											<positions>
-												<Point x="5609" y="39608"/>
-												<Point x="6297" y="39608"/>
-												<Point x="6297" y="39608"/>
-												<Point x="6985" y="39608"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/476a/56E7/5DAC/653bb3b55216" dstEquation="!ed/476d/56E7/5DAC/653bb3b529f5">
-											<positions>
-												<Point x="5450" y="38920"/>
-												<Point x="6218" y="38920"/>
-												<Point x="6218" y="38920"/>
-												<Point x="6985" y="38920"/>
-											</positions>
-										</Edge>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/476f/56E7/5DAC/653bb3b51267">
-											<position>
-												<Point x="5398" y="39449"/>
-											</position>
-											<size>
-												<Size width="212" height="317"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4868" presentable="!ed/473a/56E7/5DAC/653bb37c4267">
-											<textAreas>
-												<TextArea text="digital::FallingEdge(displayPumpState[1] =3)&#xA;
-" role="181"/>
-											</textAreas>
-											<position>
-												<Point x="1588" y="42677"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/4744/56E7/5DAC/653bb37d45f4">
-											<position>
-												<Point x="2990" y="42598"/>
-											</position>
-											<size>
-												<Size width="12964" height="3598"/>
-											</size>
-										</ActionGE>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/478e/56E7/5DAC/653bb3c6203">
-											<position>
-												<Point x="5398" y="44318"/>
+												<Point x="17383" y="4233"/>
 											</position>
 											<size>
 												<Size width="212" height="318"/>
 											</size>
 										</EquationGE>
-										<EquationGE presentable="!ed/4790/56E7/5DAC/653bb3c6651e">
-											<position>
-												<Point x="13838" y="43841"/>
-											</position>
-											<size>
-												<Size width="317" height="502"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4791/56E7/5DAC/653bb3c64d0c" dstEquation="!ed/4790/56E7/5DAC/653bb3c6651e">
+										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/2627/5AFC/F098/66a73d2d5577" dstEquation="!ed/25ec/5AFC/F098/66a73b3c5767">
 											<positions>
-												<Point x="11589" y="44133"/>
-												<Point x="13070" y="44133"/>
-												<Point x="13070" y="44133"/>
-												<Point x="13838" y="44133"/>
+												<Point x="17595" y="4392"/>
+												<Point x="18733" y="4392"/>
+												<Point x="18733" y="4392"/>
+												<Point x="19870" y="4392"/>
 											</positions>
 										</Edge>
-										<EquationGE presentable="!ed/4791/56E7/5DAC/653bb3c64d0c">
-											<position>
-												<Point x="6985" y="43127"/>
-											</position>
-											<size>
-												<Size width="4603" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4793/56E7/5DAC/653bb3c61b86" dstEquation="!ed/4791/56E7/5DAC/653bb3c64d0c">
+										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/260b/5AFC/F098/66a73bf169c9" dstEquation="!ed/25ec/5AFC/F098/66a73b3c5767">
 											<positions>
-												<Point x="5450" y="43789"/>
-												<Point x="6218" y="43789"/>
-												<Point x="6218" y="43789"/>
-												<Point x="6985" y="43789"/>
+												<Point x="3572" y="3413"/>
+												<Point x="11721" y="3413"/>
+												<Point x="11721" y="3413"/>
+												<Point x="19870" y="3413"/>
 											</positions>
 										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/478e/56E7/5DAC/653bb3c6203" dstEquation="!ed/4791/56E7/5DAC/653bb3c64d0c">
-											<positions>
-												<Point x="5609" y="44476"/>
-												<Point x="6297" y="44476"/>
-												<Point x="6297" y="44476"/>
-												<Point x="6985" y="44476"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/4793/56E7/5DAC/653bb3c61b86">
-											<position>
-												<Point x="5133" y="43550"/>
-											</position>
-											<size>
-												<Size width="318" height="502"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4921" presentable="!ed/47b1/56E7/5DAC/653bb3ea4c7d">
-											<position>
-												<Point x="1588" y="47360"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/47bb/56E7/5DAC/653bb3eb6060">
-											<position>
-												<Point x="2963" y="47281"/>
-											</position>
-											<size>
-												<Size width="12938" height="4815"/>
-											</size>
-										</ActionGE>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/4857/56E7/5DAC/653bb46957fd">
-											<position>
-												<Point x="5398" y="49477"/>
-											</position>
-											<size>
-												<Size width="212" height="318"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/4859/56E7/5DAC/653bb4692c81">
-											<position>
-												<Point x="6985" y="48286"/>
-											</position>
-											<size>
-												<Size width="4604" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/485c/56E7/5DAC/653bb46971c1" dstEquation="!ed/4859/56E7/5DAC/653bb4692c81">
-											<positions>
-												<Point x="5450" y="48948"/>
-												<Point x="6218" y="48948"/>
-												<Point x="6218" y="48948"/>
-												<Point x="6985" y="48948"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/4857/56E7/5DAC/653bb46957fd" dstEquation="!ed/4859/56E7/5DAC/653bb4692c81">
-											<positions>
-												<Point x="5609" y="49636"/>
-												<Point x="6297" y="49636"/>
-												<Point x="6297" y="49636"/>
-												<Point x="6985" y="49636"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/485b/56E7/5DAC/653bb469cec">
-											<position>
-												<Point x="13203" y="49001"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4859/56E7/5DAC/653bb4692c81" dstEquation="!ed/485b/56E7/5DAC/653bb469cec">
-											<positions>
-												<Point x="11589" y="49292"/>
-												<Point x="12435" y="49292"/>
-												<Point x="12435" y="49292"/>
-												<Point x="13203" y="49292"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/485c/56E7/5DAC/653bb46971c1">
-											<position>
-												<Point x="5133" y="48710"/>
-											</position>
-											<size>
-												<Size width="317" height="503"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4868" presentable="!ed/47bd/56E7/5DAC/653bb3f07ef7">
-											<textAreas>
-												<TextArea text="digital::FallingEdge(displayPumpState[2] =3)&#xA;
-" role="181"/>
-											</textAreas>
-											<position>
-												<Point x="1588" y="53314"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/47c7/56E7/5DAC/653bb3f16801">
-											<position>
-												<Point x="2937" y="53234"/>
-											</position>
-											<size>
-												<Size width="12912" height="4789"/>
-											</size>
-										</ActionGE>
-										<EquationGE presentable="!ed/489f/56E7/5DAC/653bb481918">
-											<position>
-												<Point x="5133" y="54266"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/48a1/56E7/5DAC/653bb48148bf">
-											<position>
-												<Point x="6985" y="53843"/>
-											</position>
-											<size>
-												<Size width="4604" height="2010"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/489f/56E7/5DAC/653bb481918" dstEquation="!ed/48a1/56E7/5DAC/653bb48148bf">
-											<positions>
-												<Point x="5450" y="54504"/>
-												<Point x="6218" y="54504"/>
-												<Point x="6218" y="54504"/>
-												<Point x="6985" y="54504"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/48a4/56E7/5DAC/653bb48162bc" dstEquation="!ed/48a1/56E7/5DAC/653bb48148bf">
-											<positions>
-												<Point x="5609" y="55192"/>
-												<Point x="6297" y="55192"/>
-												<Point x="6297" y="55192"/>
-												<Point x="6985" y="55192"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/48a3/56E7/5DAC/653bb48117e0">
-											<position>
-												<Point x="13282" y="54557"/>
-											</position>
-											<size>
-												<Size width="317" height="503"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/48a1/56E7/5DAC/653bb48148bf" dstEquation="!ed/48a3/56E7/5DAC/653bb48117e0">
-											<positions>
-												<Point x="11589" y="54848"/>
-												<Point x="12515" y="54848"/>
-												<Point x="12515" y="54848"/>
-												<Point x="13282" y="54848"/>
-											</positions>
-										</Edge>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/48a4/56E7/5DAC/653bb48162bc">
-											<position>
-												<Point x="5398" y="55033"/>
-											</position>
-											<size>
-												<Size width="212" height="318"/>
-											</size>
-										</EquationGE>
-										<IfNodeGE labelWidth="4921" presentable="!ed/47d5/56E7/5DAC/653bb3fa1c22">
-											<position>
-												<Point x="1588" y="58896"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/47df/56E7/5DAC/653bb3fc6b27">
-											<position>
-												<Point x="2963" y="58817"/>
-											</position>
-											<size>
-												<Size width="12912" height="4630"/>
-											</size>
-										</ActionGE>
-										<EquationGE presentable="!ed/4875/56E7/5DAC/653bb46b49c6">
-											<position>
-												<Point x="6985" y="59928"/>
-											</position>
-											<size>
-												<Size width="4604" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4877/56E7/5DAC/653bb46b7519" dstEquation="!ed/4875/56E7/5DAC/653bb46b49c6">
-											<positions>
-												<Point x="5450" y="60590"/>
-												<Point x="6218" y="60590"/>
-												<Point x="6218" y="60590"/>
-												<Point x="6985" y="60590"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/4879/56E7/5DAC/653bb46b4378" dstEquation="!ed/4875/56E7/5DAC/653bb46b49c6">
-											<positions>
-												<Point x="5609" y="61278"/>
-												<Point x="6297" y="61278"/>
-												<Point x="6297" y="61278"/>
-												<Point x="6985" y="61278"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/4877/56E7/5DAC/653bb46b7519">
-											<position>
-												<Point x="5133" y="60351"/>
-											</position>
-											<size>
-												<Size width="318" height="503"/>
-											</size>
-										</EquationGE>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/4879/56E7/5DAC/653bb46b4378">
-											<position>
-												<Point x="5398" y="61119"/>
-											</position>
-											<size>
-												<Size width="212" height="317"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/487b/56E7/5DAC/653bb46b5947">
-											<position>
-												<Point x="13176" y="60643"/>
-											</position>
-											<size>
-												<Size width="318" height="502"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/4875/56E7/5DAC/653bb46b49c6" dstEquation="!ed/487b/56E7/5DAC/653bb46b5947">
-											<positions>
-												<Point x="11589" y="60934"/>
-												<Point x="12409" y="60934"/>
-												<Point x="12409" y="60934"/>
-												<Point x="13176" y="60934"/>
-											</positions>
-										</Edge>
-										<IfNodeGE labelWidth="4868" presentable="!ed/47e0/56E7/5DAC/653bb4056f10">
-											<textAreas>
-												<TextArea text="digital::FallingEdge(displayPumpState[3] =3)&#xA;
-" role="181"/>
-											</textAreas>
-											<position>
-												<Point x="1588" y="65114"/>
-											</position>
-										</IfNodeGE>
-										<ActionGE presentable="!ed/47ea/56E7/5DAC/653bb40761f9">
-											<position>
-												<Point x="2884" y="65035"/>
-											</position>
-											<size>
-												<Size width="13044" height="5556"/>
-											</size>
-										</ActionGE>
-										<EquationGE presentable="!ed/48bd/56E7/5DAC/653bb4841d28">
-											<position>
-												<Point x="5133" y="66437"/>
-											</position>
-											<size>
-												<Size width="318" height="502"/>
-											</size>
-										</EquationGE>
-										<EquationGE presentable="!ed/48bf/56E7/5DAC/653bb48470d4">
-											<position>
-												<Point x="6985" y="66014"/>
-											</position>
-											<size>
-												<Size width="4604" height="2011"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/48bd/56E7/5DAC/653bb4841d28" dstEquation="!ed/48bf/56E7/5DAC/653bb48470d4">
-											<positions>
-												<Point x="5450" y="66675"/>
-												<Point x="6218" y="66675"/>
-												<Point x="6218" y="66675"/>
-												<Point x="6985" y="66675"/>
-											</positions>
-										</Edge>
-										<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/48c2/56E7/5DAC/653bb4846ade" dstEquation="!ed/48bf/56E7/5DAC/653bb48470d4">
-											<positions>
-												<Point x="5609" y="67363"/>
-												<Point x="6297" y="67363"/>
-												<Point x="6297" y="67363"/>
-												<Point x="6985" y="67363"/>
-											</positions>
-										</Edge>
-										<EquationGE presentable="!ed/48c1/56E7/5DAC/653bb4846c83">
-											<position>
-												<Point x="13123" y="66728"/>
-											</position>
-											<size>
-												<Size width="317" height="502"/>
-											</size>
-										</EquationGE>
-										<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/48bf/56E7/5DAC/653bb48470d4" dstEquation="!ed/48c1/56E7/5DAC/653bb4846c83">
-											<positions>
-												<Point x="11589" y="67019"/>
-												<Point x="12356" y="67019"/>
-												<Point x="12356" y="67019"/>
-												<Point x="13123" y="67019"/>
-											</positions>
-										</Edge>
-										<EquationGE kind="OBJ_LIT" presentable="!ed/48c2/56E7/5DAC/653bb4846ade">
-											<position>
-												<Point x="5398" y="67204"/>
-											</position>
-											<size>
-												<Size width="212" height="317"/>
-											</size>
-										</EquationGE>
-										<ActionGE presentable="!ed/1f43/56E7/5DAC/653b842b73ea">
-											<position>
-												<Point x="15372" y="72152"/>
-											</position>
-											<size>
-												<Size width="4709" height="4260"/>
-											</size>
-										</ActionGE>
 									</presentationElements>
 								</NetDiagram>
 							</diagrams>
@@ -3476,7 +757,7 @@
 						</StateMachineGE>
 						<StateGE presentable="!ed/1f3a/56E7/5DAC/653b842b3ae3">
 							<position>
-								<Point x="2831" y="4392"/>
+								<Point x="2884" y="5794"/>
 							</position>
 							<size>
 								<Size width="8043" height="8969"/>
@@ -3484,15 +765,15 @@
 						</StateGE>
 						<EquationGE presentable="!ed/1f3b/56E7/5DAC/653b842b46df">
 							<position>
-								<Point x="4551" y="8281"/>
+								<Point x="3334" y="9684"/>
 							</position>
 							<size>
-								<Size width="1773" height="1402"/>
+								<Size width="3059" height="1419"/>
 							</size>
 						</EquationGE>
 						<EquationGE presentable="!ed/1f3c/56E7/5DAC/653b842b51d2">
 							<position>
-								<Point x="7541" y="8731"/>
+								<Point x="7594" y="10134"/>
 							</position>
 							<size>
 								<Size width="318" height="502"/>
@@ -3500,35 +781,35 @@
 						</EquationGE>
 						<StateGE display="split" presentable="!ed/1f3f/56E7/5DAC/653b842b190b">
 							<position>
-								<Point x="14764" y="4366"/>
+								<Point x="14817" y="5768"/>
 							</position>
 							<size>
-								<Size width="6747" height="9075"/>
+								<Size width="8308" height="9075"/>
 							</size>
 						</StateGE>
 						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/1f3b/56E7/5DAC/653b842b46df" dstEquation="!ed/1f3c/56E7/5DAC/653b842b51d2">
 							<positions>
-								<Point x="6324" y="8996"/>
-								<Point x="6959" y="8996"/>
-								<Point x="6959" y="8996"/>
-								<Point x="7541" y="8996"/>
+								<Point x="6403" y="10398"/>
+								<Point x="7011" y="10398"/>
+								<Point x="7011" y="10398"/>
+								<Point x="7594" y="10398"/>
 							</positions>
 						</Edge>
 						<TransitionGE presentable="!ed/2677/C1B/BAE0/667540bf4924">
 							<positions>
-								<Point x="10874" y="5583"/>
-								<Point x="12277" y="3810"/>
-								<Point x="13520" y="5106"/>
-								<Point x="14764" y="6429"/>
+								<Point x="10927" y="6985"/>
+								<Point x="12330" y="5212"/>
+								<Point x="13573" y="6509"/>
+								<Point x="14817" y="7832"/>
 							</positions>
 							<labelSize>
 								<Size width="1376" height="370"/>
 							</labelSize>
 							<labelPos>
-								<Point x="12700" y="3440"/>
+								<Point x="12250" y="4842"/>
 							</labelPos>
 							<slashPos>
-								<Point x="13282" y="3440"/>
+								<Point x="12832" y="4842"/>
 							</slashPos>
 						</TransitionGE>
 					</presentationElements>
@@ -3605,6 +886,7 @@
 			<references>
 				<ConstVarRef path="NB_PUMPS" refOid="!ed/268d/184A/4D4/4de50551764a"/>
 				<TypeRef path="ListOfDatas::ListData" refOid="!ed/1dbc/56E7/5DAC/653b8315151f"/>
+				<ConstVarRef path="ListOfDatas::N" refOid="!ed/1dc3/56E7/5DAC/653b83156992"/>
 				<ConstVarRef path="LEVEL_CONTROL_FAILURE" refOid="!ed/3e2a/56E7/5DAC/653ba3cf29d0"/>
 				<ConstVarRef path="STEAM_FAILURE" refOid="!ed/3e52/56E7/5DAC/653ba4276dd0"/>
 				<ConstVarRef path="PUMP1_FAILURE" refOid="!ed/3e61/56E7/5DAC/653ba4285e21"/>

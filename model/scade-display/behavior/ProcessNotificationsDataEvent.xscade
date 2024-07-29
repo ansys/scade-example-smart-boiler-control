@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Operator xmlns="http://www.esterel-technologies.com/ns/scade/6" xmlns:ed="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8" xmlns:kcg="http://www.esterel-technologies.com/ns/scade/pragmas/codegen/3" kind="node" name="ProcessNotificationsDataEvent">
+	<inputs>
+		<Variable name="inNotifs">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListOfDatas::ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/27d8/6FD0/A238/66a734186e44"/>
+			</pragmas>
+		</Variable>
+		<Variable name="edge">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="bool"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/275e/6FD0/A238/66a733794db9"/>
+			</pragmas>
+		</Variable>
+		<Variable name="data">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListOfDatas::Data"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/27f4/6FD0/A238/66a734bf601f"/>
+			</pragmas>
+		</Variable>
+	</inputs>
+	<outputs>
+		<Variable name="outNotifs">
+			<type>
+				<NamedType>
+					<type>
+						<TypeRef name="ListOfDatas::ListData"/>
+					</type>
+				</NamedType>
+			</type>
+			<pragmas>
+				<ed:Variable oid="!ed/2761/6FD0/A238/66a73379382e"/>
+			</pragmas>
+		</Variable>
+	</outputs>
+	<data>
+		<IfBlock name="IfBlock1">
+			<block>
+				<IfNode>
+					<if>
+						<!-- digital::RisingEdge(edge) -->
+						<CallExpression>
+							<operator>
+								<OpCall name="1">
+									<operator>
+										<OperatorRef name="digital::RisingEdge"/>
+									</operator>
+								</OpCall>
+							</operator>
+							<callParameters>
+								<IdExpression>
+									<path>
+										<ConstVarRef name="edge"/>
+									</path>
+								</IdExpression>
+							</callParameters>
+							<pragmas>
+								<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+									<references>
+										<OperatorRef path="digital::RisingEdge" refOid="s4_137/7236A702/11D5/36A6E753/39A9">
+											<InputRef refOid="s4_135/7236A702/11D5/36A6E752/7C93"/>
+											<OutputRef refOid="s4_136/7236A702/11D5/36A6E753/5ABC"/>
+										</OperatorRef>
+									</references>
+								</ed:CallExpression>
+							</pragmas>
+						</CallExpression>
+					</if>
+					<then>
+						<Action>
+							<locals>
+								<Variable name="_L1">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="ListOfDatas::ListData"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/27cd/6FD0/A238/66a733797707"/>
+									</pragmas>
+								</Variable>
+								<Variable name="_L5">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="ListOfDatas::ListData"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/27ef/6FD0/A238/66a7345848ca"/>
+									</pragmas>
+								</Variable>
+								<Variable name="_L6">
+									<type>
+										<NamedType>
+											<type>
+												<TypeRef name="ListOfDatas::Data"/>
+											</type>
+										</NamedType>
+									</type>
+									<pragmas>
+										<ed:Variable oid="!ed/2805/6FD0/A238/66a734e1637f"/>
+									</pragmas>
+								</Variable>
+							</locals>
+							<data>
+								<!-- _L1 = ListOfDatas::Append(_L5, _L6); -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L1"/>
+									</lefts>
+									<right>
+										<!-- ListOfDatas::Append(_L5, _L6) -->
+										<CallExpression>
+											<operator>
+												<OpCall name="6">
+													<operator>
+														<OperatorRef name="ListOfDatas::Append"/>
+													</operator>
+												</OpCall>
+											</operator>
+											<callParameters>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="_L5"/>
+													</path>
+												</IdExpression>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="_L6"/>
+													</path>
+												</IdExpression>
+											</callParameters>
+											<pragmas>
+												<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+													<references>
+														<OperatorRef path="ListOfDatas::Append" refOid="!ed/1e15/56E7/5DAC/653b83156e1e">
+															<InputRef refOid="!ed/1e1f/56E7/5DAC/653b831536e7"/>
+															<InputRef refOid="!ed/1e20/56E7/5DAC/653b83157557"/>
+															<OutputRef refOid="!ed/1e1e/56E7/5DAC/653b8315821"/>
+														</OperatorRef>
+													</references>
+												</ed:CallExpression>
+											</pragmas>
+										</CallExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/27c9/6FD0/A238/66a733793207"/>
+									</pragmas>
+								</Equation>
+								<!-- outNotifs = _L1; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="outNotifs"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="_L1"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/27ca/6FD0/A238/66a733799b1"/>
+									</pragmas>
+								</Equation>
+								<!-- _L5 = inNotifs; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L5"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="inNotifs"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/27ee/6FD0/A238/66a734581f52"/>
+									</pragmas>
+								</Equation>
+								<!-- _L6 = data; -->
+								<Equation>
+									<lefts>
+										<VariableRef name="_L6"/>
+									</lefts>
+									<right>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="data"/>
+											</path>
+										</IdExpression>
+									</right>
+									<pragmas>
+										<ed:Equation oid="!ed/2804/6FD0/A238/66a734e12566"/>
+									</pragmas>
+								</Equation>
+							</data>
+							<pragmas>
+								<ed:Action oid="!ed/27c8/6FD0/A238/66a733792b48"/>
+							</pragmas>
+						</Action>
+					</then>
+					<else>
+						<IfNode>
+							<if>
+								<!-- digital::FallingEdge(edge) -->
+								<CallExpression>
+									<operator>
+										<OpCall name="1">
+											<operator>
+												<OperatorRef name="digital::FallingEdge"/>
+											</operator>
+										</OpCall>
+									</operator>
+									<callParameters>
+										<IdExpression>
+											<path>
+												<ConstVarRef name="edge"/>
+											</path>
+										</IdExpression>
+									</callParameters>
+									<pragmas>
+										<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+											<references>
+												<OperatorRef path="digital::FallingEdge" refOid="s4_13D/7236A702/11D5/36A6E7A2/E74">
+													<InputRef refOid="s4_13B/7236A702/11D5/36A6E7A2/5047"/>
+													<OutputRef refOid="s4_13C/7236A702/11D5/36A6E7A2/4412"/>
+												</OperatorRef>
+											</references>
+										</ed:CallExpression>
+									</pragmas>
+								</CallExpression>
+							</if>
+							<then>
+								<Action>
+									<locals>
+										<Variable name="_L6">
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="ListOfDatas::ListData"/>
+													</type>
+												</NamedType>
+											</type>
+											<pragmas>
+												<ed:Variable oid="!ed/27c7/6FD0/A238/66a73379779"/>
+											</pragmas>
+										</Variable>
+										<Variable name="_L10">
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="ListOfDatas::ListData"/>
+													</type>
+												</NamedType>
+											</type>
+											<pragmas>
+												<ed:Variable oid="!ed/27e1/6FD0/A238/66a734491abc"/>
+											</pragmas>
+										</Variable>
+										<Variable name="_L11">
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="ListOfDatas::Data"/>
+													</type>
+												</NamedType>
+											</type>
+											<pragmas>
+												<ed:Variable oid="!ed/27ff/6FD0/A238/66a734d53963"/>
+											</pragmas>
+										</Variable>
+									</locals>
+									<data>
+										<!-- outNotifs = _L6; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="outNotifs"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="_L6"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/27c3/6FD0/A238/66a733796416"/>
+											</pragmas>
+										</Equation>
+										<!-- _L6 = ListOfDatas::Remove(_L10, _L11); -->
+										<Equation>
+											<lefts>
+												<VariableRef name="_L6"/>
+											</lefts>
+											<right>
+												<!-- ListOfDatas::Remove(_L10, _L11) -->
+												<CallExpression>
+													<operator>
+														<OpCall name="6">
+															<operator>
+																<OperatorRef name="ListOfDatas::Remove"/>
+															</operator>
+														</OpCall>
+													</operator>
+													<callParameters>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L10"/>
+															</path>
+														</IdExpression>
+														<IdExpression>
+															<path>
+																<ConstVarRef name="_L11"/>
+															</path>
+														</IdExpression>
+													</callParameters>
+													<pragmas>
+														<ed:CallExpression xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+															<references>
+																<OperatorRef path="ListOfDatas::Remove" refOid="!ed/1e60/56E7/5DAC/653b8315787b">
+																	<InputRef refOid="!ed/1e6e/56E7/5DAC/653b831589d"/>
+																	<InputRef refOid="!ed/1e6f/56E7/5DAC/653b831530f6"/>
+																	<OutputRef refOid="!ed/1e6d/56E7/5DAC/653b83153234"/>
+																</OperatorRef>
+															</references>
+														</ed:CallExpression>
+													</pragmas>
+												</CallExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/27c4/6FD0/A238/66a733797a75"/>
+											</pragmas>
+										</Equation>
+										<!-- _L10 = inNotifs; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="_L10"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="inNotifs"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/27e0/6FD0/A238/66a734497957"/>
+											</pragmas>
+										</Equation>
+										<!-- _L11 = data; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="_L11"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="data"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/27fe/6FD0/A238/66a734d52689"/>
+											</pragmas>
+										</Equation>
+									</data>
+									<pragmas>
+										<ed:Action oid="!ed/27c0/6FD0/A238/66a733795bdc"/>
+									</pragmas>
+								</Action>
+							</then>
+							<else>
+								<Action>
+									<locals>
+										<Variable name="_L3">
+											<type>
+												<NamedType>
+													<type>
+														<TypeRef name="ListOfDatas::ListData"/>
+													</type>
+												</NamedType>
+											</type>
+											<pragmas>
+												<ed:Variable oid="!ed/25eb/5AFC/F098/66a73ad7368"/>
+											</pragmas>
+										</Variable>
+									</locals>
+									<data>
+										<!-- outNotifs = _L3; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="outNotifs"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="_L3"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/2877/6FD0/A238/66a7382320fa"/>
+											</pragmas>
+										</Equation>
+										<!-- _L3 = inNotifs; -->
+										<Equation>
+											<lefts>
+												<VariableRef name="_L3"/>
+											</lefts>
+											<right>
+												<IdExpression>
+													<path>
+														<ConstVarRef name="inNotifs"/>
+													</path>
+												</IdExpression>
+											</right>
+											<pragmas>
+												<ed:Equation oid="!ed/25ea/5AFC/F098/66a73ad72f53"/>
+											</pragmas>
+										</Equation>
+									</data>
+									<pragmas>
+										<ed:Action oid="!ed/27d0/6FD0/A238/66a7338646de"/>
+									</pragmas>
+								</Action>
+							</else>
+							<pragmas>
+								<ed:IfNode oid="!ed/2764/6FD0/A238/66a7337954fd"/>
+							</pragmas>
+						</IfNode>
+					</else>
+					<pragmas>
+						<ed:IfNode oid="!ed/2763/6FD0/A238/66a733793e94"/>
+					</pragmas>
+				</IfNode>
+			</block>
+			<pragmas>
+				<ed:IfBlock oid="!ed/2762/6FD0/A238/66a73379690"/>
+			</pragmas>
+		</IfBlock>
+	</data>
+	<pragmas>
+		<ed:Operator oid="!ed/259e/6FD0/A238/66a73363188d" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
+			<diagrams>
+				<NetDiagram name="ProcessNotificationsDataEvent" landscape="true" format="A4 (210 297)" oid="!ed/259f/6FD0/A238/66a733634abd">
+					<presentationElements>
+						<IfBlockGE presentable="!ed/2762/6FD0/A238/66a73379690">
+							<position>
+								<Point x="4154" y="3016"/>
+							</position>
+							<size>
+								<Size width="20029" height="77788"/>
+							</size>
+						</IfBlockGE>
+						<IfNodeGE labelWidth="2725" presentable="!ed/2763/6FD0/A238/66a733793e94">
+							<textAreas>
+								<TextArea text="digital::RisingEdge(edge)&#xA;
+" role="181"/>
+							</textAreas>
+							<position>
+								<Point x="4604" y="3995"/>
+							</position>
+						</IfNodeGE>
+						<ActionGE presentable="!ed/27c8/6FD0/A238/66a733792b48">
+							<position>
+								<Point x="5980" y="3916"/>
+							</position>
+							<size>
+								<Size width="13308" height="5398"/>
+							</size>
+						</ActionGE>
+						<EquationGE presentable="!ed/27c9/6FD0/A238/66a733793207">
+							<position>
+								<Point x="9975" y="5159"/>
+							</position>
+							<size>
+								<Size width="4620" height="2026"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/27ca/6FD0/A238/66a733799b1">
+							<position>
+								<Point x="16775" y="5927"/>
+							</position>
+							<size>
+								<Size width="318" height="503"/>
+							</size>
+						</EquationGE>
+						<IfNodeGE labelWidth="2752" presentable="!ed/2764/6FD0/A238/66a7337954fd">
+							<position>
+								<Point x="4604" y="11033"/>
+							</position>
+						</IfNodeGE>
+						<ActionGE presentable="!ed/27c0/6FD0/A238/66a733795bdc">
+							<position>
+								<Point x="5953" y="10954"/>
+							</position>
+							<size>
+								<Size width="13308" height="5927"/>
+							</size>
+						</ActionGE>
+						<EquationGE presentable="!ed/27c3/6FD0/A238/66a733796416">
+							<position>
+								<Point x="16828" y="13679"/>
+							</position>
+							<size>
+								<Size width="318" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/27c4/6FD0/A238/66a733797a75">
+							<position>
+								<Point x="10001" y="12938"/>
+							</position>
+							<size>
+								<Size width="4604" height="2011"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/27c4/6FD0/A238/66a733797a75" dstEquation="!ed/27c3/6FD0/A238/66a733796416">
+							<positions>
+								<Point x="14605" y="13944"/>
+								<Point x="15743" y="13944"/>
+								<Point x="15743" y="13944"/>
+								<Point x="16880" y="13944"/>
+							</positions>
+						</Edge>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/27c9/6FD0/A238/66a733793207" dstEquation="!ed/27ca/6FD0/A238/66a733799b1">
+							<positions>
+								<Point x="14605" y="6191"/>
+								<Point x="15716" y="6191"/>
+								<Point x="15716" y="6191"/>
+								<Point x="16828" y="6191"/>
+							</positions>
+						</Edge>
+						<ActionGE presentable="!ed/27d0/6FD0/A238/66a7338646de">
+							<position>
+								<Point x="6033" y="18441"/>
+							</position>
+							<size>
+								<Size width="13282" height="3599"/>
+							</size>
+						</ActionGE>
+						<EquationGE presentable="!ed/27e0/6FD0/A238/66a734497957">
+							<position>
+								<Point x="7594" y="13335"/>
+							</position>
+							<size>
+								<Size width="264" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/27e0/6FD0/A238/66a734497957" dstEquation="!ed/27c4/6FD0/A238/66a733797a75">
+							<positions>
+								<Point x="7858" y="13600"/>
+								<Point x="8916" y="13600"/>
+								<Point x="8916" y="13600"/>
+								<Point x="10001" y="13600"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/27ee/6FD0/A238/66a734581f52">
+							<position>
+								<Point x="7488" y="5556"/>
+							</position>
+							<size>
+								<Size width="264" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/27ee/6FD0/A238/66a734581f52" dstEquation="!ed/27c9/6FD0/A238/66a733793207">
+							<positions>
+								<Point x="7752" y="5821"/>
+								<Point x="8864" y="5821"/>
+								<Point x="8864" y="5821"/>
+								<Point x="9975" y="5821"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/27fe/6FD0/A238/66a734d52689">
+							<position>
+								<Point x="7197" y="14023"/>
+							</position>
+							<size>
+								<Size width="265" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/27fe/6FD0/A238/66a734d52689" dstEquation="!ed/27c4/6FD0/A238/66a733797a75">
+							<positions>
+								<Point x="7461" y="14288"/>
+								<Point x="8943" y="14288"/>
+								<Point x="8943" y="14288"/>
+								<Point x="10001" y="14288"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/2804/6FD0/A238/66a734e12566">
+							<position>
+								<Point x="7091" y="6244"/>
+							</position>
+							<size>
+								<Size width="264" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="2" srcEquation="!ed/2804/6FD0/A238/66a734e12566" dstEquation="!ed/27c9/6FD0/A238/66a733793207">
+							<positions>
+								<Point x="7355" y="6509"/>
+								<Point x="9128" y="6509"/>
+								<Point x="9128" y="6509"/>
+								<Point x="9975" y="6509"/>
+							</positions>
+						</Edge>
+						<EquationGE presentable="!ed/2877/6FD0/A238/66a7382320fa">
+							<position>
+								<Point x="16828" y="20108"/>
+							</position>
+							<size>
+								<Size width="317" height="503"/>
+							</size>
+						</EquationGE>
+						<EquationGE presentable="!ed/25ea/5AFC/F098/66a73ad72f53">
+							<position>
+								<Point x="7594" y="20108"/>
+							</position>
+							<size>
+								<Size width="265" height="503"/>
+							</size>
+						</EquationGE>
+						<Edge leftVarIndex="1" rightExprIndex="1" srcEquation="!ed/25ea/5AFC/F098/66a73ad72f53" dstEquation="!ed/2877/6FD0/A238/66a7382320fa">
+							<positions>
+								<Point x="7858" y="20373"/>
+								<Point x="13414" y="20373"/>
+								<Point x="13414" y="20373"/>
+								<Point x="16880" y="20373"/>
+							</positions>
+						</Edge>
+					</presentationElements>
+				</NetDiagram>
+			</diagrams>
+			<references>
+				<TypeRef path="ListOfDatas::ListData" refOid="!ed/1dbc/56E7/5DAC/653b8315151f"/>
+				<TypeRef path="ListOfDatas::Data" refOid="!ed/1dbf/56E7/5DAC/653b83157b4a"/>
+			</references>
+		</ed:Operator>
+	</pragmas>
+</Operator>
