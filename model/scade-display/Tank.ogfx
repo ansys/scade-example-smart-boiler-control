@@ -544,8 +544,8 @@
                                             <init>true</init>
                                         </enable>
                                         <input>
-                                            <init>67</init>
-                                            <expr>color_table_DEGRADED</expr>
+                                            <init>88</init>
+                                            <expr>color_table_RESCUE</expr>
                                         </input>
                                         <output>
                                             <expr>Color</expr>
@@ -4299,5 +4299,5 @@
     </children>
 </object>
 
-<!-- crc32 : 2151839842 -->
+<!-- crc32 : 2645042131 -->
 

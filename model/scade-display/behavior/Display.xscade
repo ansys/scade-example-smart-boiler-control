@@ -152,6 +152,7 @@
 				<Operator name="MeasuredValues" href="MeasuredValues.xscade"/>
 				<Operator name="ProcessNotificationsData" href="ProcessNotificationsData.xscade"/>
 				<Operator name="NotificationsData" href="NotificationsData.xscade"/>
+				<Operator name="ProcessNotificationsDataEvent" href="ProcessNotificationsDataEvent.xscade"/>
 			</declarations>
 			<pragmas>
 				<ed:Package oid="!ed/25e0/30DB/10CC/4e2449b564c0" xmlns="http://www.esterel-technologies.com/ns/scade/pragmas/editor/8">
