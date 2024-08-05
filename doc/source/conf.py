@@ -35,7 +35,7 @@ html_theme_options = {
     "show_prev_next": False,
     "show_breadcrumbs": True,
     "additional_breadcrumbs": [
-        ("PyAnsys", "https://docs.pyansys.com/"),
+        ("SCADE Examples", "https://examples.scade.docs.pyansys.com/"),
     ],
     "switcher": {
         "json_url": f"https://{cname}/versions.json",
