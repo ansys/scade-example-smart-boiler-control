@@ -58,7 +58,7 @@ jobs:
         os: [windows-latest]
         scade-version: ['24.1']
       fail-fast: false
-    needs: [doc-build]
+    needs: [doc-build, code-style]
     steps:
       - name: "Install Git and clone project"
         uses: actions/checkout@v4
