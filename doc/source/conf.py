@@ -135,6 +135,11 @@ linkcheck_ignore = [
     "https://www.ansys.com/*"
 ]
 
+# suppress warnings about fa-build while building the documentation-pdf
+suppress_warnings = [
+    "design.fa-build",
+] 
+
 
 # additional logos for the latex coverpage
 LaTeXBuilder.supported_image_types = ["image/png", "image/pdf", "image/svg+xml"]
