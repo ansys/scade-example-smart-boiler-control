@@ -42,7 +42,7 @@ inputs:
     description: >
       Configuration file.
     required: true
-  
+
 
 runs:
   using: "composite"

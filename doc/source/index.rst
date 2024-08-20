@@ -3,7 +3,7 @@ Smart Boiler Control Example
 .. toctree::
    :maxdepth: 2
    :hidden:
-   
+
    description
    brief
    start_guide

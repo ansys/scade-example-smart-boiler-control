@@ -7,7 +7,7 @@ Start Guide
 Generate, build and execute standalone application
 --------------------------------------------------
 
-Launch  SCADE Display and open the project ``model/scade-display/DisplayPanel.etp`` (File>Open). 
+Launch  SCADE Display and open the project ``model/scade-display/DisplayPanel.etp`` (File>Open).
 
 
 .. raw:: html

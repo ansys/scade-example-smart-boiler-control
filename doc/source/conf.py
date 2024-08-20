@@ -138,7 +138,7 @@ linkcheck_ignore = [
 # suppress warnings about fa-build while building the documentation-pdf
 suppress_warnings = [
     "design.fa-build",
-] 
+]
 
 
 # additional logos for the latex coverpage

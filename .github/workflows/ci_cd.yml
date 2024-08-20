@@ -43,7 +43,7 @@ jobs:
 
   standalone-display:
     name: "Standalone Display"
-    runs-on: [self-hosted, 'SCADE']    
+    runs-on: [self-hosted, 'SCADE']
     strategy:
       matrix:
         os: [windows-latest]
@@ -59,7 +59,7 @@ jobs:
           scade-version: ${{ matrix.scade-version }}
           model-path: 'model/scade-display/DisplayPanel.etp'
           conf: 'Windows'
-      
+
 
       # - name: "Zipping the standalone directory"
       #   run: |
