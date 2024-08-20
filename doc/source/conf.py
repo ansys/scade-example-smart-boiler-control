@@ -1,5 +1,6 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
+import pathlib
 import os
 from ansys_sphinx_theme import (
     ansys_favicon,
@@ -11,7 +12,11 @@ from ansys_sphinx_theme import (
 )
 from sphinx.builders.latex import LaTeXBuilder
 
-__version__="0.1.dev0"
+source_dir = pathlib.Path(__file__).parent.resolve().absolute()
+version_file = source_dir / "../../VERSION"
+with open(str(version_file), "r") as file:
+    __version__ = file.read().splitlines()[0]
+release = version = __version__
 
 # Project information
 project = "ansys-scade-example-smart-boiler-control"
