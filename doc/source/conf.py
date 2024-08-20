@@ -1,16 +1,12 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
 import os
-from pathlib import Path
-import sys
 
 from ansys_sphinx_theme import (
     ansys_favicon,
-    get_autoapi_templates_dir_relative_path,
     get_version_match,
-    pyansys_logo_black,
 )
-from sphinx.highlighting import lexers
+from sphinx.builders.latex import LaTeXBuilder
 
 __version__="0.1.dev0"
 
@@ -21,7 +17,6 @@ author = "ANSYS, Inc."
 release = version = __version__
 
 # Select desired logo, theme, and declare the html title
-html_logo = pyansys_logo_black
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "Ansys SCADE Smart Boiler Example"
 
@@ -42,6 +37,7 @@ html_theme_options = {
         "version_match": get_version_match(version),
     },
     "check_switcher": False,
+    "logo": "pyansys",
 }
 
 # Sphinx extensions
@@ -136,3 +132,9 @@ linkcheck_ignore = [
     "https://www.ansys.com/products/embedded-software/ansys-scade-suite",
     "https://www.ansys.com/*"
 ]
+
+
+# additional logos for the latex coverpage
+LaTeXBuilder.supported_image_types = ["image/png", "image/pdf", "image/svg+xml"]
+latex_additional_files = [watermark, ansys_logo_white, ansys_logo_white_cropped]
+latex_elements = {"preamble": latex.generate_preamble(html_title)}
