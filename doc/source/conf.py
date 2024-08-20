@@ -1,10 +1,13 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
 import os
-
 from ansys_sphinx_theme import (
     ansys_favicon,
+    ansys_logo_white,
+    ansys_logo_white_cropped,
     get_version_match,
+    latex,
+    watermark,
 )
 from sphinx.builders.latex import LaTeXBuilder
 
