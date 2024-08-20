@@ -63,7 +63,6 @@ extensions = [
 ]
 
 add_module_names = False
-sd_fontawesome_latex=True
 
 # autoclass_content: keep default
 # autodoc_class_signature: can't be used with enums
