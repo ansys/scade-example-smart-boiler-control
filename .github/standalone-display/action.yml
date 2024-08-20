@@ -40,7 +40,7 @@ inputs:
 
   conf:
     description: >
-      conf.
+      Configuration file.
     required: true
   
 
