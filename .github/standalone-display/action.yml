@@ -40,9 +40,9 @@ inputs:
 
   conf:
     description: >
-      conf.
+      Configuration file.
     required: true
-  
+
 
 runs:
   using: "composite"

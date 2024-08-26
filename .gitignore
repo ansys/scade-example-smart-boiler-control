@@ -1,4 +1,4 @@
-# Files ignored for configuration management with SCADE 
+# Files ignored for configuration management with SCADE
 *.log
 *.dll
 *.exe

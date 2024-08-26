@@ -1,18 +1,22 @@
 """Sphinx documentation configuration file."""
 from datetime import datetime
+import pathlib
 import os
-from pathlib import Path
-import sys
-
 from ansys_sphinx_theme import (
     ansys_favicon,
-    get_autoapi_templates_dir_relative_path,
+    ansys_logo_white,
+    ansys_logo_white_cropped,
     get_version_match,
-    pyansys_logo_black,
+    latex,
+    watermark,
 )
-from sphinx.highlighting import lexers
+from sphinx.builders.latex import LaTeXBuilder
 
-__version__="0.1.dev0"
+source_dir = pathlib.Path(__file__).parent.resolve().absolute()
+version_file = source_dir / "../../VERSION"
+with open(str(version_file), "r") as file:
+    __version__ = file.read().splitlines()[0]
+release = version = __version__
 
 # Project information
 project = "ansys-scade-example-smart-boiler-control"
@@ -21,7 +25,6 @@ author = "ANSYS, Inc."
 release = version = __version__
 
 # Select desired logo, theme, and declare the html title
-html_logo = pyansys_logo_black
 html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "Ansys SCADE Smart Boiler Example"
 
@@ -42,6 +45,7 @@ html_theme_options = {
         "version_match": get_version_match(version),
     },
     "check_switcher": False,
+    "logo": "pyansys",
 }
 
 # Sphinx extensions
@@ -58,13 +62,7 @@ extensions = [
     # "sphinx_gallery.gen_gallery",# scade-example-smart-boiler-control examples
 ]
 
-# Print the type annotations from the signature in the description only
-autodoc_typehints = 'description'
-# When the documentation is run on Linux systems
-autodoc_mock_imports = ['scade', 'scade_env', '_scade_api']
-# Purpose of this option?
 add_module_names = False
-autoapi_python_class_content = "both"
 
 # autoclass_content: keep default
 # autodoc_class_signature: can't be used with enums
@@ -136,3 +134,14 @@ linkcheck_ignore = [
     "https://www.ansys.com/products/embedded-software/ansys-scade-suite",
     "https://www.ansys.com/*"
 ]
+
+# suppress warnings about fa-build while building the documentation-pdf
+suppress_warnings = [
+    "design.fa-build",
+]
+
+
+# additional logos for the latex coverpage
+LaTeXBuilder.supported_image_types = ["image/png", "image/pdf", "image/svg+xml"]
+latex_additional_files = [watermark, ansys_logo_white, ansys_logo_white_cropped]
+latex_elements = {"preamble": latex.generate_preamble(html_title)}
