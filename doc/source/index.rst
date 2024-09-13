@@ -36,5 +36,4 @@ Smart Boiler Control Example
       Learn how to contribute to the Smart Boiler Control application
 
 
-* :ref:`genindex`
 * :ref:`search`
