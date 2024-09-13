@@ -4,6 +4,15 @@
 Start Guide
 ===========
 
+Installation
+------------
+Clone the `repository <https://github.com/ansys/scade-example-smart-boiler-control>`_ to your local machine
+
+.. code-block:: bash
+
+    git clone https://github.com/ansys/scade-example-smart-boiler-control.git
+
+
 Generate, build and execute standalone application
 --------------------------------------------------
 
