@@ -89,13 +89,13 @@ jobs:
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v4
-      
+
       - name: "Get SCADE installation directory"
         uses: ansys/scade-actions/get-scade-dir@v2
         id: get-scade-dir
         with:
           scade-version: "24.2"
-      
+
       - name: "Execute tests"
         uses: ansys/scade-actions/test-execute@v2
         with:
