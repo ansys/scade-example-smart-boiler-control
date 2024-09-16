@@ -56,7 +56,7 @@ jobs:
     strategy:
       matrix:
         os: [windows-latest]
-        scade-version: ['24.1']
+        scade-version: ['24.2']
       fail-fast: false
     needs: [doc-build, code-style]
     steps:
@@ -82,7 +82,34 @@ jobs:
           retention-days: 7
           if-no-files-found: error
 
+  scade-test-display:
+    name: "Run Test Execution"
+    runs-on: [self-hosted, 'SCADE']
+    needs: [doc-build, code-style]
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
 
+      - name: "Execute tests"
+        uses: ansys/scade-actions/test-execute@v2.0
+        with:
+          scade-dir: 'C:\Program Files\Ansys Inc\v242\SCADE'
+          test-project: 'model/scade-test/SmartBoilerControl_Test.etp'
+          configuration: 'Test'
+
+
+
+      # - name: "Zipping the standalone directory"
+      #   run: |
+      #     powershell Compress-Archive ./model/scade-display/DisplayPanel_Exe SmartBoilerStandalone.zip
+
+      - name: "Upload folder to  artifacts"
+        uses: actions/upload-artifact@v4
+        with:
+          name: SmartBoilerStandaloneExecutable
+          path: ./model/scade-display/DisplayPanel_Exe
+          retention-days: 7
+          if-no-files-found: error
 
   release:
     name: "Release project"
