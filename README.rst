@@ -41,7 +41,7 @@ Ansys SCADE, starting from 2024 R2.
 Documentation and issues
 ------------------------
 Documentation for the latest stable release of Ansys SCADE Smart Boiler Control Example  is hosted at
-`Ansys SCADE Smart Boiler Control Example documentation <smart-boiler-control.example.scade.docs.pyansys.com>`_.
+`Ansys SCADE Smart Boiler Control Example documentation <https://smart-boiler-control.examples.scade.docs.pyansys.com/>`_.
 
 In the upper right corner of the documentation's title bar, there is an option for
 switching from viewing the documentation for the latest stable release to viewing the
@@ -56,6 +56,6 @@ License
 Ansys SCADE Smart Boiler Control Example is licensed under the MIT license.
 
 This toolkit makes no commercial claim over Ansys whatsoever. The use of this toolkit
-requires a legally licensed copy of the Ansys SCADE Suite. For more information,
-see the `Ansys SCADE Suite <https://www.ansys.com/products/embedded-software/ansys-scade-suite>`_
+requires a legally licensed copy of the Ansys SCADE. For more information,
+see the `Ansys SCADE <https://www.ansys.com/products/embedded-software/>`_
 page on the Ansys website.

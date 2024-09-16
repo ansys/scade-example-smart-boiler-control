@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Procedure xmlns:test="http://www.esterel-technologies.com/ns/testenv/2" oid="E0E75E42-7338-418E-A2C2-880AAE946C84" name="Procedure1" operator="DisplayPanel.sgfx">
+<Procedure xmlns:test="http://www.esterel-technologies.com/ns/testenv/2" oid="E0E75E42-7338-418E-A2C2-880AAE946C84" name="ProcedureOK" operator="DisplayPanel.sgfx">
 	<testElements>
 		<Record oid="759C3914-2154-4315-B9A6-1511AE4B2E75" name="Record1" description="Record1">
 			<scenarios>
