@@ -102,6 +102,7 @@ jobs:
           scade-dir: ${{ steps.get-scade-dir.outputs.scade-directory }}
           test-project: 'model/scade-test/SmartBoilerControl_Test.etp'
           configuration: 'Test'
+          results-project: 'model/scade-test/SmartBoilerControl_Results.etp'
           checkout: false
 
 
