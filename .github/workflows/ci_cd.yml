@@ -89,13 +89,20 @@ jobs:
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v4
-
-      - name: "Execute tests"
-        uses: ansys/scade-actions/test-execute@v2.0
+      
+      - name: "Get SCADE installation directory"
+        uses: ansys/scade-actions/get-scade-dir@v2
+        id: get-scade-dir
         with:
-          scade-dir: 'C:\Program Files\Ansys Inc\v242\SCADE'
+          scade-version: "24.2"
+      
+      - name: "Execute tests"
+        uses: ansys/scade-actions/test-execute@v2
+        with:
+          scade-dir: ${{ steps.get-scade-dir.outputs.scade-directory }}
           test-project: 'model/scade-test/SmartBoilerControl_Test.etp'
           configuration: 'Test'
+          checkout: false
 
 
 
