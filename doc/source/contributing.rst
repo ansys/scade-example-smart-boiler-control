@@ -80,7 +80,7 @@ This way, it's not possible for you to push code that fails the style checks::
   fix requirements.txt.....................................................Passed
   Check GitHub workflows...................................................Passed
 
-  Build documentation
+Build documentation
 -------------------
 .. code:: bash
 
