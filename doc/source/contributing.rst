@@ -52,6 +52,33 @@ source and enhance it.
       python -m pip install -U pip     # Upgrading pip
       python -m pip install -r requierements/doc.txt     # for building the documentation
 
+Use ``pre-commit``
+^^^^^^^^^^^^^^^^^^
+Ansys SCADE Example follows the PEP8 standard as outlined in
+`PEP 8 <https://dev.docs.pyansys.com/coding-style/pep8.html>`_ in
+the *PyAnsys developer's guide* and implements style checking using
+`pre-commit <https://pre-commit.com/>`_.
+
+To ensure your code meets minimum code styling standards, run these commands::
+
+  pip install pre-commit
+  pre-commit run --all-files
+
+You can also install this as a pre-commit hook by running this command::
+
+  pre-commit install
+
+This way, it's not possible for you to push code that fails the style checks::
+
+  $ pre-commit install
+  $ git commit -am "added my cool feature"
+  Add License Headers......................................................Passed
+  check for merge conflicts................................................Passed
+  debug statements (python)................................................Passed
+  trim trailing whitespace.................................................Passed
+  check yaml...............................................................Passed
+  fix requirements.txt.....................................................Passed
+  Check GitHub workflows...................................................Passed
 
 Build documentation
 -------------------

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project id="1" oid_count="39" defaultConfiguration="14">
+<Project id="1" oid_count="52" defaultConfiguration="14">
 	<props>
 		<Prop id="3" name="@STUDIO:PRODUCT">
 			<value>QTE</value>
@@ -43,16 +43,16 @@
 		<Prop id="19" name="@QTE:SOURCE_MODEL">
 			<value>..\scade-display\DisplayPanel.etp</value>
 		</Prop>
-		<Prop id="21" name="@QTE:SELECTED_PROCEDURES">
-			<value>Procedure1</value>
-			<configuration>14</configuration>
-		</Prop>
 		<Prop id="22" name="@QTE:USE_PROCEDURES_LIST">
 			<value>true</value>
 			<configuration>14</configuration>
 		</Prop>
 		<Prop id="23" name="@QTE:TEE_CONF">
 			<value>Code</value>
+			<configuration>14</configuration>
+		</Prop>
+		<Prop id="44" name="@QTE:SELECTED_PROCEDURES">
+			<value>ProcedureOK</value>
 			<configuration>14</configuration>
 		</Prop>
 	</props>
@@ -64,17 +64,31 @@
 		</Folder>
 		<Folder id="5" extensions="stp" name="Tests">
 			<elements>
-				<FileRef id="20" persistAs="Procedure1.stp"/>
+				<FileRef id="40" persistAs="ProcedureOK.stp">
+					<props>
+						<Prop id="48" name="@ARCHIVE:FILE_SELECTION">
+							<value>INCLUDE</value>
+						</Prop>
+					</props>
+				</FileRef>
+				<FileRef id="42" persistAs="ProcedureNOK1.stp">
+					<props>
+						<Prop id="47" name="@ARCHIVE:FILE_SELECTION">
+							<value>INCLUDE</value>
+						</Prop>
+					</props>
+				</FileRef>
 			</elements>
 		</Folder>
 		<Folder id="24" extensions="sss;csv;sns" name="Scenarios">
 			<elements>
 				<FileRef id="34" persistAs="Scenario1.sss"/>
+				<FileRef id="43" persistAs="Scenario2.sss"/>
 			</elements>
 		</Folder>
 		<Folder id="26" extensions="trf" name="Results">
 			<elements>
-				<FileRef id="39" persistAs="Procedure1.trf"/>
+				<FileRef id="51" persistAs="ProcedureOK.trf"/>
 			</elements>
 		</Folder>
 	</roots>
