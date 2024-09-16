@@ -105,20 +105,6 @@ jobs:
           results-project: 'model/scade-test/SmartBoilerControl_Results.etp'
           checkout: false
 
-
-
-      # - name: "Zipping the standalone directory"
-      #   run: |
-      #     powershell Compress-Archive ./model/scade-display/DisplayPanel_Exe SmartBoilerStandalone.zip
-
-      - name: "Upload folder to  artifacts"
-        uses: actions/upload-artifact@v4
-        with:
-          name: SmartBoilerStandaloneExecutable
-          path: ./model/scade-display/DisplayPanel_Exe
-          retention-days: 7
-          if-no-files-found: error
-
   release:
     name: "Release project"
     runs-on: ubuntu-latest
