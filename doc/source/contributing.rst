@@ -84,7 +84,7 @@ This way, it's not possible for you to push code that fails the style checks::
 
 Build documentation
 -------------------
-To buid documentation, you can run these commands:
+To build documentation, you can run these commands:
 
 .. code:: bash
 
