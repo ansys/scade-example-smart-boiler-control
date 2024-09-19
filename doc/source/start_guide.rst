@@ -1,71 +1,70 @@
 .. role:: raw-html-m2r(raw)
    :format: html
 
-Start Guide
-===========
+Getting started
+===============
 
-Installation
-------------
-Clone the `repository <https://github.com/ansys/scade-example-smart-boiler-control>`_ to your local machine
+Install
+-------
+To install the smart boiler control interface, run this command to clone the
+`repository <https://github.com/ansys/scade-example-smart-boiler-control>`_
+to your local machine
 
 .. code-block:: bash
 
     git clone https://github.com/ansys/scade-example-smart-boiler-control.git
 
 
-Generate, build and execute standalone application
---------------------------------------------------
+Generate, build, and execute standalone interface
+-------------------------------------------------
 
-Launch  SCADE Display and open the project ``model/scade-display/DisplayPanel.etp`` (File>Open).
+#. Launch SCADE Display.
 
+#. Select **File > Open** and then the ``model/scade-display/DisplayPanel.etp``
+   project.
 
-.. raw:: html
+   .. raw:: html
 
-   <p align="center">
-     <img src="_static/fileOpenP.png" alt="file open"/>
-   </p>
+      <p align="center">
+        <img src="_static/fileOpenP.png" alt="file open"/>
+      </p>
 
+#. Select the ``Windows`` configuration to enable the generation of a standalone application
+   running on Windows.
 
-Select ``Windows`` configuration, this configuration enables the generation of a standalone application
-running on Windows.
+   .. raw:: html
 
+      <p align="center">
+        <img src="_static/selectConf.png" alt="select conf"/>
+      </p>
 
-.. raw:: html
+#. Click **Execute**.
 
-   <p align="center">
-     <img src="_static/selectConf.png" alt="select conf"/>
-   </p>
+   .. raw:: html
 
-
-Then click Execute.
-
-
-.. raw:: html
-
-   <p align="center">
-     <img src="_static/execute.png" alt="execute"/>
-   </p>
+      <p align="center">
+        <img src="_static/execute.png" alt="execute"/>
+      </p>
 
 
-Test Execution on host
+Test execution on host
 ----------------------
 
-Launch SCADE Test and open SCADE Test project ``model/scade-test/SmartBoilerControl_Test.etp`` (File>Open).
+#. Launch SCADE Test.
 
+#. Select **File > Open** and then the ``model/scade-test/SmartBoilerControl_Test.etp``
+   SCADE test projet.
 
-.. raw:: html
+   .. raw:: html
 
-   <p align="center">
-     <img src="_static/fileOpenSCADE.png" alt="file open scade"/>
-   </p>
+      <p align="center">
+        <img src="_static/fileOpenSCADE.png" alt="file open scade"/>
+      </p>
 
+#. Select **Project > Test tool > Execute tests**.
 
-Project > Test tool > Execute tests
+   .. raw:: html
 
-
-.. raw:: html
-
-   <p align="center">
-     <img src="_static/executeTests.png" alt="execute tests"/>
-   </p>
-
+      <p align="center">
+        <img src="_static/executeTests.png" alt="execute tests"/>
+      </p>
