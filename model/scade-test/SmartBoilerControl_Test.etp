@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project id="1" oid_count="52" defaultConfiguration="14">
+<Project id="1" oid_count="55" defaultConfiguration="14">
 	<props>
 		<Prop id="3" name="@STUDIO:PRODUCT">
 			<value>QTE</value>
@@ -55,6 +55,10 @@
 			<value>ProcedureOK</value>
 			<configuration>14</configuration>
 		</Prop>
+		<Prop id="53" name="@QTE:TARGET">
+			<value>RTRT</value>
+			<configuration>14</configuration>
+		</Prop>
 	</props>
 	<roots>
 		<Folder id="4" extensions="etp;vsp" name="Model">
@@ -86,11 +90,7 @@
 				<FileRef id="43" persistAs="Scenario2.sss"/>
 			</elements>
 		</Folder>
-		<Folder id="26" extensions="trf" name="Results">
-			<elements>
-				<FileRef id="51" persistAs="ProcedureOK.trf"/>
-			</elements>
-		</Folder>
+		<Folder id="26" extensions="trf" name="Results"/>
 	</roots>
 	<configurations>
 		<Configuration id="14" name="Test"/>
