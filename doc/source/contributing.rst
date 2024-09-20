@@ -6,14 +6,16 @@ Contribute
 Overall guidance on contributing to a PyAnsys library appears in
 `Contributing <https://dev.docs.pyansys.com/how-to/contributing.html>`_
 in the *PyAnsys developer's guide*. Ensure that you are thoroughly familiar
-with this guide before attempting to contribute to Ansys SCADE Smart Boiler Control Example.
+with this guide before attempting to contribute to the Ansys SCADE smart boiler
+control example.
 
-The following contribution information is specific to Ansys SCADE Smart Boiler Control Example.
+The following contribution information is specific to the Ansys SCADE smart boiler
+control interface.
 
 Install in developer mode
 -------------------------
 
-Installing Ansys SCADE Smart Boiler Control Example in developer mode allows you to modify the
+Installing the Ansys SCADE smart boiler control interface in developer mode allows you to modify the
 source and enhance it.
 
 #. Clone the ``ansys-scade-example-smart-boiler-control`` repository:
@@ -54,7 +56,7 @@ source and enhance it.
 
 Use ``pre-commit``
 ^^^^^^^^^^^^^^^^^^
-Ansys SCADE Example follows the PEP8 standard as outlined in
+The example for the Ansys SCADE boiler plate interface follows the PEP8 standard as outlined in
 `PEP 8 <https://dev.docs.pyansys.com/coding-style/pep8.html>`_ in
 the *PyAnsys developer's guide* and implements style checking using
 `pre-commit <https://pre-commit.com/>`_.
@@ -82,6 +84,8 @@ This way, it's not possible for you to push code that fails the style checks::
 
 Build documentation
 -------------------
+To build documentation, you can run these commands:
+
 .. code:: bash
 
     # build and view the doc from a Windows environment
@@ -89,25 +93,18 @@ Build documentation
     .\doc\make.bat html
     start .\doc\_build\html\index.html
 
-
-
 Post issues
 -----------
+Use the `Issues <https://github.com/ansys/scade-example-smart-boiler-control/issues>`_
+page for this repository to report bugs and request new features. When possible,
+use the issue templates provided. If your issue does not fit into one of these templates,
+click the link for opening a blank issue.
 
-
-Use the `Ansys SCADE Smart Boiler Control Example Issues <https://github.com/ansys/scade-example-smart-boiler-control/issues>`_
-page to submit questions, report bugs, and request new features. When possible, use
-these templates:
-
-* Bug, problem, error: For filing a bug report
-* Documentation error: For requesting modifications to the documentation
-* Adding an example: For proposing a new example
-* New feature: For requesting enhancements to the code
-
-If your issue does not fit into one of these template categories, click
-the link for opening a blank issue.
-
-To reach the project support team, email `pyansys.core@ansys.com <pyansys.core@ansys.com>`_.
+If you have general questions about the PyAnsys ecosystem, email
+`pyansys.core@ansys.com <pyansys.core@ansys.com>`_. If your
+question is specific to the Ansys SCADE smart boiler
+control interface, ask your question in an issue as described
+in the previous paragraph.
 
 .. LINKS AND REFERENCES
 
