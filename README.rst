@@ -13,6 +13,10 @@ Smart Boiler Control
 .. |version| image:: https://img.shields.io/badge/version-2024R2-blue
    :alt: version
 
+.. |CI-CD| image:: https://github.com/ansys/scade-example-smart-boiler-control/actions/workflows/ci_cd.yml/badge.svg
+   :target: https://github.com/ansys/scade-example-smart-boiler-control/actions/workflows/ci_cd.yml
+   :alt: CI-CD
+
 .. |license| image:: https://img.shields.io/badge/License-MIT-yellow.svg
    :target: https://opensource.org/licenses/MIT
    :alt: MIT License
