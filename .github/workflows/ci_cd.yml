@@ -63,10 +63,16 @@ jobs:
       - name: "Install Git and clone project"
         uses: actions/checkout@v4
 
+      - name: "Get SCADE installation directory"
+        uses: ansys/scade-actions/get-scade-dir@v2
+        id: get-scade-dir
+        with:
+          scade-version: "24.2"
+
       - name: "Generate Standalone"
         uses: ansys/scade-actions/display-generate@v2
         with:
-          scade-dir: 'C:\Program Files\Ansys Inc\v242\SCADE'
+          scade-dir: ${{ steps.get-scade-dir.outputs.scade-directory }}
           project: 'model/scade-display/DisplayPanel.etp'
           configuration: 'Windows'
 
