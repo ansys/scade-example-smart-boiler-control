@@ -63,16 +63,12 @@ jobs:
       - name: "Install Git and clone project"
         uses: actions/checkout@v4
 
-      - uses: ./.github/standalone-display/
+      - name: "Generate Standalone"
+        uses: ansys/scade-actions/display-generate@v2
         with:
-          scade-version: ${{ matrix.scade-version }}
-          model-path: 'model/scade-display/DisplayPanel.etp'
-          conf: 'Windows'
-
-
-      # - name: "Zipping the standalone directory"
-      #   run: |
-      #     powershell Compress-Archive ./model/scade-display/DisplayPanel_Exe SmartBoilerStandalone.zip
+          scade-dir: 'C:\Program Files\Ansys Inc\v242\SCADE'
+          project: 'model/scade-display/DisplayPanel.etp'
+          configuration: 'Windows'
 
       - name: "Upload folder to  artifacts"
         uses: actions/upload-artifact@v4
