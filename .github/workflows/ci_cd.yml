@@ -12,6 +12,7 @@ env:
   MAIN_PYTHON_VERSION: '3.10'
   DOCUMENTATION_CNAME: 'smart-boiler-control.examples.scade.docs.pyansys.com'
   LIBRARY_NAME: 'ansys-scade-examples-smart-boiler-control'
+  ARTIFACT_NAME: 'SmartBoilerStandaloneExecutable'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -79,7 +80,7 @@ jobs:
       - name: "Upload folder to  artifacts"
         uses: actions/upload-artifact@v4
         with:
-          name: SmartBoilerStandaloneExecutable
+          name:  ${{ env.ARTIFACT_NAME }}
           path: ./model/scade-display/DisplayPanel_Exe
           retention-days: 7
           if-no-files-found: error
@@ -117,7 +118,7 @@ jobs:
         uses: ansys/actions/release-github@v7
         with:
           library-name: ${{ env.LIBRARY_NAME }}
-          # additional-artifacts: 'examples'
+          additional-artifacts: ${{ env.ARTIFACT_NAME }}
 
   doc-deploy-dev:
     name: "Deploy development documentation"
