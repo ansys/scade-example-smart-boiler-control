@@ -1,0 +1,86 @@
+[
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#contribute",
+        "title": "Contribute",
+        "section": "Contribute",
+        "text": "Overall guidance on contributing to a PyAnsys library appears in\nContributing\nin the PyAnsys developer’s guide. Ensure that you are thoroughly familiar\nwith this guide before attempting to contribute to the Ansys SCADE smart boiler\ncontrol example.\nThe following contribution information is specific to the Ansys SCADE smart boiler\ncontrol interface.\nInstalling the Ansys SCADE smart boiler control interface in developer mode allows you to modify the\nsource and enhance it.\nClone the ansys-scade-example-smart-boiler-control repository:\nAccess the scade-example-smart-boiler-control directory where the repository has been cloned:\nCreate a clean Python 3.10 environment and activate it:\nYou should use the interpreter delivered with Ansys SCADE. For example,\nC:\\Program Files\\ANSYS Inc\\v232\\SCADE\\contrib\\Python310\\python.exe.\nMake sure that you have the latest required build system, documentation, testing,\nand CI tools:\nThe example for the Ansys SCADE boiler plate interface follows the PEP8 standard as outlined in\nPEP 8 in\nthe PyAnsys developer’s guide and implements style checking using\npre-commit.\nTo ensure your code meets minimum code styling standards, run these commands:\nYou can also install this as a pre-commit hook by running this command:\nThis way, it’s not possible for you to push code that fails the style checks:\nTo build documentation, you can run these commands:\nUse the Issues\npage for this repository to report bugs and request new features. When possible,\nuse the issue templates provided. If your issue does not fit into one of these templates,\nclick the link for opening a blank issue.\nIf you have general questions about the PyAnsys ecosystem, email\npyansys.core@ansys.com. If your\nquestion is specific to the Ansys SCADE smart boiler\ncontrol interface, ask your question in an issue as described\nin the previous paragraph.\ngit clone https://github.com/ansys/scade-example-smart-boiler-control.git\ncd scade-example-smart-boiler-control\n# Create a virtual environment\npython -m venv .venv\n\n# Activate it in Windows CMD environment\n.venv\\Scripts\\activate.bat\n\n# Activate it in Windows Powershell\n.venv\\Scripts\\Activate.ps1\npython -m pip install -U pip     # Upgrading pip\npython -m pip install -r requierements/doc.txt     # for building the documentation\npip install pre-commit\npre-commit run --all-files\npre-commit install\n$ pre-commit install\n$ git commit -am \"added my cool feature\"\nAdd License Headers......................................................Passed\ncheck for merge conflicts................................................Passed\ndebug statements (python)................................................Passed\ntrim trailing whitespace.................................................Passed\ncheck yaml...............................................................Passed\nfix requirements.txt.....................................................Passed\nCheck GitHub workflows...................................................Passed\n# build and view the doc from a Windows environment\n.\\doc\\make.bat clean\n.\\doc\\make.bat html\nstart .\\doc\\_build\\html\\index.html"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#install-in-developer-mode",
+        "title": "Contribute > Install in developer mode",
+        "section": "Install in developer mode",
+        "text": "Installing the Ansys SCADE smart boiler control interface in developer mode allows you to modify the\nsource and enhance it.\nClone the ansys-scade-example-smart-boiler-control repository:\nAccess the scade-example-smart-boiler-control directory where the repository has been cloned:\nCreate a clean Python 3.10 environment and activate it:\nYou should use the interpreter delivered with Ansys SCADE. For example,\nC:\\Program Files\\ANSYS Inc\\v232\\SCADE\\contrib\\Python310\\python.exe.\nMake sure that you have the latest required build system, documentation, testing,\nand CI tools:\nThe example for the Ansys SCADE boiler plate interface follows the PEP8 standard as outlined in\nPEP 8 in\nthe PyAnsys developer’s guide and implements style checking using\npre-commit.\nTo ensure your code meets minimum code styling standards, run these commands:\nYou can also install this as a pre-commit hook by running this command:\nThis way, it’s not possible for you to push code that fails the style checks:\ngit clone https://github.com/ansys/scade-example-smart-boiler-control.git\ncd scade-example-smart-boiler-control\n# Create a virtual environment\npython -m venv .venv\n\n# Activate it in Windows CMD environment\n.venv\\Scripts\\activate.bat\n\n# Activate it in Windows Powershell\n.venv\\Scripts\\Activate.ps1\npython -m pip install -U pip     # Upgrading pip\npython -m pip install -r requierements/doc.txt     # for building the documentation\npip install pre-commit\npre-commit run --all-files\npre-commit install\n$ pre-commit install\n$ git commit -am \"added my cool feature\"\nAdd License Headers......................................................Passed\ncheck for merge conflicts................................................Passed\ndebug statements (python)................................................Passed\ntrim trailing whitespace.................................................Passed\ncheck yaml...............................................................Passed\nfix requirements.txt.....................................................Passed\nCheck GitHub workflows...................................................Passed"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#use-pre-commit",
+        "title": "Contribute > Use pre-commit",
+        "section": "Use pre-commit",
+        "text": "The example for the Ansys SCADE boiler plate interface follows the PEP8 standard as outlined in\nPEP 8 in\nthe PyAnsys developer’s guide and implements style checking using\npre-commit.\nTo ensure your code meets minimum code styling standards, run these commands:\nYou can also install this as a pre-commit hook by running this command:\nThis way, it’s not possible for you to push code that fails the style checks:\npip install pre-commit\npre-commit run --all-files\npre-commit install\n$ pre-commit install\n$ git commit -am \"added my cool feature\"\nAdd License Headers......................................................Passed\ncheck for merge conflicts................................................Passed\ndebug statements (python)................................................Passed\ntrim trailing whitespace.................................................Passed\ncheck yaml...............................................................Passed\nfix requirements.txt.....................................................Passed\nCheck GitHub workflows...................................................Passed"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#build-documentation",
+        "title": "Contribute > Build documentation",
+        "section": "Build documentation",
+        "text": "To build documentation, you can run these commands:\n# build and view the doc from a Windows environment\n.\\doc\\make.bat clean\n.\\doc\\make.bat html\nstart .\\doc\\_build\\html\\index.html"
+    },
+    {
+        "objectID": "contributing",
+        "href": "contributing.html#post-issues",
+        "title": "Contribute > Post issues",
+        "section": "Post issues",
+        "text": "Use the Issues\npage for this repository to report bugs and request new features. When possible,\nuse the issue templates provided. If your issue does not fit into one of these templates,\nclick the link for opening a blank issue.\nIf you have general questions about the PyAnsys ecosystem, email\npyansys.core@ansys.com. If your\nquestion is specific to the Ansys SCADE smart boiler\ncontrol interface, ask your question in an issue as described\nin the previous paragraph."
+    },
+    {
+        "objectID": "index",
+        "href": "index.html#smart-boiler-control",
+        "title": "Smart boiler control",
+        "section": "Smart boiler control",
+        "text": "This example shows how touch interactivity concepts are used in an interface\nfor a modern smart boiler control panel.\nLearn about the smart boiler control interface.\nView a brief on the smart boiler control interface.\nGet started with the smart boiler control interface.\nLearn how to contribute to the smart boiler control interface.\nsearch"
+    },
+    {
+        "objectID": "brief",
+        "href": "brief.html#brief",
+        "title": "Brief",
+        "section": "Brief",
+        "text": "The following image provides a brief of how collaborative efforts and the power\nof Ansys SCADE software have led to the this modernized smart boiler control interface."
+    },
+    {
+        "objectID": "start_guide",
+        "href": "start_guide.html#getting-started",
+        "title": "Getting started",
+        "section": "Getting started",
+        "text": "To install the smart boiler control interface, run this command to clone the\nrepository\nto your local machine\nLaunch SCADE Display.\nSelect File > Open and then the model/scade-display/DisplayPanel.etp\nproject.\nSelect the Windows configuration to enable the generation of a standalone application\nrunning on Windows.\nClick Execute.\nLaunch SCADE Test.\nSelect File > Open and then the model/scade-test/SmartBoilerControl_Test.etp\nSCADE test projet.\nSelect Project > Test tool > Execute tests.\ngit clone https://github.com/ansys/scade-example-smart-boiler-control.git"
+    },
+    {
+        "objectID": "start_guide",
+        "href": "start_guide.html#install",
+        "title": "Getting started > Install",
+        "section": "Install",
+        "text": "To install the smart boiler control interface, run this command to clone the\nrepository\nto your local machine\ngit clone https://github.com/ansys/scade-example-smart-boiler-control.git"
+    },
+    {
+        "objectID": "start_guide",
+        "href": "start_guide.html#generate-build-and-execute-standalone-interface",
+        "title": "Getting started > Generate, build, and execute standalone interface",
+        "section": "Generate, build, and execute standalone interface",
+        "text": "Launch SCADE Display.\nSelect File > Open and then the model/scade-display/DisplayPanel.etp\nproject.\nSelect the Windows configuration to enable the generation of a standalone application\nrunning on Windows.\nClick Execute."
+    },
+    {
+        "objectID": "start_guide",
+        "href": "start_guide.html#test-execution-on-host",
+        "title": "Getting started > Test execution on host",
+        "section": "Test execution on host",
+        "text": "Launch SCADE Test.\nSelect File > Open and then the model/scade-test/SmartBoilerControl_Test.etp\nSCADE test projet.\nSelect Project > Test tool > Execute tests."
+    },
+    {
+        "objectID": "description",
+        "href": "description.html#smart-boiler-control-interface",
+        "title": "Smart boiler control interface",
+        "section": "Smart boiler control interface",
+        "text": "Ansys SCADE Ansys SCADE Suite, Display, Test version MIT License\nThe Ansys SCADE Suite® and Ansys SCADE Display® software were used to automatically generate this\nexample of a smart boiler control interface. This modern interface incorporates touch interactivity\nconcepts into a smart boiler control panel.\nWith this interface, you can control the water level in a steam boiler. It is important that this\ninterface works correctly to control the quantity of water present in the steam boiler when the\nsteam boiler is operating. If the water quantity is too low or too high, the smart boiler could\nbe seriously affected.\nThis example serves as a companion to SCADE Smart Boiler Control - Designing a next-gen embedded HMI,\nwhich is a part of Ansys’ embedded Human Machine Interface (HMD) design blog series."
+    }
+]
