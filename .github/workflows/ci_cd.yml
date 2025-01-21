@@ -87,7 +87,7 @@ jobs:
 
   scade-test-display:
     name: "Run Test Execution"
-    runs-on: [self-hosted, 'SCADE']
+    runs-on: [self-hosted, 'SCADE', 'GRAPHICS']
     needs: [code-style]
     steps:
       - name: "Checkout code"
