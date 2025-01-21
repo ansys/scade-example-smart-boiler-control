@@ -53,7 +53,7 @@ jobs:
 
   standalone-display:
     name: "Standalone Display"
-    runs-on: [self-hosted, 'SCADE']
+    runs-on: [self-hosted, 'SCADE', 'GRAPHICS']
     strategy:
       matrix:
         os: [windows-latest]
