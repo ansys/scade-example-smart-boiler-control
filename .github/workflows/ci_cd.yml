@@ -51,6 +51,28 @@ jobs:
           dependencies: "texlive-fonts-extra qpdf"
           check-links: false
 
+  bash-test:
+    name : "TEST Bash"
+    runs-on: [self-hosted, 'SCADE', 'GRAPHICS']
+    steps:
+    # Runs on Bash
+    - name: Set an output variable on Windows
+      id: set-value-bash
+      run: |
+        echo foo=bar >> $GITHUB_OUTPUT
+      shell: bash
+    - name: Set an output variable on Windows
+      id: set-value-pwsh
+      run: |
+        echo foo=bar >> $env:GITHUB_OUTPUT
+      shell: pwsh
+    - name: Set an output variable on Window
+      id: set-value-powershell
+      # Requires explicitly setting the output encoding
+      run: |
+        "foo=bar" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append
+      shell: powershell
+
   standalone-display:
     name: "Standalone Display"
     runs-on: [self-hosted, 'SCADE', 'GRAPHICS']
