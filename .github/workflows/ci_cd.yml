@@ -59,7 +59,7 @@ jobs:
     - name: Set an output variable on Windows
       id: set-value-bash
       run: |
-        clinfo >> $GITHUB_OUTPUT
+        clinfo
       shell: bash
 
 
