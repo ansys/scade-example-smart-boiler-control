@@ -71,6 +71,7 @@ jobs:
           echo "Available GPUs:"
           dxdiag /t dxdiag_output.txt
           cat dxdiag_output.txt
+      shell: bash
 
 
 
