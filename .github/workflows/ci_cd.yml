@@ -65,6 +65,12 @@ jobs:
       id: test-gpu-rendering
       run: |
         powershell -Command "Add-Type -AssemblyName System.Drawing; [System.Drawing.Graphics]::FromImage((New-Object System.Drawing.Bitmap 100, 100))"
+    - name: Check environment
+      run: |
+          echo "Running user: $USER"
+          echo "Available GPUs:"
+          dxdiag /t dxdiag_output.txt
+          cat dxdiag_output.txt
 
 
 
