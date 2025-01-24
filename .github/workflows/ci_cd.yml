@@ -56,16 +56,21 @@ jobs:
     runs-on: [self-hosted, 'SCADE', 'GRAPHICS']
     steps:
     # Runs on Bash
-    - name: Set an output variable on Windows
-      id: set-value-bash
+    - name: CL Info
+      id: run-clinfo
       run: |
         clinfo
       shell: bash
+    - name: Test GPU rendering
+      id: test-gpu-rendering
+      run: |
+        powershell -Command "Add-Type -AssemblyName System.Drawing; [System.Drawing.Graphics]::FromImage((New-Object System.Drawing.Bitmap 100, 100))"
+
 
 
   standalone-display:
     name: "Standalone Display"
-    runs-on: [self-hosted, 'SCADE', 'GRAPHICS']
+    runs-on: [self-hosted, 'SCADE']
     strategy:
       matrix:
         os: [windows-latest]
