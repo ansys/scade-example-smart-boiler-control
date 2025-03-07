@@ -9,7 +9,6 @@ on:
   workflow_dispatch:
 
 env:
-  MAIN_PYTHON_VERSION: '3.10'
   DOCUMENTATION_CNAME: 'smart-boiler-control.examples.scade.docs.pyansys.com'
   LIBRARY_NAME: 'ansys-scade-examples-smart-boiler-control'
   ARTIFACT_NAME: 'SmartBoilerStandaloneExecutable'
@@ -26,7 +25,6 @@ jobs:
     steps:
       - uses: ansys/actions/code-style@v8
         with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
           use-python-cache: false
 
   doc-style:
@@ -45,7 +43,6 @@ jobs:
     steps:
       - uses: ansys/actions/doc-build@v8
         with:
-          python-version: ${{ env.MAIN_PYTHON_VERSION }}
           skip-install: true
           use-python-cache: false
           dependencies: "texlive-fonts-extra qpdf"
