@@ -1,0 +1,4 @@
+User-agent: *
+
+
+Sitemap: https://smart-boiler-control.examples.scade.docs.pyansys.com/sitemap.xml
