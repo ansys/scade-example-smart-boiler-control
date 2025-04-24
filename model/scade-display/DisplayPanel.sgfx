@@ -238,80 +238,8 @@
                         </outputParameters>
                     </properties>
                 </behavior>
-                <rectangle oid="bc519a26-b504-4545-b2e0-8217268bafde">
-                    <pathFromRoot value="1"/>
-                    <properties name="rectangle">
-                        <comment>background added because SCADE Test does not take in account the background color defined in the color table =&gt; image com failed!</comment>
-                        <visible>
-                            <init>true</init>
-                        </visible>
-                        <firstPoint>
-                            <x>
-                                <init>-1000.0</init>
-                            </x>
-                            <y>
-                                <init>-600.0</init>
-                            </y>
-                        </firstPoint>
-                        <thirdPoint>
-                            <x>
-                                <init>1000.0</init>
-                            </x>
-                            <y>
-                                <init>600.0</init>
-                            </y>
-                        </thirdPoint>
-                        <lineWidth>
-                            <init>0</init>
-                        </lineWidth>
-                        <lineStipple>
-                            <init>0</init>
-                        </lineStipple>
-                        <lineCap>
-                            <init>round</init>
-                        </lineCap>
-                        <haloing>
-                            <init>false</init>
-                        </haloing>
-                        <haloColor>
-                            <init>-1</init>
-                        </haloColor>
-                        <outlineColor>
-                            <init>-1</init>
-                        </outlineColor>
-                        <outlineOpacity>
-                            <init>255</init>
-                        </outlineOpacity>
-                        <fillColor>
-                            <init>3</init>
-                        </fillColor>
-                        <fillOpacity>
-                            <init>255</init>
-                        </fillOpacity>
-                        <polygonSmooth>
-                            <init>false</init>
-                        </polygonSmooth>
-                        <textureControl>
-                            <init>false</init>
-                        </textureControl>
-                        <texture horizAlign="center" horizPattern="1.0" vertAlign="middle" vertPattern="1.0">
-                            <textureId>
-                                <init>-1</init>
-                            </textureId>
-                        </texture>
-                        <gradient>
-                            <init>-1</init>
-                        </gradient>
-                        <modulate>
-                            <init>false</init>
-                        </modulate>
-                        <tessellate>
-                            <init>false</init>
-                        </tessellate>
-                    </properties>
-                </rectangle>
                 <container oid="20071c59-e69a-4ed4-a8e1-c70265c32708">
-                    <pathFromRoot value="2"/>
+                    <pathFromRoot value="1"/>
                     <properties name="Mode">
                         <visible>
                             <init>true</init>
@@ -347,7 +275,7 @@
                     </properties>
                     <children>
                         <condContainer oid="ce6614d7-1971-4dce-ac91-f1cb445b4755">
-                            <pathFromRoot value="0,2"/>
+                            <pathFromRoot value="0,1"/>
                             <properties name="Mode Indicator">
                                 <visible>
                                     <init>true</init>
@@ -392,7 +320,7 @@
                             </properties>
                             <children>
                                 <container oid="9d172dd4-ff53-4552-951f-741254212720">
-                                    <pathFromRoot value="0,0,2"/>
+                                    <pathFromRoot value="0,0,1"/>
                                     <properties name="group">
                                         <visible>
                                             <init>true</init>
@@ -428,7 +356,7 @@
                                     </properties>
                                     <children>
                                         <assignment oid="f7c00293-1af6-4c25-bd89-57131e1607a1">
-                                            <pathFromRoot value="0,0,0,2"/>
+                                            <pathFromRoot value="0,0,0,1"/>
                                             <properties name="ModeIndicatorColor">
                                                 <enable>
                                                     <init>true</init>
@@ -443,7 +371,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="b399709b-cab7-406a-a6fd-ae609ad304bf">
-                                            <pathFromRoot value="1,0,0,2"/>
+                                            <pathFromRoot value="1,0,0,1"/>
                                             <properties name="ModeIndicatorText">
                                                 <enable>
                                                     <init>true</init>
@@ -457,7 +385,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="170ba8c7-349f-4564-ad4d-a9ca0f24045b">
-                                            <pathFromRoot value="2,0,0,2"/>
+                                            <pathFromRoot value="2,0,0,1"/>
                                             <properties name="TankColor">
                                                 <enable>
                                                     <init>true</init>
@@ -474,7 +402,7 @@
                                     </children>
                                 </container>
                                 <container oid="84321c93-0d8a-49e7-97a0-79566bc2a22c">
-                                    <pathFromRoot value="1,0,2"/>
+                                    <pathFromRoot value="1,0,1"/>
                                     <properties name="group">
                                         <visible>
                                             <init>true</init>
@@ -510,7 +438,7 @@
                                     </properties>
                                     <children>
                                         <assignment oid="6f151208-6402-407e-9808-6d6c5a068492">
-                                            <pathFromRoot value="0,1,0,2"/>
+                                            <pathFromRoot value="0,1,0,1"/>
                                             <properties name="ModeIndicatorColor">
                                                 <enable>
                                                     <init>true</init>
@@ -525,7 +453,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="c525e8b7-3f94-4ebb-a086-1f0235aacc7e">
-                                            <pathFromRoot value="1,1,0,2"/>
+                                            <pathFromRoot value="1,1,0,1"/>
                                             <properties name="ModeIndicatorText">
                                                 <enable>
                                                     <init>true</init>
@@ -539,7 +467,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="3e654b25-2d8a-44fb-a871-5f9c1d24c242">
-                                            <pathFromRoot value="2,1,0,2"/>
+                                            <pathFromRoot value="2,1,0,1"/>
                                             <properties name="TankColor">
                                                 <enable>
                                                     <init>true</init>
@@ -556,7 +484,7 @@
                                     </children>
                                 </container>
                                 <container oid="3674a467-e07d-486d-9b6b-8531ba565c2b">
-                                    <pathFromRoot value="2,0,2"/>
+                                    <pathFromRoot value="2,0,1"/>
                                     <properties name="group">
                                         <visible>
                                             <init>true</init>
@@ -592,7 +520,7 @@
                                     </properties>
                                     <children>
                                         <assignment oid="2786aca1-32d5-492a-968e-992fc7111782">
-                                            <pathFromRoot value="0,2,0,2"/>
+                                            <pathFromRoot value="0,2,0,1"/>
                                             <properties name="ModeIndicatorColor">
                                                 <enable>
                                                     <init>true</init>
@@ -607,7 +535,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="13aca218-d2dd-4a62-91f1-f2ccffc59271">
-                                            <pathFromRoot value="1,2,0,2"/>
+                                            <pathFromRoot value="1,2,0,1"/>
                                             <properties name="ModeIndicatorText">
                                                 <enable>
                                                     <init>true</init>
@@ -621,7 +549,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="ecf28486-70de-4313-a569-e4474564d796">
-                                            <pathFromRoot value="2,2,0,2"/>
+                                            <pathFromRoot value="2,2,0,1"/>
                                             <properties name="TankColor">
                                                 <enable>
                                                     <init>true</init>
@@ -638,7 +566,7 @@
                                     </children>
                                 </container>
                                 <container oid="2b35e6a1-3e97-44ec-a185-7ec06f45a5b7">
-                                    <pathFromRoot value="3,0,2"/>
+                                    <pathFromRoot value="3,0,1"/>
                                     <properties name="group">
                                         <visible>
                                             <init>true</init>
@@ -674,7 +602,7 @@
                                     </properties>
                                     <children>
                                         <assignment oid="2dacfc8a-c9e2-4aa2-a934-ea250c10889c">
-                                            <pathFromRoot value="0,3,0,2"/>
+                                            <pathFromRoot value="0,3,0,1"/>
                                             <properties name="ModeIndicatorColor">
                                                 <enable>
                                                     <init>true</init>
@@ -689,7 +617,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="4389726e-a461-4a6f-ba00-481a87ed23a0">
-                                            <pathFromRoot value="1,3,0,2"/>
+                                            <pathFromRoot value="1,3,0,1"/>
                                             <properties name="ModeIndicatorText">
                                                 <enable>
                                                     <init>true</init>
@@ -703,7 +631,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="bd12aaf3-4f31-4f4c-b1ab-3edba0f508d1">
-                                            <pathFromRoot value="2,3,0,2"/>
+                                            <pathFromRoot value="2,3,0,1"/>
                                             <properties name="TankColor">
                                                 <enable>
                                                     <init>true</init>
@@ -720,7 +648,7 @@
                                     </children>
                                 </container>
                                 <container oid="f9772244-aebd-4a62-bf6c-a67f0b6f02a7">
-                                    <pathFromRoot value="4,0,2"/>
+                                    <pathFromRoot value="4,0,1"/>
                                     <properties name="group">
                                         <visible>
                                             <init>true</init>
@@ -756,7 +684,7 @@
                                     </properties>
                                     <children>
                                         <assignment oid="dc258be8-f94d-462d-8e82-87ae548dbd80">
-                                            <pathFromRoot value="0,4,0,2"/>
+                                            <pathFromRoot value="0,4,0,1"/>
                                             <properties name="ModeIndicatorColor">
                                                 <enable>
                                                     <init>true</init>
@@ -771,7 +699,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="1ee099d6-e9c5-492d-bf8d-e11c0af35062">
-                                            <pathFromRoot value="1,4,0,2"/>
+                                            <pathFromRoot value="1,4,0,1"/>
                                             <properties name="ModeIndicatorText">
                                                 <enable>
                                                     <init>true</init>
@@ -785,7 +713,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="39a6613a-8550-4b6c-bcbf-4e58d192c7c6">
-                                            <pathFromRoot value="2,4,0,2"/>
+                                            <pathFromRoot value="2,4,0,1"/>
                                             <properties name="TankColor">
                                                 <enable>
                                                     <init>true</init>
@@ -802,7 +730,7 @@
                                     </children>
                                 </container>
                                 <container oid="2f72e64c-8323-463e-8b2e-f06ff79b41a3">
-                                    <pathFromRoot value="5,0,2"/>
+                                    <pathFromRoot value="5,0,1"/>
                                     <properties name="group">
                                         <visible>
                                             <init>true</init>
@@ -838,7 +766,7 @@
                                     </properties>
                                     <children>
                                         <assignment oid="852a5112-2109-427d-88fe-9f64edba8649">
-                                            <pathFromRoot value="0,5,0,2"/>
+                                            <pathFromRoot value="0,5,0,1"/>
                                             <properties name="ModeIndicatorColor">
                                                 <enable>
                                                     <init>true</init>
@@ -853,7 +781,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="f7d93a74-a9f4-4ceb-adb3-d155efe03810">
-                                            <pathFromRoot value="1,5,0,2"/>
+                                            <pathFromRoot value="1,5,0,1"/>
                                             <properties name="ModeIndicatorText">
                                                 <enable>
                                                     <init>true</init>
@@ -867,7 +795,7 @@
                                             </properties>
                                         </assignment>
                                         <assignment oid="4fec40e2-545f-4b42-b561-cced8ef73035">
-                                            <pathFromRoot value="2,5,0,2"/>
+                                            <pathFromRoot value="2,5,0,1"/>
                                             <properties name="TankColor">
                                                 <enable>
                                                     <init>true</init>
@@ -886,7 +814,7 @@
                             </children>
                         </condContainer>
                         <container oid="72089c04-3f61-4aa6-956f-61b43c5f66e7">
-                            <pathFromRoot value="1,2"/>
+                            <pathFromRoot value="1,1"/>
                             <properties name="Top Left text">
                                 <visible>
                                     <init>false</init>
@@ -923,7 +851,7 @@
                             </properties>
                             <children>
                                 <circle oid="a6158fcc-ec3f-4f37-b4c1-c5500da3c24a">
-                                    <pathFromRoot value="0,1,2"/>
+                                    <pathFromRoot value="0,1,1"/>
                                     <properties name="circle">
                                         <visible>
                                             <init>true</init>
@@ -984,7 +912,7 @@
                                     </properties>
                                 </circle>
                                 <text oid="7099089a-870b-4993-b936-a92c8174700c">
-                                    <pathFromRoot value="1,1,2"/>
+                                    <pathFromRoot value="1,1,1"/>
                                     <properties name="text">
                                         <visible>
                                             <init>true</init>
@@ -1033,7 +961,7 @@
                     </children>
                 </container>
                 <container oid="50af4865-807e-4306-a477-abf77b568ea0">
-                    <pathFromRoot value="3"/>
+                    <pathFromRoot value="2"/>
                     <properties name="Colors Management">
                         <visible>
                             <init>true</init>
@@ -1069,7 +997,7 @@
                     </properties>
                     <children>
                         <container oid="2fda4662-af6e-474e-82f0-24940c0ee8ce">
-                            <pathFromRoot value="0,3"/>
+                            <pathFromRoot value="0,2"/>
                             <properties name="PumpColors">
                                 <visible>
                                     <init>true</init>
@@ -1105,7 +1033,7 @@
                             </properties>
                             <children>
                                 <assignment oid="c8872679-8eef-4051-a134-b176f6f7e63c">
-                                    <pathFromRoot value="0,0,3"/>
+                                    <pathFromRoot value="0,0,2"/>
                                     <properties name="Pump1">
                                         <enable>
                                             <init>true</init>
@@ -1120,7 +1048,7 @@
                                     </properties>
                                 </assignment>
                                 <assignment oid="a769d632-b9c6-4452-9e2a-42013fdfc24b">
-                                    <pathFromRoot value="1,0,3"/>
+                                    <pathFromRoot value="1,0,2"/>
                                     <properties name="Pump2">
                                         <enable>
                                             <init>true</init>
@@ -1135,7 +1063,7 @@
                                     </properties>
                                 </assignment>
                                 <assignment oid="40df215b-0b8b-4d03-bc1a-6e82f72e5839">
-                                    <pathFromRoot value="2,0,3"/>
+                                    <pathFromRoot value="2,0,2"/>
                                     <properties name="Pump3">
                                         <enable>
                                             <init>true</init>
@@ -1150,7 +1078,7 @@
                                     </properties>
                                 </assignment>
                                 <assignment oid="5cc933ac-aed5-48db-8248-e3f955234385">
-                                    <pathFromRoot value="3,0,3"/>
+                                    <pathFromRoot value="3,0,2"/>
                                     <properties name="Pump4">
                                         <enable>
                                             <init>true</init>
@@ -1167,7 +1095,7 @@
                             </children>
                         </container>
                         <container oid="87b4d19a-fdce-4630-8454-7bcdf8c20bfd">
-                            <pathFromRoot value="1,3"/>
+                            <pathFromRoot value="1,2"/>
                             <properties name="SteamColor">
                                 <visible>
                                     <init>true</init>
@@ -1203,7 +1131,7 @@
                             </properties>
                             <children>
                                 <assignment oid="bd630a3b-8f98-43a2-a7e8-425adbd95bf0">
-                                    <pathFromRoot value="0,1,3"/>
+                                    <pathFromRoot value="0,1,2"/>
                                     <properties name="Steam">
                                         <enable>
                                             <init>true</init>
@@ -1220,7 +1148,7 @@
                             </children>
                         </container>
                         <container oid="bf0188bc-e5fe-47fc-8282-6590cee3ff8e">
-                            <pathFromRoot value="2,3"/>
+                            <pathFromRoot value="2,2"/>
                             <properties name="LevelColor">
                                 <visible>
                                     <init>true</init>
@@ -1256,7 +1184,7 @@
                             </properties>
                             <children>
                                 <assignment oid="26529ed8-d7d6-4fd7-9927-417f3b81cbd5">
-                                    <pathFromRoot value="0,2,3"/>
+                                    <pathFromRoot value="0,2,2"/>
                                     <properties name="Level">
                                         <enable>
                                             <init>true</init>
@@ -1273,7 +1201,7 @@
                             </children>
                         </container>
                         <container oid="c7e84191-b79e-478e-81cf-8e4bfab133a4">
-                            <pathFromRoot value="3,3"/>
+                            <pathFromRoot value="3,2"/>
                             <properties name="WaterColor">
                                 <visible>
                                     <init>true</init>
@@ -1309,7 +1237,7 @@
                             </properties>
                             <children>
                                 <assignment oid="a81c7357-daf7-47be-a4e8-f8837afb8ed7">
-                                    <pathFromRoot value="0,3,3"/>
+                                    <pathFromRoot value="0,3,2"/>
                                     <properties name="Level">
                                         <enable>
                                             <init>true</init>
@@ -1328,7 +1256,7 @@
                     </children>
                 </container>
                 <container oid="e05dcd83-d679-4145-946d-910c990f2c87">
-                    <pathFromRoot value="4"/>
+                    <pathFromRoot value="3"/>
                     <properties name="Time">
                         <visible>
                             <init>true</init>
@@ -1364,7 +1292,7 @@
                     </properties>
                     <children>
                         <imported oid="e22734c4-ccd8-4d32-9dbf-dd70e741340b">
-                            <pathFromRoot value="0,4"/>
+                            <pathFromRoot value="0,3"/>
                             <properties name="GetTime">
                                 <function name="GetTime"/>
                                 <enable>
@@ -1384,7 +1312,7 @@
                             </properties>
                         </imported>
                         <text oid="3f2a768c-d9a6-4cd8-a80b-1e60c44c70a6">
-                            <pathFromRoot value="1,4"/>
+                            <pathFromRoot value="1,3"/>
                             <properties name="text">
                                 <visible>
                                     <init>true</init>
@@ -1430,7 +1358,7 @@
                     </children>
                 </container>
                 <container oid="11920417-8676-493a-93f5-88214a468a9e">
-                    <pathFromRoot value="5"/>
+                    <pathFromRoot value="4"/>
                     <properties name="Graphs">
                         <visible>
                             <init>true</init>
@@ -1466,7 +1394,7 @@
                     </properties>
                     <children>
                         <referenceContainer oid="72aca7db-0c6b-45e8-ab41-837ad83cd936">
-                            <pathFromRoot value="0,5"/>
+                            <pathFromRoot value="0,4"/>
                             <properties modular="false" name="Reactor Water Widget">
                                 <visible>
                                     <init>true</init>
@@ -1523,7 +1451,7 @@
                             <children/>
                         </referenceContainer>
                         <referenceContainer oid="ec716389-552d-4c2a-9ced-1dfa00f1155c">
-                            <pathFromRoot value="1,5"/>
+                            <pathFromRoot value="1,4"/>
                             <properties modular="false" name="Water Widget">
                                 <visible>
                                     <init>true</init>
@@ -1580,7 +1508,7 @@
                             <children/>
                         </referenceContainer>
                         <referenceContainer oid="e31e0adf-1a11-4180-ae4b-6fd744e108f1">
-                            <pathFromRoot value="2,5"/>
+                            <pathFromRoot value="2,4"/>
                             <properties modular="false" name="Steam Widget">
                                 <visible>
                                     <init>true</init>
@@ -1639,7 +1567,7 @@
                     </children>
                 </container>
                 <referenceContainer oid="82c069bc-6fa5-4b40-9464-8acd528256dd">
-                    <pathFromRoot value="6"/>
+                    <pathFromRoot value="5"/>
                     <properties modular="false" name="Tank">
                         <visible>
                             <init>true</init>
@@ -1694,7 +1622,7 @@
                     <children/>
                 </referenceContainer>
                 <container oid="42eac5d7-5d86-40db-99e3-2d0e14d5b515">
-                    <pathFromRoot value="7"/>
+                    <pathFromRoot value="6"/>
                     <properties name="Parameters Configuration">
                         <visible>
                             <init>true</init>
@@ -1730,7 +1658,7 @@
                     </properties>
                     <children>
                         <text oid="02a738b0-78ff-49c3-a5e1-951d3b4e6105">
-                            <pathFromRoot value="0,7"/>
+                            <pathFromRoot value="0,6"/>
                             <properties name="text">
                                 <visible>
                                     <init>true</init>
@@ -1773,7 +1701,7 @@
                             </properties>
                         </text>
                         <container oid="b2fe63b2-d47e-4524-9293-f9a76fc9d178">
-                            <pathFromRoot value="1,7"/>
+                            <pathFromRoot value="1,6"/>
                             <properties name="Pumps Control">
                                 <visible>
                                     <init>true</init>
@@ -1809,7 +1737,7 @@
                             </properties>
                             <children>
                                 <referenceContainer oid="0be39fe7-3f51-4557-862c-5660761bd5ee">
-                                    <pathFromRoot value="0,1,7"/>
+                                    <pathFromRoot value="0,1,6"/>
                                     <properties modular="false" name="Pump1">
                                         <visible>
                                             <init>true</init>
@@ -1872,7 +1800,7 @@
                                     <children/>
                                 </referenceContainer>
                                 <referenceContainer oid="a530bea4-5f50-4657-9142-45fb5c2551d3">
-                                    <pathFromRoot value="1,1,7"/>
+                                    <pathFromRoot value="1,1,6"/>
                                     <properties modular="false" name="Pump2">
                                         <visible>
                                             <init>true</init>
@@ -1935,7 +1863,7 @@
                                     <children/>
                                 </referenceContainer>
                                 <referenceContainer oid="d91ab9e3-832b-4fc5-b708-fffa82a5f371">
-                                    <pathFromRoot value="2,1,7"/>
+                                    <pathFromRoot value="2,1,6"/>
                                     <properties modular="false" name="Pump3">
                                         <visible>
                                             <init>true</init>
@@ -1998,7 +1926,7 @@
                                     <children/>
                                 </referenceContainer>
                                 <referenceContainer oid="9694c5d4-32fb-4ef9-a056-f471ab632f72">
-                                    <pathFromRoot value="3,1,7"/>
+                                    <pathFromRoot value="3,1,6"/>
                                     <properties modular="false" name="Pump4">
                                         <visible>
                                             <init>true</init>
@@ -2063,7 +1991,7 @@
                             </children>
                         </container>
                         <referenceContainer oid="d328ea41-5860-464f-b05e-f93f364419a2">
-                            <pathFromRoot value="2,7"/>
+                            <pathFromRoot value="2,6"/>
                             <properties modular="false" name="Steam Control">
                                 <visible>
                                     <init>true</init>
@@ -2122,7 +2050,7 @@
                             <children/>
                         </referenceContainer>
                         <referenceContainer oid="30b66fb5-cc08-4ec0-b5d4-297db8fb6972">
-                            <pathFromRoot value="3,7"/>
+                            <pathFromRoot value="3,6"/>
                             <properties modular="false" name="Level Control">
                                 <visible>
                                     <init>true</init>
@@ -2183,7 +2111,7 @@
                     </children>
                 </container>
                 <container oid="66d662ae-cf38-4884-92f8-96eb7c53a498">
-                    <pathFromRoot value="8"/>
+                    <pathFromRoot value="7"/>
                     <properties name="Initialization">
                         <visible>
                             <init>true</init>
@@ -2220,7 +2148,7 @@
                     </properties>
                     <children>
                         <text oid="be29fa46-ef9c-4308-980f-6a456b019efb">
-                            <pathFromRoot value="0,8"/>
+                            <pathFromRoot value="0,7"/>
                             <properties name="text">
                                 <visible>
                                     <init>true</init>
@@ -2263,7 +2191,7 @@
                             </properties>
                         </text>
                         <referenceContainer oid="335ffee9-b06c-4f64-962d-76186ef6a82e">
-                            <pathFromRoot value="1,8"/>
+                            <pathFromRoot value="1,7"/>
                             <properties modular="false" name="Boiler">
                                 <visible>
                                     <init>true</init>
@@ -2301,7 +2229,7 @@
                                     </parameter>
                                 </constantParameters>
                                 <inputParameters>
-                                    <parameter control="true" name="SizeX" oid="057842e7-e65a-45a7-9cec-a22fcce89a6a" type="float32">
+                                    <parameter control="false" name="SizeX" oid="057842e7-e65a-45a7-9cec-a22fcce89a6a" type="float32">
                                         <init>139.0</init>
                                     </parameter>
                                     <parameter control="false" name="Color" oid="3a931a02-8ce7-494b-a22b-0ff34eccb33b" representation="color" type="int32">
@@ -2323,7 +2251,7 @@
                             <children/>
                         </referenceContainer>
                         <referenceContainer oid="2f5be6ca-ffc5-4251-b205-e3245b78adc0">
-                            <pathFromRoot value="2,8"/>
+                            <pathFromRoot value="2,7"/>
                             <properties modular="false" name="Units">
                                 <visible>
                                     <init>true</init>
@@ -2361,7 +2289,7 @@
                                     </parameter>
                                 </constantParameters>
                                 <inputParameters>
-                                    <parameter control="true" name="SizeX" oid="057842e7-e65a-45a7-9cec-a22fcce89a6a" type="float32">
+                                    <parameter control="false" name="SizeX" oid="057842e7-e65a-45a7-9cec-a22fcce89a6a" type="float32">
                                         <init>139.0</init>
                                     </parameter>
                                     <parameter control="false" name="Color" oid="3a931a02-8ce7-494b-a22b-0ff34eccb33b" representation="color" type="int32">
@@ -2385,7 +2313,7 @@
                     </children>
                 </container>
                 <referenceContainer oid="1b0d4d2c-9fda-4d89-a598-8600590fab85">
-                    <pathFromRoot value="9"/>
+                    <pathFromRoot value="8"/>
                     <properties modular="false" name="Notifications">
                         <visible>
                             <init>true</init>
@@ -2437,7 +2365,7 @@
                     <children/>
                 </referenceContainer>
                 <container oid="e14cd263-1366-43d1-802f-53b6d21069ca">
-                    <pathFromRoot value="10"/>
+                    <pathFromRoot value="9"/>
                     <properties name="logo">
                         <visible>
                             <init>true</init>
@@ -2473,7 +2401,7 @@
                     </properties>
                     <children>
                         <bitmap oid="6bbae703-a96a-4135-8d2a-8139fd846d79">
-                            <pathFromRoot value="0,10"/>
+                            <pathFromRoot value="0,9"/>
                             <properties name="bitmap">
                                 <visible>
                                     <init>true</init>
@@ -2498,5 +2426,5 @@
     </children>
 </specification>
 
-<!-- crc32 : 707308517 -->
+<!-- crc32 : 3016366941 -->
 
