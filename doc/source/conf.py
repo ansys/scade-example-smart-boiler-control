@@ -45,7 +45,7 @@ html_theme_options = {
         "version_match": get_version_match(version),
     },
     "check_switcher": False,
-    "logo": "pyansys",
+    "logo": "ansys",
 }
 
 # Sphinx extensions
