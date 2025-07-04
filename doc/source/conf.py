@@ -124,17 +124,6 @@ source_suffix = ".rst"
 # The master toctree document.
 master_doc = "index"
 
-
-# TODO: remove ignore links after public release
-linkcheck_ignore = [
-    "https://github.com/ansys/scade-example-smart-boiler-control",
-    "https://github.com/ansys/scade-example-smart-boiler-control/actions/workflows/ci_cd.yml",
-    "https://pypi.org/project/ansys-scade-example-smart-boiler-control",
-    # The link below takes a long time to check
-    "https://www.ansys.com/products/embedded-software/ansys-scade-suite",
-    "https://www.ansys.com/*"
-]
-
 # suppress warnings about fa-build while building the documentation-pdf
 suppress_warnings = [
     "design.fa-build",
