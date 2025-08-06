@@ -95,7 +95,7 @@
 			<type>
 				<NamedType>
 					<type>
-						<TypeRef name="float32"/>
+						<TypeRef name="Volume"/>
 					</type>
 				</NamedType>
 			</type>

@@ -5,7 +5,7 @@
 			<value>DISPLAY</value>
 		</Prop>
 		<Prop id="4" name="@SDY:RELEASE">
-			<value>24.1</value>
+			<value>25.2</value>
 		</Prop>
 		<Prop id="7" name="@SDY:DEFAULTCOLORTABLE">
 			<value>color_table.sct</value>
