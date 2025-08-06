@@ -23,7 +23,7 @@ jobs:
     name: "Code style"
     runs-on: ubuntu-latest
     steps:
-      - uses: ansys/actions/code-style@v9
+      - uses: ansys/actions/code-style@v10
         with:
           use-python-cache: false
 
@@ -31,7 +31,7 @@ jobs:
     name: "Documentation style"
     runs-on: ubuntu-latest
     steps:
-      - uses: ansys/actions/doc-style@v9
+      - uses: ansys/actions/doc-style@v10
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -41,7 +41,7 @@ jobs:
     timeout-minutes: 30
     needs: doc-style
     steps:
-      - uses: ansys/actions/doc-build@v9
+      - uses: ansys/actions/doc-build@v10
         with:
           skip-install: true
           use-python-cache: false
@@ -168,7 +168,7 @@ jobs:
     needs: [standalone-display, scade-test-display, doc-build]
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
-      - uses: ansys/actions/doc-deploy-dev@v9
+      - uses: ansys/actions/doc-deploy-dev@v10
         with:
           doc-artifact-name: 'documentation-html'
           cname: ${{ env.DOCUMENTATION_CNAME }}
@@ -183,7 +183,7 @@ jobs:
     needs: [release]
     if: github.event_name == 'push' && contains(github.ref, 'refs/tags')
     steps:
-      - uses: ansys/actions/doc-deploy-stable@v9
+      - uses: ansys/actions/doc-deploy-stable@v10
         with:
           cname: ${{ env.DOCUMENTATION_CNAME }}
           token: ${{ secrets.GITHUB_TOKEN }}
