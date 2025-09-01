@@ -104,7 +104,7 @@
                     </angle>
                 </rotate>
                 <orientation clockwise="false"/>
-                <static editorLinked="true" generateStaticSequence="true" maxX="371.0" maxY="431.5" minX="-219.00006" minY="-442.5">
+                <static editorLinked="true" generateStaticSequence="true" maxX="371.0" maxY="431.5" minX="-219.0" minY="-442.5">
                     <init>false</init>
                 </static>
             </properties>
@@ -3828,7 +3828,7 @@
                                     </angle>
                                 </rotate>
                                 <orientation clockwise="false"/>
-                                <static editorLinked="true" generateStaticSequence="false" maxX="6.0" maxY="-375.0" minX="-198.0" minY="-403.0">
+                                <static editorLinked="true" generateStaticSequence="false" maxX="6.0" maxY="-376.5" minX="-196.0" minY="-400.5">
                                     <init>false</init>
                                 </static>
                             </properties>
@@ -4103,7 +4103,7 @@
                             </angle>
                         </rotate>
                         <orientation clockwise="false"/>
-                        <static editorLinked="true" generateStaticSequence="true" maxX="-171.00006" maxY="274.0001" minX="-219.00006" minY="-115.00002">
+                        <static editorLinked="true" generateStaticSequence="true" maxX="-207.0" maxY="251.0" minX="-219.0" minY="-115.0">
                             <init>false</init>
                         </static>
                     </properties>
@@ -4299,5 +4299,5 @@
     </children>
 </object>
 
-<!-- crc32 : 2645042131 -->
+<!-- crc32 : 3895171884 -->
 
