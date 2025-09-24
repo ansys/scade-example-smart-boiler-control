@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Project id="1" oid_count="53" defaultConfiguration="14">
+<Project id="1" oid_count="54" defaultConfiguration="14">
 	<props>
 		<Prop id="3" name="@STUDIO:PRODUCT">
 			<value>QTE</value>
@@ -92,7 +92,7 @@
 		</Folder>
 		<Folder id="26" extensions="trf" name="Results">
 			<elements>
-				<FileRef id="51" persistAs="ProcedureOK.trf"/>
+				<FileRef id="54" persistAs="ProcedureOK.trf"/>
 			</elements>
 		</Folder>
 	</roots>
