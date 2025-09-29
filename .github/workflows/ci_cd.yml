@@ -48,28 +48,6 @@ jobs:
           dependencies: "texlive-fonts-extra qpdf"
           check-links: false
 
-  bash-test:
-    name : "TEST Bash"
-    runs-on: [self-hosted, 'SCADE', 'GRAPHICS']
-    steps:
-    # Runs on Bash
-    - name: CL Info
-      id: run-clinfo
-      run: |
-        clinfo
-      shell: bash
-    - name: Test GPU rendering
-      id: test-gpu-rendering
-      run: |
-        powershell -Command "Add-Type -AssemblyName System.Drawing; [System.Drawing.Graphics]::FromImage((New-Object System.Drawing.Bitmap 100, 100))"
-    - name: Check environment
-      run: |
-          echo "Running user: $USER"
-          echo "Available GPUs:"
-          dxdiag /t dxdiag_output.txt
-      shell: cmd
-
-
 
   standalone-display:
     name: "Standalone Display"
@@ -126,7 +104,13 @@ jobs:
           test-project: 'model/scade-test/SmartBoilerControl_Test.etp'
           configuration: 'Test'
           results-project: 'model/scade-test/SmartBoilerControl_Results.etp'
+          junit-report: 'junit-reports\SmartBoilerControl.xml'
           checkout: false
+      - name: "Publish Test Report"
+        uses: mikepenz/action-junit-report@v5
+        if: success() || failure() # always run even if the previous step fails
+        with:
+          report_paths: './junit-reports/SmartBoilerControl.xml'
 
   release:
     name: "Release project"
