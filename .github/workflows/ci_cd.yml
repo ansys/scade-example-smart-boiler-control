@@ -46,7 +46,7 @@ jobs:
         with:
           skip-install: true
           use-python-cache: false
-          dependencies: "texlive-fonts-extra qpdf"
+          dependencies: "qpdf"
           python-version: ${{ env.MAIN_PYTHON_VERSION }}
 
 
