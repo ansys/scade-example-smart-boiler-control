@@ -124,6 +124,13 @@ source_suffix = ".rst"
 # The master toctree document.
 master_doc = "index"
 
+#  ignore links that are known to be problematic
+linkcheck_ignore = [
+    # The link below takes a long time to check
+    "https://www.ansys.com/products/embedded-software/ansys-scade-suite",
+    "https://www.ansys.com/*"
+]
+
 # suppress warnings about fa-build while building the documentation-pdf
 suppress_warnings = [
     "design.fa-build",
