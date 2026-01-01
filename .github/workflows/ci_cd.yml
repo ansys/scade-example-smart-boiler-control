@@ -62,7 +62,7 @@ jobs:
     needs: [code-style]
     steps:
       - name: "Install Git and clone project"
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: "Get SCADE installation directory"
         uses: ansys/scade-actions/get-scade-dir@v2
@@ -78,7 +78,7 @@ jobs:
           configuration: 'Windows'
 
       - name: "Upload folder to  artifacts"
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name:  ${{ env.ARTIFACT_NAME }}
           path: ./model/scade-display/DisplayPanel_Exe
@@ -91,7 +91,7 @@ jobs:
     needs: [code-style]
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: "Get SCADE installation directory"
         uses: ansys/scade-actions/get-scade-dir@v2
@@ -122,7 +122,7 @@ jobs:
     steps:
 
     - name: "Download HTML documentation"
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: documentation-html
         path: documentation-html
@@ -134,7 +134,7 @@ jobs:
         dest: documentation-html.zip
 
     - name: "Download PDF documentation"
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: documentation-pdf
         path: documentation-pdf
@@ -146,7 +146,7 @@ jobs:
         dest: documentation-pdf.zip
 
     - name: "Download Standalone"
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: ${{ env.ARTIFACT_NAME }}
         path: ${{ env.ARTIFACT_NAME }}
