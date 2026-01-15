@@ -10,3 +10,4 @@
 * [Jorge Martínez](https://github.com/jorgepiloto)
 * [Kathy Pippert](https://github.com/PipKat)
 * [Revathy Venugopal](https://github.com/Revathyvenugopal162)
+* [Sébastien Morais](https://github.com/SMoraisAnsys)
