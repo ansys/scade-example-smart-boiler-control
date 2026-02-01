@@ -62,23 +62,23 @@ jobs:
     needs: [code-style]
     steps:
       - name: "Install Git and clone project"
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: "Get SCADE installation directory"
-        uses: ansys/scade-actions/get-scade-dir@v2
+        uses: ansys/scade-actions/get-scade-dir@v3
         id: get-scade-dir
         with:
           scade-version: "25.2"
 
       - name: "Generate Standalone"
-        uses: ansys/scade-actions/display-generate@v2
+        uses: ansys/scade-actions/display-generate@v3
         with:
           scade-dir: ${{ steps.get-scade-dir.outputs.scade-directory }}
           project: 'model/scade-display/DisplayPanel.etp'
           configuration: 'Windows'
 
       - name: "Upload folder to  artifacts"
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name:  ${{ env.ARTIFACT_NAME }}
           path: ./model/scade-display/DisplayPanel_Exe
@@ -91,16 +91,16 @@ jobs:
     needs: [code-style]
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: "Get SCADE installation directory"
-        uses: ansys/scade-actions/get-scade-dir@v2
+        uses: ansys/scade-actions/get-scade-dir@v3
         id: get-scade-dir
         with:
           scade-version: "25.2"
 
       - name: "Execute tests"
-        uses: ansys/scade-actions/test-execute@v2
+        uses: ansys/scade-actions/test-execute@v3
         with:
           scade-dir: ${{ steps.get-scade-dir.outputs.scade-directory }}
           test-project: 'model/scade-test/SmartBoilerControl_Test.etp'
@@ -122,7 +122,7 @@ jobs:
     steps:
 
     - name: "Download HTML documentation"
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: documentation-html
         path: documentation-html
@@ -134,7 +134,7 @@ jobs:
         dest: documentation-html.zip
 
     - name: "Download PDF documentation"
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: documentation-pdf
         path: documentation-pdf
@@ -146,7 +146,7 @@ jobs:
         dest: documentation-pdf.zip
 
     - name: "Download Standalone"
-      uses: actions/download-artifact@v6
+      uses: actions/download-artifact@v7
       with:
         name: ${{ env.ARTIFACT_NAME }}
         path: ${{ env.ARTIFACT_NAME }}
