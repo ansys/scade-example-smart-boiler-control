@@ -12,7 +12,7 @@ env:
   DOCUMENTATION_CNAME: 'smart-boiler-control.examples.scade.docs.pyansys.com'
   LIBRARY_NAME: 'ansys-scade-examples-smart-boiler-control'
   ARTIFACT_NAME: 'SmartBoilerStandaloneExecutable'
-  MAIN_PYTHON_VERSION: '3.10'
+  MAIN_PYTHON_VERSION: '3.12'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
