@@ -53,7 +53,7 @@ Test execution on host
 #. Launch SCADE Test.
 
 #. Select **File > Open** and then the ``model/scade-test/SmartBoilerControl_Test.etp``
-   SCADE test projet.
+   SCADE test project.
 
    .. raw:: html
 
