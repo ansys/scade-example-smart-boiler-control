@@ -1,4 +1,5 @@
 """Sphinx documentation configuration file."""
+
 from datetime import datetime
 import pathlib
 import os
@@ -29,7 +30,9 @@ html_theme = "ansys_sphinx_theme"
 html_short_title = html_title = "Ansys SCADE Smart Boiler Example"
 
 # multi-version documentation
-cname = os.getenv("DOCUMENTATION_CNAME", "smart-boiler-control.example.scade.docs.pyansys.com")
+cname = os.getenv(
+    "DOCUMENTATION_CNAME", "smart-boiler-control.example.scade.docs.pyansys.com"
+)
 """The canonical name of the webpage hosting the documentation."""
 
 # specify the location of your github repo
@@ -128,7 +131,7 @@ master_doc = "index"
 linkcheck_ignore = [
     # The link below takes a long time to check
     "https://www.ansys.com/products/embedded-software/ansys-scade-suite",
-    "https://www.ansys.com/*"
+    "https://www.ansys.com/*",
 ]
 
 # suppress warnings about fa-build while building the documentation-pdf

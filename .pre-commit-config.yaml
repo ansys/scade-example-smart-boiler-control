@@ -1,3 +1,6 @@
+exclude: |
+  (?x)^(model/)
+
 ci:
   autofix_commit_msg: 'chore: auto fixes from pre-commit hooks'
   autoupdate_commit_msg: 'chore: pre-commit automatic update'
@@ -6,7 +9,7 @@ ci:
 repos:
 
 - repo: https://github.com/ansys/pre-commit-hooks
-  rev: v0.4.3
+  rev: v0.8.0
   hooks:
   - id: add-license-headers
     args:
