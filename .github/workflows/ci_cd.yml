@@ -62,7 +62,7 @@ jobs:
     needs: [code-style]
     steps:
       - name: "Install Git and clone project"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "Get SCADE installation directory"
         uses: ansys/scade-actions/get-scade-dir@v3
@@ -91,7 +91,7 @@ jobs:
     needs: [code-style]
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: "Get SCADE installation directory"
         uses: ansys/scade-actions/get-scade-dir@v3
