@@ -1,11 +1,6 @@
 exclude: |
   (?x)^(model/)
 
-ci:
-  autofix_commit_msg: 'chore: auto fixes from pre-commit hooks'
-  autoupdate_commit_msg: 'chore: pre-commit automatic update'
-  autoupdate_schedule: monthly
-
 repos:
 
 - repo: https://github.com/ansys/pre-commit-hooks
